@@ -24,6 +24,7 @@ yarn-error.log*
 !.oii/quarantine/.gitkeep
 .oii/reviewed/*
 !.oii/reviewed/.gitkeep
+.oii/snapshots/
 
 # Secrets / local config — never track
 *.pem

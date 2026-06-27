@@ -26,12 +26,12 @@ Legend: ✅ done · 🟡 partial/representative · ⬜ not started
 | 16 | Search, ranking, CLI | ✅ | `python -m oii` with transparent ranking |
 | 17 | Tests & evaluations | ✅ | Judgement evals + rejection/security tests |
 | 18 | Examples | 🟡 | Representative example decision records |
-| 19 | Open-source readiness | ✅ | README, CONTRIBUTING, SECURITY, CoC, CHANGELOG |
-| 20 | CI & quality | ✅ | GitHub Actions + `make check` mirror |
-| 21 | Critical self-review | ✅ | `docs/reviews/pre-release-review.md` |
-| 22 | Versioning & release | 🟡 | Conventional commits per phase; tag pending final check |
-| 23 | GitHub publication | ⬜ | Local only — exact publish commands provided, not auto-pushed |
+| 19 | Open-source readiness | ✅ | README, CONTRIBUTING, SECURITY, CoC, CHANGELOG, issue/PR templates |
+| 20 | CI & quality | ✅ | GitHub Actions + `make check` mirror (46/46 self-checks, secret scan clean) |
+| 21 | Critical self-review | ✅ | `docs/reviews/pre-release-review.md` (8 perspectives + checklist) |
+| 22 | Versioning & release | ✅ | Conventional commits per phase; `v0.1.0` tagged after full check |
+| 23 | GitHub publication | ⬜ | Local only — exact `gh` publish commands in the final report; NOT auto-pushed (awaits human go-ahead) |
 
 ## Next-session entry point
 Run `make check`, read recent `git log`, then continue the lowest-numbered 🟡/⬜ phase.
-Publication (Phase 23) is intentionally left to a human go-ahead.
+Publication (Phase 23) is intentionally left to a human go-ahead — see the final report.
