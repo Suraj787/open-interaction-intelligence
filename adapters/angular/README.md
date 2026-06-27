@@ -1,4 +1,4 @@
-# Motif Adapter — Angular
+# Motif Adapter, Angular
 
 How Motif recipes map onto idiomatic Angular (standalone components, signals,
 `DestroyRef`). Recipes stay CSS-first; Angular owns DI, change detection, and
@@ -16,7 +16,7 @@ Package a recipe as a **directive + (optional) component**:
   `output()`.
 
 Keep motion in component/`:host` CSS. Angular's `@angular/animations` is available
-but **CSS-first is preferred** — only use the animations package for orchestration
+but **CSS-first is preferred**, only use the animations package for orchestration
 it genuinely simplifies.
 
 ```ts
@@ -37,7 +37,7 @@ export class BlurRevealDirective implements OnInit {
 
 ## Cleanup
 
-Use `DestroyRef` / `takeUntilDestroyed` — the modern, leak-proof pattern:
+Use `DestroyRef` / `takeUntilDestroyed`, the modern, leak-proof pattern:
 
 ```ts
 constructor() {
@@ -104,7 +104,7 @@ duration `0`) and jump to the end state. CDK respects an
 ## Dependency trade-offs
 
 `@angular/animations` and `@angular/cdk` are first-party and already in most Angular
-apps — using them is not "adding a dependency" in the Motif sense. Still prefer CSS
+apps, using them is not "adding a dependency" in the Motif sense. Still prefer CSS
 for simple motion. Don't pull in third-party animation libs for effects CSS/WAAPI
 cover; escalate only per the technique order.
 

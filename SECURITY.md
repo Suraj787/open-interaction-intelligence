@@ -19,7 +19,7 @@ Motif is designed so that the unsafe path is the hard path:
   through `.motif/quarantine/ → reviewed/ → approved/ | rejected/`.
 - **Licence gate.** Unknown licence ⇒ `reference-only`, never bundled. Source-available
   and Commons-Clause terms are not treated as permissive OSS.
-- **Trust tiers 1–5.** Tier 5 is reference-only / rejected. Bundling requires a verified
+- **Trust tiers 1-5.** Tier 5 is reference-only / rejected. Bundling requires a verified
   permissive licence **and** trust tier ≥ 3.
 - **Controlled installation.** Plan → snapshot → controlled patch → validate →
   auto-rollback on failure → provenance manifest. Third-party installers are never run
@@ -47,7 +47,7 @@ concept, and the impact you observed. We will acknowledge the report, investigat
 coordinate a fix and disclosure timeline with you. Please give us reasonable time to
 remediate before any public disclosure.
 
-There is no published security email address for this project — use GitHub's private
+There is no published security email address for this project, use GitHub's private
 advisory mechanism.
 
 ## What the scanners do

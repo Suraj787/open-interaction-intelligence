@@ -1,4 +1,4 @@
-# Kanban — Drag Feedback & Column Move
+# Kanban, Drag Feedback & Column Move
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -7,14 +7,14 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 - **Product type:** Work-tracking board (Kanban) inside a project tool.
 - **Page/screen:** Multi-column board; cards dragged within and across columns.
 - **Target user:** Team members triaging and re-prioritizing work throughout the day.
-- **Primary task:** Move a card to a new column/position and trust the new state — with
+- **Primary task:** Move a card to a new column/position and trust the new state, with
   clear feedback during the drag and a clean settle on drop.
 
 ## User problem
 The board uses an abrupt drag with no lift cue, and on drop cards "teleport" while the
 column re-lays-out with a jarring jump. Users lose track of where the card landed and
-sometimes drop into the wrong column. The goal is **spatial continuity** — the eye
-should follow the card from pickup to its resting place — without janky layout animation.
+sometimes drop into the wrong column. The goal is **spatial continuity**, the eye
+should follow the card from pickup to its resting place, without janky layout animation.
 
 ## Candidate approaches considered
 1. **Instant move, no feedback.** Fast but disorienting; drop target is ambiguous and
@@ -36,20 +36,20 @@ Simplest that works, native first:
   it visibly "lifts." Pointer drag uses native pointer/drag events; position via `transform`.
 - **Insertion point:** a placeholder block of the card's height marks where it will land;
   the gap opens with a short height/transform transition.
-- **Drop/settle:** FLIP — measure positions before/after, animate neighbors via `transform`
+- **Drop/settle:** FLIP, measure positions before/after, animate neighbors via `transform`
   over ~160ms so nothing teleports; the dropped card eases into the placeholder slot.
 
 ## Rejected effects (and why)
-- **Springy bounce / overshoot on drop** — decoration that delays the next action and
+- **Springy bounce / overshoot on drop**, decoration that delays the next action and
   obscures the final position; precision tool, not a trampoline.
-- **Pulsing/glowing placeholder** — continuous motion behind dense UI; a static highlighted
+- **Pulsing/glowing placeholder**, continuous motion behind dense UI; a static highlighted
   gap reads better.
-- **Full-column reflow animation on every hover** — janky layout animation; thrashes layout.
-- **Confetti when a card hits "Done"** — confetti for a frequent action.
+- **Full-column reflow animation on every hover**, janky layout animation; thrashes layout.
+- **Confetti when a card hits "Done"**, confetti for a frequent action.
 
 ## Implementation sketch
 Native pointer events drive the drag; CSS owns lift and gap; a FLIP pass owns the settle.
-(Library-agnostic — no third-party component code.)
+(Library-agnostic, no third-party component code.)
 
 ```js
 // FLIP settle: call before mutating DOM order, then after.
@@ -86,7 +86,7 @@ function flip(container) {
 
 ## Accessibility
 - **Keyboard DnD:** cards are focusable; arrow keys move within a column, modifier+arrow
-  moves across columns; Space/Enter to pick up and drop — no pointer required.
+  moves across columns; Space/Enter to pick up and drop, no pointer required.
 - **Reduced motion:** lift, gap and FLIP collapse to instant repositioning; layout still
   correct, just no tween.
 - **No motion-only meaning:** moves are announced via `aria-live="polite"` ("Card X moved
@@ -94,13 +94,13 @@ function flip(container) {
 - **Focus:** focus stays on the moved card after drop.
 
 ## Performance
-- Only `transform`/`opacity`/`box-shadow` animate — compositor-friendly, no layout in the
+- Only `transform`/`opacity`/`box-shadow` animate, compositor-friendly, no layout in the
   animated frames (FLIP measures once, then transforms).
 - No continuous/offscreen animation; motion exists only during an active drag/drop.
 - Budget posture: virtualize tall columns; cap FLIP to visible cards.
 
 ## Validation
-- Drag within and across columns — placeholder always shows the true drop target.
-- Drop — neighbors slide, nothing teleports, focus lands on the card.
+- Drag within and across columns, placeholder always shows the true drop target.
+- Drop, neighbors slide, nothing teleports, focus lands on the card.
 - Keyboard-only move works end to end with announcements.
 - Reduce-motion → instant, correct, no jank. No motion when idle.

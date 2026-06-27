@@ -1,4 +1,4 @@
-# Motif Adapter — Browser-Native
+# Motif Adapter, Browser-Native
 
 This adapter is the **reference baseline** for Motif.
 Every recipe is first expressed here using only platform features: HTML, CSS, and
@@ -32,7 +32,7 @@ A recipe ships as up to three artifacts:
 | `*.html`/docs | Minimal markup contract and usage.                          |
 
 Markup is authored so that **the page is fully usable with CSS and JS disabled**.
-JS only *enhances* — it never gates content visibility.
+JS only *enhances*, it never gates content visibility.
 
 ```html
 <!-- Content is present and readable before any script runs -->
@@ -77,7 +77,7 @@ check if the script is ever evaluated server-side.
 
 ## Hydration
 
-There is nothing to hydrate — the server HTML *is* the final DOM. To avoid a flash,
+There is nothing to hydrate, the server HTML *is* the final DOM. To avoid a flash,
 set the resting (pre-animation) visual state in CSS keyed off a class the script
 adds (`.js` / `data-motif-ready`), so non-JS users see content and JS users get the
 enhanced start state only once the script confirms support.
@@ -122,13 +122,13 @@ The non-negotiable default. Author motion behind a "motion is okay" guard so the
 
 In JS, branch on `matchMedia('(prefers-reduced-motion: reduce)')` and **listen for
 changes** so a mid-session preference flip is honoured. Reduced motion means the
-end state is shown instantly — never a blank or stuck state.
+end state is shown instantly, never a blank or stuck state.
 
 ## Testing
 
 - **Unit:** initializer attaches expected attributes/classes; `dispose()` removes
   them and disconnects observers (spy on `disconnect`).
-- **Integration:** jsdom lacks `IntersectionObserver`/`matchMedia` — provide stubs.
+- **Integration:** jsdom lacks `IntersectionObserver`/`matchMedia`, provide stubs.
 - **Visual/E2E:** Playwright with `prefers-reduced-motion` emulation, both
   `reduce` and `no-preference`, plus coarse-pointer emulation.
 
@@ -136,7 +136,7 @@ end state is shown instantly — never a blank or stuck state.
 
 Zero dependencies, zero bundle cost, maximum longevity. Cost: more verbose than a
 framework's sugar, and you hand-roll the state plumbing other adapters get free.
-This is the price of being the portable reference — accept it here so consumers can
+This is the price of being the portable reference, accept it here so consumers can
 choose lighter integration elsewhere.
 
 ## Normalised component contract knobs

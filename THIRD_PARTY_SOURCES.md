@@ -26,10 +26,10 @@ rules that govern it.
 
 ## v0.1.0 sources by redistribution class
 
-22 reviewed sources. Trust tiers shown are 1–5 (lower can be high-quality guidance that is
+22 reviewed sources. Trust tiers shown are 1-5 (lower can be high-quality guidance that is
 simply not redistributable, e.g. official design guidelines).
 
-### Redistributable (14) — verified permissive OSS or open standards
+### Redistributable (14), verified permissive OSS or open standards
 
 Concepts may be implemented and original implementations bundled (trust tier ≥ 3 and a
 verified licence still required), preserving attribution and notices.
@@ -51,19 +51,19 @@ verified licence still required), preserving attribution and notices.
 | Three.js | MIT | 2 | medium |
 | tsParticles | MIT | 3 | medium |
 
-### Adaptable-concept (4) — learn the concept, write clean-room original code
+### Adaptable-concept (4), learn the concept, write clean-room original code
 
 The licence/terms permit learning from the concept but not wholesale redistribution of the
 source's code or assets. Implement from scratch and record provenance; never copy.
 
 | Source | Licence | Trust tier | Confidence | Notes |
 |--------|---------|:----------:|:----------:|-------|
-| GSAP | GSAP-Standard (now free) | 2 | low | `pending-verification` — re-verify current terms before bundling. |
+| GSAP | GSAP-Standard (now free) | 2 | low | `pending-verification`, re-verify current terms before bundling. |
 | IBM Carbon | Apache-2.0 | 2 | medium | Design system; adapt concepts, mind trademark/assets. |
 | Magic UI | MIT | 3 | low | Re-verify per-component provenance. |
 | React Bits | MIT | 3 | low | Re-verify per-component provenance. |
 
-### Reference-only (4) — cite only, never bundle or reconstruct
+### Reference-only (4), cite only, never bundle or reconstruct
 
 Unknown, guidance-only, or community/per-element terms. Reference and cite; never copy,
 never reconstruct from previews.
@@ -72,8 +72,8 @@ never reconstruct from previews.
 |--------|---------|:----------:|:----------:|-------|
 | Apple Human Interface Guidelines | Guidance (Apple terms) | 1 | high | Official guidance; not redistributable. |
 | Material Design | Guidance (CC-BY / Google terms) | 1 | high | Official guidance; mind asset/trademark terms. |
-| Aceternity UI | Unknown / per-component | 4 | low | `pending-verification` — licence unclear per component. |
-| Uiverse | MIT (community-submitted; verify per element) | 4 | low | `pending-verification` — verify each element's provenance. |
+| Aceternity UI | Unknown / per-component | 4 | low | `pending-verification`, licence unclear per component. |
+| Uiverse | MIT (community-submitted; verify per element) | 4 | low | `pending-verification`, verify each element's provenance. |
 
 ### Rejected (0)
 

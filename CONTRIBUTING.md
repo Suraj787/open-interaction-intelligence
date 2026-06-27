@@ -1,6 +1,6 @@
 # Contributing to Motif
 
-Thank you for helping build Motif. This project is not an animation bundle — it is an
+Thank you for helping build Motif. This project is not an animation bundle, it is an
 interaction-design intelligence and governance system for AI coding agents. The most
 valuable contribution is rarely "one more effect"; it is a record that selects the
 right interaction, proves where it came from, adapts it safely, and refuses motion that
@@ -30,7 +30,7 @@ Please read [`LICENSE_POLICY.md`](LICENSE_POLICY.md), [`SECURITY.md`](SECURITY.m
 ## What you can contribute
 
 Every machine-readable record must validate against its JSON Schema in
-[`schemas/`](schemas/). Run `python -m motif validate` (or `make check`) — invalid records
+[`schemas/`](schemas/). Run `python -m motif validate` (or `make check`), invalid records
 will fail CI.
 
 | Contribution | Lives in | Must satisfy schema |
@@ -53,7 +53,7 @@ Detailed authoring guides live in `docs/`: `source-review.md`, `component-author
    official links, licence, redistribution class, trust tier and evidence can be reviewed.
 2. Add a record under `registry/sources/` that satisfies `schemas/source.schema.json`,
    including: `homepage`, `repository`, `license` + `license_reference`, `redistribution`
-   class, `attribution_required`, `trust_tier` (1–5), `evidence`, `last_reviewed`,
+   class, `attribution_required`, `trust_tier` (1-5), `evidence`, `last_reviewed`,
    `confidence` and `status`.
 3. Classify the licence honestly. **Unknown licence ⇒ `reference-only`, never bundled.**
    Source-available / Commons-Clause terms are **not** permissive OSS. See the LICENCE
@@ -97,8 +97,7 @@ and **must be re-verified online** before any material is bundled.
 Motif bundles original implementations, not copied third-party code. To adapt a concept:
 
 1. **Confirm the licence permits adaptation.** Consult `registry/licenses/` and the LICENCE
-   GATE. If the licence is unknown, source-available, Commons-Clause, or premium, stop —
-   the source is reference-only at most. Never copy premium components and never
+   GATE. If the licence is unknown, source-available, Commons-Clause, or premium, stop, the source is reference-only at most. Never copy premium components and never
    reconstruct paid components from previews.
 2. **Study the concept, not the code.** Record the interaction objective, the pattern, the
    observable behaviour, the accessibility expectations and the performance profile.

@@ -1,4 +1,4 @@
-# Accessibility policy — mandatory, not optional. Mirrors skills/motion-accessibility.
+# Accessibility policy, mandatory, not optional. Mirrors skills/motion-accessibility.
 mandatory:
   - respect_prefers_reduced_motion
   - static_or_instant_fallback_for_every_effect

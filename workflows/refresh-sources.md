@@ -12,7 +12,7 @@ pipeline, and never executes it. Run it deliberately, not by default.
 
 ## Steps
 
-1. **Discover.** `python -m motif source discover <source>` — read public metadata and
+1. **Discover.** `python -m motif source discover <source>`, read public metadata and
    official component pages only. Connectors must not follow unknown domains, URL
    shorteners, IP hosts, localhost or private ranges.
 2. **Verify official source.** Confirm homepage + repository; choose the retrieval path in
@@ -44,4 +44,4 @@ pipeline, and never executes it. Run it deliberately, not by default.
 ## Done when
 
 The source's material is quarantined, scanned, licence-gated, and either approved into the
-registry with evidence or rejected — with nothing executed and the registry re-validated.
+registry with evidence or rejected, with nothing executed and the registry re-validated.

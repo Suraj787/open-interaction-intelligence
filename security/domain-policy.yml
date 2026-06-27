@@ -1,4 +1,4 @@
-# Domain policy — explicit allowlist for the source-refresh workflow.
+# Domain policy, explicit allowlist for the source-refresh workflow.
 # Default runtime mode is OFFLINE; these only apply during explicit retrieval.
 mode: offline-approved-registry
 allowlist:

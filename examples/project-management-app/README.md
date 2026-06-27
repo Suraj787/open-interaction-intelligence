@@ -1,4 +1,4 @@
-# Project Management App — Status & Row Change Feedback
+# Project Management App, Status & Row Change Feedback
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -9,7 +9,7 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
   often and rows are added/removed as work flows.
 - **Target user:** Team members and leads scanning and updating many tasks per session.
 - **Primary task:** Change a task's status, add/remove tasks, and trust that what they
-  see reflects reality — without losing their place in a long list.
+  see reflects reality, without losing their place in a long list.
 
 ## User problem
 Status changes and row insert/remove happen instantly with no transition, so updates
@@ -28,7 +28,7 @@ high-frequency list into something seasick-inducing.
 
 ## Selected pattern
 **Object permanence for list mutations.** Items appear, change, and leave in ways that
-preserve the user's mental model — just enough motion to explain *what changed*, no more.
+preserve the user's mental model, just enough motion to explain *what changed*, no more.
 
 ## Selected effect/technique
 Simplest that works, native first:
@@ -40,10 +40,10 @@ Simplest that works, native first:
 - Implemented with Vue's `<TransitionGroup>` (FLIP) so neighbors slide rather than jump.
 
 ## Rejected effects (and why)
-- **Scale/bounce on every status change** — decoration-only; meaningless at high frequency.
-- **Confetti on task complete** — confetti for a frequent action; quickly becomes noise.
-- **Long (>300ms) reorder animations** — make a fast tool feel slow; users out-pace them.
-- **Continuous shimmer on "active" rows** — continuous motion behind dense text.
+- **Scale/bounce on every status change**, decoration-only; meaningless at high frequency.
+- **Confetti on task complete**, confetti for a frequent action; quickly becomes noise.
+- **Long (>300ms) reorder animations**, make a fast tool feel slow; users out-pace them.
+- **Continuous shimmer on "active" rows**, continuous motion behind dense text.
 
 ## Implementation sketch
 Vue `<TransitionGroup>` with FLIP for neighbor movement; CSS owns the actual motion.
@@ -77,7 +77,7 @@ defineProps({ tasks: Array })   // [{ id, title, status }]
 
 ## Accessibility
 - **Reduced motion:** all transitions disabled; rows still appear/disappear and statuses
-  still recolor — instantly, not jankily.
+  still recolor, instantly, not jankily.
 - **No motion-only meaning:** status is text first (color is reinforcement); insert/remove
   is reflected in an `aria-live="polite"` summary ("Task moved to Done").
 - **Keyboard/focus:** when a focused row is removed, focus moves to the next logical row,
@@ -91,7 +91,7 @@ defineProps({ tasks: Array })   // [{ id, title, status }]
   don't animate hundreds of rows at once (animate the viewport, settle the rest).
 
 ## Validation
-- Change status repeatedly — feedback reads as calm, never seasick.
-- Insert/remove rows — neighbors slide, no snap, focus preserved.
-- Bulk update — no frame drops; offscreen rows don't animate.
-- Reduce-motion on — instant updates, all meaning intact.
+- Change status repeatedly, feedback reads as calm, never seasick.
+- Insert/remove rows, neighbors slide, no snap, focus preserved.
+- Bulk update, no frame drops; offscreen rows don't animate.
+- Reduce-motion on, instant updates, all meaning intact.

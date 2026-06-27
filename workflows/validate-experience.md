@@ -1,7 +1,7 @@
 # Workflow: Validate an Experience
 
 The final acceptance gate before an interaction is considered done. Validates
-accessibility, performance, responsiveness, design-system fidelity and provenance — and
+accessibility, performance, responsiveness, design-system fidelity and provenance, and
 records the result. Load `skills/implementation-validation`.
 
 ## Preconditions

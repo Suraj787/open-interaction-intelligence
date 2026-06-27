@@ -20,16 +20,16 @@ Each profile is a YAML file with these keys:
 
 ## Profiles
 
-- `enterprise-strict.yml` — dense internal tools, ERP/financial. Maximum restraint.
-- `saas-balanced.yml` — consumer/B2B SaaS apps. Useful polish, task-first.
-- `marketing-expressive.yml` — SaaS marketing & corporate sites. Brand-forward.
-- `ecommerce-conversion.yml` — storefronts. Lively browse, calm checkout.
-- `documentation-calm.yml` — docs & reference. Near-zero motion.
-- `editorial-storytelling.yml` — publications & case studies. Narrative set-pieces.
-- `portfolio-creative.yml` — portfolios & agencies. Signature expression.
-- `experimental.yml` — immersive/showcase. Highest licence, hard fallbacks.
-- `low-power-device.yml` — constraint overlay for weak hardware.
-- `accessibility-first.yml` — constraint overlay where inclusion leads everything.
+- `enterprise-strict.yml`, dense internal tools, ERP/financial. Maximum restraint.
+- `saas-balanced.yml`, consumer/B2B SaaS apps. Useful polish, task-first.
+- `marketing-expressive.yml`, SaaS marketing & corporate sites. Brand-forward.
+- `ecommerce-conversion.yml`, storefronts. Lively browse, calm checkout.
+- `documentation-calm.yml`, docs & reference. Near-zero motion.
+- `editorial-storytelling.yml`, publications & case studies. Narrative set-pieces.
+- `portfolio-creative.yml`, portfolios & agencies. Signature expression.
+- `experimental.yml`, immersive/showcase. Highest licence, hard fallbacks.
+- `low-power-device.yml`, constraint overlay for weak hardware.
+- `accessibility-first.yml`, constraint overlay where inclusion leads everything.
 
 ## Page-level overrides
 

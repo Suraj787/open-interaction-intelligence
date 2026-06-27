@@ -8,13 +8,13 @@ controls that mitigate them, and the residual risk.
 
 ## Assets to protect
 
-- **The user's project** — source tree, build pipeline, deployed application.
-- **The user's machine** — secrets, SSH keys, GitHub credentials, environment variables,
+- **The user's project**, source tree, build pipeline, deployed application.
+- **The user's machine**, secrets, SSH keys, GitHub credentials, environment variables,
   home-directory files, local network.
-- **The Motif registry's integrity** — only safe, licence-clear, evidence-backed records
+- **The Motif registry's integrity**, only safe, licence-clear, evidence-backed records
   should ever reach `approved`.
-- **Licence compliance** — the user must not unknowingly redistribute restricted code.
-- **The end user of the built product** — must not receive exfiltrating, tracking or
+- **Licence compliance**, the user must not unknowingly redistribute restricted code.
+- **The end user of the built product**, must not receive exfiltrating, tracking or
   malicious client-side code.
 
 ## Trust boundaries
@@ -61,7 +61,7 @@ Key boundaries:
 *Goal:* get `npm install`, a `postinstall` lifecycle script, or shell-from-docs to run on
 the user's machine.
 
-*Controls:* **No execution during ingestion** — connectors must not run install scripts,
+*Controls:* **No execution during ingestion**, connectors must not run install scripts,
 execute JavaScript, run shell commands from documentation, or open binaries. Dependency
 inspection flags `lifecycle scripts`. Controlled installation never runs third-party
 installers against the target; it applies a reviewed patch with rollback. When execution
@@ -85,7 +85,7 @@ rejected.
 *Goal:* slip source-available, Commons-Clause, paid or attribution-required code into a
 permissive-looking bundle.
 
-*Controls:* the **licence gate** — **unknown licence ⇒ `reference-only`, never bundled.**
+*Controls:* the **licence gate**, **unknown licence ⇒ `reference-only`, never bundled.**
 Public visibility is not redistribution permission. Source-available/Commons-Clause terms
 are never treated as ordinary permissive open source. The project's MIT licence never
 overrides third-party obligations. Premium/paid components are never copied or
@@ -142,9 +142,9 @@ regression that weakens a scanner is caught by tests.
 
 ## Defence in depth
 
-No single control is trusted. A piece of code must clear *all* relevant gates — official
+No single control is trusted. A piece of code must clear *all* relevant gates, official
 verification, checksum pinning, static scan, dependency inspection, behaviour
-classification, licence gate, accessibility/performance review — before it can be
+classification, licence gate, accessibility/performance review, before it can be
 approved, and it still only reaches a project through a reversible, manifested install.
 
 ## Residual risk

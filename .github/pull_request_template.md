@@ -21,10 +21,10 @@ What does this change and why? Link any related issue (e.g. `Closes #123`).
 - [ ] **Licence verified** and the redistribution class is correct (unknown ⇒ reference-only;
       source-available / Commons-Clause are **not** permissive; bundling needs a verified
       permissive licence **and** trust tier ≥ 3).
-- [ ] **Reduced-motion handled** — a `prefers-reduced-motion` path exists where motion is involved.
-- [ ] **Accessibility considered** — keyboard, focus, semantics; nothing is hover-only or
+- [ ] **Reduced-motion handled**, a `prefers-reduced-motion` path exists where motion is involved.
+- [ ] **Accessibility considered**, keyboard, focus, semantics; nothing is hover-only or
       motion-only for essential status.
-- [ ] **Performance considered** — animates transform/opacity within budget; no jank, no
+- [ ] **Performance considered**, animates transform/opacity within budget; no jank, no
       decorative continuous motion behind dense UIs.
 - [ ] **No secrets** committed (the secret scan is clean).
 - [ ] **Original implementations labelled `original`**; third-party notices preserved.

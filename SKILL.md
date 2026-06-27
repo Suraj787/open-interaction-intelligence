@@ -82,16 +82,16 @@ internet only via an explicit `source-refresh`.
 
 Load these selectively as the workflow demands:
 
-- `skills/product-context-analysis` — purpose, product type, page/user/task.
-- `skills/interaction-design` — interaction objective and pattern selection.
-- `skills/effect-discovery` — find candidate effects in the registry.
-- `skills/effect-selection` — rank candidates, pick the simplest effective one.
-- `skills/framework-adaptation` — implement in Vue/Frappe-Vue or the target stack.
-- `skills/motion-accessibility` — keyboard, focus, semantics, reduced-motion.
-- `skills/motion-performance` — animation cost, budgets, jank avoidance.
-- `skills/implementation-validation` — final acceptance gates.
-- `skills/source-governance` — registry provenance, licences, source-refresh.
-- `skills/web-experience-orchestrator` — thin alias that defers here.
+- `skills/product-context-analysis`, purpose, product type, page/user/task.
+- `skills/interaction-design`, interaction objective and pattern selection.
+- `skills/effect-discovery`, find candidate effects in the registry.
+- `skills/effect-selection`, rank candidates, pick the simplest effective one.
+- `skills/framework-adaptation`, implement in Vue/Frappe-Vue or the target stack.
+- `skills/motion-accessibility`, keyboard, focus, semantics, reduced-motion.
+- `skills/motion-performance`, animation cost, budgets, jank avoidance.
+- `skills/implementation-validation`, final acceptance gates.
+- `skills/source-governance`, registry provenance, licences, source-refresh.
+- `skills/web-experience-orchestrator`, thin alias that defers here.
 
 ## CLI
 

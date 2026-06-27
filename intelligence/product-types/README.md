@@ -1,20 +1,20 @@
-# LEVEL 2 — Product Types
+# LEVEL 2, Product Types
 
 This is the first real branch of Motif. Before any
 effect, pattern, or recipe is considered, the agent must classify the product.
 
 The single most important distinction is:
 
-- **Web application** — a tool people use repeatedly to *get work done*. The
+- **Web application**, a tool people use repeatedly to *get work done*. The
   interface is a workspace. Motion exists to support tasks, feedback, and
   spatial continuity. Default posture is **restrained**.
-- **Website** — a destination people visit to *learn, evaluate, or be
+- **Website**, a destination people visit to *learn, evaluate, or be
   persuaded*. The interface is a message. Motion can carry brand and narrative.
   Default posture ranges from **balanced to expressive**.
 
 > Rule of thumb: if the same person opens it five times a day, treat it as an
 > application and protect their attention. If most visitors arrive once, you
-> have more room to express — but never at the cost of comprehension or speed.
+> have more room to express, but never at the cost of comprehension or speed.
 
 Each entry below gives: **user intent**, **motion posture** (on a
 restrained → expressive scale), and **key risks**.

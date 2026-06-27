@@ -1,4 +1,4 @@
-"""Minimal JSON Schema (draft-07 subset) validator — zero dependencies.
+"""Minimal JSON Schema (draft-07 subset) validator, zero dependencies.
 
 Supports the keywords used by Motif schemas: type, required, properties,
 additionalProperties, enum, pattern, minimum, maximum, minItems, minLength,

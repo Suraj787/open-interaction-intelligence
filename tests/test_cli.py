@@ -1,4 +1,4 @@
-"""CLI smoke tests — exit codes + key behaviours."""
+"""CLI smoke tests, exit codes + key behaviours."""
 from motif import cli
 
 

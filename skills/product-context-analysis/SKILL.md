@@ -20,17 +20,17 @@ later decision is grounded in context, not aesthetics.
 
 ## Outputs
 
-- **Development purpose** — why the product exists.
-- **Product type** — and a firm **website vs web application** classification.
-- **Page/screen type** — landing, dashboard, list/table, form, detail, wizard, etc.
-- **User + primary task** — who acts and what they are trying to accomplish.
+- **Development purpose**, why the product exists.
+- **Product type**, and a firm **website vs web application** classification.
+- **Page/screen type**, landing, dashboard, list/table, form, detail, wizard, etc.
+- **User + primary task**, who acts and what they are trying to accomplish.
 - A short statement of the **interaction problem** to hand to `interaction-design`.
 
 ## How it connects
 
 - Reads `intelligence/` taxonomies (product types, page types, user intents) to
   classify, not to prescribe effects.
-- Does **not** touch `registry/` — context first, catalogue later.
+- Does **not** touch `registry/`, context first, catalogue later.
 - Hands its findings to `interaction-design`; records them in the decision log.
 
 ## Notes

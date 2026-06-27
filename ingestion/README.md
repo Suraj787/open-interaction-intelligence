@@ -1,21 +1,21 @@
 # Ingestion pipeline
 
 Ingestion turns an untrusted public source into either an approved registry entry,
-an adaptable concept, a reference-only note, or a rejection — **without ever executing
+an adaptable concept, a reference-only note, or a rejection, **without ever executing
 the retrieved code**.
 
 ```
 discover
   → verify official source        (connectors/, security/domain-policy.yml)
   → retrieve into quarantine       (.motif/quarantine/, pinned version + SHA-256)
-  → identify licence               (scanners/license_scanner.py — LICENCE GATE)
+  → identify licence               (scanners/license_scanner.py, LICENCE GATE)
   → static security analysis       (scanners/source_scanner.py)
   → dependency inspection          (scanners/dependency_scanner.py)
   → behaviour classification       (scanners/behaviour_scanner.py)
   → secret scan                    (scanners/secret_scanner.py)
   → accessibility + performance review
-  → approve · adapt · reference · reject
-  → controlled installation        (motif/install.py — plan, snapshot, patch, rollback)
+  → approve, adapt, reference, reject
+  → controlled installation        (motif/install.py, plan, snapshot, patch, rollback)
 ```
 
 Stages map to the subdirectories here:

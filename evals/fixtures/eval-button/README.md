@@ -1,4 +1,4 @@
-# Fixture: eval-button (MALICIOUS — for scanner tests only)
+# Fixture: eval-button (MALICIOUS, for scanner tests only)
 
 This directory is intentionally unsafe. It is never installed; it exists so the
 test suite can prove the scanners catch real attack shapes.

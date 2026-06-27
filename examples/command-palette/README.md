@@ -1,4 +1,4 @@
-# Command Palette — Reveal Motion & Focus Management
+# Command Palette, Reveal Motion & Focus Management
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -7,21 +7,21 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 - **Product type:** Productivity/SaaS app with a Cmd/Ctrl-K command palette.
 - **Page/screen:** Overlay palette for fast navigation and actions, summoned from anywhere.
 - **Target user:** Power users who live on the keyboard and expect instant response.
-- **Primary task:** Summon, type, choose, execute — in well under a second. Speed and
+- **Primary task:** Summon, type, choose, execute, in well under a second. Speed and
   keyboard correctness dominate; the reveal is incidental.
 
 ## User problem
 The palette either pops in with no transition (feels abrupt, unclear where focus went) or,
 in an over-designed variant, animates in slowly (~400ms) so fast users out-type the
 animation and the first keystrokes get lost. We need a reveal that is **fast, calm, and
-keyboard-perfect** — focus into the input immediately, restore it on close.
+keyboard-perfect**, focus into the input immediately, restore it on close.
 
 ## Candidate approaches considered
 1. **No transition, hard show/hide.** Maximally fast but jarring and the overlay's origin
    is unclear; focus handling still required regardless. Acceptable but slightly harsh.
 2. **Large scale/blur cinematic entrance (~400ms).** Looks premium, costs latency on a
    hot path; users hit Enter before it settles. Rejected.
-3. **Tiny, fast reveal:** ~120ms opacity + 4–8px upward translate, input focused on the
+3. **Tiny, fast reveal:** ~120ms opacity + 4-8px upward translate, input focused on the
    same frame it opens; Escape closes and restores focus. **Selected.**
 
 ## Selected pattern
@@ -39,10 +39,10 @@ Simplest that works, native first:
 - Use the platform `<dialog>` or a focus-trapped container; native first.
 
 ## Rejected effects (and why)
-- **Slow/cinematic entrance** — adds latency to a latency-critical interaction; users beat it.
-- **Bouncy spring overshoot** — decoration that delays focus settling and selection.
-- **Backdrop blur animation on a big surface** — expensive paint on the hot path for no info.
-- **Result rows animating in one-by-one as you type** — continuous motion that fights rapid
+- **Slow/cinematic entrance**, adds latency to a latency-critical interaction; users beat it.
+- **Bouncy spring overshoot**, decoration that delays focus settling and selection.
+- **Backdrop blur animation on a big surface**, expensive paint on the hot path for no info.
+- **Result rows animating in one-by-one as you type**, continuous motion that fights rapid
   filtering; results should update instantly.
 
 ## Implementation sketch
@@ -95,7 +95,7 @@ window.addEventListener('keydown', onKey)
   close; focus is trapped within the dialog while open (`aria-modal="true"`).
 - **Keyboard-first:** Cmd/Ctrl-K opens, arrows move the active option (`aria-activedescendant`),
   Enter executes, Escape closes. No pointer needed.
-- **Reduced motion:** transitions removed; open/close are instant — the fast path users
+- **Reduced motion:** transitions removed; open/close are instant, the fast path users
   actually want.
 - **No motion-only meaning:** selection/active state is conveyed by `aria-selected` and a
   visible highlight, not by movement.
@@ -103,10 +103,10 @@ window.addEventListener('keydown', onKey)
 ## Performance
 - Animate only `opacity`/`transform` for ~120ms; no blur animation, no per-row stagger.
 - Nothing animates while closed (component unmounted); no offscreen/continuous motion.
-- Budget posture: the reveal must never delay first input — focus and typing precede the tween.
+- Budget posture: the reveal must never delay first input, focus and typing precede the tween.
 
 ## Validation
-- Open and immediately type — no keystrokes lost, no wait.
+- Open and immediately type, no keystrokes lost, no wait.
 - Escape and scrim-click close and restore focus to the opener.
 - Tab cannot leave the open dialog; arrows + Enter run a command.
 - Reduce-motion → instant open/close; everything still works.

@@ -18,7 +18,7 @@ Before any third-party material can move from quarantine toward approval, its li
 be identified and verified. A source is treated as `reference-only` (at most) whenever:
 
 - the licence is unknown, missing, ambiguous, or only stated informally;
-- the terms are **source-available** or carry a **Commons-Clause** rider — these are **not**
+- the terms are **source-available** or carry a **Commons-Clause** rider, these are **not**
   permissive OSS and must never be treated as such;
 - the material is a premium/paid component or a preview of one;
 - the licence is incompatible with redistribution under this project.
@@ -51,7 +51,7 @@ These are non-negotiable:
 5. **Never treat source-available or Commons-Clause terms as permissive OSS.**
 6. **The project licence never overrides third-party obligations.** MIT applies only to
    original Motif code.
-7. **Record provenance for every recipe** — the inspiring source, the licence under which
+7. **Record provenance for every recipe**, the inspiring source, the licence under which
    the concept may be adapted, and evidence links.
 8. **Label original implementations `original`** so Motif-authored code is distinguishable
    from third-party material.
@@ -68,7 +68,7 @@ Use this when adding or re-verifying a source (it complements `docs/source-revie
 - [ ] Confirmed the licence is **not** source-available / Commons-Clause / premium.
 - [ ] `redistribution` class assigned per the table above.
 - [ ] `attribution_required` set correctly; required notices captured.
-- [ ] `trust_tier` (1–5) assigned; bundling candidates are tier ≥ 3.
+- [ ] `trust_tier` (1-5) assigned; bundling candidates are tier ≥ 3.
 - [ ] `confidence` and `status` set; `pending-verification` if not re-verified online.
 - [ ] For recipes: provenance recorded and the implementation is clean-room `original`.
 - [ ] `python -m motif validate` / `make check` passes.

@@ -6,7 +6,7 @@ description: Use when recording provenance, reviewing licences and costs, writin
 # Source Governance
 
 **Responsibility:** Own provenance, licences, the decision log, and the only sanctioned
-path to the internet — the explicit `source-refresh`.
+path to the internet, the explicit `source-refresh`.
 
 ## When to invoke
 

@@ -30,8 +30,8 @@ until it passes.
    `reduced_motion_support`, `responsive_behaviour`, `performance_cost`, `complexity`,
    `quality_status`.
 7. **Assign usability mode:** `bundled` (licence clearly permits redistribution + scans
-   clean) · `installable` · `adaptable` (clean-room) · `reference-only` (default for
-   unknown/restricted licence) · `rejected` (unsafe/incompatible).
+   clean), `installable`, `adaptable` (clean-room), `reference-only` (default for
+   unknown/restricted licence), `rejected` (unsafe/incompatible).
 8. **Record** the component (`schemas/component.schema.json`) with `verification_date` and
    `evidence`; move quarantined material to `.motif/reviewed/` then `approved/` or
    `rejected/`.

@@ -1,7 +1,7 @@
-# Motif Adapter — Tailwind CSS
+# Motif Adapter, Tailwind CSS
 
 How Motif recipes map onto a Tailwind-styled codebase (v3 and v4). Tailwind is a
-*styling layer*, not a framework — this adapter explains how to express Motif's
+*styling layer*, not a framework, this adapter explains how to express Motif's
 CSS-first motion as utilities, where to drop to custom CSS, and how to keep the
 accessibility guarantees intact.
 
@@ -15,7 +15,7 @@ accessibility guarantees intact.
 - Put **keyframes and scroll-driven timelines** in a small custom CSS layer
   (`@layer utilities` / `@utility` in v4, or `tailwind.config` `extend.keyframes`).
   Tailwind's `animate-*` utilities reference those keyframes.
-- Pair with whichever framework adapter renders the markup — Tailwind only supplies
+- Pair with whichever framework adapter renders the markup, Tailwind only supplies
   classes.
 
 ```html
@@ -32,7 +32,7 @@ accessibility guarantees intact.
 
 ## Lifecycle / cleanup / SSR / hydration
 
-Tailwind has no runtime — these concerns are owned by the host framework adapter
+Tailwind has no runtime, these concerns are owned by the host framework adapter
 (React/Vue/Svelte/Angular/vanilla). Tailwind contributes only static classes, which
 are SSR- and hydration-safe by construction (same classes on server and client).
 Use `data-*` attributes (toggled by the host) plus arbitrary variants
@@ -44,7 +44,7 @@ they're generated.
 
 - Style focus with `focus-visible:` variants (`focus-visible:ring-2`); never remove
   outlines without a visible replacement.
-- Don't use utilities to hide focusable content from keyboard users — prefer
+- Don't use utilities to hide focusable content from keyboard users, prefer
   `sr-only` for visually-hidden-but-accessible labels, not `hidden`.
 
 ## Pointer & coarse-pointer support
@@ -63,7 +63,7 @@ duration, and offsets responsively by swapping utilities at breakpoints.
 
 ## Reduced-motion strategy
 
-Tailwind ships first-class `motion-reduce:` and `motion-safe:` variants — **use
+Tailwind ships first-class `motion-reduce:` and `motion-safe:` variants, **use
 them on every animated element**. Author the static end state under
 `motion-reduce:` (as in the example above) so reduced-motion users land on the
 final visual instantly. For `animate-*` keyframe utilities, neutralise with

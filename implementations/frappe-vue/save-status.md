@@ -1,8 +1,8 @@
-# Save Status Indicator — Frappe-Vue
+# Save Status Indicator, Frappe-Vue
 
 A compact `pending / saving / saved / error` status pill suited to a Frappe form
 field or toolbar. Presentational only: it renders the `status` it's given and emits
-`retry` — it never calls the backend, so it carries **no Frappe dependency** and is
+`retry`, it never calls the backend, so it carries **no Frappe dependency** and is
 unit-testable in isolation.
 
 File: [`SaveStatus.vue`](./SaveStatus.vue). Vue 3 + plain scoped CSS only.
@@ -15,7 +15,7 @@ SPA) and bind its `status` to the parent's save lifecycle. Because it's transpor
 
 ## Wiring to Frappe (the parent owns the call)
 
-### Option A — `frappe-ui` resource (SPA)
+### Option A, `frappe-ui` resource (SPA)
 
 ```vue
 <script setup>
@@ -41,7 +41,7 @@ function persist(args) {
 </template>
 ```
 
-### Option B — classic Desk (`frappe.call`)
+### Option B, classic Desk (`frappe.call`)
 
 ```js
 status.value = "saving";
@@ -52,7 +52,7 @@ frappe.call({ method: "frappe.client.set_value", args })
 
 To embed in a Desk form, mount a tiny Vue app into a custom HTML field's wrapper and
 `app.unmount()` on form teardown (see `adapters/frappe-vue/README.md`). No new build
-system — it rides Frappe's existing Vite/`bench build`.
+system, it rides Frappe's existing Vite/`bench build`.
 
 ## Algorithm
 
@@ -71,7 +71,7 @@ class, never colour alone (each state also has distinct text/icon).
 ## Accessibility
 
 - **`role="status" aria-live="polite"`** visually-hidden region announces each
-  status change to assistive tech without moving focus — appropriate for a frequent,
+  status change to assistive tech without moving focus, appropriate for a frequent,
   low-urgency form signal (polite, not assertive).
 - The decorative icon/spinner is `aria-hidden`.
 - **Retry** is a genuine focusable `<button>` with a visible `:focus-visible` ring
@@ -81,7 +81,7 @@ class, never colour alone (each state also has distinct text/icon).
 ## Reduced-motion behaviour
 
 - `@media (prefers-reduced-motion: reduce)` disables the spinner rotation and the
-  entrance animation. The spinner degrades to a **static ring** — still a clear
+  entrance animation. The spinner degrades to a **static ring**, still a clear
   "in progress" affordance, just not spinning.
 - A live `matchMedia` ref (mounted/unmounted cleanly) also sets a `.no-motion`
   class, covering runtime preference flips and the `disableAnimation` prop, for
@@ -107,7 +107,7 @@ a real Frappe app these resolve to the theme's tokens so the pill matches Desk.
 ## Browser support
 
 All evergreen browsers and Safari 12.1+. Vue 3, scoped CSS, `matchMedia` (mount
--guarded for any non-browser context). No SSR concern — Frappe frontends are
+-guarded for any non-browser context). No SSR concern, Frappe frontends are
 client-rendered.
 
 ## Provenance: original (clean-room).

@@ -1,4 +1,4 @@
-# ADR 0001 — Architecture and safety baseline
+# ADR 0001, Architecture and safety baseline
 
 - Status: Accepted
 - Date: 2026-06-27

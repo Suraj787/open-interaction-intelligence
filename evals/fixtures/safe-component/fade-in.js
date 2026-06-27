@@ -1,4 +1,4 @@
-// CLEAN CONTROL FIXTURE — should produce no high/critical findings.
+// CLEAN CONTROL FIXTURE, should produce no high/critical findings.
 // Browser-native, dependency-free, reduced-motion aware.
 export function fadeIn(el) {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

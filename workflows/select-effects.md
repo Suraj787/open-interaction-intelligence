@@ -14,7 +14,7 @@ effect.
 1. **Restate the objective.** What must the user understand, feel or accomplish? Confirm
    website vs web application.
 2. **Confirm the pattern.** `python -m motif search "<problem>"`; verify a pattern in
-   `registry/patterns/` matches. If none does, step back to interaction design — do not
+   `registry/patterns/` matches. If none does, step back to interaction design, do not
    force an effect.
 3. **Discover candidates.** Load `skills/effect-discovery`; list the pattern's
    `recommended_effects` and any close alternatives:

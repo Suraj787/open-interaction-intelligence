@@ -1,4 +1,4 @@
-# Enterprise UI policy — restraint first.
+# Enterprise UI policy, restraint first.
 profile: enterprise-strict
 goals: [task_clarity, data_legibility, trustworthiness]
 forbidden:

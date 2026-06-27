@@ -12,7 +12,7 @@ installers are never run directly against the target.
 
 ## Steps
 
-1. **Confirm eligibility.** `python -m motif component inspect <id>` — verify
+1. **Confirm eligibility.** `python -m motif component inspect <id>`, verify
    `usability_mode` is `bundled` or `installable`, licence permits the intended use, and
    security findings are acceptable. Reject `reference-only`/`rejected` here.
 2. **Consider alternatives / weight.** `python -m motif component alternatives <id>`; apply

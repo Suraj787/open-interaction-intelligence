@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an improvement to Motif (not a new source — use the "Propose a new source" template for that)
+about: Suggest an improvement to Motif (not a new source, use the "Propose a new source" template for that)
 title: "feat: "
 labels: [enhancement]
 assignees: []
@@ -31,7 +31,7 @@ What you would like Motif to do.
 
 ## Website vs web application
 
-Which context does this serve — a **website** (marketing/narrative) or a **web
+Which context does this serve, a **website** (marketing/narrative) or a **web
 application** (task completion/data density), or both? Why?
 
 ## Accessibility, reduced-motion & performance

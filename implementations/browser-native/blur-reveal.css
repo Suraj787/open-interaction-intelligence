@@ -1,11 +1,11 @@
 /* ============================================================================
- * Motif Recipe — Blur Reveal on Scroll (browser-native)
+ * Motif Recipe, Blur Reveal on Scroll (browser-native)
  * ----------------------------------------------------------------------------
  * Content rises and sharpens (blur -> 0, translateY -> 0, opacity -> 1) as it
  * scrolls into view.
  *
  * Two cooperating paths:
- *   1. CSS scroll-driven animation (animation-timeline: view()) — the
+ *   1. CSS scroll-driven animation (animation-timeline: view()), the
  *      progressive-enhancement path. No JS at all where supported.
  *   2. A JS IntersectionObserver fallback (see blur-reveal.js) that toggles
  *      [data-motif-reveal="shown"] for browsers without scroll timelines.
@@ -36,7 +36,7 @@
  * Resting (pre-reveal) state.
  * IMPORTANT: only applied once JS has signalled it is in control by adding the
  * `motif-js` class to <html>. Without JS (and without scroll-timeline support)
- * the content simply stays visible — never hidden behind a script that may
+ * the content simply stays visible, never hidden behind a script that may
  * fail to load. The CSS scroll-driven path below opts in independently.
  * -------------------------------------------------------------------------- */
 .motif-js .motif-reveal {
@@ -62,7 +62,7 @@
 /* ----------------------------------------------------------------------------
  * Progressive-enhancement path: CSS scroll-driven animation.
  * Where `animation-timeline: view()` is supported we drive the reveal purely
- * from scroll position — smoother and JS-free. This is gated behind @supports
+ * from scroll position, smoother and JS-free. This is gated behind @supports
  * AND the `motif-css-scroll` class that blur-reveal.js adds when it detects
  * support, so the two paths never double-animate.
  * -------------------------------------------------------------------------- */
@@ -97,7 +97,7 @@
 }
 
 /* ----------------------------------------------------------------------------
- * Reduced motion — the accessibility baseline.
+ * Reduced motion, the accessibility baseline.
  * Disable BOTH paths: content is shown instantly, no blur, no movement.
  * Placed last so it wins the cascade regardless of the paths above.
  * -------------------------------------------------------------------------- */

@@ -1,4 +1,4 @@
-# ERP Form — Save Feedback (Frappe-Vue)
+# ERP Form, Save Feedback (Frappe-Vue)
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -14,15 +14,15 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 > "Users cannot tell if their changes were saved."
 
 After editing, nothing visibly confirms persistence. Users re-click Save, navigate
-away unsure, or lose trust. The fix must make save **state** legible — dirty, saving,
-saved, error — without blocking work or being patronizing.
+away unsure, or lose trust. The fix must make save **state** legible, dirty, saving,
+saved, error, without blocking work or being patronizing.
 
 ## Candidate approaches considered
 1. **Blocking modal "Saved successfully" on every save.** Unambiguous but stops the
    workflow dead and demands a dismiss click on a routine action. Rejected.
 2. **Confetti / celebratory animation on save.** Save is a frequent, mundane action;
    celebrating it is noise and quickly insulting. Rejected.
-3. **Persistent inline save-state indicator** near the form title — a quiet label that
+3. **Persistent inline save-state indicator** near the form title, a quiet label that
    moves through *Unsaved changes → Saving… → Saved HH:MM*, plus a polite
    screen-reader announcement and a toast only on **error**. **Selected.**
 
@@ -39,10 +39,10 @@ Simplest that works, native first:
 - **Error** raises a non-blocking toast with a Retry action and keeps the form editable.
 
 ## Rejected effects (and why)
-- **Confetti on save** — confetti for a frequent action; trivializes routine work.
-- **Blocking success modal** — interrupts a non-exceptional event; adds a needless click.
-- **Full-form flash/shake on save** — decoration that distracts from the field just edited.
-- **Continuous pulsing "saving" overlay** — continuous motion over dense form fields.
+- **Confetti on save**, confetti for a frequent action; trivializes routine work.
+- **Blocking success modal**, interrupts a non-exceptional event; adds a needless click.
+- **Full-form flash/shake on save**, decoration that distracts from the field just edited.
+- **Continuous pulsing "saving" overlay**, continuous motion over dense form fields.
 
 ## Implementation sketch
 Frappe-Vue framing using a resource/save handler. The indicator reflects `state`; the
@@ -91,12 +91,12 @@ function save() { state.value = 'saving'; doc.submit({ doc: /* current doc */ })
 ```
 
 ## Accessibility
-- **Screen-reader announcement** via `role="status" aria-live="polite"` — "Changes saved"
+- **Screen-reader announcement** via `role="status" aria-live="polite"`, "Changes saved"
   is announced without stealing focus. Errors announced the same way plus the toast.
 - **Reduced motion:** checkmark/spinner fades removed; the *text* still conveys state,
   so meaning is never motion-only.
 - **Keyboard/focus:** save is reachable via keyboard; focus stays in the field the user
-  was editing — no modal grabs it. Error toast is reachable and dismissible by keyboard.
+  was editing, no modal grabs it. Error toast is reachable and dismissible by keyboard.
 
 ## Performance
 - Only `opacity` transitions; spinner is a single transformed element, paused when idle.

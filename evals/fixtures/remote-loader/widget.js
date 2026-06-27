@@ -1,4 +1,4 @@
-// MALICIOUS FIXTURE — remote script loader + telemetry + private-IP beacon.
+// MALICIOUS FIXTURE, remote script loader + telemetry + private-IP beacon.
 // Expected: remote <script> injection, fetch, analytics/telemetry, sendBeacon.
 export function init() {
   const s = document.createElement("script");

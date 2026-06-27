@@ -1,4 +1,4 @@
-# Motif Adapter — Vue
+# Motif Adapter, Vue
 
 How Motif recipes map onto idiomatic Vue 3 (`<script setup>`, Composition API). Vue is
 a **first-class** Motif target. Recipes stay CSS-first; Vue contributes reactivity,
@@ -10,12 +10,12 @@ its `<Transition>`/`<TransitionGroup>` primitives, lifecycle, and cleanup.
 
 Package a recipe as a **composable + Single File Component**:
 
-- `useBlurReveal(target, options)` — a composable returning reactive state and
+- `useBlurReveal(target, options)`, a composable returning reactive state and
   binding observers via `onMounted`/`onUnmounted`.
-- `OptimisticSave.vue` etc. — SFC with `<template>`, `<script setup>`, scoped
+- `OptimisticSave.vue` etc., SFC with `<template>`, `<script setup>`, scoped
   `<style>`. Knobs arrive as typed `defineProps`; callbacks as `defineEmits`.
 
-Prefer Vue's native `<Transition>` for enter/leave — it adds/removes the
+Prefer Vue's native `<Transition>` for enter/leave, it adds/removes the
 `*-enter-active` / `*-leave-to` classes you target in CSS, no JS animation needed.
 
 ```vue
@@ -106,7 +106,7 @@ const transitionName = computed(() => (reduced.value ? 'motif-none' : 'motif-fad
 ## Dependency trade-offs
 
 Vue's built-ins (`<Transition>`, `<TransitionGroup>`) cover most of the catalogue
-dependency-free — prefer them. `@vueuse/core` is an *approved* convenience for
+dependency-free, prefer them. `@vueuse/core` is an *approved* convenience for
 composables (`useIntersectionObserver`, `usePreferredReducedMotion`) if the project
 already uses it; don't add it solely for one recipe. Escalate beyond CSS/WAAPI only
 per the technique order.

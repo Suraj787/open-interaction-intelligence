@@ -12,7 +12,7 @@ findings are agreed.
 
 1. **Inventory motion.** Locate every animation/transition/effect: CSS animations,
    transitions, JS-driven motion, scroll effects, canvas/WebGL, third-party widgets.
-2. **Classify the product** (website vs web application) — the acceptable motion profile
+2. **Classify the product** (website vs web application), the acceptable motion profile
    differs sharply.
 3. **Flag anti-patterns** against the hard rules and `intelligence/anti-patterns/`:
    - motion purely for novelty;
@@ -37,4 +37,4 @@ findings are agreed.
 ## Done when
 
 A prioritised, evidence-backed findings list exists covering accessibility, performance,
-anti-patterns and provenance — with no code changed yet.
+anti-patterns and provenance, with no code changed yet.

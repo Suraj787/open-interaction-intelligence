@@ -1,6 +1,6 @@
 ---
 name: performance-reviewer
-description: Verifies interactions stay within the performance budget — cheap animated properties, no jank, and no costly decorative motion behind dense UIs.
+description: Verifies interactions stay within the performance budget, cheap animated properties, no jank, and no costly decorative motion behind dense UIs.
 ---
 
 # Performance Reviewer

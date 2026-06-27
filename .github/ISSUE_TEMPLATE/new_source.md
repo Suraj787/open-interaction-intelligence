@@ -24,9 +24,9 @@ assignees: []
 
 - **Licence (SPDX or exact name):**
 - **Canonical licence URL (`license_reference`):**
-- **Is it source-available / Commons-Clause / premium?** (yes/no — if yes, it is
+- **Is it source-available / Commons-Clause / premium?** (yes/no, if yes, it is
   reference-only at most)
-- **Attribution required?** (yes/no — what notice?)
+- **Attribution required?** (yes/no, what notice?)
 - **Licence confidence:** (high / medium / low)
 
 ## Redistribution class
@@ -38,7 +38,7 @@ Pick one (see `LICENSE_POLICY.md`):
 - [ ] reference-only (unknown / guidance / premium / source-available)
 - [ ] rejected
 
-## Trust tier (1–5)
+## Trust tier (1-5)
 
 - **Proposed trust tier:**
 - **Rationale:** (maintenance, provenance clarity, accessibility maturity, security

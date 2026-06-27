@@ -6,7 +6,7 @@ description: Verifies an interaction fits the design system, reads as intentiona
 # Visual Quality Reviewer
 
 Judges whether the interaction looks intentional, consistent, and appropriate to the
-product — website or web application.
+product, website or web application.
 
 ## Responsibilities
 

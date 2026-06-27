@@ -11,20 +11,20 @@ from . import Finding
 
 # (code, severity, regex, human message)
 PATTERNS: list[tuple[str, str, str, str]] = [
-    ("eval", "critical", r"\beval\s*\(", "Use of eval() — dynamic code execution"),
-    ("new-function", "critical", r"\bnew\s+Function\s*\(", "new Function() — dynamic code execution"),
+    ("eval", "critical", r"\beval\s*\(", "Use of eval(), dynamic code execution"),
+    ("new-function", "critical", r"\bnew\s+Function\s*\(", "new Function(), dynamic code execution"),
     ("settimeout-string", "high", r"set(?:Timeout|Interval)\s*\(\s*['\"]", "Timer called with a string body (implicit eval)"),
     ("child-process", "critical", r"require\(\s*['\"]child_process['\"]\s*\)|child_process", "child_process / shell execution"),
     ("node-exec", "critical", r"\bexecSync?\s*\(|\bspawnSync?\s*\(", "Process execution (exec/spawn)"),
     ("remote-script", "high", r"document\.createElement\(\s*['\"]script['\"]\s*\)", "Dynamic remote <script> injection"),
     ("import-remote", "high", r"import\s*\(\s*[`'\"]https?://", "Dynamic import() of a remote URL"),
-    ("fetch-undocumented", "warn", r"\bfetch\s*\(|XMLHttpRequest|new\s+WebSocket\b", "Network call (fetch/XHR/WebSocket) — verify it is documented"),
+    ("fetch-undocumented", "warn", r"\bfetch\s*\(|XMLHttpRequest|new\s+WebSocket\b", "Network call (fetch/XHR/WebSocket), verify it is documented"),
     ("inner-html", "warn", r"\.innerHTML\s*=", "Unsafe HTML insertion via innerHTML"),
-    ("document-write", "high", r"document\.write\s*\(", "document.write — can inject arbitrary markup"),
+    ("document-write", "high", r"document\.write\s*\(", "document.write, can inject arbitrary markup"),
     ("iframe-inject", "warn", r"createElement\(\s*['\"]iframe['\"]\s*\)", "Dynamic iframe injection"),
-    ("obfuscation-hex", "high", r"(?:\\x[0-9a-fA-F]{2}){6,}", "Long hex escape run — possible obfuscation"),
-    ("obfuscation-fromcharcode", "warn", r"String\.fromCharCode\s*\(", "String.fromCharCode — possible obfuscation"),
-    ("atob", "warn", r"\batob\s*\(", "atob() base64 decode — verify decoded content"),
+    ("obfuscation-hex", "high", r"(?:\\x[0-9a-fA-F]{2}){6,}", "Long hex escape run, possible obfuscation"),
+    ("obfuscation-fromcharcode", "warn", r"String\.fromCharCode\s*\(", "String.fromCharCode, possible obfuscation"),
+    ("atob", "warn", r"\batob\s*\(", "atob() base64 decode, verify decoded content"),
     ("crypto-mining", "critical", r"coinhive|cryptonight|CoinImp|miner\.start", "Crypto-mining marker"),
 ]
 

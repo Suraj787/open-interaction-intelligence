@@ -1,4 +1,4 @@
-# Enterprise Dashboard — Payroll & Analytics
+# Enterprise Dashboard, Payroll & Analytics
 
 A worked example from **Motif**. The discipline:
 search PATTERNS before EFFECTS, prefer browser-native CSS, keep accessibility and
@@ -6,7 +6,7 @@ reduced-motion mandatory, and refuse motion that hurts a dense, data-heavy scree
 
 ## Context
 - **Product type:** Internal enterprise ERP / analytics suite.
-- **Page/screen:** Payroll + workforce analytics dashboard — KPI tiles, a
+- **Page/screen:** Payroll + workforce analytics dashboard, KPI tiles, a
 trend chart, a paginated payroll run table, and a few drill-down filters.
 - **Target user:** Payroll/finance operators and managers reviewing numbers under
 time pressure, often for hours at a stretch, frequently on modest hardware.
@@ -33,7 +33,7 @@ busy and slow. Operators report eye fatigue and distrust of the figures.
 
 ## Selected pattern
 **Stable-layout loading + change confirmation.** Hierarchy is carried by typography,
-spacing and weight — not motion. Feedback is reserved for two real events: "data is
+spacing and weight, not motion. Feedback is reserved for two real events: "data is
 loading" and "this value just changed."
 
 ## Selected effect/technique
@@ -41,18 +41,18 @@ Simplest thing that works, browser-native first:
 - **Skeleton placeholders** sized to the real content so nothing reflows when data
   arrives (CSS only; a low-contrast shimmer at most, or static blocks).
 - **Changed-value cue:** a ~600ms background fade on the specific tile/cell whose
-  number changed since last load — a single `transition` on `background-color`,
+  number changed since last load, a single `transition` on `background-color`,
   then back to transparent. No count-up; the final number is shown immediately.
 - **Freshness:** a plain text "Updated 14:32" caption, updated on each successful fetch.
 
 ## Rejected effects (and why)
-- **Count-up number tickers** — decoration-only animation that *delays* reading the
+- **Count-up number tickers**, decoration-only animation that *delays* reading the
   value; actively harmful on a reference screen.
-- **Continuous animated gradient / particles behind the charts** — continuous motion
+- **Continuous animated gradient / particles behind the charts**, continuous motion
   behind dense UI; raises cognitive load and burns GPU for zero information.
-- **Confetti / celebratory burst on "payroll confirmed"** — confetti for a frequent,
+- **Confetti / celebratory burst on "payroll confirmed"**, confetti for a frequent,
   serious action trivializes it and annoys daily users.
-- **Card flip / 3D tilt on tiles** — motion that conveys no state; pure decoration.
+- **Card flip / 3D tilt on tiles**, motion that conveys no state; pure decoration.
 
 ## Implementation sketch
 Browser-native + light Vue/Frappe-Vue binding. Each metric component knows its
@@ -103,13 +103,13 @@ watch(() => props.value, (v) => {
 - Skeletons are `aria-hidden`; a single polite "Loading payroll data" status is announced.
 
 ## Performance
-- Animations limited to `background-color`/`opacity` — cheap, compositor-friendly.
+- Animations limited to `background-color`/`opacity`, cheap, compositor-friendly.
 - **No offscreen or continuous motion**; the changed-value cue runs once and stops.
 - Skeletons prevent layout thrash (no CLS) and reading is never blocked.
 - Budget posture: motion is a rounding error in the frame budget; charts/data own it.
 
 ## Validation
-- Toggle OS "reduce motion" — fades disappear, meaning remains.
-- Change a filter — verify no layout jump, timestamp updates, only truly-changed cells cue.
+- Toggle OS "reduce motion", fades disappear, meaning remains.
+- Change a filter, verify no layout jump, timestamp updates, only truly-changed cells cue.
 - Screen reader announces loading + value updates once (no spam).
 - Confirm no animation runs while the tab/section is offscreen or idle.

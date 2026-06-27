@@ -1,10 +1,10 @@
 <script setup>
 /* ============================================================================
- * Motif Recipe — Save Status Indicator (Frappe-Vue)
+ * Motif Recipe, Save Status Indicator (Frappe-Vue)
  * ----------------------------------------------------------------------------
  * A compact "pending / saving / saved / error" status pill suited to a Frappe
  * form field or toolbar. It is a PRESENTATIONAL component: it renders whatever
- * `status` it's given and emits `retry` — it does NOT call the backend itself.
+ * `status` it's given and emits `retry`, it does NOT call the backend itself.
  *
  * This keeps it usable both inside a frappe-ui SPA (driven by a `createResource`
  * or a `frappe.call` promise in the parent) and in classic Desk (mounted into a
@@ -91,7 +91,7 @@ const isError = computed(() => props.status === "error");
       Retry
     </button>
 
-    <!-- Polite live region — announces status to AT without moving focus. -->
+    <!-- Polite live region, announces status to AT without moving focus. -->
     <span class="motif-sr-only" role="status" aria-live="polite">
       {{ visibleLabel }}
     </span>

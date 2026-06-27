@@ -1,6 +1,6 @@
 # Workflow: Build a New Website
 
-For **websites** (marketing, narrative, persuasion) — distinct from web applications.
+For **websites** (marketing, narrative, persuasion), distinct from web applications.
 Motion may be expressive here, but it still earns its place: search a pattern before an
 effect, and keep a reduced-motion path.
 
@@ -15,7 +15,7 @@ effect, and keep a reduced-motion path.
    (corporate, SaaS marketing, product-launch, e-commerce, documentation, portfolio).
    Load `skills/product-context-analysis`.
 2. **Map screens.** List page/screen types (hero, features, pricing, story, footer CTA).
-3. **Per screen, state the objective** — what the visitor must understand, feel or
+3. **Per screen, state the objective**, what the visitor must understand, feel or
    accomplish. Load `skills/interaction-design`.
 4. **Search patterns first:**
    `python -m motif search "<problem>"` then inspect candidate patterns. Only then look at
@@ -34,7 +34,7 @@ effect, and keep a reduced-motion path.
 10. **Responsiveness gate:** breakpoints and input modes (touch/coarse pointer).
 11. **Record the decision** (`schemas/decision.schema.json`) and provenance; install any
     approved component via `python -m motif component install` (diff + rollback + manifest).
-12. **Validate the experience** — see [validate-experience.md](validate-experience.md).
+12. **Validate the experience**, see [validate-experience.md](validate-experience.md).
 
 ## Done when
 

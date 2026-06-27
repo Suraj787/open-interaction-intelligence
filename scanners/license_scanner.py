@@ -60,10 +60,10 @@ def scan_text(text: str, path: str = "") -> list[Finding]:
     bundleable, klass = classify(spdx)
     if spdx == "UNKNOWN":
         return [Finding("license_scanner", "high", "unknown-license",
-                        "No recognised licence — gate to reference-only, never bundle", path)]
+                        "No recognised licence, gate to reference-only, never bundle", path)]
     if spdx == "LicenseRef-Commons-Clause":
         return [Finding("license_scanner", "high", "commons-clause",
-                        "Commons Clause is source-available, NOT permissive OSS — not redistributable", path)]
+                        "Commons Clause is source-available, NOT permissive OSS, not redistributable", path)]
     sev = "info" if bundleable else "warn"
     return [Finding("license_scanner", sev, "license-detected",
                     f"Detected {spdx} → {klass} (bundleable={bundleable})", path)]
@@ -79,7 +79,7 @@ def scan_path(target: str | pathlib.Path) -> list[Finding]:
                       if f.is_file() and re.match(r"licen[cs]e", f.name, re.I)]
     if not candidates:
         return [Finding("license_scanner", "high", "no-license-file",
-                        "No LICENSE file found — gate to reference-only", str(p))]
+                        "No LICENSE file found, gate to reference-only", str(p))]
     out: list[Finding] = []
     for f in candidates:
         try:

@@ -9,13 +9,13 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Work toward the **v0.2.0** roadmap:
 
-- Broaden the registry to roughly 40–50 reviewed sources.
+- Broaden the registry to roughly 40-50 reviewed sources.
 - Expand component-level coverage across the five usability modes.
 - Strengthen controlled-installer automation (planning, patching, validation, rollback).
 - Add more tested clean-room recipes and worked decision examples.
 - Re-verify licence facts online and reduce the number of `pending-verification` sources.
 
-(Longer term, v1.0.0 targets 75–100 thoroughly reviewed sources, broad component
+(Longer term, v1.0.0 targets 75-100 thoroughly reviewed sources, broad component
 coverage, mature adapters and a proven contributor workflow.)
 
 ## [0.1.0] - 2026-06-27
@@ -40,7 +40,7 @@ Initial release. Ships the **complete architecture and secure pipeline** with
 - **Five static scanners** in `scanners/`: `source_scanner`, `behaviour_scanner`,
   `dependency_scanner`, `license_scanner`, `secret_scanner`.
 - **Licence & source governance.** The LICENCE GATE (unknown ⇒ reference-only),
-  trust tiers 1–5, redistribution classes, `registry/licenses/`, `LICENSE_POLICY.md` and
+  trust tiers 1-5, redistribution classes, `registry/licenses/`, `LICENSE_POLICY.md` and
   `THIRD_PARTY_SOURCES.md`. Original code is MIT-licensed.
 - **Representative registry.** 22 reviewed sources (licence/redistribution classified, a
   few `pending-verification`), 10 component records spanning all five usability modes

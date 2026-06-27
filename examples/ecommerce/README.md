@@ -1,4 +1,4 @@
-# E-commerce — Product Page & Add-to-Cart Feedback
+# E-commerce, Product Page & Add-to-Cart Feedback
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -8,7 +8,7 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 - **Page/screen:** Product imagery, price, variant selectors, Add to Cart, and a cart
   indicator in the header.
 - **Target user:** A shopper deciding whether to buy; mixed devices, often mobile.
-- **Primary task:** Choose a variant and add to cart with **confidence** it worked — then
+- **Primary task:** Choose a variant and add to cart with **confidence** it worked, then
   keep shopping or check out. Conversion clarity beats spectacle.
 
 ## User problem
@@ -26,22 +26,22 @@ a flying-product arc that delayed the action and distracted from the price/CTA. 
 
 ## Selected pattern
 **Inline action confirmation + cart-count update.** Confidence is delivered at the point of
-action and reflected where the cart lives — no overlay, no detour.
+action and reflected where the cart lives, no overlay, no detour.
 
 ## Selected effect/technique
 Simplest that works, native first:
 - **Button state:** Add to Cart → brief loading → "Added ✓" (~1.2s) → back to "Add to Cart".
   Disabled during the request to prevent double-submit.
 - **Cart count:** the header badge updates and gives a single ~150ms scale "bump" (transform)
-  so the eye is drawn to where the item went — spatial link between action and cart.
-- **Toast:** a small, dismissible "Added to cart — View cart" with `role="status"`.
+  so the eye is drawn to where the item went, spatial link between action and cart.
+- **Toast:** a small, dismissible "Added to cart, View cart" with `role="status"`.
 
 ## Rejected effects (and why)
-- **Confetti on every add** — confetti for a frequent action; trivializes and irritates.
-- **Flying product arc to the cart** — decoration-only; delays the next action and is fragile
+- **Confetti on every add**, confetti for a frequent action; trivializes and irritates.
+- **Flying product arc to the cart**, decoration-only; delays the next action and is fragile
   across layouts/mobile.
-- **Full-screen success modal** — blocks shopping; interrupts a routine, non-exceptional event.
-- **Continuous pulsing CTA / animated price** — continuous motion behind the conversion point;
+- **Full-screen success modal**, blocks shopping; interrupts a routine, non-exceptional event.
+- **Continuous pulsing CTA / animated price**, continuous motion behind the conversion point;
   reads as pushy and distracts from the actual price.
 
 ## Implementation sketch
@@ -63,7 +63,7 @@ async function addToCart(variantId) {
     bump.value = true; setTimeout(() => (bump.value = false), 160)
     status.value = 'added'; setTimeout(() => (status.value = 'idle'), 1200)
     toast('Added to cart', { action: 'View cart' })
-  } catch { status.value = 'idle'; toast('Could not add to cart — try again') }
+  } catch { status.value = 'idle'; toast('Could not add to cart, try again') }
 }
 </script>
 
@@ -91,7 +91,7 @@ async function addToCart(variantId) {
 - **Screen reader:** `role="status" aria-live="polite"` announces "Item added to cart" without
   stealing focus; the cart badge has an accessible label with the count.
 - **Reduced motion:** the badge bump is removed; the **count change and "Added ✓" text** still
-  confirm success — meaning is never motion-only.
+  confirm success, meaning is never motion-only.
 - **Keyboard/focus:** button is keyboard-operable; focus stays on it after adding so a shopper
   can immediately add another or tab to "View cart" in the toast.
 - **No double-submit:** disabled-while-loading protects assistive-tech and fast-tap users alike.

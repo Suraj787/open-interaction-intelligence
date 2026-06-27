@@ -1,7 +1,7 @@
 # Motif Architecture
 
 Motif is an **intelligence and governance system** for UI
-interactions, motion and effects — not an animation bundle. Its job is to help an AI
+interactions, motion and effects, not an animation bundle. Its job is to help an AI
 coding agent decide what a user needs to *understand, feel or accomplish*, then select
 and implement the **least complex interaction** that achieves it, safely and with full
 provenance.
@@ -34,31 +34,31 @@ These hold across every layer and override convenience:
 flowchart TB
     subgraph Skills["Agent Skills (entry point)"]
         ORCH["web-experience-orchestrator\n(SKILL.md, 16-step workflow)"]
-        SPEC["specialist skills:\nproduct-context-analysis · interaction-design\neffect-discovery · effect-selection · framework-adaptation\nmotion-accessibility · motion-performance\nimplementation-validation · source-governance"]
+        SPEC["specialist skills:\nproduct-context-analysis, interaction-design\neffect-discovery, effect-selection, framework-adaptation\nmotion-accessibility, motion-performance\nimplementation-validation, source-governance"]
     end
 
     subgraph CLI["motif CLI  (python -m motif)"]
-        C1["search · rank-sources · generate-index"]
+        C1["search, rank-sources, generate-index"]
         C2["component search/inspect/alternatives"]
         C3["component plan-install/install/rollback"]
         C4["source discover/retrieve/scan/approve/reject"]
-        C5["validate · doctor"]
+        C5["validate, doctor"]
     end
 
     subgraph Intel["Intelligence (intelligence/)"]
-        I1["product-types · page-types · user-intents"]
-        I2["interaction-problems · effect-taxonomy"]
-        I3["selection-policies · anti-patterns · quality-profiles"]
+        I1["product-types, page-types, user-intents"]
+        I2["interaction-problems, effect-taxonomy"]
+        I3["selection-policies, anti-patterns, quality-profiles"]
     end
 
     subgraph Reg["Approved Registry (registry/)"]
-        R1["sources · components · effects"]
-        R2["patterns · recipes"]
-        R3["licenses · dependencies"]
+        R1["sources, components, effects"]
+        R2["patterns, recipes"]
+        R3["licenses, dependencies"]
     end
 
     subgraph Adapt["Adapters (adapters/)"]
-        A1["browser-native · react · vue · frappe-vue\nframework-neutral algorithm → adapter"]
+        A1["browser-native, react, vue, frappe-vue\nframework-neutral algorithm → adapter"]
     end
 
     subgraph Ingest["Ingestion + Connectors"]
@@ -67,7 +67,7 @@ flowchart TB
     end
 
     subgraph Scan["Scanners (scanners/) + Policies (security/)"]
-        S1["source_scanner · dependency_scanner\nlicense_scanner · behaviour_scanner · secret_scanner"]
+        S1["source_scanner, dependency_scanner\nlicense_scanner, behaviour_scanner, secret_scanner"]
         P1["security/*.yml (domain, behaviour, network, licence)"]
     end
 
@@ -94,7 +94,7 @@ selectively as the workflow demands. Skills hold judgement; the CLI holds enforc
 `python -m motif` is the single tool surface. It is **dependency-free core** (Python
 standard library only) so `make check` runs anywhere; optional tools such as
 `jsonschema` are used if present but never required. The CLI enforces the
-offline-approved-registry default — it is preferred over ad-hoc internet retrieval.
+offline-approved-registry default, it is preferred over ad-hoc internet retrieval.
 
 ### Intelligence layer
 
@@ -131,7 +131,7 @@ policies in `security/*.yml`. Nothing is executed. See [threat-model.md](threat-
 ## Ingestion pipeline
 
 Every piece of external material follows the same one-way pipeline. Internet access only
-happens here, via an explicit source-refresh — never during normal registry use.
+happens here, via an explicit source-refresh, never during normal registry use.
 
 ```mermaid
 flowchart LR
@@ -154,11 +154,11 @@ flowchart LR
 
 Operating modes (the connector layer supports three; the runtime default is the first):
 
-1. **Offline approved registry** *(default)* — read committed registry, no network.
-2. **Catalogue-only** — metadata and references only, no source retrieval.
-3. **Review** — retrieve untrusted text into disposable quarantine for static review; do
+1. **Offline approved registry** *(default)*, read committed registry, no network.
+2. **Catalogue-only**, metadata and references only, no source retrieval.
+3. **Review**, retrieve untrusted text into disposable quarantine for static review; do
    not execute.
-4. **Approved installation** — only approved entries are applied to a target project via a
+4. **Approved installation**, only approved entries are applied to a target project via a
    controlled patch with diff, rollback snapshot and a provenance manifest.
 
 ### Quarantine state machine
@@ -178,7 +178,7 @@ quarantined original is not redistributed.
 
 ## Trust tiers
 
-Sources carry a tier 1–5 (`source.schema.json`). Lower trust requires stronger review.
+Sources carry a tier 1-5 (`source.schema.json`). Lower trust requires stronger review.
 
 | Tier | Meaning | Default disposition |
 |-----:|---------|---------------------|

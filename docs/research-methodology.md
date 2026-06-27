@@ -1,13 +1,13 @@
 # Research Methodology
 
 Motif's value depends on the quality of its source research. This document describes how
-the source landscape (target: **50–100 sources**) is researched, what is recorded, how
+the source landscape (target: **50-100 sources**) is researched, what is recorded, how
 unverified records are handled, and the non-negotiable rule: **do not fabricate facts.**
 
 ## Goals
 
 - Build a broad, accurate map of where UI interactions, motion and effects actually come
-  from — animated component collections, accessible UI foundations, animation engines,
+  from, animated component collections, accessible UI foundations, animation engines,
   browser-native capabilities, scroll/transition systems, canvas/particle/generative
   systems, 3D/shader ecosystems, SVG/icon motion, creative references, and enterprise
   design systems.
@@ -42,7 +42,7 @@ Every source is one machine-readable record validated against
 | `license`, `license_reference` | SPDX-style identifier + where it was read |
 | `redistribution` | `redistributable` / `adaptable-concept` / `reference-only` / `rejected` |
 | `attribution_required` | Boolean |
-| `trust_tier` | Integer 1–5 (see architecture.md) |
+| `trust_tier` | Integer 1-5 (see architecture.md) |
 | `maintenance` | `active` / `maintained` / `slow` / `stale` / `unknown` |
 | `documentation_quality`, `accessibility_maturity` | Quality signals |
 | `performance_characteristics` | Free text |
@@ -55,7 +55,7 @@ Every source is one machine-readable record validated against
 
 A source is **not complete merely because its homepage was reviewed.** Where technically
 and legally possible, discover its component/effect catalogue and create per-component
-records (`component.schema.json`) — see [component-authoring.md](component-authoring.md).
+records (`component.schema.json`), see [component-authoring.md](component-authoring.md).
 
 ## Research procedure (per source)
 
@@ -67,7 +67,7 @@ records (`component.schema.json`) — see [component-authoring.md](component-aut
 3. **Classify access and delivery** (`access_class`, `delivery_model`,
    `dependency_model`).
 4. **Assess maintenance, documentation, accessibility maturity, performance.**
-5. **Assign a trust tier** (1–5) and a `redistribution` disposition.
+5. **Assign a trust tier** (1-5) and a `redistribution` disposition.
 6. **Record evidence** for every non-obvious claim. Each strength/weakness/licence claim
    should be traceable.
 7. **Set `confidence` and `status`** honestly (see below).
@@ -76,7 +76,7 @@ records (`component.schema.json`) — see [component-authoring.md](component-aut
 ## `pending-verification` handling
 
 When internet access is unavailable, or a fact cannot be confirmed at its official
-source, the record still gets created — but:
+source, the record still gets created, but:
 
 - `status` is set to **`pending-verification`** (never `verified`).
 - `confidence` reflects reality (`low`/`medium`).
@@ -84,7 +84,7 @@ source, the record still gets created — but:
 - The record is **excluded from approved-installation flows**; it may inform
   catalogue/reference use only.
 - A later `source refresh` re-checks the official source, fills evidence, and promotes
-  the record to `verified` (or `rejected`) — never silently.
+  the record to `verified` (or `rejected`), never silently.
 
 This is why the build pipeline can exist before exhaustive online verification:
 **create the full research pipeline and mark records as `pending-verification`** rather
@@ -97,7 +97,7 @@ This is the governing rule of all Motif research:
 - **Never present assumptions as verified research.** No invented version numbers,
   benchmark figures, licence identifiers, or accessibility ratings.
 - If a number is not measured or read from an authoritative source, it is not recorded as
-  fact — describe the uncertainty instead.
+  fact, describe the uncertainty instead.
 - Prefer a smaller set of **high-confidence, evidence-backed** records over fabricated
   breadth. Motif v0.1.0 deliberately ships representative depth (16 deeply reviewed
   sources plus the pipeline and schema for the rest) rather than 100 unverified rows.

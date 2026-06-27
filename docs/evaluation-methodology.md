@@ -1,7 +1,7 @@
 # Evaluation Methodology
 
 Motif's evals test **judgement, not syntax.** The risk Motif guards against is not "can the
-agent write an animation" — it is "does the agent choose the *right* interaction, refuse
+agent write an animation", it is "does the agent choose the *right* interaction, refuse
 the wrong one, respect framework/licence/safety boundaries, and ship accessible,
 performant motion." Evals therefore reward correct decisions and correct *refusals*.
 
@@ -37,14 +37,14 @@ Required: `id`, `category`, `kind`, `prompt`, `expected_behaviour`, `judgement`.
 | `expected_pattern` | the pattern id a correct answer should select (or `null`) |
 | `fixture` | a malicious/edge input the answer must handle (e.g. a quarantined sample) |
 | `expected_findings` | for security/licence cases: what the scanners/agent must flag |
-| `judgement` | how a reviewer decides pass/fail — the rubric |
+| `judgement` | how a reviewer decides pass/fail, the rubric |
 
 ## Automated vs human-judgement
 
-- **`automated`** — deterministic checks: schema validation, scanner output against a
+- **`automated`**, deterministic checks: schema validation, scanner output against a
   fixture, "did the agent avoid installing a banned dependency," "is a reduced-motion
   fallback present," licence-gate behaviour. These run in CI.
-- **`human-judgement`** — open-ended reasoning quality: was the *simplest effective*
+- **`human-judgement`**, open-ended reasoning quality: was the *simplest effective*
   approach chosen, was the website/app distinction handled well, was the rejection
   rationale sound. The `judgement` field is the rubric a reviewer applies.
 
@@ -71,14 +71,14 @@ The `category` enum drives coverage. Every category must be represented:
 `security` and `source-governance` evals reference fixtures (quarantined samples) proving
 the controls catch `eval`, dynamic execution, remote script loading, undocumented network
 calls, embedded secrets, dangerous dependencies, etc. The eval passes when
-`expected_findings` are produced — i.e. the control fired. A regression that silences a
+`expected_findings` are produced, i.e. the control fired. A regression that silences a
 scanner is caught here.
 
 ## Writing a new eval
 
 1. Pick the category and `kind`.
 2. Write a realistic `prompt` (+ `context`).
-3. State `expected_behaviour` as concrete decisions/refusals — and set `must_reject`
+3. State `expected_behaviour` as concrete decisions/refusals, and set `must_reject`
    where refusal is the only correct answer.
 4. For security/licence, attach a `fixture` and list `expected_findings`.
 5. Write a `judgement` rubric a reviewer can apply consistently.

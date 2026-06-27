@@ -2,8 +2,7 @@
 
 A **pattern** is the problem-first unit of Motif intelligence. It describes a user problem,
 the user intent behind it, the interaction states involved, and the accessibility and
-success criteria a solution must meet. Patterns are what Motif searches **before** effects —
-they connect "what the user needs to understand/feel/accomplish" to candidate effects.
+success criteria a solution must meet. Patterns are what Motif searches **before** effects, they connect "what the user needs to understand/feel/accomplish" to candidate effects.
 
 - **Schema:** `schemas/pattern.schema.json`
 - **Location:** `registry/patterns/`
@@ -55,7 +54,7 @@ happy path.
 Patterns are Motif's own intelligence, derived from `intelligence/interaction-problems/`
 and selection policies rather than copied from a vendor. They carry no third-party code.
 Where a pattern is informed by an enterprise design system's guidance, cite that guidance
-as evidence in the surrounding documentation — but the pattern text is original.
+as evidence in the surrounding documentation, but the pattern text is original.
 
 ## Example skeleton
 

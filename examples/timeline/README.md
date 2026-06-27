@@ -1,4 +1,4 @@
-# Timeline — Progressive Disclosure & Scroll Reveal (not hijacking)
+# Timeline, Progressive Disclosure & Scroll Reveal (not hijacking)
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -13,7 +13,7 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
   scrolling at all times.
 
 ## User problem
-A previous version pinned the timeline and **hijacked scroll** — wheel/trackpad gestures
+A previous version pinned the timeline and **hijacked scroll**, wheel/trackpad gestures
 drove a scripted animation instead of the page, so users couldn't skim, jump, or use
 Find-in-page. We need entries to reveal pleasantly as they enter view, plus expandable
 detail, **without ever taking over scroll**.
@@ -40,13 +40,13 @@ Simplest that works, native first:
 - The wheel, scrollbar, keyboard and Find-in-page are never intercepted.
 
 ## Rejected effects (and why)
-- **Scroll hijacking / pinned scrubber** — the headline anti-pattern: steals control,
+- **Scroll hijacking / pinned scrubber**, the headline anti-pattern: steals control,
   breaks accessibility and Find-in-page.
-- **Parallax layers moving continuously as you scroll** — continuous motion behind dense
+- **Parallax layers moving continuously as you scroll**, continuous motion behind dense
   text; distracting and costly.
-- **Re-animating entries every time they re-enter view** — decoration-only repetition;
+- **Re-animating entries every time they re-enter view**, decoration-only repetition;
   jittery on scroll-up.
-- **Confetti / sparkle on each entry** — pure decoration, no information.
+- **Confetti / sparkle on each entry**, pure decoration, no information.
 
 ## Implementation sketch
 Browser-native IntersectionObserver + CSS; framework-agnostic (works as a Vue directive too).
@@ -77,23 +77,22 @@ document.querySelectorAll('.tl-entry').forEach(el => io.observe(el))
 ```
 
 ## Accessibility
-- **No scroll hijacking** — wheel, keyboard (PageUp/Down, Space, arrows), scrollbar and
+- **No scroll hijacking**, wheel, keyboard (PageUp/Down, Space, arrows), scrollbar and
   browser Find all behave normally.
 - **Reduced motion:** entries render fully visible with no fade/slide; nothing depends on
   the animation having played.
-- **JS-off / observer-unsupported:** entries default to visible (progressive enhancement) —
-  the `revealed` styles should be the *enhancement*, not a gate on content.
+- **JS-off / observer-unsupported:** entries default to visible (progressive enhancement), the `revealed` styles should be the *enhancement*, not a gate on content.
 - **Disclosure:** native `<details>` (or button + `aria-expanded`) is keyboard-operable and
   announced; content is in the DOM for Find-in-page even when collapsed-but-rendered.
 
 ## Performance
-- Animate only `opacity`/`transform`; one-shot reveal then `unobserve` — no ongoing work.
+- Animate only `opacity`/`transform`; one-shot reveal then `unobserve`, no ongoing work.
 - No parallax, no continuous/offscreen motion.
 - Budget posture: a single shared IntersectionObserver; no scroll-event listeners doing
   layout reads on every frame.
 
 ## Validation
-- Try to "scroll past" fast — the page never resists; Find-in-page jumps anywhere.
-- Scroll up/down repeatedly — entries don't re-animate or flicker.
-- Reduce-motion / JS-disabled — all content present and readable.
-- Keyboard-only — expand/collapse details and traverse the whole timeline.
+- Try to "scroll past" fast, the page never resists; Find-in-page jumps anywhere.
+- Scroll up/down repeatedly, entries don't re-animate or flicker.
+- Reduce-motion / JS-disabled, all content present and readable.
+- Keyboard-only, expand/collapse details and traverse the whole timeline.

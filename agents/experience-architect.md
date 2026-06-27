@@ -1,6 +1,6 @@
 ---
 name: experience-architect
-description: Owns the Motif reasoning model end to end — frames product context, interaction objective, and the path from need to the simplest effective interaction.
+description: Owns the Motif reasoning model end to end, frames product context, interaction objective, and the path from need to the simplest effective interaction.
 ---
 
 # Experience Architect

@@ -1,4 +1,4 @@
-# Blur Reveal on Scroll — browser-native
+# Blur Reveal on Scroll, browser-native
 
 Content gently rises and sharpens (blur → 0, `translateY` → 0, opacity → 1) as it
 enters the viewport. Pure platform features: CSS scroll-driven animation as the
@@ -33,7 +33,7 @@ The script picks the cheapest accessible technique available, in this order:
 2. **CSS scroll-driven animations supported** (`@supports (animation-timeline:
    view())`) → add `motif-js motif-css-scroll` and let **CSS** drive the reveal from
    scroll position (`animation-timeline: view()`, `animation-range: entry 0% cover
-   35%`). No JS observers run — zero runtime cost. Elements are still marked `shown`
+   35%`). No JS observers run, zero runtime cost. Elements are still marked `shown`
    and the `motif:reveal` event still fires so consumers have a consistent contract.
 3. **`IntersectionObserver` fallback** → add `motif-js` (which arms the resting
    blurred state in CSS), observe each element, and on first intersection toggle
@@ -71,7 +71,7 @@ reflow. `will-change` is set on the resting state and dropped under reduced moti
 `!important`) forces `opacity: 1`, no `transform`, no `filter`, and disables both
 `transition` and `animation` for all three paths. The JS path additionally skips all
 observers and reveals instantly. Net effect: content simply appears, exactly as a
-static page would — no blur, no movement.
+static page would, no blur, no movement.
 
 ## Browser support
 

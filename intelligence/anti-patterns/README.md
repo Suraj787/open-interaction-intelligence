@@ -66,7 +66,7 @@ an anti-pattern, Motif rejects or downgrades it regardless of how impressive it 
 - **Better:** Always pair motion with text, colour, and icon. Motion is an enhancement, never the sole channel.
 
 ### 15. No reduced-motion support
-- **Why it harms:** Ignores `prefers-reduced-motion`; causes discomfort and excludes users — a hard accessibility failure.
+- **Why it harms:** Ignores `prefers-reduced-motion`; causes discomfort and excludes users, a hard accessibility failure.
 - **Better:** Provide a reduced-motion variant for every animation (fade/instant); treat it as mandatory, not optional.
 
 ### 16. Gratuitous dependency installation

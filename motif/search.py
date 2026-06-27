@@ -1,4 +1,4 @@
-"""Search across registry records — offline, substring + field match."""
+"""Search across registry records, offline, substring + field match."""
 from __future__ import annotations
 from . import registry
 

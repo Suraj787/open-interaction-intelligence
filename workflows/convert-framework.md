@@ -1,7 +1,7 @@
 # Workflow: Convert an Interaction to Another Framework
 
 Re-express an existing interaction in a different framework (e.g. a React reference into a
-Vue/Frappe-Vue implementation) by moving the *idea* through the adaptation model — never
+Vue/Frappe-Vue implementation) by moving the *idea* through the adaptation model, never
 by porting code or installing the source framework.
 
 ## Hard rule
@@ -17,7 +17,7 @@ gets React added to obtain an interaction. Re-implement via the adapter instead.
 ## Steps
 
 1. **Extract the concept, not the code.** State what the user must understand, feel or
-   accomplish — independent of the original framework.
+   accomplish, independent of the original framework.
 2. **Write the framework-neutral algorithm:** triggers, states, transitions, cleanup,
    reduced-motion path. This is licence-safe (concept, not source).
 3. **Check provenance.** If the original is licence-restricted, this is **clean-room
@@ -32,7 +32,7 @@ gets React added to obtain an interaction. Re-implement via the adapter instead.
    coarse-pointer, responsive, reduced-motion, testing.
 6. **Implement** in the target's conventions and design system. For Frappe-Vue, use
    Frappe UI patterns; do not add a parallel animation engine.
-7. **Gates:** accessibility, performance, responsiveness — re-validate; the reduced-motion
+7. **Gates:** accessibility, performance, responsiveness, re-validate; the reduced-motion
    path must exist in the new framework too.
 8. **Author the recipe** (`recipe-authoring.md`) for the new `framework`, with provenance
    and `source_references`; record the decision.

@@ -39,12 +39,12 @@ Schema: `schemas/source.schema.json`. Validate with `python -m motif validate`.
 
 ## 4. Trust tier
 
-- [ ] `trust_tier` assigned 1–5:
-  - 1 — official browser/framework documentation
-  - 2 — established open-source project
-  - 3 — maintained component library, clear ownership
-  - 4 — community contribution
-  - 5 — unknown or unverifiable ⇒ **reference-only or rejected**
+- [ ] `trust_tier` assigned 1-5:
+  - 1, official browser/framework documentation
+  - 2, established open-source project
+  - 3, maintained component library, clear ownership
+  - 4, community contribution
+  - 5, unknown or unverifiable ⇒ **reference-only or rejected**
 - [ ] Lower trust → stronger review recorded.
 
 ## 5. Quality and fit
@@ -64,17 +64,17 @@ Schema: `schemas/source.schema.json`. Validate with `python -m motif validate`.
 - [ ] `last_reviewed` set to today's ISO date.
 - [ ] `confidence` (`high`/`medium`/`low`) reflects how well evidence backs the record.
 - [ ] `status` set honestly:
-  - `verified` — every applicable box above checked with evidence
-  - `pending-verification` — created but not yet confirmed at the official source
+  - `verified`, every applicable box above checked with evidence
+  - `pending-verification`, created but not yet confirmed at the official source
     (e.g. offline); excluded from approved-installation flows
-  - `rejected` — fails the licence gate, trust tier, or safety review
+  - `rejected`, fails the licence gate, trust tier, or safety review
 - [ ] **No fabricated facts.** Unmeasured numbers and unread licences are never recorded
       as verified.
 
 ## 7. Downstream completeness
 
 - [ ] If the source's catalogue is reachable, per-component records were created
-      (`component.schema.json`) — a homepage review alone does not complete a source.
+      (`component.schema.json`), a homepage review alone does not complete a source.
 - [ ] `python -m motif source completeness` reflects the real state.
 
 ## Sign-off

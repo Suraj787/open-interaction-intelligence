@@ -1,6 +1,6 @@
 <script setup>
 /* ============================================================================
- * Motif Recipe — Optimistic Save (Vue 3, <script setup>)
+ * Motif Recipe, Optimistic Save (Vue 3, <script setup>)
  * ----------------------------------------------------------------------------
  * Demonstrates the optimistic-save UX: the UI assumes success the instant the
  * user acts, shows a transient "Saving…" then "Saved", and rolls back to an
@@ -102,7 +102,7 @@ const statusText = computed(
       idle: "",
       saving: "Saving…",
       saved: "Saved",
-      error: "Couldn't save — tap to retry",
+      error: "Couldn't save, tap to retry",
     }[state.value])
 );
 
@@ -196,7 +196,7 @@ const buttonLabel = computed(() =>
   border-radius: 50%;
   background: currentColor;
 }
-/* Subtle pulse while saving — transform/opacity only, motion-safe. */
+/* Subtle pulse while saving, transform/opacity only, motion-safe. */
 .is-saving .motif-optimistic__dot {
   animation: motif-pulse 1s ease-in-out infinite;
 }

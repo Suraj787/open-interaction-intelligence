@@ -1,4 +1,4 @@
-# LEVEL 5 — Interaction Problems (Objectives)
+# LEVEL 5, Interaction Problems (Objectives)
 
 This is the heart of Motif. Everything above narrows context; this level names the
 **precise objective** the interaction must achieve, and points to the
@@ -46,7 +46,7 @@ Make unavoidable waits feel shorter and less uncertain.
 ### 8. Confirm completion
 Tell the user an action succeeded.
 - **Patterns:** Brief success animation; checkmark/state change; toast confirmation; inline saved indicator.
-- **Note:** Scale celebration to frequency and stakes — no confetti on routine actions.
+- **Note:** Scale celebration to frequency and stakes, no confetti on routine actions.
 
 ### 9. Prevent errors
 Stop mistakes before they happen, or make them recoverable.
@@ -70,12 +70,12 @@ Make the experience feel crafted, branded, memorable.
 ## Problem → pattern → effect, in practice
 
 1. **Name the objective** from the list above (driven by LEVEL 3 intent + LEVEL 4 screen).
-2. **Pick a pattern** that solves it. Multiple objectives may share patterns — prefer one pattern that serves several.
+2. **Pick a pattern** that solves it. Multiple objectives may share patterns, prefer one pattern that serves several.
 3. **Choose the minimal effect** that implements the pattern, honouring the
    implementation order and penalties in `../selection-policies/`.
-4. **Check anti-patterns** (`../anti-patterns/`) — many tempting effects solve a
+4. **Check anti-patterns** (`../anti-patterns/`), many tempting effects solve a
    *different* objective than the one you actually have.
 
 The objective, not the effect, is the unit of decision. If you cannot state
-which objective an animation serves, it is decoration — and decoration is the
+which objective an animation serves, it is decoration, and decoration is the
 first thing Motif removes.

@@ -1,5 +1,5 @@
 /* ============================================================================
- * Motif Recipe — Skeleton Loader (React, dependency-free)
+ * Motif Recipe, Skeleton Loader (React, dependency-free)
  * ----------------------------------------------------------------------------
  * Placeholder blocks with a left-to-right shimmer that stand in for content
  * while it loads. The shimmer is a CSS gradient animated via background-position

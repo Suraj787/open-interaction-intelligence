@@ -1,9 +1,9 @@
-# Pre-Release Critical Self-Review — v0.1.0
+# Pre-Release Critical Self-Review, v0.1.0
 
 A deliberately critical review of Motif before the v0.1.0 release, written from eight
 professional perspectives, followed by the spec's readiness checklist. The goal is to be
 honest about what the release proves and what it does not. v0.1.0 ships the **complete
-architecture and secure pipeline** with **representative, high-confidence breadth** — not
+architecture and secure pipeline** with **representative, high-confidence breadth**, not
 full coverage.
 
 Standing limitations that apply across every perspective below:
@@ -74,7 +74,7 @@ executed during ingestion, five static scanners, and a controlled install with s
 auto-rollback + provenance manifest. Secret scanning is wired into `make check` and CI. The
 threat model is documented.
 
-**Weaknesses / risks.** Scanners are static and heuristic — false negatives are possible,
+**Weaknesses / risks.** Scanners are static and heuristic, false negatives are possible,
 especially for obfuscated or runtime-only behaviour. Because live connectors are not
 implemented, the end-to-end retrieve→quarantine→scan→approve path is exercised on fixtures,
 not against real hosts. Trust tiers and licence confidence are partly manual judgements.
@@ -129,7 +129,7 @@ exist.
 
 ## 8. Agent Skills engineer
 
-**Strengths.** The root `SKILL.md` is an orchestrator, not a knowledge dump — it inspects the
+**Strengths.** The root `SKILL.md` is an orchestrator, not a knowledge dump, it inspects the
 repo, classifies context, then loads only relevant intelligence and registry slices.
 Specialist skills and reviewer agents are decomposed and loaded selectively. The CLI gives
 the agent deterministic tools (search, ranking, validation, install) instead of ad-hoc
@@ -152,7 +152,7 @@ and keep the orchestrator lean as the catalogue grows.
 | 1 | Is the root skill too large? | No | `SKILL.md` is a lean orchestrator (workflow + rules + pointers), not a knowledge dump. |
 | 2 | Does it load knowledge selectively? | Yes | Step 6 loads only relevant `intelligence/` and registry slices; specialists load on demand. Not yet hard-guarded. |
 | 3 | Does it distinguish websites vs apps? | Yes | Explicit in the model, skills and rules; drives pattern/effect choice and quality profile. |
-| 4 | Does it identify user intent before effects? | Yes | Levels 2–5 (product type → user intent → page type → interaction objective) precede effect selection. |
+| 4 | Does it identify user intent before effects? | Yes | Levels 2-5 (product type → user intent → page type → interaction objective) precede effect selection. |
 | 5 | Does it search patterns before effects? | Yes | Structural ordering; pattern coverage (16) is still the scarce resource. |
 | 6 | Does it reject inappropriate effects? | Yes | "Never" list, anti-patterns, quality profiles and a rejected fixture exercise the rejection path. |
 | 7 | Is Vue first-class? | Yes | Vue and Frappe-Vue are first-class adapters/implementations alongside React and browser-native. |
@@ -172,6 +172,6 @@ over a representative registry. Its real limitations are breadth (small catalogu
 verification still pending for several sources, and the absence of implemented live network
 connectors (the secure pipeline is proven on fixtures, not against real hosts). None of
 these undermine the design; they are the explicit work of v0.2.0 and beyond. The strongest
-version of this project is not the one with the most effects — it is the one that selects
+version of this project is not the one with the most effects, it is the one that selects
 the right effect, proves where it came from, adapts it safely, and refuses inappropriate
 motion. v0.1.0 demonstrates that discipline at small scale.

@@ -1,7 +1,6 @@
 # Authoring an Effect Record
 
-An **effect** record describes a reusable *motion/visual technique* in the abstract —
-what objective it serves, its cost, its accessibility risk, and its mandatory
+An **effect** record describes a reusable *motion/visual technique* in the abstract, what objective it serves, its cost, its accessibility risk, and its mandatory
 reduced-motion fallback. Effects are framework-leaning building blocks that patterns
 recommend or reject. Remember the core rule: **search for a PATTERN before an EFFECT.**
 
@@ -19,14 +18,14 @@ recommend or reject. Remember the core rule: **search for a PATTERN before an EF
 | Field | Guidance |
 |-------|----------|
 | `id` | slug, `^[a-z0-9-]+$` |
-| `category` | effect family (e.g. reveal, transition, parallax, particle) — align with `intelligence/effect-taxonomy/` |
+| `category` | effect family (e.g. reveal, transition, parallax, particle), align with `intelligence/effect-taxonomy/` |
 | `objective` | the user-facing reason it exists: what it helps the user **understand, feel or accomplish**. Never "looks cool" |
 | `contexts` | where it suits (e.g. marketing-hero, dashboard-empty-state) |
 | `technologies`, `frameworks`, `dependencies` | how it can be built; keep dependencies minimal |
 | `complexity`, `performance_cost`, `accessibility_risk` | `low` / `medium` / `high` |
 | `mobile_suitability` | `good` / `conditional` / `poor` |
-| `reduced_motion_fallback` | **required** — the non-motion experience when `prefers-reduced-motion` is set |
-| `enterprise_suitability`, `marketing_suitability` | `recommended` / `conditional` / `discouraged` — encode the website-vs-web-application distinction |
+| `reduced_motion_fallback` | **required**, the non-motion experience when `prefers-reduced-motion` is set |
+| `enterprise_suitability`, `marketing_suitability` | `recommended` / `conditional` / `discouraged`, encode the website-vs-web-application distinction |
 | `provenance` | `original` / `adapted-concept` / `browser-native` |
 | `testing`, `tags` | how it is validated; search aids |
 
@@ -46,9 +45,9 @@ be `discouraged` for enterprise even if `recommended` for a marketing hero.
 
 Set `provenance` honestly:
 
-- `browser-native` — built on platform capabilities (CSS, WAAPI, View Transitions).
-- `original` — Motif's own technique.
-- `adapted-concept` — concept learned from a source via clean-room adaptation; **retains
+- `browser-native`, built on platform capabilities (CSS, WAAPI, View Transitions).
+- `original`, Motif's own technique.
+- `adapted-concept`, concept learned from a source via clean-room adaptation; **retains
   no source code** and records the inspiration in the related recipe's
   `source_references`.
 

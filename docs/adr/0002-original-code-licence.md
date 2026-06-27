@@ -1,4 +1,4 @@
-# ADR 0002 — Original code licence: MIT
+# ADR 0002, Original code licence: MIT
 
 - Status: Accepted
 - Date: 2026-06-27

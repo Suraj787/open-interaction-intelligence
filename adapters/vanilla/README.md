@@ -1,4 +1,4 @@
-# Motif Adapter — Vanilla JS
+# Motif Adapter, Vanilla JS
 
 How Motif recipes map onto a no-framework codebase: hand-written ES modules, custom
 elements, and the DOM. Closely related to the browser-native baseline, but this
@@ -11,9 +11,9 @@ without a framework runtime.
 
 Two equally idiomatic packagings:
 
-1. **Factory function** — `initBlurReveal(root = document)` queries
+1. **Factory function**, `initBlurReveal(root = document)` queries
    `[data-motif="blur-reveal"]`, wires each, and returns a `dispose()`.
-2. **Custom element** — `class OiiReveal extends HTMLElement` with
+2. **Custom element**, `class OiiReveal extends HTMLElement` with
    `connectedCallback`/`disconnectedCallback`. This gives you framework-grade
    lifecycle with zero dependencies and is the recommended path for reusable
    widgets.
@@ -37,8 +37,7 @@ Keep motion in CSS (a stylesheet or the element's `<template>`/shadow styles).
 
 ## Cleanup
 
-- Custom element: undo everything in `disconnectedCallback` —
-  `observer.disconnect()`, `controller.abort()`, `cancelAnimationFrame`. Note it
+- Custom element: undo everything in `disconnectedCallback`, `observer.disconnect()`, `controller.abort()`, `cancelAnimationFrame`. Note it
   fires on every detach, so re-acquire in `connectedCallback`.
 - Factory: return a `dispose()` that tears down all per-node state. Use a
   `WeakMap<Element, State>` so node state is GC'd with the node.
@@ -59,7 +58,7 @@ code against non-browser evaluation if bundled for an SSR pipeline.
 
 ## Hydration
 
-No hydration step — the script attaches to existing DOM. Prevent flashes by keying
+No hydration step, the script attaches to existing DOM. Prevent flashes by keying
 the resting state on a class the script adds (`html.motif-js`) or by using a custom
 element's `:defined` pseudo-class:
 
@@ -85,7 +84,7 @@ motif-reveal:not(:defined) { opacity: 1; }   /* visible until upgraded */
 ## Responsive behaviour
 
 CSS media/container queries first. If JS must branch, subscribe to
-`matchMedia(...).addEventListener('change', …)` and remove it on dispose — avoid
+`matchMedia(...).addEventListener('change', …)` and remove it on dispose, avoid
 `resize` polling.
 
 ## Reduced-motion strategy

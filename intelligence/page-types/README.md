@@ -1,4 +1,4 @@
-# LEVEL 4 — Page & Section Types
+# LEVEL 4, Page & Section Types
 
 LEVEL 2 sets the product. LEVEL 3 sets the user's intent. This level names the
 **screen or section** in front of the user and states, for each, the
@@ -147,7 +147,7 @@ sections have more licence to express.
 - **Avoid:** Hiding answers from page search behind heavy JS; jarring expand jumps.
 
 ### CTA section
-- **Objective:** Convert — get the click.
+- **Objective:** Convert, get the click.
 - **Recommended:** Draw attention to the action; strengthen the button's affordance; calm surroundings.
 - **Avoid:** Competing animations stealing focus; motion that delays the click.
 

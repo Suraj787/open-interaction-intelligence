@@ -1,4 +1,4 @@
-# Optimistic Save — Vue 3
+# Optimistic Save, Vue 3
 
 A `<script setup>` component that demonstrates the optimistic-save pattern: the UI
 commits to the user's intent immediately, shows a transient progress → confirmation,
@@ -12,7 +12,7 @@ File: [`OptimisticSave.vue`](./OptimisticSave.vue). No external dependencies.
 <script setup>
 import OptimisticSave from "./OptimisticSave.vue";
 
-// Inject the real async work — keeps the component transport-agnostic.
+// Inject the real async work, keeps the component transport-agnostic.
 const saveTitle = () =>
   fetch("/api/save", { method: "POST" }).then((r) => {
     if (!r.ok) throw new Error("save failed");
@@ -36,7 +36,7 @@ idle ──save()──▶ saving ──resolve──▶ saved ──(savedDurat
                      └────reject────▶ error ──save()/Retry──▶ saving
 ```
 
-- `save()` flips to **saving** *immediately* (optimistic — no waiting for the
+- `save()` flips to **saving** *immediately* (optimistic, no waiting for the
   network to show feedback) and ignores re-entry while a save is in flight.
 - On resolve → **saved**, emit `saved`, then a timer returns to **idle** after
   `savedDuration` (default 1600 ms) so the control is reusable.
@@ -46,12 +46,12 @@ idle ──save()──▶ saving ──resolve──▶ saved ──(savedDurat
 - The saved timer is cleared on re-save and on unmount (no stray timers).
 
 The async work is the `saveFn` prop, so the component has no knowledge of `fetch`,
-Axios, or Frappe — making it trivially unit-testable with a stub promise.
+Axios, or Frappe, making it trivially unit-testable with a stub promise.
 
 ## Accessibility
 
 - **`role="status" aria-live="polite"`** visually-hidden region is the single
-  accessible source of truth; it announces "Saving…", "Saved", "Couldn't save — tap
+  accessible source of truth; it announces "Saving…", "Saved", "Couldn't save, tap
   to retry" without stealing focus. The *visible* status chip is `aria-hidden` to
   avoid double announcement.
 - **`aria-busy`** on the button reflects the saving state; the button is `disabled`
@@ -67,8 +67,8 @@ Two layers, both honoured:
 1. A dependency-free `usePrefersReducedMotion`-style `ref` tracks
    `matchMedia('(prefers-reduced-motion: reduce)')` live (subscribed in
    `onMounted`, cleaned up in `onUnmounted`). When reduced (or `disableAnimation`
-   prop is set), the `<Transition>` name becomes `motif-none` — a transition with no
-   CSS — so status swaps are **instant**.
+   prop is set), the `<Transition>` name becomes `motif-none`, a transition with no
+   CSS, so status swaps are **instant**.
 2. A scoped `@media (prefers-reduced-motion: reduce)` block disables the saving
    pulse and the chip enter/leave transition outright.
 

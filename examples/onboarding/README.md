@@ -1,14 +1,14 @@
-# Onboarding — Progressive, Staged, Skippable
+# Onboarding, Progressive, Staged, Skippable
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 
 ## Context
 - **Product type:** SaaS app first-run experience.
-- **Page/screen:** A short onboarding flow — a few steps introducing key actions, shown
+- **Page/screen:** A short onboarding flow, a few steps introducing key actions, shown
   on first login (and re-accessible from Help).
 - **Target user:** A brand-new user, possibly evaluating the product, with limited patience.
-- **Primary task:** Understand enough to take the first real action — and be able to
+- **Primary task:** Understand enough to take the first real action, and be able to
   **skip** to the product at any moment.
 
 ## User problem
@@ -33,21 +33,21 @@ being small and advanced *by the user*, not a timer.
 ## Selected effect/technique
 Simplest that works, native first:
 - **Step transition:** ~180ms opacity crossfade (+ small translate) between steps, triggered
-  only by user navigation — never auto-played.
-- **Optional element stagger:** within a step, 2–3 elements may fade in with a small delay
+  only by user navigation, never auto-played.
+- **Optional element stagger:** within a step, 2-3 elements may fade in with a small delay
   (≤250ms total). Cosmetic only; content is readable instantly if skipped.
-- **Progress:** "Step 2 of 4" text plus dots — meaning is textual, not motion.
+- **Progress:** "Step 2 of 4" text plus dots, meaning is textual, not motion.
 - **Skip** and **Back** are always present and keyboard-reachable.
 
 ## Rejected effects (and why)
-- **Auto-advancing slides / timed animations** — removes control; a hostile pattern for
+- **Auto-advancing slides / timed animations**, removes control; a hostile pattern for
   first-run, and unusable under reduced motion.
-- **Confetti on finishing onboarding** — borderline; once-only completion *could* justify a
+- **Confetti on finishing onboarding**, borderline; once-only completion *could* justify a
   tiny flourish, but for a tool people set up repeatedly across workspaces it reads as
   forced delight, so we keep a calm "You're all set" instead.
-- **Continuous looping illustrations/Lottie behind text** — continuous motion behind reading
+- **Continuous looping illustrations/Lottie behind text**, continuous motion behind reading
   content; distracting and costly.
-- **Long entrance choreography per step** — decoration that delays the point of each step.
+- **Long entrance choreography per step**, decoration that delays the point of each step.
 
 ## Implementation sketch
 Vue stepper; user-driven transitions; skip/back persistent. CSS owns motion.

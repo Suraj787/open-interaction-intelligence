@@ -7,7 +7,7 @@ and *what may be done with it*. They do not contain scrapers that execute code.
 In this offline-by-default build, connectors are declarative (`connector.yml`). The
 network retrieval step is only performed through the explicit `source refresh`
 workflow against an allowlisted host (`security/domain-policy.yml`), and everything
-retrieved goes to `.motif/quarantine/` for static review — it is never executed.
+retrieved goes to `.motif/quarantine/` for static review, it is never executed.
 
 ## A connector MAY
 
@@ -28,9 +28,9 @@ retrieved goes to `.motif/quarantine/` for static review — it is never execute
 
 ## Operating modes
 
-1. **Catalogue-only** — metadata + references only; no source retrieval.
-2. **Review** — retrieve untrusted text into disposable quarantine for static review.
-3. **Approved installation** — only approved registry entries may be applied to a
+1. **Catalogue-only**, metadata + references only; no source retrieval.
+2. **Review**, retrieve untrusted text into disposable quarantine for static review.
+3. **Approved installation**, only approved registry entries may be applied to a
    target project, through a controlled patch with snapshot + rollback.
 
 Default runtime mode: **offline approved registry**.

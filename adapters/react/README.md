@@ -1,4 +1,4 @@
-# Motif Adapter — React
+# Motif Adapter, React
 
 How Motif recipes map onto idiomatic React (18/19, function components + hooks).
 Recipes stay CSS-first; React owns *state, lifecycle, and cleanup*, not the motion.
@@ -9,8 +9,8 @@ Recipes stay CSS-first; React owns *state, lifecycle, and cleanup*, not the moti
 
 Package a recipe as a **custom hook + a thin component**:
 
-- `useBlurReveal(ref, options)` — encapsulates the observer/state machine.
-- `<SkeletonLoader />` — presentational, accepts the contract knobs as props.
+- `useBlurReveal(ref, options)`, encapsulates the observer/state machine.
+- `<SkeletonLoader />`, presentational, accepts the contract knobs as props.
 
 Keep DOM access in `ref`s; keep motion in a co-located CSS module / stylesheet.
 Avoid inline animation in JS unless the Web Animations API is genuinely required.
@@ -33,7 +33,7 @@ function Reveal({ children, intensity }: RevealProps) {
 ## Cleanup
 
 Return a cleanup function from every `useEffect`. Under React 18 Strict Mode the
-effect runs twice in dev — your cleanup must make that a no-op:
+effect runs twice in dev, your cleanup must make that a no-op:
 
 ```tsx
 useEffect(() => {
@@ -49,7 +49,7 @@ Use `AbortController` for listeners (`{ signal }`) so one `abort()` clears them 
 
 For Next.js / RSC: the component renders static markup on the server. Any hook that
 touches `window`, `matchMedia`, or `IntersectionObserver` must run **client-side
-only** — mark the file `'use client'` and read browser APIs inside `useEffect`, not
+only**, mark the file `'use client'` and read browser APIs inside `useEffect`, not
 during render. Provide an SSR-safe initial state (content visible, motion not yet
 applied).
 
@@ -106,7 +106,7 @@ return <div data-animate={!reduced} className="motif-reveal">{children}</div>;
 
 Stay dependency-free: hooks + CSS cover the catalogue. Reach for `framer-motion`
 only when orchestration (layout/shared-element/spring choreography) genuinely
-exceeds CSS + WAAPI — and never add it just to fade something in. Document any such
+exceeds CSS + WAAPI, and never add it just to fade something in. Document any such
 escalation per the technique order.
 
 ## Normalised component contract knobs (props)

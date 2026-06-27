@@ -1,4 +1,4 @@
-# LEVEL 3 — User Intents
+# LEVEL 3, User Intents
 
 Once the product type is known (LEVEL 2), Motif asks: **what is this specific user
 trying to do on this screen right now?** Intent is the bridge between *what the
@@ -41,8 +41,8 @@ Browsing, exploring a catalogue, scanning a feed.
 - **Motion implications:** Light reveal and hover affordances are welcome. Lazy-load without layout jank. Keep scanning fluid; avoid heavy staggered entrances that slow the browse.
 
 ### 8. Evaluate a product
-Marketing/landing context — deciding whether something is worth it.
-- **Motion implications:** Motion can demonstrate value and guide attention to proof and CTA. This is where expressiveness is licensed — but it must not delay the message or the call to action.
+Marketing/landing context, deciding whether something is worth it.
+- **Motion implications:** Motion can demonstrate value and guide attention to proof and CTA. This is where expressiveness is licensed, but it must not delay the message or the call to action.
 
 ### 9. Purchase
 Cart, checkout, payment, confirmation.
@@ -79,6 +79,6 @@ Settings, admin, permissions, integrations.
 | Collaborate | Balanced, presence-aware |
 | Configure a system | Very restrained |
 
-Intent narrows the field. The next level — **interaction problems**
-(`../interaction-problems/`) — names the precise objective the chosen pattern
+Intent narrows the field. The next level, **interaction problems**
+(`../interaction-problems/`), names the precise objective the chosen pattern
 must solve.

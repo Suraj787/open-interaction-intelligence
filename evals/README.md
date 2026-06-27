@@ -3,10 +3,10 @@
 These test **judgement, not just syntax**. Each case in `cases/*.json` conforms to
 `schemas/evaluation.schema.json` and carries a `category` and a `kind`:
 
-- `kind: automated` — machine-checkable (the security/licence cases run against the
+- `kind: automated`, machine-checkable (the security/licence cases run against the
   fixtures in `fixtures/` and are executed by `tools/selfcheck.py` and the pytest
   suite).
-- `kind: human-judgement` — requires a reviewer to confirm the agent reasoned
+- `kind: human-judgement`, requires a reviewer to confirm the agent reasoned
   correctly (e.g. refusing showcase motion on an enterprise dashboard).
 
 Categories (the `category` field replaces separate folders): `positive`, `rejection`,

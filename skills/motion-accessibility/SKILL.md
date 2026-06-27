@@ -24,7 +24,7 @@ This is a non-negotiable gate.
 
 - Keyboard focus is never removed or obscured; focus order stays logical.
 - Essential actions are never hover-only; they work via keyboard and touch.
-- Status is never conveyed by motion alone — pair with text/icon/ARIA.
+- Status is never conveyed by motion alone, pair with text/icon/ARIA.
 - `prefers-reduced-motion: reduce` is respected with a meaningful non-motion path.
 - Decorative motion never blocks or delays input.
 - Semantics (roles, names, states) are correct and announced.
@@ -36,5 +36,5 @@ This is a non-negotiable gate.
 
 ## Notes
 
-A reduced-motion path is not "disable the animation and leave a gap" — it must still
+A reduced-motion path is not "disable the animation and leave a gap", it must still
 communicate the state change clearly. No interaction ships without it.

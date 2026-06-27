@@ -31,7 +31,7 @@ description: Use when product context is known and you need to convert the user'
 
 - Reads `intelligence/` pattern catalogues and objective→pattern mappings.
 - Produces the query that `effect-discovery` runs against `registry/`.
-- Never selects a concrete effect — that is `effect-selection`'s job.
+- Never selects a concrete effect, that is `effect-selection`'s job.
 
 ## Notes
 

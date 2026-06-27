@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dependency-free self-check — the local mirror of CI used by `make check`.
+"""Dependency-free self-check, the local mirror of CI used by `make check`.
 
 Runs the same assertions as the pytest suite without requiring pytest, so the
 gate works on any stock Python 3.11+. CI additionally runs the full pytest suite.

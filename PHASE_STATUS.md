@@ -3,13 +3,13 @@
 Persistent build log so a later Claude Code session can continue without duplicating work.
 Target release: **v0.1.0** (representative breadth, complete architecture + secure pipeline).
 
-Legend: ✅ done · 🟡 partial/representative · ⬜ not started
+Legend: ✅ done, 🟡 partial/representative, ⬜ not started
 
 | Phase | Title | Status | Notes |
 |------:|-------|:------:|-------|
 | 0  | Environment, repository, safety | ✅ | git init (main), identity set, .gitignore, ADR 0001/0002, master spec stored |
 | 1  | Product & interaction intelligence model | ✅ | 8-level model in `intelligence/` |
-| 2  | Research 50–100 sources | 🟡 | 16 deeply reviewed sources; pipeline + schema for the rest |
+| 2  | Research 50-100 sources | 🟡 | 16 deeply reviewed sources; pipeline + schema for the rest |
 | 3  | Component-level catalogue | 🟡 | Representative component records w/ usability modes + completeness report |
 | 4  | Effect / pattern / recipe taxonomies | ✅ | Machine-readable taxonomies + anti-patterns |
 | 5  | Secure source connectors & ingestion | ✅ | Connector contract, 3 modes, offline-registry default |
@@ -34,4 +34,4 @@ Legend: ✅ done · 🟡 partial/representative · ⬜ not started
 
 ## Next-session entry point
 Run `make check`, read recent `git log`, then continue the lowest-numbered 🟡/⬜ phase.
-Publication (Phase 23) is intentionally left to a human go-ahead — see the final report.
+Publication (Phase 23) is intentionally left to a human go-ahead, see the final report.

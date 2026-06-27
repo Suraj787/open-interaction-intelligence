@@ -1,7 +1,7 @@
 # Authoring a Component Record
 
 A **component** record describes a concrete, catalogued UI component or distinct effect as
-it exists in a third-party source — its framework, technologies, licence, accessibility
+it exists in a third-party source, its framework, technologies, licence, accessibility
 and the **usability mode** that governs how Motif may use it. Components are evidence about
 the outside world; they are not Motif's own implementations (those are *recipes*).
 
@@ -12,7 +12,7 @@ the outside world; they are not Motif's own implementations (those are *recipes*
 ## When to create one
 
 When cataloguing a source's publicly accessible catalogue. A source is **not complete**
-because its homepage was reviewed — create one machine-readable record per component or
+because its homepage was reviewed, create one machine-readable record per component or
 distinct effect, where technically and legally possible.
 
 ## Required fields
@@ -47,12 +47,12 @@ distinct effect, where technically and legally possible.
 
 `usability_mode` is the disposition gate. Choose exactly one:
 
-- `bundled` — may be shipped as-is (licence clearly permits redistribution; scans clean).
-- `installable` — fetched/applied via its official installation method under controlled
+- `bundled`, may be shipped as-is (licence clearly permits redistribution; scans clean).
+- `installable`, fetched/applied via its official installation method under controlled
   installation.
-- `adaptable` — concept may be re-implemented clean-room; source not redistributed.
-- `reference-only` — inspiration only; **default when licence is unknown or restricted.**
-- `rejected` — fails safety, licence or quality review.
+- `adaptable`, concept may be re-implemented clean-room; source not redistributed.
+- `reference-only`, inspiration only; **default when licence is unknown or restricted.**
+- `rejected`, fails safety, licence or quality review.
 
 **Licence gate:** unknown licence ⇒ `reference-only`, never `bundled`.
 
@@ -61,7 +61,7 @@ distinct effect, where technically and legally possible.
 Every component traces to a verified `source`. Licence/redistribution claims must be
 backed by `evidence`. Never set `redistribution_permission: true` or
 `usability_mode: bundled` without a clear licence basis. Never reconstruct a paid
-component from a preview. If unsure, downgrade — `reference-only` is the safe default.
+component from a preview. If unsure, downgrade, `reference-only` is the safe default.
 
 ## Example skeleton
 

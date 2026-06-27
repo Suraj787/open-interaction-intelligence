@@ -27,10 +27,10 @@ target framework, with provenance. Assumes the pattern/effect is already chosen 
    coarse-pointer, responsive, reduced-motion, testing. For Frappe-Vue, respect Frappe UI
    conventions.
 6. **Implement** in the project, preserving design-system conventions.
-7. **Gate — accessibility:** keyboard, focus, semantics, reduced-motion; status never
+7. **Gate, accessibility:** keyboard, focus, semantics, reduced-motion; status never
    motion-only.
-8. **Gate — performance:** transform/opacity, budget respected, no jank.
-9. **Gate — responsiveness:** breakpoints + input modes.
+8. **Gate, performance:** transform/opacity, budget respected, no jank.
+9. **Gate, responsiveness:** breakpoints + input modes.
 10. **Record** the recipe + decision + provenance. If installing an approved component,
     use `python -m motif component install` (diff + rollback + manifest).
 11. **Validate:** `python -m motif validate`; then

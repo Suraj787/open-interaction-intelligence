@@ -1,4 +1,4 @@
-# Skeleton Loading — React
+# Skeleton Loading, React
 
 Placeholder blocks with a left-to-right shimmer that occupy the layout while content
 loads, then swap to the real children. Dependency-free; the shimmer is a CSS gradient
@@ -39,7 +39,7 @@ function Profile({ user, loading }) {
 - **Shimmer mechanics:** a `linear-gradient` sheen sits on a `200%`-wide background
   over a solid base colour. A keyframe slides `background-position` from `-150%` to
   `250%`, sweeping the sheen across. Animating `background-position` does **not**
-  trigger layout or paint of surrounding content — it's cheap and transform-friendly
+  trigger layout or paint of surrounding content, it's cheap and transform-friendly
   in spirit (no width/height thrash).
 - **Style injection:** the stylesheet is injected once (id-guarded, SSR-guarded) so
   the component is drop-in with no separate CSS import. Projects preferring a real
@@ -51,7 +51,7 @@ function Profile({ user, loading }) {
   updating. While loading it also gets `role="status"`, `aria-live="polite"`, and an
   `aria-label` (default "Loading") so screen-reader users are informed without focus
   movement; the label is dropped once content arrives.
-- The skeleton blocks themselves are **`aria-hidden`** — they are purely decorative
+- The skeleton blocks themselves are **`aria-hidden`**, they are purely decorative
   and must not be read out as content.
 - No focus is moved or trapped; the placeholder is non-interactive.
 - Because the placeholder occupies the same layout footprint, swapping to real
@@ -62,7 +62,7 @@ function Profile({ user, loading }) {
 `@media (prefers-reduced-motion: reduce)` sets `animation: none` **and**
 `background-image: none`, so the shimmer stops entirely and each block becomes a
 calm, solid static placeholder. The placeholders still occupy layout and `aria-busy`
-still communicates loading — only the motion is removed. This is a CSS-level
+still communicates loading, only the motion is removed. This is a CSS-level
 guarantee, so it holds even before/without JS hydration.
 
 ## Contract knobs

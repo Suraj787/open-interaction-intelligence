@@ -1,8 +1,7 @@
-# Motif Adapter — Svelte
+# Motif Adapter, Svelte
 
 How Motif recipes map onto idiomatic Svelte (4 and 5/runes). Svelte's compiler and
-built-in `transition:` / `animate:` directives make it an excellent Motif host —
-recipes stay CSS-first and let Svelte own state and teardown.
+built-in `transition:` / `animate:` directives make it an excellent Motif host, recipes stay CSS-first and let Svelte own state and teardown.
 
 > Provenance: original (clean-room). No third-party source is copied.
 
@@ -11,13 +10,13 @@ recipes stay CSS-first and let Svelte own state and teardown.
 Package a recipe as an **action + component**:
 
 - A Svelte **action** (`use:blurReveal`) is the idiomatic home for
-  observer/listener wiring on an element — it receives the node and returns
+  observer/listener wiring on an element, it receives the node and returns
   `{ update, destroy }`.
 - A `.svelte` component exposes the contract knobs as `export let` props (Svelte 4)
   or `$props()` (Svelte 5 runes), with scoped `<style>`.
 
 Prefer Svelte's native `transition:fade` / `transition:fly` (and custom transition
-functions) over hand-rolled animation — they respect mount/unmount automatically.
+functions) over hand-rolled animation, they respect mount/unmount automatically.
 
 ```svelte
 <script>
@@ -49,7 +48,7 @@ export function blurReveal(node, params) {
 }
 ```
 
-In Svelte 5, `$effect` returns its own cleanup closure — same discipline.
+In Svelte 5, `$effect` returns its own cleanup closure, same discipline.
 
 ## SSR
 
@@ -60,7 +59,7 @@ directives don't run during SSR; the resting state is what's serialized.
 
 ## Hydration
 
-SvelteKit hydrates the server HTML. Keep markup deterministic — don't branch on
+SvelteKit hydrates the server HTML. Keep markup deterministic, don't branch on
 `browser` during render in a way that changes structure, or hydration mismatches.
 Apply enhanced start state in `onMount`/action, or via CSS, to avoid a flash.
 `transition:...|local` and the `intro` option control whether transitions play on
@@ -72,7 +71,7 @@ initial hydration.
   (`on:keydown|preventDefault`) for handlers.
 - Don't remove focusability for animation.
 - Manage focus explicitly only for revealed dialogs/menus; restore on close. Style
-  `:focus-visible` in scoped CSS. Svelte's a11y compiler warnings help here — heed
+  `:focus-visible` in scoped CSS. Svelte's a11y compiler warnings help here, heed
   them.
 
 ## Pointer & coarse-pointer support

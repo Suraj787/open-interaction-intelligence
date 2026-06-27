@@ -51,6 +51,6 @@ def run() -> tuple[list[str], bool]:
         lines.append("  [ok ] registry validates against schemas")
     else:
         ok = False
-        lines.append(f"  [FAIL] {len(res.errors)} validation error(s) — run `motif validate`")
+        lines.append(f"  [FAIL] {len(res.errors)} validation error(s), run `motif validate`")
 
     return lines, ok

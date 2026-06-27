@@ -1,4 +1,4 @@
-# Corporate Website — Calm, Credible, Minimal Motion
+# Corporate Website, Calm, Credible, Minimal Motion
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
@@ -6,15 +6,15 @@ EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 ## Context
 - **Product type:** Corporate / institutional website (e.g. enterprise vendor, financial
   or professional-services firm).
-- **Page/screen:** Home and key marketing/info pages — value statement, proof points,
+- **Page/screen:** Home and key marketing/info pages, value statement, proof points,
   navigation to products, careers, investor/legal.
-- **Target user:** Prospects, partners, press, candidates, regulators — many of them
+- **Target user:** Prospects, partners, press, candidates, regulators, many of them
   evaluating **trustworthiness**.
 - **Primary task:** Find information and judge credibility. Calm and clarity outrank flair.
 
 ## User problem
-A redesign added trendy motion — animated hero loops, scroll-triggered everything, hover
-effects on every card — which made a serious institution feel gimmicky and slowed the
+A redesign added trendy motion, animated hero loops, scroll-triggered everything, hover
+effects on every card, which made a serious institution feel gimmicky and slowed the
 site. We need a **calm, credible** presence: motion only where it aids comprehension or
 feedback, accessibility-first, fast.
 
@@ -24,11 +24,11 @@ feedback, accessibility-first, fast.
 2. **Absolutely zero interaction feedback.** Credible but feels inert/unresponsive; users
    miss affordances (e.g. which nav item is active). Too austere.
 3. **Minimal, functional motion:** quiet hover/focus states, a brief content fade on route
-   change, smooth in-page anchor scrolling — and nothing decorative. **Selected.**
+   change, smooth in-page anchor scrolling, and nothing decorative. **Selected.**
 
 ## Selected pattern
 **Calm functional feedback only.** Every animation answers "did my action register?" or
-"where am I?" — never "look how lively we are."
+"where am I?", never "look how lively we are."
 
 ## Selected effect/technique
 Simplest that works, native first:
@@ -39,11 +39,11 @@ Simplest that works, native first:
 - That is the entire motion vocabulary. Hierarchy comes from typography, spacing, contrast.
 
 ## Rejected effects (and why)
-- **Animated hero loops / background video** — decoration; harms credibility and load time.
-- **Scroll-triggered reveals on every section** — continuous, attention-grabbing motion the
+- **Animated hero loops / background video**, decoration; harms credibility and load time.
+- **Scroll-triggered reveals on every section**, continuous, attention-grabbing motion the
   content doesn't need; can feel manipulative on an institutional site.
-- **Hover animations on every card** — decoration-only; visual noise.
-- **Confetti / parallax / marquees** — all gimmick, zero informational value here.
+- **Hover animations on every card**, decoration-only; visual noise.
+- **Confetti / parallax / marquees**, all gimmick, zero informational value here.
 
 ## Implementation sketch
 Browser-native CSS does almost everything; a tiny fade on route change if it's an SPA.
@@ -74,7 +74,7 @@ html { scroll-behavior: smooth; }
   same affordance as hover.
 
 ## Performance
-- Motion limited to short `color`/`opacity`/`box-shadow` transitions — negligible cost.
+- Motion limited to short `color`/`opacity`/`box-shadow` transitions, negligible cost.
 - No background media, no scroll listeners, no offscreen/continuous animation.
 - Budget posture: fast first paint, minimal JS; the site should feel instant and solid.
 

@@ -1,4 +1,4 @@
-"""Restricted YAML reader — zero dependencies.
+"""Restricted YAML reader, zero dependencies.
 
 Supports the subset Motif policy files use: nested maps (2-space indent),
 `key: value`, `key:` block parents, `- scalar` lists, `#` comments, and

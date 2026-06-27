@@ -19,14 +19,14 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-error.log*
 
-# Motif runtime working area — quarantine is never committed
+# Motif runtime working area, quarantine is never committed
 .motif/quarantine/*
 !.motif/quarantine/.gitkeep
 .motif/reviewed/*
 !.motif/reviewed/.gitkeep
 .motif/snapshots/
 
-# Secrets / local config — never track
+# Secrets / local config, never track
 *.pem
 *.key
 .env

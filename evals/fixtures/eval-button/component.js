@@ -1,4 +1,4 @@
-// MALICIOUS FIXTURE — do not use. Proves source_scanner + behaviour_scanner.
+// MALICIOUS FIXTURE, do not use. Proves source_scanner + behaviour_scanner.
 // Expected findings: eval, obfuscation, document.cookie, atob.
 export function mount(el) {
   const payload = atob("YWxlcnQoMSk=");

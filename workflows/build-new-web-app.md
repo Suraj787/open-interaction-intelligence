@@ -1,6 +1,6 @@
 # Workflow: Build a New Web Application
 
-For **web applications** (task completion, data density, repeated use) — ERP, CRM,
+For **web applications** (task completion, data density, repeated use), ERP, CRM,
 dashboards, project management, SaaS tools. Motion here serves clarity and feedback, never
 decoration. Vue and Frappe-Vue are first-class targets.
 
@@ -18,7 +18,7 @@ decoration. Vue and Frappe-Vue are first-class targets.
    tolerate the least decorative motion.
 3. **Map screen types:** list views, data tables, forms, detail/record pages, dashboards,
    empty/loading/error states.
-4. **State the interaction objective** — usually feedback, orientation, state transition,
+4. **State the interaction objective**, usually feedback, orientation, state transition,
    or progressive disclosure. Load `skills/interaction-design`.
 5. **Search patterns first:** `python -m motif search "<problem>"`. Strongly prefer effects
    with `enterprise_suitability: recommended`.
@@ -35,7 +35,7 @@ decoration. Vue and Frappe-Vue are first-class targets.
 10. **Responsiveness gate:** breakpoints + input modes; touch targets.
 11. **Record decision + provenance**; install approved components via
     `python -m motif component install` (diff + rollback + manifest).
-12. **Validate** — see [validate-experience.md](validate-experience.md).
+12. **Validate**, see [validate-experience.md](validate-experience.md).
 
 ## Done when
 

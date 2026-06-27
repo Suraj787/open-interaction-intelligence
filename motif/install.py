@@ -74,7 +74,7 @@ def plan_install(component_id: str, target: str) -> InstallPlan:
                         f"(LICENCE/usability gate). Adapt the concept instead.")
         return plan
     if d["license"].lower().startswith("unknown") or d["license"] == "":
-        plan.refused = "unknown licence — refused by the LICENCE GATE"
+        plan.refused = "unknown licence, refused by the LICENCE GATE"
         return plan
 
     impl = _recipe_for(component_id)

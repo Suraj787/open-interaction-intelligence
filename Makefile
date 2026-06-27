@@ -12,10 +12,10 @@ selfcheck:
 
 # Full pytest suite (requires dev extras: pip install -e '.[dev]')
 test:
-	@python3 -m pytest -q || (echo "pytest not installed — run 'pip install -e .[dev]' (selfcheck already covers the gate)"; exit 0)
+	@python3 -m pytest -q || (echo "pytest not installed, run 'pip install -e .[dev]' (selfcheck already covers the gate)"; exit 0)
 
 lint:
-	@ruff check motif scanners tools tests || echo "ruff not installed — skipping (optional)"
+	@ruff check motif scanners tools tests || echo "ruff not installed, skipping (optional)"
 
 index:
 	@python3 -m motif generate-index
@@ -23,7 +23,7 @@ index:
 doctor:
 	@python3 -m motif doctor
 
-# Refuse to ship tracked secrets — scans the repo (excludes .git/node_modules/.motif).
+# Refuse to ship tracked secrets, scans the repo (excludes .git/node_modules/.motif).
 secrets:
 	@python3 -c "import sys,pathlib; sys.path.insert(0,'.'); from scanners import secret_scanner as s; \
 f=[x for x in s.scan_path('.') if x.severity in ('high','critical')]; \

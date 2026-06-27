@@ -22,7 +22,7 @@ a project. Recipes are where clean-room adaptation lands.
 | `pattern` | the `id` of the pattern in `registry/patterns/` this recipe implements |
 | `framework` | one of `browser-native`, `react`, `vue`, `svelte`, `angular`, `vanilla`, `frappe-vue` |
 | `technology`, `dependencies` | implementation tech; keep dependencies minimal (see hierarchy) |
-| `cost` | `none` / `low` / `medium` / `high` — dependency/runtime weight |
+| `cost` | `none` / `low` / `medium` / `high`, dependency/runtime weight |
 | `license` | licence of **this recipe** (Motif originals are MIT) |
 | `provenance_type` | `original` / `browser-native` / `adapted-concept` |
 | `source_references` | source `id`s that inspired an `adapted-concept`; the inspiration trail |
@@ -39,9 +39,9 @@ a project. Recipes are where clean-room adaptation lands.
 
 `provenance_type` records how the recipe came to exist:
 
-- `browser-native` — built directly on platform capabilities; no third-party code.
-- `original` — Motif's own design.
-- `adapted-concept` — produced by **clean-room adaptation**: record the interaction
+- `browser-native`, built directly on platform capabilities; no third-party code.
+- `original`, Motif's own design.
+- `adapted-concept`, produced by **clean-room adaptation**: record the interaction
   objective and behaviour, write a framework-neutral `algorithm`, implement independently,
   and **retain no source code**. List the inspirations in `source_references`. Avoid
   line-by-line, structure-by-structure or distinctive-copy recreation. Preserve any
@@ -57,7 +57,7 @@ licence never overrides a third-party obligation.
 The `framework` and `dependencies` choices follow the implementation hierarchy in
 [framework-adaptation.md](framework-adaptation.md): browser-native CSS first, heavy
 dependencies last. A `cost: high` recipe needs explicit justification in `algorithm`/
-docs. **Never install another framework for a single effect** — a Vue project gets a
+docs. **Never install another framework for a single effect**, a Vue project gets a
 `vue`/`frappe-vue`/`browser-native` recipe, never a `react` one.
 
 ## Accessibility and reduced motion are required fields

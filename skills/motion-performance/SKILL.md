@@ -1,6 +1,6 @@
 ---
 name: motion-performance
-description: Use when validating that an interaction stays within performance budget — animating cheap properties, avoiding jank, and never running costly decorative motion behind dense UIs.
+description: Use when validating that an interaction stays within performance budget, animating cheap properties, avoiding jank, and never running costly decorative motion behind dense UIs.
 ---
 
 # Motion Performance

@@ -51,7 +51,7 @@ def cmd_search(args) -> int:
         d = r.data
         label = d.get("name", d["id"])
         extra = d.get("objective") or d.get("problem") or d.get("category", "")
-        _print(f"  [{r.kind:9}] {d['id']:32} {label} — {extra}")
+        _print(f"  [{r.kind:9}] {d['id']:32} {label}, {extra}")
     _print(f"\n{len(hits)} result(s)")
     return 0
 
@@ -72,7 +72,7 @@ def cmd_rank(args) -> int:
         for s in rej:
             _print(f"  {s.score:+6.2f}  {s.id}  (listed as rejected for this pattern)")
     if rec:
-        _print(f"\nSelected: {rec[0].id} — simplest effective candidate with the highest transparent score.")
+        _print(f"\nSelected: {rec[0].id}, simplest effective candidate with the highest transparent score.")
     return 0
 
 
@@ -235,7 +235,7 @@ def cmd_generate_index(_args) -> int:
     for kind, items in index.items():
         lines.append(f"## {kind} ({len(items)})")
         for it in items:
-            lines.append(f"- `{it['id']}` — {it['name']}")
+            lines.append(f"- `{it['id']}`, {it['name']}")
         lines.append("")
     (registry.REGISTRY / "INDEX.md").write_text("\n".join(lines))
     _print(f"wrote registry/INDEX.json and registry/INDEX.md "

@@ -1,11 +1,11 @@
-# SaaS Website — Premium Hero That Explains the Product
+# SaaS Website, Premium Hero That Explains the Product
 
 A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 
 ## Context
 - **Product type:** Marketing site for a SaaS product.
-- **Page/screen:** Above-the-fold hero — headline, subhead, primary CTA, and a product
+- **Page/screen:** Above-the-fold hero, headline, subhead, primary CTA, and a product
   visual.
 - **Target user:** A prospect deciding in seconds whether this is worth their time.
 - **Primary task:** Understand *what the product does* and click the CTA. Conversion
@@ -36,17 +36,17 @@ the CTA; the ambient touch signals craft without competing with the message.
 ## Selected effect/technique
 Simplest that works, native first:
 - **Staged reveal:** headline, subhead, CTA, then product visual fade/rise in sequence,
-  each ~250ms with ~80ms stagger — completes in well under a second, once, on load.
+  each ~250ms with ~80ms stagger, completes in well under a second, once, on load.
 - **One ambient effect:** a slow, low-contrast gradient sheen drifting across the product
   card (CSS `@keyframes` on `background-position`/`transform`, long duration, low
-  amplitude) — *or* a gentle hover-lift on the product card. Pick **one**.
+  amplitude), *or* a gentle hover-lift on the product card. Pick **one**.
 - Headline is real text rendered immediately (good LCP); animation is opacity-only on top.
 
 ## Rejected effects (and why)
-- **Autoplay background video** — heavy LCP/bandwidth cost; competes with the message.
-- **Parallax scroll layers** — continuous motion + jank; distracts from the value prop.
-- **Animated stat counters** — decoration-only; delays reading the actual numbers.
-- **Multiple simultaneous ambient effects** — an "animation showcase"; dilutes premium feel
+- **Autoplay background video**, heavy LCP/bandwidth cost; competes with the message.
+- **Parallax scroll layers**, continuous motion + jank; distracts from the value prop.
+- **Animated stat counters**, decoration-only; delays reading the actual numbers.
+- **Multiple simultaneous ambient effects**, an "animation showcase"; dilutes premium feel
   and conversion focus. Strictly one.
 
 ## Implementation sketch
@@ -80,7 +80,7 @@ Browser-native CSS staged reveal (no JS needed for the entrance); optional one a
 
 ## Accessibility
 - **Reduced motion:** the staged reveal renders content immediately (no transform) and the
-  ambient sheen is disabled — the hero is fully premium-static.
+  ambient sheen is disabled, the hero is fully premium-static.
 - **No motion-only meaning:** all value-prop info is in real text/markup; nothing depends on
   the animation playing.
 - **Keyboard/focus:** CTA is a real focusable link, reachable first; no animation blocks

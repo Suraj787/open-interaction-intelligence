@@ -2,7 +2,7 @@
 
 Flags lifecycle install scripts (the classic supply-chain RCE vector),
 typosquat look-alikes of popular packages, and unexpected dependency growth.
-Read-only — never runs `npm install`.
+Read-only, never runs `npm install`.
 """
 from __future__ import annotations
 import json
@@ -61,7 +61,7 @@ def scan_package_json(text: str, path: str = "package.json") -> list[Finding]:
 
     if len(all_deps) > 15:
         out.append(Finding("dependency_scanner", "warn", "dependency-growth",
-                           f"{len(all_deps)} dependencies for an effect — review necessity", path))
+                           f"{len(all_deps)} dependencies for an effect, review necessity", path))
     if not out:
         out.append(Finding("dependency_scanner", "info", "clean",
                            f"{len(all_deps)} deps, no lifecycle scripts detected", path))
