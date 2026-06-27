@@ -1,6 +1,6 @@
 """Minimal JSON Schema (draft-07 subset) validator — zero dependencies.
 
-Supports the keywords used by OII schemas: type, required, properties,
+Supports the keywords used by Motif schemas: type, required, properties,
 additionalProperties, enum, pattern, minimum, maximum, minItems, minLength,
 items, and a light `format` check for "date" and "uri". If the real
 `jsonschema` package is installed it is used instead for full coverage.

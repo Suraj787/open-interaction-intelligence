@@ -12,7 +12,7 @@ registry and governs the single sanctioned path to external retrieval.
 
 - Maintain `registry/` entries with provenance, licence, and cost metadata.
 - Resolve the source and licence of every candidate effect before it can be ranked.
-- Perform explicit `source-refresh` operations via `python -m oii` when, and only when,
+- Perform explicit `source-refresh` operations via `python -m motif` when, and only when,
   the offline registry cannot serve the need.
 - Record licence + cost reviews for any proposed dependency.
 

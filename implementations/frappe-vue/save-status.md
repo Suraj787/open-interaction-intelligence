@@ -92,7 +92,7 @@ class, never colour alone (each state also has distinct text/icon).
 ## Design-token compatibility
 
 Colours read from Frappe / `frappe-ui` CSS variables with standalone fallbacks:
-`--text-muted`, `--oii-pending`, `--oii-success`, `--oii-danger`, `--oii-focus`. In
+`--text-muted`, `--motif-pending`, `--motif-success`, `--motif-danger`, `--motif-focus`. In
 a real Frappe app these resolve to the theme's tokens so the pill matches Desk.
 
 ## Contract knobs

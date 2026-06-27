@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://oii.dev/schemas/decision.schema.json",
-  "title": "OII Decision Record",
+  "$id": "https://motif.dev/schemas/decision.schema.json",
+  "title": "Motif Decision Record",
   "description": "Pre-implementation reasoning record produced by the orchestrator skill.",
   "type": "object",
   "additionalProperties": false,

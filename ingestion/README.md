@@ -7,7 +7,7 @@ the retrieved code**.
 ```
 discover
   → verify official source        (connectors/, security/domain-policy.yml)
-  → retrieve into quarantine       (.oii/quarantine/, pinned version + SHA-256)
+  → retrieve into quarantine       (.motif/quarantine/, pinned version + SHA-256)
   → identify licence               (scanners/license_scanner.py — LICENCE GATE)
   → static security analysis       (scanners/source_scanner.py)
   → dependency inspection          (scanners/dependency_scanner.py)
@@ -15,7 +15,7 @@ discover
   → secret scan                    (scanners/secret_scanner.py)
   → accessibility + performance review
   → approve · adapt · reference · reject
-  → controlled installation        (oii/install.py — plan, snapshot, patch, rollback)
+  → controlled installation        (motif/install.py — plan, snapshot, patch, rollback)
 ```
 
 Stages map to the subdirectories here:
@@ -23,14 +23,14 @@ Stages map to the subdirectories here:
 | Stage | Directory | Responsibility |
 |-------|-----------|----------------|
 | discovery | `discovery/` | enumerate official component/effect pages via a connector |
-| retrieval | `retrieval/` | pull text into `.oii/quarantine/`, pin version + checksum |
+| retrieval | `retrieval/` | pull text into `.motif/quarantine/`, pin version + checksum |
 | quarantine | `quarantine/` | holding area; nothing here is trusted or executed |
 | normalisation | `normalisation/` | turn a reviewed item into a schema-valid registry record |
 
 Run the scanners over a quarantined path:
 
 ```bash
-python -m oii source scan .oii/quarantine/<item>
+python -m motif source scan .motif/quarantine/<item>
 ```
 
 A `reject` verdict (any high/critical finding) blocks promotion. A `review` verdict

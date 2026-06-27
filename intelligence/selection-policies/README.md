@@ -1,6 +1,6 @@
 # Selection Policies — The Transparent Ranking Model
 
-This is how OII turns a context (product type, page, intent, objective) into a
+This is how Motif turns a context (product type, page, intent, objective) into a
 single defensible choice. The model is **transparent**: every recommendation can
 be explained as priorities scored, penalties subtracted, and an implementation
 order followed.

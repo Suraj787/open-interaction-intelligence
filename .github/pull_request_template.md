@@ -16,7 +16,7 @@ What does this change and why? Link any related issue (e.g. `Closes #123`).
 
 ## Checklist
 
-- [ ] **`make check` passes** locally (runs `oii validate`, `tools/selfcheck.py`, secret scan).
+- [ ] **`make check` passes** locally (runs `motif validate`, `tools/selfcheck.py`, secret scan).
 - [ ] **Provenance recorded** for any source-derived material (source id, evidence links).
 - [ ] **Licence verified** and the redistribution class is correct (unknown ⇒ reference-only;
       source-available / Commons-Clause are **not** permissive; bundling needs a verified
@@ -33,7 +33,7 @@ What does this change and why? Link any related issue (e.g. `Closes #123`).
 
 ## Validation evidence
 
-Paste relevant `make check` / `python -m oii validate` output, and any accessibility /
+Paste relevant `make check` / `python -m motif validate` output, and any accessibility /
 performance validation notes.
 
 ```

@@ -7,7 +7,7 @@ and *what may be done with it*. They do not contain scrapers that execute code.
 In this offline-by-default build, connectors are declarative (`connector.yml`). The
 network retrieval step is only performed through the explicit `source refresh`
 workflow against an allowlisted host (`security/domain-policy.yml`), and everything
-retrieved goes to `.oii/quarantine/` for static review — it is never executed.
+retrieved goes to `.motif/quarantine/` for static review — it is never executed.
 
 ## A connector MAY
 

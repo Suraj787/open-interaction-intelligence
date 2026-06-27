@@ -36,7 +36,7 @@ effective approach. Novelty must never outrank usability.
 
 ## How it connects
 
-- Uses `python -m oii` ranking to keep scoring reproducible and auditable.
+- Uses `python -m motif` ranking to keep scoring reproducible and auditable.
 - Passes the winner to `framework-adaptation`; logs the table via `source-governance`.
 
 ## Notes

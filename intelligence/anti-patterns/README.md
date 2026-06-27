@@ -1,8 +1,8 @@
 # Anti-Patterns
 
-These are the failure modes OII actively guards against. Each entry states
+These are the failure modes Motif actively guards against. Each entry states
 **why it harms** and the **better alternative**. When a proposed effect matches
-an anti-pattern, OII rejects or downgrades it regardless of how impressive it looks.
+an anti-pattern, Motif rejects or downgrades it regardless of how impressive it looks.
 
 > Most anti-patterns share a root cause: an effect was chosen for its own sake,
 > not to solve a stated interaction objective.
@@ -75,7 +75,7 @@ an anti-pattern, OII rejects or downgrades it regardless of how impressive it lo
 
 ---
 
-## How OII uses this list
+## How Motif uses this list
 
 During selection, every candidate effect is checked against these anti-patterns.
 A match triggers either a **penalty** (see the penalty model in

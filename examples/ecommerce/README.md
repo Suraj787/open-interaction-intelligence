@@ -1,6 +1,6 @@
 # E-commerce — Product Page & Add-to-Cart Feedback
 
-A worked example from **Open Interaction Intelligence (OII)**. PATTERNS before
+A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 
 ## Context

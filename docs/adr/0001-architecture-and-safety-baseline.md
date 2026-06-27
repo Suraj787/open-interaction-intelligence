@@ -2,11 +2,11 @@
 
 - Status: Accepted
 - Date: 2026-06-27
-- Deciders: Open Interaction Intelligence maintainers
+- Deciders: Motif maintainers
 
 ## Context
 
-Open Interaction Intelligence (OII) is an Agent Skill + local knowledge system that
+Motif is an Agent Skill + local knowledge system that
 helps AI coding agents research, select, adapt and validate UI interactions, motion
 and effects. The central risk is that "discover an effect on the web" naturally tempts
 a system into scraping arbitrary sites and executing untrusted third-party code inside
@@ -23,10 +23,10 @@ a user's project. We must make that the hard path, not the easy one.
    reads the committed local registry.
 
 3. **Untrusted-by-default ingestion.** All externally retrieved material lands in
-   `.oii/quarantine/` and is never executed during ingestion. It is statically scanned,
+   `.motif/quarantine/` and is never executed during ingestion. It is statically scanned,
    licence-checked, dependency-inspected, then promoted to `reviewed/approved/rejected`.
 
-4. **Dependency-free core.** The `oii` CLI and scanners use only the Python standard
+4. **Dependency-free core.** The `motif` CLI and scanners use only the Python standard
    library so `make check` runs anywhere without installing packages. Optional tools
    (e.g. `jsonschema`) are used if present but never required.
 

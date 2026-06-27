@@ -27,7 +27,7 @@ jobs:
         run: python -m pytest -q
 
       - name: Lint
-        run: ruff check oii scanners tools tests
+        run: ruff check motif scanners tools tests
 
   json-yaml:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
           python - <<'PY'
           import sys, pathlib
           sys.path.insert(0, ".")
-          from oii import yaml_min
+          from motif import yaml_min
           for p in pathlib.Path("security").glob("*.yml"):
               yaml_min.load(p.read_text())
               print("ok", p)

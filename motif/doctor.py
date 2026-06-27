@@ -16,7 +16,7 @@ def run() -> tuple[list[str], bool]:
     lines: list[str] = []
     ok = True
 
-    lines.append("# OII doctor")
+    lines.append("# Motif doctor")
     lines.append("")
     lines.append("## Tooling")
     for t in ("git", "python3", "node", "npm", "gh", "make"):
@@ -39,8 +39,8 @@ def run() -> tuple[list[str], bool]:
     lines.append("")
     lines.append("## Quarantine layout")
     for d in ("quarantine", "reviewed", "approved", "rejected"):
-        p = ROOT / ".oii" / d
-        lines.append(f"  [{'ok ' if p.exists() else 'WARN'}] .oii/{d}")
+        p = ROOT / ".motif" / d
+        lines.append(f"  [{'ok ' if p.exists() else 'WARN'}] .motif/{d}")
 
     lines.append("")
     lines.append("## Registry")
@@ -51,6 +51,6 @@ def run() -> tuple[list[str], bool]:
         lines.append("  [ok ] registry validates against schemas")
     else:
         ok = False
-        lines.append(f"  [FAIL] {len(res.errors)} validation error(s) — run `oii validate`")
+        lines.append(f"  [FAIL] {len(res.errors)} validation error(s) — run `motif validate`")
 
     return lines, ok

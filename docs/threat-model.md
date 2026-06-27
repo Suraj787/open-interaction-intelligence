@@ -1,6 +1,6 @@
 # Threat Model
 
-OII deliberately operates in a dangerous space: "discover an effect on the web" naturally
+Motif deliberately operates in a dangerous space: "discover an effect on the web" naturally
 tempts a system into scraping arbitrary sites and executing untrusted third-party code
 inside a user's project. The architecture exists to make that the **hard path, not the
 easy one**. This document records the assets, trust boundaries, attacker goals, the
@@ -11,7 +11,7 @@ controls that mitigate them, and the residual risk.
 - **The user's project** — source tree, build pipeline, deployed application.
 - **The user's machine** — secrets, SSH keys, GitHub credentials, environment variables,
   home-directory files, local network.
-- **The OII registry's integrity** — only safe, licence-clear, evidence-backed records
+- **The Motif registry's integrity** — only safe, licence-clear, evidence-backed records
   should ever reach `approved`.
 - **Licence compliance** — the user must not unknowingly redistribute restricted code.
 - **The end user of the built product** — must not receive exfiltrating, tracking or
@@ -22,11 +22,11 @@ controls that mitigate them, and the residual risk.
 ```mermaid
 flowchart LR
     NET["Internet / third-party sources\n(UNTRUSTED)"]
-    subgraph OII["OII process"]
+    subgraph Motif["Motif process"]
         CN["connectors\n(read-only, no exec)"]
-        Q[".oii/quarantine\n(untrusted, never executed)"]
+        Q[".motif/quarantine\n(untrusted, never executed)"]
         SC["scanners + security/*.yml\n(static only)"]
-        AP[".oii/approved + registry\n(trusted, evidence-backed)"]
+        AP[".motif/approved + registry\n(trusted, evidence-backed)"]
     end
     PROJ["User project\n(protected)"]
     HOST["User machine: secrets, SSH,\nenv, home dir (protected)"]
@@ -54,7 +54,7 @@ Key boundaries:
 - **Everything → host secrets.** Always denied. No layer reads SSH keys, GitHub
   credentials, env vars or home-directory files.
 
-## Attacker goals and how OII frustrates them
+## Attacker goals and how Motif frustrates them
 
 ### 1. Remote code execution via install/lifecycle scripts
 
@@ -120,12 +120,12 @@ asset hosts).
 *Goal:* exfiltrate or accidentally commit embedded secrets.
 
 *Controls:* the **secret scanner** flags embedded secrets in quarantined material, and
-the release process runs a secret scan on a clean checkout. OII never prints or stores
+the release process runs a secret scan on a clean checkout. Motif never prints or stores
 tokens, SSH keys or private configuration.
 
 ## STRIDE-ish control mapping
 
-| Threat type | Primary OII control | Component |
+| Threat type | Primary Motif control | Component |
 |-------------|---------------------|-----------|
 | **Spoofing** (fake source/domain) | Official source verification, domain allowlist | `security/*.yml`, connectors |
 | **Tampering** (altered code) | Version/commit pinning + SHA-256 checksum | ingestion, `source_scanner` |
@@ -152,7 +152,7 @@ approved, and it still only reaches a project through a reversible, manifested i
 Static analysis and policy gates **reduce risk substantially but cannot guarantee that
 third-party code is completely safe.** Obfuscation can hide intent from static scanners;
 a legitimate-looking dependency can be compromised upstream after review; a licence can
-be misread; novel attack patterns may not yet have a detection rule. OII's mitigations
+be misread; novel attack patterns may not yet have a detection rule. Motif's mitigations
 are: prefer original and browser-native implementations, keep the offline registry the
 default, require human review of every flagged finding (not every occurrence is
 malicious, but every flagged occurrence must be reviewed), pin and checksum everything,

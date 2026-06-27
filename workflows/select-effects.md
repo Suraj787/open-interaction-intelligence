@@ -13,12 +13,12 @@ effect.
 
 1. **Restate the objective.** What must the user understand, feel or accomplish? Confirm
    website vs web application.
-2. **Confirm the pattern.** `python -m oii search "<problem>"`; verify a pattern in
+2. **Confirm the pattern.** `python -m motif search "<problem>"`; verify a pattern in
    `registry/patterns/` matches. If none does, step back to interaction design — do not
    force an effect.
 3. **Discover candidates.** Load `skills/effect-discovery`; list the pattern's
    `recommended_effects` and any close alternatives:
-   `python -m oii component alternatives <id>`.
+   `python -m motif component alternatives <id>`.
 4. **Screen each candidate** against context:
    - `enterprise_suitability` / `marketing_suitability`;
    - `complexity`, `performance_cost`, `accessibility_risk`, `mobile_suitability`;

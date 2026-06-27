@@ -1,6 +1,6 @@
-# OII Adapter — Vanilla JS
+# Motif Adapter — Vanilla JS
 
-How OII recipes map onto a no-framework codebase: hand-written ES modules, custom
+How Motif recipes map onto a no-framework codebase: hand-written ES modules, custom
 elements, and the DOM. Closely related to the browser-native baseline, but this
 adapter covers the **JS architecture** patterns for shipping reusable recipes
 without a framework runtime.
@@ -12,14 +12,14 @@ without a framework runtime.
 Two equally idiomatic packagings:
 
 1. **Factory function** — `initBlurReveal(root = document)` queries
-   `[data-oii="blur-reveal"]`, wires each, and returns a `dispose()`.
+   `[data-motif="blur-reveal"]`, wires each, and returns a `dispose()`.
 2. **Custom element** — `class OiiReveal extends HTMLElement` with
    `connectedCallback`/`disconnectedCallback`. This gives you framework-grade
    lifecycle with zero dependencies and is the recommended path for reusable
    widgets.
 
 ```js
-customElements.define('oii-reveal', class extends HTMLElement {
+customElements.define('motif-reveal', class extends HTMLElement {
   connectedCallback() { /* observe */ }
   disconnectedCallback() { /* disconnect */ }
 });
@@ -33,7 +33,7 @@ Keep motion in CSS (a stylesheet or the element's `<template>`/shadow styles).
   `attributeChangedCallback` + `observedAttributes` (knob changes),
   `adoptedCallback` (moved between documents).
 - Factory style: init on `DOMContentLoaded`/`defer`; re-run on dynamically inserted
-  subtrees (keep `init` idempotent via a `data-oii-ready` guard).
+  subtrees (keep `init` idempotent via a `data-motif-ready` guard).
 
 ## Cleanup
 
@@ -60,11 +60,11 @@ code against non-browser evaluation if bundled for an SSR pipeline.
 ## Hydration
 
 No hydration step — the script attaches to existing DOM. Prevent flashes by keying
-the resting state on a class the script adds (`html.oii-js`) or by using a custom
+the resting state on a class the script adds (`html.motif-js`) or by using a custom
 element's `:defined` pseudo-class:
 
 ```css
-oii-reveal:not(:defined) { opacity: 1; }   /* visible until upgraded */
+motif-reveal:not(:defined) { opacity: 1; }   /* visible until upgraded */
 ```
 
 ## Keyboard behaviour
@@ -116,14 +116,14 @@ state truly warrants it, per the technique order.
 | Knob                 | Vanilla surface                                         |
 | -------------------- | ------------------------------------------------------- |
 | class override       | author classes; reflected attributes                    |
-| style override       | inline `style`; `--oii-*` custom properties             |
+| style override       | inline `style`; `--motif-*` custom properties             |
 | design tokens        | read CSS variables from `:root`/ancestor                |
 | intensity            | `intensity` attribute (reflected to property)           |
-| duration             | `duration` attr / `--oii-duration`                      |
-| delay                | `delay` attr / `--oii-delay`                            |
-| easing               | `easing` attr / `--oii-easing`                          |
-| disable-animation    | `data-oii-disabled` attribute                           |
+| duration             | `duration` attr / `--motif-duration`                      |
+| delay                | `delay` attr / `--motif-delay`                            |
+| easing               | `easing` attr / `--motif-easing`                          |
+| disable-animation    | `data-motif-disabled` attribute                           |
 | reduced-motion       | media query + `matchMedia` listener                     |
 | responsive controls  | media/container queries on the knobs                    |
 | accessible labels    | `aria-label`/`aria-live` on markup                      |
-| event callbacks      | `dispatchEvent(new CustomEvent('oii:reveal'))`          |
+| event callbacks      | `dispatchEvent(new CustomEvent('motif:reveal'))`          |

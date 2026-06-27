@@ -1,6 +1,6 @@
-# OII Adapter — Angular
+# Motif Adapter — Angular
 
-How OII recipes map onto idiomatic Angular (standalone components, signals,
+How Motif recipes map onto idiomatic Angular (standalone components, signals,
 `DestroyRef`). Recipes stay CSS-first; Angular owns DI, change detection, and
 deterministic teardown.
 
@@ -104,7 +104,7 @@ duration `0`) and jump to the end state. CDK respects an
 ## Dependency trade-offs
 
 `@angular/animations` and `@angular/cdk` are first-party and already in most Angular
-apps — using them is not "adding a dependency" in the OII sense. Still prefer CSS
+apps — using them is not "adding a dependency" in the Motif sense. Still prefer CSS
 for simple motion. Don't pull in third-party animation libs for effects CSS/WAAPI
 cover; escalate only per the technique order.
 
@@ -113,7 +113,7 @@ cover; escalate only per the technique order.
 | Knob                 | Angular surface                                         |
 | -------------------- | ------------------------------------------------------- |
 | class override       | `[class]` / `[ngClass]`                                 |
-| style override       | `[style]`, `[style.--oii-*]` custom properties          |
+| style override       | `[style]`, `[style.--motif-*]` custom properties          |
 | design tokens        | inherited CSS variables                                 |
 | intensity            | `input<number>('intensity')`                            |
 | duration             | `input('duration')`                                     |

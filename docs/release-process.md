@@ -1,6 +1,6 @@
 # Release Process
 
-OII releases are deliberately conservative: a tag means "a genuinely usable release,"
+Motif releases are deliberately conservative: a tag means "a genuinely usable release,"
 never "the build happened to pass today." This document covers commit discipline, the
 local quality gate, and the versioning rules.
 
@@ -25,12 +25,12 @@ such as `jsonschema` are used if present but never required.
 `make check` covers:
 
 - **Schema validation** — every registry record validates against its schema
-  (`python -m oii validate`).
+  (`python -m motif validate`).
 - **Scanners** — `source`, `dependency`, `license`, `behaviour`, `secret` scanners run
   against the malicious fixtures and produce expected findings.
 - **Evals** — automated eval cases pass (judgement, rejection, framework, accessibility,
   performance, source-governance, licence, security).
-- **Doctor** — `python -m oii doctor` reports a healthy environment.
+- **Doctor** — `python -m motif doctor` reports a healthy environment.
 - **Index** — generated indexes are current.
 
 Read recent `git log` and run `make check` at the start of any continuation session
@@ -43,8 +43,8 @@ build artefacts, no uncommitted files):
 
 1. Clone or export the repo to a clean directory.
 2. Run `make check` there — it must pass with no extra setup.
-3. Exercise the CLI: `python -m oii doctor`, `python -m oii validate`,
-   `python -m oii search`.
+3. Exercise the CLI: `python -m motif doctor`, `python -m motif validate`,
+   `python -m motif search`.
 
 This proves the release is self-contained and that the offline-approved-registry default
 works without network access.
@@ -70,7 +70,7 @@ go-ahead; exact publish commands are provided, never auto-run.
 
 ## Version discipline
 
-OII follows semantic versioning with a deliberate, honest progression:
+Motif follows semantic versioning with a deliberate, honest progression:
 
 | Version | Meaning |
 |---------|---------|

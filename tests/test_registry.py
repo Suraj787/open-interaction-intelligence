@@ -1,7 +1,7 @@
 """Registry + schema integrity."""
 import json
 import pathlib
-from oii import registry, jsonschema_min
+from motif import registry, jsonschema_min
 
 ROOT = registry.ROOT
 

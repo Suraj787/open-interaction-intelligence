@@ -7,7 +7,7 @@ recommend or reject. Remember the core rule: **search for a PATTERN before an EF
 
 - **Schema:** `schemas/effect.schema.json`
 - **Location:** `registry/effects/`
-- **Validate:** `python -m oii validate`
+- **Validate:** `python -m motif validate`
 
 ## Required fields
 
@@ -32,7 +32,7 @@ recommend or reject. Remember the core rule: **search for a PATTERN before an EF
 
 ## The reduced-motion fallback is mandatory
 
-`reduced_motion_fallback` is a required field for a reason: OII never ships an effect
+`reduced_motion_fallback` is a required field for a reason: Motif never ships an effect
 without a reduced-motion path. Describe the actual fallback (e.g. "instant state change,
 no translate/opacity tween"), not "respects user preference."
 
@@ -47,7 +47,7 @@ be `discouraged` for enterprise even if `recommended` for a marketing hero.
 Set `provenance` honestly:
 
 - `browser-native` — built on platform capabilities (CSS, WAAPI, View Transitions).
-- `original` — OII's own technique.
+- `original` — Motif's own technique.
 - `adapted-concept` — concept learned from a source via clean-room adaptation; **retains
   no source code** and records the inspiration in the related recipe's
   `source_references`.

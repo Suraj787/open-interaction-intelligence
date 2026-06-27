@@ -1,7 +1,7 @@
-# OII Adapter — Svelte
+# Motif Adapter — Svelte
 
-How OII recipes map onto idiomatic Svelte (4 and 5/runes). Svelte's compiler and
-built-in `transition:` / `animate:` directives make it an excellent OII host —
+How Motif recipes map onto idiomatic Svelte (4 and 5/runes). Svelte's compiler and
+built-in `transition:` / `animate:` directives make it an excellent Motif host —
 recipes stay CSS-first and let Svelte own state and teardown.
 
 > Provenance: original (clean-room). No third-party source is copied.
@@ -24,7 +24,7 @@ functions) over hand-rolled animation — they respect mount/unmount automatical
   import { blurReveal } from './blur-reveal.js';
   export let intensity = 1;
 </script>
-<div use:blurReveal={{ intensity }} class="oii-reveal"><slot /></div>
+<div use:blurReveal={{ intensity }} class="motif-reveal"><slot /></div>
 ```
 
 ## Lifecycle handling
@@ -111,7 +111,7 @@ state holds pre-hydration too.
 
 Svelte's built-in transitions/animations + `svelte/easing` cover most of the
 catalogue with **zero runtime dependency** (it's compiled). This is one of the
-lightest OII hosts. Escalate beyond built-ins/CSS only per the technique order, and
+lightest Motif hosts. Escalate beyond built-ins/CSS only per the technique order, and
 never add a motion lib for an effect Svelte already ships.
 
 ## Normalised component contract knobs
@@ -119,7 +119,7 @@ never add a motion lib for an effect Svelte already ships.
 | Knob                 | Svelte surface                                          |
 | -------------------- | ------------------------------------------------------- |
 | class override       | `class` prop / `class:` directive                       |
-| style override       | `style` attr, `--oii-*` custom properties               |
+| style override       | `style` attr, `--motif-*` custom properties               |
 | design tokens        | inherited CSS variables                                 |
 | intensity            | `export let intensity` / `$props`                       |
 | duration             | `duration` prop                                         |

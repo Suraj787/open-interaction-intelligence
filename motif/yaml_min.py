@@ -1,6 +1,6 @@
 """Restricted YAML reader — zero dependencies.
 
-Supports the subset OII policy files use: nested maps (2-space indent),
+Supports the subset Motif policy files use: nested maps (2-space indent),
 `key: value`, `key:` block parents, `- scalar` lists, `#` comments, and
 quoted scalars. Prefers the real `pyyaml` when installed. This is intentionally
 small; keep `security/*.yml` within the supported subset.

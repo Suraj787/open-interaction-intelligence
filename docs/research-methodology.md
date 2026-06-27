@@ -1,6 +1,6 @@
 # Research Methodology
 
-OII's value depends on the quality of its source research. This document describes how
+Motif's value depends on the quality of its source research. This document describes how
 the source landscape (target: **50–100 sources**) is researched, what is recorded, how
 unverified records are handled, and the non-negotiable rule: **do not fabricate facts.**
 
@@ -71,7 +71,7 @@ records (`component.schema.json`) — see [component-authoring.md](component-aut
 6. **Record evidence** for every non-obvious claim. Each strength/weakness/licence claim
    should be traceable.
 7. **Set `confidence` and `status`** honestly (see below).
-8. **Validate** the record: `python -m oii validate`.
+8. **Validate** the record: `python -m motif validate`.
 
 ## `pending-verification` handling
 
@@ -92,20 +92,20 @@ than inventing confirmed facts.
 
 ## Do not fabricate
 
-This is the governing rule of all OII research:
+This is the governing rule of all Motif research:
 
 - **Never present assumptions as verified research.** No invented version numbers,
   benchmark figures, licence identifiers, or accessibility ratings.
 - If a number is not measured or read from an authoritative source, it is not recorded as
   fact — describe the uncertainty instead.
 - Prefer a smaller set of **high-confidence, evidence-backed** records over fabricated
-  breadth. OII v0.1.0 deliberately ships representative depth (16 deeply reviewed
+  breadth. Motif v0.1.0 deliberately ships representative depth (16 deeply reviewed
   sources plus the pipeline and schema for the rest) rather than 100 unverified rows.
 - Every claim that affects a safety decision (licence, redistribution, behaviour) must be
   backed by `evidence` or downgraded in `confidence`/`status`.
 
 ## Completeness reporting
 
-Use `python -m oii source completeness` to report how far each source has been taken
+Use `python -m motif source completeness` to report how far each source has been taken
 (homepage-only vs catalogued, verified vs pending). Completeness is a first-class signal:
 an honest "partial" beats a fabricated "complete".

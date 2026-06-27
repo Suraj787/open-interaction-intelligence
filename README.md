@@ -1,4 +1,4 @@
-# Open Interaction Intelligence (OII)
+# Motif
 
 **Interaction-design intelligence and governance for AI coding agents** — securely
 discover, select, adapt and validate UI motion, effects and interaction patterns
@@ -10,14 +10,14 @@ for websites and web applications.
 > **least complex interaction** that achieves it — and to refuse motion that hurts
 > usability, accessibility, performance or licensing.
 
-[![CI](https://github.com/Suraj787/open-interaction-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/Suraj787/open-interaction-intelligence/actions)
+[![CI](https://github.com/Suraj787/motif/actions/workflows/ci.yml/badge.svg)](https://github.com/Suraj787/motif/actions)
 &nbsp;Licence: MIT · Status: v0.1.0
 
 ---
 
 ## What it does
 
-OII reasons from product context down to implementation, **searching for a pattern
+Motif reasons from product context down to implementation, **searching for a pattern
 before an effect**:
 
 ```
@@ -37,7 +37,7 @@ code into your project — is the *hard* path here. Instead:
 - **Offline approved registry is the default.** Normal use reads the committed local
   registry and never touches the network. Internet retrieval happens only through an
   explicit `source retrieve --refresh` against an allowlisted official host.
-- **Untrusted-by-default ingestion.** Retrieved material lands in `.oii/quarantine/`
+- **Untrusted-by-default ingestion.** Retrieved material lands in `.motif/quarantine/`
   and is **never executed**. Five static scanners (dangerous patterns, browser
   behaviour, dependencies, licence, secrets) review it before anything is approved.
 - **Licence gate.** Unknown licence ⇒ `reference-only`, never bundled. Source-available
@@ -46,7 +46,7 @@ code into your project — is the *hard* path here. Instead:
   auto-rollback on failure → provenance manifest. Third-party installers are never run
   against your project.
 
-> OII reduces risk but **cannot guarantee** third-party code is completely safe. Human
+> Motif reduces risk but **cannot guarantee** third-party code is completely safe. Human
 > review remains required. See [`docs/threat-model.md`](docs/threat-model.md).
 
 ## Installation
@@ -58,8 +58,8 @@ on a stock interpreter.
 ### 1. Get the repository
 
 ```bash
-git clone https://github.com/Suraj787/open-interaction-intelligence.git
-cd open-interaction-intelligence
+git clone https://github.com/Suraj787/motif.git
+cd motif
 ```
 
 ### 2. Use it — pick one
@@ -67,17 +67,17 @@ cd open-interaction-intelligence
 **Option A — run in place (zero install).** From the repo root:
 
 ```bash
-python -m oii doctor      # checks environment + registry
+python -m motif doctor      # checks environment + registry
 make check                # full local gate (validation + scanners + ranking)
 ```
 
-**Option B — install the `oii` command.** Installs an entry point so you can call
-`oii` from anywhere; add `[dev]` for the pytest + ruff toolchain used by CI:
+**Option B — install the `motif` command.** Installs an entry point so you can call
+`motif` from anywhere; add `[dev]` for the pytest + ruff toolchain used by CI:
 
 ```bash
-python -m pip install -e .          # gives the `oii` command
+python -m pip install -e .          # gives the `motif` command
 python -m pip install -e ".[dev]"   # + pytest, ruff (optional)
-oii doctor
+motif doctor
 ```
 
 ### 3. Use it as a Claude Code Agent Skill
@@ -88,22 +88,22 @@ orchestrator; specialist skills live in [`skills/`](skills/). For example:
 
 ```bash
 # expose the skills to a Claude Code skills directory (adjust the target path)
-ln -s "$(pwd)/skills" ~/.claude/skills/oii-specialists
-ln -s "$(pwd)/SKILL.md" ~/.claude/skills/open-interaction-intelligence.md
+ln -s "$(pwd)/skills" ~/.claude/skills/motif-specialists
+ln -s "$(pwd)/SKILL.md" ~/.claude/skills/motif.md
 ```
 
-Then verify with `python -m oii validate` (should report `OK`).
+Then verify with `python -m motif validate` (should report `OK`).
 
 ## Quick start
 
 ```bash
 # no dependencies required for the core CLI (stdlib only, Python 3.11+)
-python -m oii doctor              # environment + registry health
-python -m oii validate            # validate the registry against schemas
-python -m oii search "save"       # search patterns/effects/recipes
-python -m oii rank skeleton-loading --profile enterprise-strict   # transparent ranking
-python -m oii source completeness # component coverage by source
-python -m oii source scan evals/fixtures/eval-button   # run the scanners on a path
+python -m motif doctor              # environment + registry health
+python -m motif validate            # validate the registry against schemas
+python -m motif search "save"       # search patterns/effects/recipes
+python -m motif rank skeleton-loading --profile enterprise-strict   # transparent ranking
+python -m motif source completeness # component coverage by source
+python -m motif source scan evals/fixtures/eval-button   # run the scanners on a path
 make check                        # the full local gate (mirrors CI)
 ```
 
@@ -127,7 +127,7 @@ Specialist skills live in [`skills/`](skills/); reusable runbooks in
 | `schemas/` | 7 strict JSON Schemas every record must satisfy |
 | `connectors/`, `ingestion/`, `security/`, `scanners/` | Secure retrieval pipeline + policies + 5 scanners |
 | `adapters/`, `implementations/` | Framework contracts + clean-room implementations (browser-native, Vue, Frappe-Vue, React) |
-| `oii/` | The dependency-free Python CLI (search, ranking, install, validation) |
+| `motif/` | The dependency-free Python CLI (search, ranking, install, validation) |
 | `evals/` | Judgement + security evaluations and malicious fixtures |
 | `examples/` | Worked decision records (enterprise dashboard, ERP form, SaaS hero, …) |
 | `docs/` | Architecture, threat model, authoring guides, ADRs |
@@ -166,5 +166,5 @@ safely, and refuses inappropriate motion.
 
 ## Licence
 
-Original OII code is [MIT](LICENSE). This licence covers only original code; every
+Original Motif code is [MIT](LICENSE). This licence covers only original code; every
 third-party source keeps its own licence and obligations.

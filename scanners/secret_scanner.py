@@ -20,7 +20,7 @@ SECRETS: list[tuple[str, str, str, str]] = [
 ]
 
 _COMPILED = [(c, s, re.compile(p), m) for c, s, p, m in SECRETS]
-_SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "__pycache__", ".oii"}
+_SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "__pycache__", ".motif"}
 _SKIP_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".woff", ".woff2", ".ttf", ".ico", ".pdf"}
 
 

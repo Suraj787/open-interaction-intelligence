@@ -12,21 +12,21 @@ installers are never run directly against the target.
 
 ## Steps
 
-1. **Confirm eligibility.** `python -m oii component inspect <id>` — verify
+1. **Confirm eligibility.** `python -m motif component inspect <id>` — verify
    `usability_mode` is `bundled` or `installable`, licence permits the intended use, and
    security findings are acceptable. Reject `reference-only`/`rejected` here.
-2. **Consider alternatives / weight.** `python -m oii component alternatives <id>`; apply
+2. **Consider alternatives / weight.** `python -m motif component alternatives <id>`; apply
    the no-automatic-new-dependency rule (prefer dependency-free → existing dep → original
    recipe → approved lightweight dep). 
-3. **Plan the install.** `python -m oii component plan-install <id>` shows: files to
+3. **Plan the install.** `python -m motif component plan-install <id>` shows: files to
    create/modify, source + licence, security findings, scripts, and dependency impact.
    Review all of it.
-4. **Snapshot + patch.** `python -m oii component install <id>` creates a **rollback
+4. **Snapshot + patch.** `python -m motif component install <id>` creates a **rollback
    snapshot**, then applies a **controlled patch** (no third-party installer is run
    against the project).
-5. **Validate.** Run the project's build/tests plus the OII gates (accessibility,
+5. **Validate.** Run the project's build/tests plus the Motif gates (accessibility,
    performance, responsiveness, reduced-motion). If validation fails, the install
-   **automatically reverts**; otherwise run `python -m oii component rollback <id>`
+   **automatically reverts**; otherwise run `python -m motif component rollback <id>`
    manually if needed.
 6. **Provenance manifest.** Confirm the manifest was written: component, implementation ID,
    source type, inspiration sources, source version/commit, licence, install date,

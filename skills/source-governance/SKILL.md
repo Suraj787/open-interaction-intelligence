@@ -26,7 +26,7 @@ path to the internet — the explicit `source-refresh`.
 ## How it connects
 
 - Curates `registry/` entries; the default runtime is the **offline approved registry**.
-- A `source-refresh` (via `python -m oii`) is the **only** way internet retrieval is
+- A `source-refresh` (via `python -m motif`) is the **only** way internet retrieval is
   allowed, and it must be explicit and recorded.
 
 ## Invariants

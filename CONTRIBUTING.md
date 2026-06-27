@@ -1,6 +1,6 @@
-# Contributing to Open Interaction Intelligence (OII)
+# Contributing to Motif
 
-Thank you for helping build OII. This project is not an animation bundle — it is an
+Thank you for helping build Motif. This project is not an animation bundle — it is an
 interaction-design intelligence and governance system for AI coding agents. The most
 valuable contribution is rarely "one more effect"; it is a record that selects the
 right interaction, proves where it came from, adapts it safely, and refuses motion that
@@ -13,7 +13,7 @@ Please read [`LICENSE_POLICY.md`](LICENSE_POLICY.md), [`SECURITY.md`](SECURITY.m
 
 - **Default runtime is the offline approved registry.** Do not add tooling that reaches
   the network during normal use. Internet retrieval happens only through the explicit
-  `python -m oii source retrieve --refresh` workflow against an allowlisted official host
+  `python -m motif source retrieve --refresh` workflow against an allowlisted official host
   (`security/domain-policy.yml`).
 - **Ingestion never executes retrieved code.** Never add a code path that runs, evals or
   imports untrusted retrieved material. Retrieved content is reviewed statically only.
@@ -30,7 +30,7 @@ Please read [`LICENSE_POLICY.md`](LICENSE_POLICY.md), [`SECURITY.md`](SECURITY.m
 ## What you can contribute
 
 Every machine-readable record must validate against its JSON Schema in
-[`schemas/`](schemas/). Run `python -m oii validate` (or `make check`) — invalid records
+[`schemas/`](schemas/). Run `python -m motif validate` (or `make check`) — invalid records
 will fail CI.
 
 | Contribution | Lives in | Must satisfy schema |
@@ -94,7 +94,7 @@ and **must be re-verified online** before any material is bundled.
 
 ## Clean-room adaptation procedure
 
-OII bundles original implementations, not copied third-party code. To adapt a concept:
+Motif bundles original implementations, not copied third-party code. To adapt a concept:
 
 1. **Confirm the licence permits adaptation.** Consult `registry/licenses/` and the LICENCE
    GATE. If the licence is unknown, source-available, Commons-Clause, or premium, stop —
@@ -109,14 +109,14 @@ OII bundles original implementations, not copied third-party code. To adapt a co
    inspiring source in the recipe's provenance even when the implementation is original.
 5. **Validate** accessibility (keyboard, focus, semantics, reduced-motion), performance
    (transform/opacity, budget, no jank) and responsiveness before submitting.
-6. **Label it `original`.** Mark OII-authored implementations with the `original` label so
+6. **Label it `original`.** Mark Motif-authored implementations with the `original` label so
    they are distinguishable from third-party material.
 
 ## Commit and PR conventions
 
 - Use **Conventional Commits** (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`,
   `test:`, `ci:` …). Example: `feat(registry): add Reka UI source record`.
-- Run **`make check`** before opening a PR. It mirrors CI and runs `oii validate`,
+- Run **`make check`** before opening a PR. It mirrors CI and runs `motif validate`,
   `tools/selfcheck.py` and the secret scan; the repo must contain no tracked secrets.
 - Complete the checklist in `.github/pull_request_template.md`: `make check` passing,
   provenance recorded, licence verified, reduced-motion handled, accessibility +
@@ -126,8 +126,8 @@ OII bundles original implementations, not copied third-party code. To adapt a co
 ## Local development
 
 ```bash
-python -m oii doctor        # environment + registry health
-python -m oii validate      # validate the registry against schemas
+python -m motif doctor        # environment + registry health
+python -m motif validate      # validate the registry against schemas
 make check                  # the full local gate (mirrors CI)
 make index                  # regenerate registry/INDEX.* after adding records
 ```

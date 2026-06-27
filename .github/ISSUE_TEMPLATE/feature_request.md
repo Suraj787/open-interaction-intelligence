@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an improvement to OII (not a new source — use the "Propose a new source" template for that)
+about: Suggest an improvement to Motif (not a new source — use the "Propose a new source" template for that)
 title: "feat: "
 labels: [enhancement]
 assignees: []
@@ -9,12 +9,12 @@ assignees: []
 ## Problem / motivation
 
 What user or maintainer need is unmet today? Describe the interaction-design or governance
-problem, not just a desired effect. Remember: OII searches PATTERNS before EFFECTS and
+problem, not just a desired effect. Remember: Motif searches PATTERNS before EFFECTS and
 prefers the least-complex interaction that serves a real need.
 
 ## Proposed solution
 
-What you would like OII to do.
+What you would like Motif to do.
 
 ## Area
 

@@ -12,7 +12,7 @@ import pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from oii import registry, scan as scan_mod, rank as rank_mod, install as install_mod, cli, jsonschema_min  # noqa: E402
+from motif import registry, scan as scan_mod, rank as rank_mod, install as install_mod, cli, jsonschema_min  # noqa: E402
 from scanners import license_scanner  # noqa: E402
 
 ROOT = registry.ROOT

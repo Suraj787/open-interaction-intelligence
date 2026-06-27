@@ -28,6 +28,6 @@ catch real attack shapes, plus one clean control:
 Run the security evals:
 
 ```bash
-python -m oii source scan evals/fixtures/eval-button   # expect verdict REJECT
+python -m motif source scan evals/fixtures/eval-button   # expect verdict REJECT
 python tools/selfcheck.py                              # runs all automated evals
 ```

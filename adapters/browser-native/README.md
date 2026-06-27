@@ -1,6 +1,6 @@
-# OII Adapter — Browser-Native
+# Motif Adapter — Browser-Native
 
-This adapter is the **reference baseline** for Open Interaction Intelligence (OII).
+This adapter is the **reference baseline** for Motif.
 Every recipe is first expressed here using only platform features: HTML, CSS, and
 vanilla DOM APIs. All other adapters are *translations* of this baseline into a
 framework's idioms. If a behaviour cannot be expressed here, it does not belong in
@@ -10,7 +10,7 @@ the catalogue.
 
 ## Why browser-native first
 
-Per the OII technique order, we always reach for the simplest accessible layer
+Per the Motif technique order, we always reach for the simplest accessible layer
 before climbing:
 
 ```
@@ -36,7 +36,7 @@ JS only *enhances* — it never gates content visibility.
 
 ```html
 <!-- Content is present and readable before any script runs -->
-<section class="oii-reveal" data-oii="blur-reveal">
+<section class="motif-reveal" data-motif="blur-reveal">
   <h2>Readable immediately</h2>
 </section>
 ```
@@ -79,12 +79,12 @@ check if the script is ever evaluated server-side.
 
 There is nothing to hydrate — the server HTML *is* the final DOM. To avoid a flash,
 set the resting (pre-animation) visual state in CSS keyed off a class the script
-adds (`.js` / `data-oii-ready`), so non-JS users see content and JS users get the
+adds (`.js` / `data-motif-ready`), so non-JS users see content and JS users get the
 enhanced start state only once the script confirms support.
 
 ```css
 /* Only hide/blur when JS has signalled it can animate */
-html.oii-js .oii-reveal { opacity: 0; }
+html.motif-js .motif-reveal { opacity: 0; }
 ```
 
 ## Keyboard behaviour
@@ -116,7 +116,7 @@ The non-negotiable default. Author motion behind a "motion is okay" guard so the
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  .oii-reveal { animation: none; opacity: 1; filter: none; transition: none; }
+  .motif-reveal { animation: none; opacity: 1; filter: none; transition: none; }
 }
 ```
 
@@ -146,14 +146,14 @@ properties so all adapters share one vocabulary:
 
 | Knob                 | Browser-native surface                                  |
 | -------------------- | ------------------------------------------------------- |
-| class/style override | author classes; `--oii-*` custom properties             |
+| class/style override | author classes; `--motif-*` custom properties             |
 | design tokens        | read from CSS variables on `:root` / ancestor           |
-| intensity            | `--oii-intensity` (e.g. blur radius / distance scalar)  |
-| duration             | `--oii-duration`                                        |
-| delay                | `--oii-delay`                                            |
-| easing               | `--oii-easing`                                           |
-| disable-animation    | `data-oii-disabled` / omit the script                   |
+| intensity            | `--motif-intensity` (e.g. blur radius / distance scalar)  |
+| duration             | `--motif-duration`                                        |
+| delay                | `--motif-delay`                                            |
+| easing               | `--motif-easing`                                           |
+| disable-animation    | `data-motif-disabled` / omit the script                   |
 | reduced-motion       | media query + JS `matchMedia` listener                  |
 | responsive controls  | media / container queries on the knobs above            |
 | accessible labels    | `aria-label`/`aria-live` on the markup                  |
-| event callbacks      | `CustomEvent` dispatch (`oii:reveal`, etc.)             |
+| event callbacks      | `CustomEvent` dispatch (`motif:reveal`, etc.)             |

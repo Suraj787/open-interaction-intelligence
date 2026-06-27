@@ -24,7 +24,7 @@ from the approved registry. Discovery is breadth; selection comes next.
 
 ## How it connects
 
-- Queries `registry/` via `python -m oii` (offline approved registry by default).
+- Queries `registry/` via `python -m motif` (offline approved registry by default).
 - Reads `intelligence/` to map a pattern to candidate effect families.
 - Only `source-governance` may widen the search beyond the offline registry via an
   explicit `source-refresh`.

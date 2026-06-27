@@ -1,6 +1,6 @@
 """Security scanners must catch the malicious fixtures and pass the clean one."""
-from oii import scan as scan_mod
-from oii.registry import ROOT
+from motif import scan as scan_mod
+from motif.registry import ROOT
 
 FIX = ROOT / "evals" / "fixtures"
 

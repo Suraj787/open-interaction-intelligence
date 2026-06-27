@@ -1,6 +1,6 @@
 # Project Management App — Status & Row Change Feedback
 
-A worked example from **Open Interaction Intelligence (OII)**. PATTERNS before
+A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 
 ## Context

@@ -1,6 +1,6 @@
 # Evaluation Methodology
 
-OII's evals test **judgement, not syntax.** The risk OII guards against is not "can the
+Motif's evals test **judgement, not syntax.** The risk Motif guards against is not "can the
 agent write an animation" — it is "does the agent choose the *right* interaction, refuse
 the wrong one, respect framework/licence/safety boundaries, and ship accessible,
 performant motion." Evals therefore reward correct decisions and correct *refusals*.
@@ -82,4 +82,4 @@ scanner is caught here.
    where refusal is the only correct answer.
 4. For security/licence, attach a `fixture` and list `expected_findings`.
 5. Write a `judgement` rubric a reviewer can apply consistently.
-6. Validate with `python -m oii validate`; ensure it runs under `make check`.
+6. Validate with `python -m motif validate`; ensure it runs under `make check`.

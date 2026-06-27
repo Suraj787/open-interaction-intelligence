@@ -1,6 +1,6 @@
 <script setup>
 /* ============================================================================
- * OII Recipe — Optimistic Save (Vue 3, <script setup>)
+ * Motif Recipe — Optimistic Save (Vue 3, <script setup>)
  * ----------------------------------------------------------------------------
  * Demonstrates the optimistic-save UX: the UI assumes success the instant the
  * user acts, shows a transient "Saving…" then "Saved", and rolls back to an
@@ -53,7 +53,7 @@ onUnmounted(() => mq?.removeEventListener?.("change", onMqChange));
 /** True when we must not animate (system pref OR explicit opt-out). */
 const noMotion = computed(() => props.disableAnimation || reducedMotion.value);
 /** Transition name: a no-op when motion is suppressed. */
-const transitionName = computed(() => (noMotion.value ? "oii-none" : "oii-status"));
+const transitionName = computed(() => (noMotion.value ? "motif-none" : "motif-status"));
 
 /* ---- state machine ------------------------------------------------------- */
 const state = ref("idle"); // 'idle' | 'saving' | 'saved' | 'error'
@@ -112,10 +112,10 @@ const buttonLabel = computed(() =>
 </script>
 
 <template>
-  <div class="oii-optimistic" :data-state="state">
+  <div class="motif-optimistic" :data-state="state">
     <button
       type="button"
-      class="oii-optimistic__btn"
+      class="motif-optimistic__btn"
       :class="{ 'is-error': state === 'error' }"
       :aria-busy="isBusy"
       :disabled="isBusy"
@@ -130,78 +130,78 @@ const buttonLabel = computed(() =>
       <span
         v-if="statusText"
         :key="state"
-        class="oii-optimistic__status"
+        class="motif-optimistic__status"
         :class="`is-${state}`"
         aria-hidden="true"
       >
-        <span class="oii-optimistic__dot" />
+        <span class="motif-optimistic__dot" />
         {{ statusText }}
       </span>
     </Transition>
 
     <!-- Polite live region: announces status changes without stealing focus. -->
-    <span class="oii-sr-only" role="status" aria-live="polite">
+    <span class="motif-sr-only" role="status" aria-live="polite">
       {{ statusText }}
     </span>
   </div>
 </template>
 
 <style scoped>
-.oii-optimistic {
+.motif-optimistic {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
 }
 
-.oii-optimistic__btn {
+.motif-optimistic__btn {
   font: inherit;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--oii-border, #cbd5e1);
-  background: var(--oii-accent, #2563eb);
+  border: 1px solid var(--motif-border, #cbd5e1);
+  background: var(--motif-accent, #2563eb);
   color: #fff;
   cursor: pointer;
   min-height: 44px; /* coarse-pointer friendly target */
 }
-.oii-optimistic__btn:disabled {
+.motif-optimistic__btn:disabled {
   cursor: progress;
   opacity: 0.8;
 }
-.oii-optimistic__btn.is-error {
-  background: var(--oii-danger, #dc2626);
+.motif-optimistic__btn.is-error {
+  background: var(--motif-danger, #dc2626);
 }
 /* Always keep a visible keyboard focus ring. */
-.oii-optimistic__btn:focus-visible {
-  outline: 2px solid var(--oii-focus, #1d4ed8);
+.motif-optimistic__btn:focus-visible {
+  outline: 2px solid var(--motif-focus, #1d4ed8);
   outline-offset: 2px;
 }
 
-.oii-optimistic__status {
+.motif-optimistic__status {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   font-size: 0.875rem;
-  color: var(--oii-muted, #475569);
+  color: var(--motif-muted, #475569);
 }
-.oii-optimistic__status.is-error {
-  color: var(--oii-danger, #dc2626);
+.motif-optimistic__status.is-error {
+  color: var(--motif-danger, #dc2626);
 }
-.oii-optimistic__status.is-saved {
-  color: var(--oii-success, #16a34a);
+.motif-optimistic__status.is-saved {
+  color: var(--motif-success, #16a34a);
 }
 
-.oii-optimistic__dot {
+.motif-optimistic__dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
   background: currentColor;
 }
 /* Subtle pulse while saving — transform/opacity only, motion-safe. */
-.is-saving .oii-optimistic__dot {
-  animation: oii-pulse 1s ease-in-out infinite;
+.is-saving .motif-optimistic__dot {
+  animation: motif-pulse 1s ease-in-out infinite;
 }
 
-@keyframes oii-pulse {
+@keyframes motif-pulse {
   0%,
   100% {
     transform: scale(1);
@@ -214,18 +214,18 @@ const buttonLabel = computed(() =>
 }
 
 /* Enter/leave transition for the status chip (transform + opacity). */
-.oii-status-enter-active,
-.oii-status-leave-active {
+.motif-status-enter-active,
+.motif-status-leave-active {
   transition: opacity 200ms ease, transform 200ms ease;
 }
-.oii-status-enter-from,
-.oii-status-leave-to {
+.motif-status-enter-from,
+.motif-status-leave-to {
   opacity: 0;
   transform: translateY(4px);
 }
 
 /* Visually-hidden but screen-reader-available live region. */
-.oii-sr-only {
+.motif-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -238,18 +238,18 @@ const buttonLabel = computed(() =>
 }
 
 /* Reduced motion: instant state changes, no pulse, no chip transition.
-   The `oii-none` transition has no CSS, so <Transition> swaps instantly. */
+   The `motif-none` transition has no CSS, so <Transition> swaps instantly. */
 @media (prefers-reduced-motion: reduce) {
-  .oii-optimistic__dot,
-  .is-saving .oii-optimistic__dot {
+  .motif-optimistic__dot,
+  .is-saving .motif-optimistic__dot {
     animation: none !important;
   }
-  .oii-status-enter-active,
-  .oii-status-leave-active {
+  .motif-status-enter-active,
+  .motif-status-leave-active {
     transition: none !important;
   }
-  .oii-status-enter-from,
-  .oii-status-leave-to {
+  .motif-status-enter-from,
+  .motif-status-leave-to {
     transform: none !important;
   }
 }

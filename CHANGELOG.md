@@ -35,7 +35,7 @@ Initial release. Ships the **complete architecture and secure pipeline** with
   in `workflows/`.
 - **Secure ingestion pipeline.** Offline approved registry as the default runtime; explicit
   `source retrieve --refresh` against an allowlisted official host; untrusted-by-default
-  quarantine (`.oii/quarantine|reviewed|approved|rejected/`) where retrieved code is never
+  quarantine (`.motif/quarantine|reviewed|approved|rejected/`) where retrieved code is never
   executed. Security policies in `security/*.yml`.
 - **Five static scanners** in `scanners/`: `source_scanner`, `behaviour_scanner`,
   `dependency_scanner`, `license_scanner`, `secret_scanner`.
@@ -46,7 +46,7 @@ Initial release. Ships the **complete architecture and secure pipeline** with
   few `pending-verification`), 10 component records spanning all five usability modes
   (including a rejected fixture), 14 effects, 16 patterns, 4 clean-room recipe
   implementations and 10 quality profiles.
-- **CLI and transparent ranking.** A dependency-free `python -m oii` CLI (Python 3.11+,
+- **CLI and transparent ranking.** A dependency-free `python -m motif` CLI (Python 3.11+,
   stdlib only) with registry search, transparent candidate ranking, controlled install
   (plan → snapshot → patch → validate → auto-rollback → provenance manifest), validation
   and a health `doctor`.
@@ -57,7 +57,7 @@ Initial release. Ships the **complete architecture and secure pipeline** with
   `evals/`.
 - **Schemas.** 7 strict JSON Schemas in `schemas/` (source, component, effect, pattern,
   recipe, decision, evaluation) that every record must satisfy.
-- **CI and local gate.** `make check` (runs `oii validate`, `tools/selfcheck.py` and the
+- **CI and local gate.** `make check` (runs `motif validate`, `tools/selfcheck.py` and the
   secret scan) mirrored by `.github/workflows/ci.yml`.
 - **Open-source readiness.** README, `CONTRIBUTING.md`, `SECURITY.md`,
   `CODE_OF_CONDUCT.md`, this changelog, issue/PR templates and a pre-release self-review.
@@ -69,5 +69,5 @@ This is representative breadth, not full coverage. Licence facts are confidence-
 `pending-verification`. Live network connectors are specified but not implemented in this
 release.
 
-[Unreleased]: https://github.com/Suraj787/open-interaction-intelligence/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/Suraj787/open-interaction-intelligence/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Suraj787/motif/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Suraj787/motif/releases/tag/v0.1.0

@@ -19,12 +19,12 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-error.log*
 
-# OII runtime working area — quarantine is never committed
-.oii/quarantine/*
-!.oii/quarantine/.gitkeep
-.oii/reviewed/*
-!.oii/reviewed/.gitkeep
-.oii/snapshots/
+# Motif runtime working area — quarantine is never committed
+.motif/quarantine/*
+!.motif/quarantine/.gitkeep
+.motif/reviewed/*
+!.motif/reviewed/.gitkeep
+.motif/snapshots/
 
 # Secrets / local config — never track
 *.pem

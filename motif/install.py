@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from . import registry
 
 ROOT = registry.ROOT
-SNAP_DIR = ROOT / ".oii" / "snapshots"
+SNAP_DIR = ROOT / ".motif" / "snapshots"
 
 
 def _sha256(p: pathlib.Path) -> str:
@@ -93,7 +93,7 @@ def plan_install(component_id: str, target: str) -> InstallPlan:
 def write_provenance(plan: InstallPlan, target: pathlib.Path) -> pathlib.Path:
     manifest = {
         "component": plan.component_id,
-        "implementation_id": f"oii:{plan.component_id}",
+        "implementation_id": f"motif:{plan.component_id}",
         "source_type": plan.usability_mode,
         "inspiration_sources": [plan.source],
         "source_version_commit": "pinned-on-refresh",
@@ -105,7 +105,7 @@ def write_provenance(plan: InstallPlan, target: pathlib.Path) -> pathlib.Path:
         "accessibility_support": "reduced-motion required; see recipe record",
         "reduced_motion_behaviour": "instant/static fallback",
     }
-    out = target / "oii-provenance.json"
+    out = target / "motif-provenance.json"
     out.write_text(json.dumps(manifest, indent=2) + "\n")
     return out
 

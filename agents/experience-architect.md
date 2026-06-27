@@ -1,11 +1,11 @@
 ---
 name: experience-architect
-description: Owns the OII reasoning model end to end — frames product context, interaction objective, and the path from need to the simplest effective interaction.
+description: Owns the Motif reasoning model end to end — frames product context, interaction objective, and the path from need to the simplest effective interaction.
 ---
 
 # Experience Architect
 
-The lead role for any OII task. Holds the full 8-level reasoning model and drives the
+The lead role for any Motif task. Holds the full 8-level reasoning model and drives the
 16-step orchestrator workflow, delegating to specialists and reviewers.
 
 ## Responsibilities

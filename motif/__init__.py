@@ -1,4 +1,4 @@
-"""Open Interaction Intelligence (OII) — dependency-free core.
+"""Motif — dependency-free core.
 
 Default runtime mode is OFFLINE APPROVED REGISTRY: the CLI reads the committed
 local registry and never reaches the network. Internet retrieval happens only

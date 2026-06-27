@@ -1,6 +1,6 @@
 # SaaS Website — Premium Hero That Explains the Product
 
-A worked example from **Open Interaction Intelligence (OII)**. PATTERNS before
+A worked example from **Motif**. PATTERNS before
 EFFECTS; browser-native first; accessibility and reduced-motion mandatory.
 
 ## Context

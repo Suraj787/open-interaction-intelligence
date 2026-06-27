@@ -1,6 +1,6 @@
 # Pre-Release Critical Self-Review — v0.1.0
 
-A deliberately critical review of OII before the v0.1.0 release, written from eight
+A deliberately critical review of Motif before the v0.1.0 release, written from eight
 professional perspectives, followed by the spec's readiness checklist. The goal is to be
 honest about what the release proves and what it does not. v0.1.0 ships the **complete
 architecture and secure pipeline** with **representative, high-confidence breadth** — not
@@ -161,7 +161,7 @@ and keep the orchestrator lean as the catalogue grows.
 | 10 | Trustworthy licences? | Partial | Gate and classes are sound, but several sources are `pending-verification` / low-confidence and must be re-verified before bundling. |
 | 11 | Install diff + rollback? | Yes | Plan → snapshot → patch → validate → auto-rollback → provenance manifest; third-party installers never run against the target. |
 | 12 | A11y + perf mandatory? | Yes | Mandatory gates with dedicated skills, policies and evals; runtime/measured automation is a follow-up. |
-| 13 | Explainable ranking? | Yes | `oii rank` states criteria and scores; explanation quality scales with catalogue size. |
+| 13 | Explainable ranking? | Yes | `motif rank` states criteria and scores; explanation quality scales with catalogue size. |
 | 14 | Can contributors add sources safely? | Yes | Schema + `new_source` template + licence checklist + `make check`; AI contributions require human review. |
 | 15 | Evidence-based completion? | Yes | Records carry `evidence`, provenance and `confidence`; `make check` / CI gate the registry. |
 

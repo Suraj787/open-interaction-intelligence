@@ -1,6 +1,6 @@
 # LEVEL 2 — Product Types
 
-This is the first real branch of Open Interaction Intelligence (OII). Before any
+This is the first real branch of Motif. Before any
 effect, pattern, or recipe is considered, the agent must classify the product.
 
 The single most important distinction is:
@@ -139,7 +139,7 @@ restrained → expressive scale), and **key risks**.
 
 ---
 
-## How this level feeds the rest of OII
+## How this level feeds the rest of Motif
 
 The product type sets a **default motion posture** and a **starting quality
 profile** (see `../quality-profiles/`). Later levels (page type, user intent,

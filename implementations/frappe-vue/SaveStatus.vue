@@ -1,6 +1,6 @@
 <script setup>
 /* ============================================================================
- * OII Recipe — Save Status Indicator (Frappe-Vue)
+ * Motif Recipe — Save Status Indicator (Frappe-Vue)
  * ----------------------------------------------------------------------------
  * A compact "pending / saving / saved / error" status pill suited to a Frappe
  * form field or toolbar. It is a PRESENTATIONAL component: it renders whatever
@@ -69,30 +69,30 @@ const isError = computed(() => props.status === "error");
 <template>
   <div
     v-if="status !== 'idle'"
-    class="oii-save-status"
+    class="motif-save-status"
     :class="[`is-${status}`, { 'no-motion': noMotion }]"
     :data-status="status"
   >
     <!-- Icon area. The saving spinner uses transform-only animation. -->
-    <span class="oii-save-status__icon" aria-hidden="true">
-      <span v-if="status === 'saving'" class="oii-save-status__spinner" />
+    <span class="motif-save-status__icon" aria-hidden="true">
+      <span v-if="status === 'saving'" class="motif-save-status__spinner" />
       <span v-else>{{ meta.icon }}</span>
     </span>
 
-    <span class="oii-save-status__label">{{ visibleLabel }}</span>
+    <span class="motif-save-status__label">{{ visibleLabel }}</span>
 
     <!-- Retry affordance for the error state. Real focusable button. -->
     <button
       v-if="isError"
       type="button"
-      class="oii-save-status__retry"
+      class="motif-save-status__retry"
       @click="emit('retry')"
     >
       Retry
     </button>
 
     <!-- Polite live region — announces status to AT without moving focus. -->
-    <span class="oii-sr-only" role="status" aria-live="polite">
+    <span class="motif-sr-only" role="status" aria-live="polite">
       {{ visibleLabel }}
     </span>
   </div>
@@ -101,7 +101,7 @@ const isError = computed(() => props.status === "error");
 <style scoped>
 /* Colours read from frappe-ui / Frappe CSS variables where present, with safe
    fallbacks so the component also works standalone. */
-.oii-save-status {
+.motif-save-status {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -111,23 +111,23 @@ const isError = computed(() => props.status === "error");
   border-radius: 0.375rem;
   color: var(--text-muted, #6b7280);
   /* Fade/slide in. Animatable, compositor-friendly. */
-  animation: oii-status-in 180ms ease-out both;
+  animation: motif-status-in 180ms ease-out both;
 }
 
-.oii-save-status.is-pending {
-  color: var(--oii-pending, #b45309);
+.motif-save-status.is-pending {
+  color: var(--motif-pending, #b45309);
 }
-.oii-save-status.is-saving {
+.motif-save-status.is-saving {
   color: var(--text-muted, #6b7280);
 }
-.oii-save-status.is-saved {
-  color: var(--oii-success, #16a34a);
+.motif-save-status.is-saved {
+  color: var(--motif-success, #16a34a);
 }
-.oii-save-status.is-error {
-  color: var(--oii-danger, #dc2626);
+.motif-save-status.is-error {
+  color: var(--motif-danger, #dc2626);
 }
 
-.oii-save-status__icon {
+.motif-save-status__icon {
   display: inline-flex;
   width: 0.875rem;
   justify-content: center;
@@ -135,16 +135,16 @@ const isError = computed(() => props.status === "error");
 }
 
 /* Saving spinner: a rotating ring built from borders, transform-only. */
-.oii-save-status__spinner {
+.motif-save-status__spinner {
   width: 0.75rem;
   height: 0.75rem;
   border: 2px solid currentColor;
   border-top-color: transparent;
   border-radius: 50%;
-  animation: oii-spin 0.7s linear infinite;
+  animation: motif-spin 0.7s linear infinite;
 }
 
-.oii-save-status__retry {
+.motif-save-status__retry {
   font: inherit;
   font-size: 0.75rem;
   margin-left: 0.25rem;
@@ -156,17 +156,17 @@ const isError = computed(() => props.status === "error");
   color: inherit;
   cursor: pointer;
 }
-.oii-save-status__retry:focus-visible {
-  outline: 2px solid var(--oii-focus, #1d4ed8);
+.motif-save-status__retry:focus-visible {
+  outline: 2px solid var(--motif-focus, #1d4ed8);
   outline-offset: 1px;
 }
 
-@keyframes oii-spin {
+@keyframes motif-spin {
   to {
     transform: rotate(360deg);
   }
 }
-@keyframes oii-status-in {
+@keyframes motif-status-in {
   from {
     opacity: 0;
     transform: translateY(2px);
@@ -177,7 +177,7 @@ const isError = computed(() => props.status === "error");
   }
 }
 
-.oii-sr-only {
+.motif-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -194,13 +194,13 @@ const isError = computed(() => props.status === "error");
    .no-motion class (set from JS when matchMedia matches or disableAnimation)
    covers engines that ignore the media query at runtime. */
 @media (prefers-reduced-motion: reduce) {
-  .oii-save-status,
-  .oii-save-status__spinner {
+  .motif-save-status,
+  .motif-save-status__spinner {
     animation: none !important;
   }
 }
-.oii-save-status.no-motion,
-.oii-save-status.no-motion .oii-save-status__spinner {
+.motif-save-status.no-motion,
+.motif-save-status.no-motion .motif-save-status__spinner {
   animation: none !important;
 }
 </style>

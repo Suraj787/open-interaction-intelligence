@@ -5,12 +5,12 @@ description: Use when you need to establish the product purpose, product type, p
 
 # Product Context Analysis
 
-**Responsibility:** Resolve the top four levels of the OII reasoning model so every
+**Responsibility:** Resolve the top four levels of the Motif reasoning model so every
 later decision is grounded in context, not aesthetics.
 
 ## When to invoke
 
-- At the start of any OII task (steps 1-5 of the root workflow).
+- At the start of any Motif task (steps 1-5 of the root workflow).
 - Whenever the interaction objective is unclear or contested.
 
 ## Inputs

@@ -1,5 +1,5 @@
 /* ============================================================================
- * OII Recipe — Blur Reveal on Scroll (browser-native)
+ * Motif Recipe — Blur Reveal on Scroll (browser-native)
  * ----------------------------------------------------------------------------
  * Content rises and sharpens (blur -> 0, translateY -> 0, opacity -> 1) as it
  * scrolls into view.
@@ -8,52 +8,52 @@
  *   1. CSS scroll-driven animation (animation-timeline: view()) — the
  *      progressive-enhancement path. No JS at all where supported.
  *   2. A JS IntersectionObserver fallback (see blur-reveal.js) that toggles
- *      [data-oii-reveal="shown"] for browsers without scroll timelines.
+ *      [data-motif-reveal="shown"] for browsers without scroll timelines.
  *
  * Accessibility contract:
  *   - Content is fully present and readable with NO CSS and NO JS.
  *   - prefers-reduced-motion: reduce  -> no blur, no movement, fully visible.
  *
  * Tunable knobs (CSS custom properties, override per-element or on :root):
- *   --oii-reveal-duration : timed-fallback duration            (default 600ms)
- *   --oii-reveal-delay    : timed-fallback delay               (default 0ms)
- *   --oii-reveal-easing   : easing                             (default ease-out)
- *   --oii-reveal-distance : travel distance (intensity)        (default 16px)
- *   --oii-reveal-blur     : start blur radius (intensity)      (default 8px)
+ *   --motif-reveal-duration : timed-fallback duration            (default 600ms)
+ *   --motif-reveal-delay    : timed-fallback delay               (default 0ms)
+ *   --motif-reveal-easing   : easing                             (default ease-out)
+ *   --motif-reveal-distance : travel distance (intensity)        (default 16px)
+ *   --motif-reveal-blur     : start blur radius (intensity)      (default 8px)
  *
  * Provenance: original (clean-room).
  * ========================================================================== */
 
-.oii-reveal {
-  --oii-reveal-duration: 600ms;
-  --oii-reveal-delay: 0ms;
-  --oii-reveal-easing: ease-out;
-  --oii-reveal-distance: 16px;
-  --oii-reveal-blur: 8px;
+.motif-reveal {
+  --motif-reveal-duration: 600ms;
+  --motif-reveal-delay: 0ms;
+  --motif-reveal-easing: ease-out;
+  --motif-reveal-distance: 16px;
+  --motif-reveal-blur: 8px;
 }
 
 /* ----------------------------------------------------------------------------
  * Resting (pre-reveal) state.
  * IMPORTANT: only applied once JS has signalled it is in control by adding the
- * `oii-js` class to <html>. Without JS (and without scroll-timeline support)
+ * `motif-js` class to <html>. Without JS (and without scroll-timeline support)
  * the content simply stays visible — never hidden behind a script that may
  * fail to load. The CSS scroll-driven path below opts in independently.
  * -------------------------------------------------------------------------- */
-.oii-js .oii-reveal {
+.motif-js .motif-reveal {
   opacity: 0;
-  transform: translateY(var(--oii-reveal-distance));
-  filter: blur(var(--oii-reveal-blur));
+  transform: translateY(var(--motif-reveal-distance));
+  filter: blur(var(--motif-reveal-blur));
   /* Animate the JS-driven state change via transition (transform/opacity/filter
    * are all compositor- or cheaply-animatable). */
   transition:
-    opacity var(--oii-reveal-duration) var(--oii-reveal-easing) var(--oii-reveal-delay),
-    transform var(--oii-reveal-duration) var(--oii-reveal-easing) var(--oii-reveal-delay),
-    filter var(--oii-reveal-duration) var(--oii-reveal-easing) var(--oii-reveal-delay);
+    opacity var(--motif-reveal-duration) var(--motif-reveal-easing) var(--motif-reveal-delay),
+    transform var(--motif-reveal-duration) var(--motif-reveal-easing) var(--motif-reveal-delay),
+    filter var(--motif-reveal-duration) var(--motif-reveal-easing) var(--motif-reveal-delay);
   will-change: opacity, transform, filter;
 }
 
 /* Revealed state, toggled by blur-reveal.js once the element intersects. */
-.oii-js .oii-reveal[data-oii-reveal="shown"] {
+.motif-js .motif-reveal[data-motif-reveal="shown"] {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
@@ -63,11 +63,11 @@
  * Progressive-enhancement path: CSS scroll-driven animation.
  * Where `animation-timeline: view()` is supported we drive the reveal purely
  * from scroll position — smoother and JS-free. This is gated behind @supports
- * AND the `oii-css-scroll` class that blur-reveal.js adds when it detects
+ * AND the `motif-css-scroll` class that blur-reveal.js adds when it detects
  * support, so the two paths never double-animate.
  * -------------------------------------------------------------------------- */
 @supports (animation-timeline: view()) {
-  .oii-css-scroll .oii-reveal {
+  .motif-css-scroll .motif-reveal {
     /* The JS resting/transition styles above still apply for the brief moment
      * before paint; the animation takes over and is authoritative. */
     opacity: 1;
@@ -75,7 +75,7 @@
     filter: none;
     transition: none;
 
-    animation: oii-reveal-keyframes linear both;
+    animation: motif-reveal-keyframes linear both;
     /* Tie the animation's progress to the element entering the viewport.
      * Animate across the first ~35% of the element's view-progress range. */
     animation-timeline: view();
@@ -83,11 +83,11 @@
   }
 }
 
-@keyframes oii-reveal-keyframes {
+@keyframes motif-reveal-keyframes {
   from {
     opacity: 0;
-    transform: translateY(var(--oii-reveal-distance));
-    filter: blur(var(--oii-reveal-blur));
+    transform: translateY(var(--motif-reveal-distance));
+    filter: blur(var(--motif-reveal-blur));
   }
   to {
     opacity: 1;
@@ -102,9 +102,9 @@
  * Placed last so it wins the cascade regardless of the paths above.
  * -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .oii-js .oii-reveal,
-  .oii-css-scroll .oii-reveal,
-  .oii-reveal {
+  .motif-js .motif-reveal,
+  .motif-css-scroll .motif-reveal,
+  .motif-reveal {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;

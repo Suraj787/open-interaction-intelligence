@@ -3,13 +3,13 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "open-interaction-intelligence"
+name = "motif"
 version = "0.1.0"
 description = "Interaction-design intelligence + governance for AI coding agents: securely discover, select, adapt and validate UI motion, effects and patterns."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Open Interaction Intelligence contributors" }]
+authors = [{ name = "Motif contributors" }]
 keywords = ["claude-code", "agent-skills", "interaction-design", "ui-animation", "accessibility", "web-performance"]
 dependencies = []  # core is intentionally dependency-free
 
@@ -17,10 +17,10 @@ dependencies = []  # core is intentionally dependency-free
 dev = ["pytest>=7", "ruff>=0.4"]
 
 [project.scripts]
-oii = "oii.cli:main"
+motif = "motif.cli:main"
 
 [tool.setuptools]
-packages = ["oii", "scanners"]
+packages = ["motif", "scanners"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

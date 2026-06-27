@@ -32,8 +32,8 @@ target framework, with provenance. Assumes the pattern/effect is already chosen 
 8. **Gate — performance:** transform/opacity, budget respected, no jank.
 9. **Gate — responsiveness:** breakpoints + input modes.
 10. **Record** the recipe + decision + provenance. If installing an approved component,
-    use `python -m oii component install` (diff + rollback + manifest).
-11. **Validate:** `python -m oii validate`; then
+    use `python -m motif component install` (diff + rollback + manifest).
+11. **Validate:** `python -m motif validate`; then
     [validate-experience.md](validate-experience.md).
 
 ## Done when

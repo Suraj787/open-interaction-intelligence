@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://oii.dev/schemas/evaluation.schema.json",
-  "title": "OII Evaluation Case",
+  "$id": "https://motif.dev/schemas/evaluation.schema.json",
+  "title": "Motif Evaluation Case",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "category", "kind", "prompt", "expected_behaviour", "judgement"],

@@ -1,19 +1,19 @@
-# OII Adapter — Frappe-Vue
+# Motif Adapter — Frappe-Vue
 
-How OII recipes integrate inside a **Frappe** app's frontend: Vue 3 + `frappe-ui`,
+How Motif recipes integrate inside a **Frappe** app's frontend: Vue 3 + `frappe-ui`,
 built by Frappe's existing Vite/esbuild pipeline, talking to the Frappe backend via
-`frappe.call` / `frappe-ui`'s resource layer. Frappe-Vue is a **first-class** OII
+`frappe.call` / `frappe-ui`'s resource layer. Frappe-Vue is a **first-class** Motif
 target. This guide layers Frappe-specific concerns on top of the Vue adapter
 (`adapters/vue/README.md`) — read that first.
 
 > Provenance: original (clean-room). No third-party source is copied.
 
-## Where OII lives in a Frappe app
+## Where Motif lives in a Frappe app
 
-Frappe frontends come in two shapes; OII recipes work in both:
+Frappe frontends come in two shapes; Motif recipes work in both:
 
 1. **`frappe-ui` SPA** (e.g. a `frontend/` app like CRM/Helpdesk/Gameplan): a
-   normal Vue 3 + Vite project. OII components are plain SFCs imported here.
+   normal Vue 3 + Vite project. Motif components are plain SFCs imported here.
 2. **Desk integration** (form scripts / custom HTML fields / `frappe.ui` dialogs):
    mount a small Vue app into a Desk-provided DOM node, or use a CSS-only recipe via
    a bundled stylesheet.
@@ -26,7 +26,7 @@ produce the bundle in `<app>/public/`.
 
 ```
 <app>/frontend/src/
-  components/oii/
+  components/motif/
     SaveStatus.vue          # SFC, contract knobs as defineProps
     useReducedMotion.js     # shared composable
 ```
@@ -35,11 +35,11 @@ produce the bundle in `<app>/public/`.
   CSS leakage into Desk.
 - Knobs as typed `defineProps`; events as `defineEmits`.
 - Reuse `frappe-ui` primitives (`Button`, `Badge`, `FeatherIcon`) and **design
-  tokens** (its CSS variables / Tailwind theme) so OII visuals match the Frappe look.
+  tokens** (its CSS variables / Tailwind theme) so Motif visuals match the Frappe look.
 
 ## Wiring to Frappe data (`frappe.call` / `frappe-ui`)
 
-OII components stay **transport-agnostic** — they render state and emit intent; the
+Motif components stay **transport-agnostic** — they render state and emit intent; the
 host wires the backend. Two idiomatic options:
 
 ```js
@@ -56,7 +56,7 @@ frappe.call({ method: 'frappe.client.set_value', args, })
   .catch(() => status.value = 'error');
 ```
 
-The OII `SaveStatus`/`OptimisticSave` components **require neither** — they accept a
+The Motif `SaveStatus`/`OptimisticSave` components **require neither** — they accept a
 `status` prop or expose a method and emit `save`. This keeps them testable without a
 Frappe backend and lets you swap `frappe.call` for `createResource` freely.
 
@@ -88,13 +88,13 @@ Frappe backend and lets you swap `frappe.call` for `createResource` freely.
 
 ## Responsive behaviour
 
-Use `frappe-ui`'s Tailwind breakpoints and container queries so OII components adapt
+Use `frappe-ui`'s Tailwind breakpoints and container queries so Motif components adapt
 inside Desk's variable-width form columns and the narrower mobile Desk. Don't assume
 viewport width — a form field's slot can be narrow on a wide screen.
 
 ## Reduced-motion strategy
 
-Same guarantee as everywhere in OII: a `useReducedMotion()` composable
+Same guarantee as everywhere in Motif: a `useReducedMotion()` composable
 (`matchMedia('(prefers-reduced-motion: reduce)')`, live) plus a scoped CSS
 `@media (prefers-reduced-motion: reduce)` guard. Status changes (saving→saved)
 become **instant** with no transition, and the aria-live announcement still fires.
@@ -115,14 +115,14 @@ be noise.
 do **not** add React, GSAP, or a second animation runtime into a Frappe bundle just
 for an effect; it bloats `bench build` output and clashes with Frappe's CSS. Plain
 CSS + Vue `<Transition>` + `frappe-ui` cover the catalogue. Escalate only per the
-OII technique order, and keep everything inside Frappe's existing Vite build.
+Motif technique order, and keep everything inside Frappe's existing Vite build.
 
 ## Normalised component contract knobs
 
 | Knob                 | Frappe-Vue surface                                      |
 | -------------------- | ------------------------------------------------------- |
 | class override       | `:class` / `frappe-ui` `class` prop                     |
-| style override       | `:style`, `--oii-*` custom properties                   |
+| style override       | `:style`, `--motif-*` custom properties                   |
 | design tokens        | `frappe-ui` CSS variables / Tailwind theme tokens       |
 | intensity            | `defineProps({ intensity })`                            |
 | duration             | `duration` prop / CSS var                               |

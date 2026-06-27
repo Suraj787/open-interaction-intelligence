@@ -1,6 +1,6 @@
 # LEVEL 5 — Interaction Problems (Objectives)
 
-This is the heart of OII. Everything above narrows context; this level names the
+This is the heart of Motif. Everything above narrows context; this level names the
 **precise objective** the interaction must achieve, and points to the
 **pattern(s)** that solve it. We search *problems → patterns*, never
 *effects → places to use them*.
@@ -78,4 +78,4 @@ Make the experience feel crafted, branded, memorable.
 
 The objective, not the effect, is the unit of decision. If you cannot state
 which objective an animation serves, it is decoration — and decoration is the
-first thing OII removes.
+first thing Motif removes.

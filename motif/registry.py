@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 
 from . import jsonschema_min
 
-# repo root = parent of the `oii` package dir
+# repo root = parent of the `motif` package dir
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "registry"
 SCHEMAS = ROOT / "schemas"

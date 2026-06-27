@@ -1,4 +1,4 @@
-"""OII static scanners. Pure-stdlib, read-only, never execute scanned code.
+"""Motif static scanners. Pure-stdlib, read-only, never execute scanned code.
 
 Each scanner returns a list of Finding objects. Findings are advisory: not every
 match is malicious, but every match must be reviewed before a source is approved.

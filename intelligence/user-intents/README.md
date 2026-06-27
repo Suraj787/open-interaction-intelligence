@@ -1,6 +1,6 @@
 # LEVEL 3 — User Intents
 
-Once the product type is known (LEVEL 2), OII asks: **what is this specific user
+Once the product type is known (LEVEL 2), Motif asks: **what is this specific user
 trying to do on this screen right now?** Intent is the bridge between *what the
 product is* and *what interaction objective* (LEVEL 5) we must solve.
 

@@ -1,6 +1,6 @@
 # Framework Adaptation
 
-OII never copies an effect across frameworks. It moves an *idea* through four stages so
+Motif never copies an effect across frameworks. It moves an *idea* through four stages so
 the same interaction can be implemented correctly in browser-native code, React, Vue,
 Frappe-Vue or another stack — using the **least complex** mechanism that works.
 

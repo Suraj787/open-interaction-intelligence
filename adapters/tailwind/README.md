@@ -1,7 +1,7 @@
-# OII Adapter — Tailwind CSS
+# Motif Adapter — Tailwind CSS
 
-How OII recipes map onto a Tailwind-styled codebase (v3 and v4). Tailwind is a
-*styling layer*, not a framework — this adapter explains how to express OII's
+How Motif recipes map onto a Tailwind-styled codebase (v3 and v4). Tailwind is a
+*styling layer*, not a framework — this adapter explains how to express Motif's
 CSS-first motion as utilities, where to drop to custom CSS, and how to keep the
 accessibility guarantees intact.
 
@@ -19,11 +19,11 @@ accessibility guarantees intact.
   classes.
 
 ```html
-<div data-oii-state="hidden"
+<div data-motif-state="hidden"
      class="opacity-0 blur-sm translate-y-4 transition
-            data-[oii-state=shown]:opacity-100
-            data-[oii-state=shown]:blur-none
-            data-[oii-state=shown]:translate-y-0
+            data-[motif-state=shown]:opacity-100
+            data-[motif-state=shown]:blur-none
+            data-[motif-state=shown]:translate-y-0
             motion-reduce:transition-none motion-reduce:opacity-100
             motion-reduce:blur-none motion-reduce:translate-y-0">
   …
@@ -70,7 +70,7 @@ final visual instantly. For `animate-*` keyframe utilities, neutralise with
 `motion-reduce:animate-none`.
 
 ```html
-<div class="motion-safe:animate-[oii-shimmer_1.5s_linear_infinite]
+<div class="motion-safe:animate-[motif-shimmer_1.5s_linear_infinite]
             motion-reduce:animate-none"></div>
 ```
 
@@ -89,14 +89,14 @@ Tailwind is a build-time dependency many projects already have; it adds no runti
 JS. It excels at the *state* half of a recipe (resting/end utilities + transitions)
 but keyframes/scroll-timelines still live in a thin CSS layer. Don't reach for a JS
 animation lib for things `transition`/`animate-*` utilities already do. Escalate
-only per the OII technique order.
+only per the Motif technique order.
 
 ## Normalised component contract knobs
 
 | Knob                 | Tailwind surface                                        |
 | -------------------- | ------------------------------------------------------- |
 | class override       | utility classes (the native model); `class` merge       |
-| style override       | arbitrary values `[--oii-x:…]`; inline `style`          |
+| style override       | arbitrary values `[--motif-x:…]`; inline `style`          |
 | design tokens        | theme tokens (`theme()` / `@theme` in v4)               |
 | intensity            | swap utilities (`blur-sm`↔`blur-md`) / arbitrary value  |
 | duration             | `duration-300` / `[transition-duration:…]`              |

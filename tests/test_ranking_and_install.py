@@ -1,7 +1,7 @@
 """Transparent ranking + installation gates."""
 import pathlib
-from oii import rank as rank_mod, install as install_mod
-from oii.registry import ROOT
+from motif import rank as rank_mod, install as install_mod
+from motif.registry import ROOT
 
 
 def test_ranking_prefers_restraint_in_enterprise():
@@ -16,20 +16,20 @@ def test_ranking_prefers_restraint_in_enterprise():
 
 def test_missing_reduced_motion_is_penalised():
     # aurora-background has a fallback; fabricate a record without one to confirm penalty.
-    from oii import registry
+    from motif import registry
     aurora = next(r for r in registry.load_records("effects") if r.data["id"] == "aurora-background")
     s = rank_mod.score_effect(aurora, "marketing-expressive")
     assert any("reduced-motion" in r for r in s.reasons)
 
 
 def test_install_refuses_reference_only():
-    plan = install_mod.plan_install("aceternity-aurora-bg", "/tmp/oii-target-x")
+    plan = install_mod.plan_install("aceternity-aurora-bg", "/tmp/motif-target-x")
     assert plan.refused is not None
     assert "not installable" in plan.refused or "reference" in plan.refused.lower()
 
 
 def test_install_refuses_rejected_component():
-    plan = install_mod.plan_install("uiverse-eval-button", "/tmp/oii-target-y")
+    plan = install_mod.plan_install("uiverse-eval-button", "/tmp/motif-target-y")
     assert plan.refused is not None
 
 

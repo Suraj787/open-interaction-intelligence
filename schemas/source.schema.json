@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://oii.dev/schemas/source.schema.json",
-  "title": "OII Source",
+  "$id": "https://motif.dev/schemas/source.schema.json",
+  "title": "Motif Source",
   "type": "object",
   "additionalProperties": false,
   "required": [

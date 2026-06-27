@@ -4,7 +4,7 @@ Use this checklist when adding or refreshing a source in `registry/sources/`. A 
 the top-level provenance anchor for the components, effects and recipes derived from it.
 Do not mark a source `verified` until every applicable box is checked with evidence.
 
-Schema: `schemas/source.schema.json`. Validate with `python -m oii validate`.
+Schema: `schemas/source.schema.json`. Validate with `python -m motif validate`.
 
 ## 1. Official verification
 
@@ -75,7 +75,7 @@ Schema: `schemas/source.schema.json`. Validate with `python -m oii validate`.
 
 - [ ] If the source's catalogue is reachable, per-component records were created
       (`component.schema.json`) — a homepage review alone does not complete a source.
-- [ ] `python -m oii source completeness` reflects the real state.
+- [ ] `python -m motif source completeness` reflects the real state.
 
 ## Sign-off
 

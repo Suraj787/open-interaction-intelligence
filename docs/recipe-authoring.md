@@ -1,13 +1,13 @@
 # Authoring a Recipe Record
 
-A **recipe** is OII's own installable implementation of a pattern in a specific framework.
+A **recipe** is Motif's own installable implementation of a pattern in a specific framework.
 Where a *component* is evidence about a third-party source and an *effect* is an abstract
-technique, a recipe is the concrete, provenance-clean thing OII can actually install into
+technique, a recipe is the concrete, provenance-clean thing Motif can actually install into
 a project. Recipes are where clean-room adaptation lands.
 
 - **Schema:** `schemas/recipe.schema.json`
 - **Location:** `registry/recipes/`
-- **Validate:** `python -m oii validate`
+- **Validate:** `python -m motif validate`
 
 ## Required fields
 
@@ -23,7 +23,7 @@ a project. Recipes are where clean-room adaptation lands.
 | `framework` | one of `browser-native`, `react`, `vue`, `svelte`, `angular`, `vanilla`, `frappe-vue` |
 | `technology`, `dependencies` | implementation tech; keep dependencies minimal (see hierarchy) |
 | `cost` | `none` / `low` / `medium` / `high` — dependency/runtime weight |
-| `license` | licence of **this recipe** (OII originals are MIT) |
+| `license` | licence of **this recipe** (Motif originals are MIT) |
 | `provenance_type` | `original` / `browser-native` / `adapted-concept` |
 | `source_references` | source `id`s that inspired an `adapted-concept`; the inspiration trail |
 | `algorithm` | the framework-neutral algorithm the implementation follows |
@@ -40,7 +40,7 @@ a project. Recipes are where clean-room adaptation lands.
 `provenance_type` records how the recipe came to exist:
 
 - `browser-native` — built directly on platform capabilities; no third-party code.
-- `original` — OII's own design.
+- `original` — Motif's own design.
 - `adapted-concept` — produced by **clean-room adaptation**: record the interaction
   objective and behaviour, write a framework-neutral `algorithm`, implement independently,
   and **retain no source code**. List the inspirations in `source_references`. Avoid

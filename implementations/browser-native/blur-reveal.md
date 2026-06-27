@@ -10,7 +10,7 @@ Files: [`blur-reveal.css`](./blur-reveal.css), [`blur-reveal.js`](./blur-reveal.
 
 ```html
 <!-- Readable with no CSS and no JS. The attribute is the only requirement. -->
-<section data-oii="blur-reveal">
+<section data-motif="blur-reveal">
   <h2>Heading</h2>
   <p>Body copy that reveals as you scroll.</p>
 </section>
@@ -19,7 +19,7 @@ Files: [`blur-reveal.css`](./blur-reveal.css), [`blur-reveal.js`](./blur-reveal.
 <script type="module" src="./blur-reveal.js"></script>
 ```
 
-The script adds the `oii-reveal` class and toggles `data-oii-reveal="shown"`; the
+The script adds the `motif-reveal` class and toggles `data-motif-reveal="shown"`; the
 CSS does the rest. You can also `import { initBlurReveal } from './blur-reveal.js'`
 and call it from a framework lifecycle hook to control teardown via the returned
 `dispose()`.
@@ -28,21 +28,21 @@ and call it from a framework lifecycle hook to control teardown via the returned
 
 The script picks the cheapest accessible technique available, in this order:
 
-1. **Reduced motion requested** → add `oii-js`, immediately mark every element
+1. **Reduced motion requested** → add `motif-js`, immediately mark every element
    `shown`, attach **no** observers. Content appears instantly, no blur, no travel.
 2. **CSS scroll-driven animations supported** (`@supports (animation-timeline:
-   view())`) → add `oii-js oii-css-scroll` and let **CSS** drive the reveal from
+   view())`) → add `motif-js motif-css-scroll` and let **CSS** drive the reveal from
    scroll position (`animation-timeline: view()`, `animation-range: entry 0% cover
    35%`). No JS observers run — zero runtime cost. Elements are still marked `shown`
-   and the `oii:reveal` event still fires so consumers have a consistent contract.
-3. **`IntersectionObserver` fallback** → add `oii-js` (which arms the resting
+   and the `motif:reveal` event still fires so consumers have a consistent contract.
+3. **`IntersectionObserver` fallback** → add `motif-js` (which arms the resting
    blurred state in CSS), observe each element, and on first intersection toggle
-   `data-oii-reveal="shown"` then `unobserve` it (one-shot). A `transition` on
+   `data-motif-reveal="shown"` then `unobserve` it (one-shot). A `transition` on
    `opacity`/`transform`/`filter` animates the change. `rootMargin: 0 0 -10% 0` and
    `threshold: 0.15` trigger slightly before the element is fully on screen.
 4. **No `IntersectionObserver`** (very old engines) → reveal everything immediately.
 
-The resting (hidden/blurred) state is gated behind the `oii-js` class that the
+The resting (hidden/blurred) state is gated behind the `motif-js` class that the
 script adds, so if the script fails to load the content is never left invisible.
 
 A `matchMedia('(prefers-reduced-motion: reduce)')` `change` listener reveals all
@@ -91,13 +91,13 @@ Override via CSS custom properties (per element or on `:root`):
 
 | Property                | Default     | Meaning                                  |
 | ----------------------- | ----------- | ---------------------------------------- |
-| `--oii-reveal-duration` | `600ms`     | timed-fallback transition duration       |
-| `--oii-reveal-delay`    | `0ms`       | timed-fallback delay                     |
-| `--oii-reveal-easing`   | `ease-out`  | easing                                   |
-| `--oii-reveal-distance` | `16px`      | travel distance (intensity)              |
-| `--oii-reveal-blur`     | `8px`       | starting blur radius (intensity)         |
+| `--motif-reveal-duration` | `600ms`     | timed-fallback transition duration       |
+| `--motif-reveal-delay`    | `0ms`       | timed-fallback delay                     |
+| `--motif-reveal-easing`   | `ease-out`  | easing                                   |
+| `--motif-reveal-distance` | `16px`      | travel distance (intensity)              |
+| `--motif-reveal-blur`     | `8px`       | starting blur radius (intensity)         |
 
-Event: each element dispatches a bubbling `CustomEvent('oii:reveal', { detail: {
+Event: each element dispatches a bubbling `CustomEvent('motif:reveal', { detail: {
 element } })` when revealed.
 
 ## Provenance: original (clean-room).

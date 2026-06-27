@@ -1,5 +1,5 @@
 /* ============================================================================
- * OII Recipe — Skeleton Loader (React, dependency-free)
+ * Motif Recipe — Skeleton Loader (React, dependency-free)
  * ----------------------------------------------------------------------------
  * Placeholder blocks with a left-to-right shimmer that stand in for content
  * while it loads. The shimmer is a CSS gradient animated via background-position
@@ -21,32 +21,32 @@ import React, { useEffect } from "react";
  * in the browser) and idempotent (keyed by id). Projects that prefer a real CSS
  * file can delete this and ship the same rules in their stylesheet.
  * ------------------------------------------------------------------------- */
-const STYLE_ID = "oii-skeleton-styles";
+const STYLE_ID = "motif-skeleton-styles";
 const STYLES = `
-.oii-skeleton {
+.motif-skeleton {
   /* Tunable knobs via custom properties (override per-instance with style). */
-  --oii-skel-base: var(--oii-skeleton-base, #e2e8f0);
-  --oii-skel-sheen: var(--oii-skeleton-sheen, #f1f5f9);
-  --oii-skel-radius: var(--oii-skeleton-radius, 0.375rem);
-  --oii-skel-duration: var(--oii-skeleton-duration, 1.4s);
+  --motif-skel-base: var(--motif-skeleton-base, #e2e8f0);
+  --motif-skel-sheen: var(--motif-skeleton-sheen, #f1f5f9);
+  --motif-skel-radius: var(--motif-skeleton-radius, 0.375rem);
+  --motif-skel-duration: var(--motif-skeleton-duration, 1.4s);
 
   display: block;
-  border-radius: var(--oii-skel-radius);
-  background-color: var(--oii-skel-base);
+  border-radius: var(--motif-skel-radius);
+  background-color: var(--motif-skel-base);
   /* Moving sheen overlaid on the base. 200% width so it can slide across. */
   background-image: linear-gradient(
     90deg,
     transparent 0%,
-    var(--oii-skel-sheen) 50%,
+    var(--motif-skel-sheen) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
   background-repeat: no-repeat;
   background-position: -150% 0;
-  animation: oii-skeleton-shimmer var(--oii-skel-duration) ease-in-out infinite;
+  animation: motif-skeleton-shimmer var(--motif-skel-duration) ease-in-out infinite;
 }
 
-@keyframes oii-skeleton-shimmer {
+@keyframes motif-skeleton-shimmer {
   to {
     background-position: 250% 0;
   }
@@ -54,7 +54,7 @@ const STYLES = `
 
 /* Reduced motion: no shimmer. Show a calm static placeholder instead. */
 @media (prefers-reduced-motion: reduce) {
-  .oii-skeleton {
+  .motif-skeleton {
     animation: none !important;
     background-image: none !important;
   }
@@ -109,7 +109,7 @@ export function Skeleton({
 
   return (
     <span
-      className={`oii-skeleton ${className}`.trim()}
+      className={`motif-skeleton ${className}`.trim()}
       aria-hidden="true"
       style={{
         width: toCss(width),

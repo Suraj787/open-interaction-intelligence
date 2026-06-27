@@ -12,9 +12,9 @@ A clear, concise description of the bug.
 
 ## Area
 
-Which part of OII is affected?
+Which part of Motif is affected?
 
-- [ ] CLI (`python -m oii ...`)
+- [ ] CLI (`python -m motif ...`)
 - [ ] Registry / schema validation
 - [ ] Ranking / selection
 - [ ] Ingestion / connectors / quarantine
@@ -49,7 +49,7 @@ Does `make check` pass? Paste relevant output if it fails.
 
 ## Environment
 
-- OII version / commit:
+- Motif version / commit:
 - OS:
 - Python version (`python --version`):
 

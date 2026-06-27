@@ -30,7 +30,7 @@ records the result. Load `skills/implementation-validation`.
    foreign framework introduced.
 6. **Provenance:** decision record (`schemas/decision.schema.json`) and, for installed
    components, the provenance manifest are present and accurate.
-7. **Registry integrity:** `python -m oii validate` passes for any new/changed records.
+7. **Registry integrity:** `python -m motif validate` passes for any new/changed records.
 8. **Report** (the SKILL "After implementation" report): pattern + effect implemented,
    accessibility result, performance result, responsiveness result, design-system status,
    dependencies (with licence/cost) or confirmation of none, and the decision + provenance

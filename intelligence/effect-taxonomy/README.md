@@ -1,6 +1,6 @@
 # Effect Taxonomy — EFFECT vs PATTERN vs RECIPE
 
-OII separates three things that are often confused. Getting the vocabulary right
+Motif separates three things that are often confused. Getting the vocabulary right
 is what lets us search **problems → patterns → effects** instead of reaching for
 an animation bundle.
 
@@ -23,7 +23,7 @@ perceived waiting", "inline validation to prevent errors".
 A vetted, context-bound combination: **product type + page type + intent +
 objective → chosen pattern → specific effect(s) + implementation order +
 accessibility + reduced-motion fallback + performance budget.**
-- A recipe is the deliverable OII ultimately produces — a defensible, ready-to-build choice.
+- A recipe is the deliverable Motif ultimately produces — a defensible, ready-to-build choice.
 - Recipes are where Vue / Frappe-Vue specifics, dependency budgets, and profiles get applied.
 
 > **Search direction:** Problem → Pattern → (cheapest) Effect → Recipe.
@@ -34,7 +34,7 @@ accessibility + reduced-motion fallback + performance budget.**
 
 ## Effect families
 
-These are the implementation families OII can draw from. For each, note the
+These are the implementation families Motif can draw from. For each, note the
 **objective it usually serves** and its **main cost** — both feed selection
 policy. Effects with no clear objective are decoration (see `../anti-patterns/`).
 

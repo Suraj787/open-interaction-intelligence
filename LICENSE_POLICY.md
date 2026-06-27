@@ -1,8 +1,8 @@
 # Licence Policy
 
-This policy governs how OII treats third-party material and how it decides what may be
+This policy governs how Motif treats third-party material and how it decides what may be
 **redistributed**, **adapted as a concept**, kept **reference-only**, or **rejected**.
-Original OII code is MIT-licensed (see [`LICENSE`](LICENSE)); that licence covers only
+Original Motif code is MIT-licensed (see [`LICENSE`](LICENSE)); that licence covers only
 original code and **never overrides a third-party source's own licence or obligations**.
 
 Licence records live in [`registry/licenses/`](registry/licenses/) and each source carries
@@ -25,13 +25,13 @@ be identified and verified. A source is treated as `reference-only` (at most) wh
 
 **Bundling requires a verified permissive licence _and_ trust tier ≥ 3.** Licence facts are
 confidence-rated and must be **re-verified online** through
-`python -m oii source retrieve --refresh` before bundling.
+`python -m motif source retrieve --refresh` before bundling.
 
 ## Redistribution classes
 
 Every source is assigned one of four redistribution classes:
 
-| Class | Meaning | What OII may do |
+| Class | Meaning | What Motif may do |
 |-------|---------|-----------------|
 | **redistributable** | Verified permissive OSS licence (e.g. MIT, Apache-2.0) or open browser standard. | The concept may be implemented and original implementations may be bundled, preserving attribution and notices. Bundling still requires trust tier ≥ 3 and a verified licence. |
 | **adaptable-concept** | Licence/terms allow learning from the concept but not wholesale redistribution of the source's code/assets. | Learn the pattern and write a clean-room original implementation; never copy source code or assets. Record provenance. |
@@ -50,10 +50,10 @@ These are non-negotiable:
    the material is reference-only.
 5. **Never treat source-available or Commons-Clause terms as permissive OSS.**
 6. **The project licence never overrides third-party obligations.** MIT applies only to
-   original OII code.
+   original Motif code.
 7. **Record provenance for every recipe** — the inspiring source, the licence under which
    the concept may be adapted, and evidence links.
-8. **Label original implementations `original`** so OII-authored code is distinguishable
+8. **Label original implementations `original`** so Motif-authored code is distinguishable
    from third-party material.
 9. **Preserve third-party notices** (licence headers, NOTICE files, attribution) wherever
    they apply.
@@ -71,6 +71,6 @@ Use this when adding or re-verifying a source (it complements `docs/source-revie
 - [ ] `trust_tier` (1–5) assigned; bundling candidates are tier ≥ 3.
 - [ ] `confidence` and `status` set; `pending-verification` if not re-verified online.
 - [ ] For recipes: provenance recorded and the implementation is clean-room `original`.
-- [ ] `python -m oii validate` / `make check` passes.
+- [ ] `python -m motif validate` / `make check` passes.
 
 When in doubt, classify down (toward `reference-only`), not up.

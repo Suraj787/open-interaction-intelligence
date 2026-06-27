@@ -6,7 +6,7 @@ until it passes.
 
 ## Preconditions
 
-- Component material present in `.oii/quarantine/` (from a source-refresh) or a candidate
+- Component material present in `.motif/quarantine/` (from a source-refresh) or a candidate
   to catalogue. Load `skills/source-governance`.
 
 ## Steps
@@ -33,9 +33,9 @@ until it passes.
    clean) · `installable` · `adaptable` (clean-room) · `reference-only` (default for
    unknown/restricted licence) · `rejected` (unsafe/incompatible).
 8. **Record** the component (`schemas/component.schema.json`) with `verification_date` and
-   `evidence`; move quarantined material to `.oii/reviewed/` then `approved/` or
+   `evidence`; move quarantined material to `.motif/reviewed/` then `approved/` or
    `rejected/`.
-9. **Validate:** `python -m oii validate`.
+9. **Validate:** `python -m motif validate`.
 
 ## Done when
 

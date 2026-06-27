@@ -20,7 +20,7 @@ decoration. Vue and Frappe-Vue are first-class targets.
    empty/loading/error states.
 4. **State the interaction objective** — usually feedback, orientation, state transition,
    or progressive disclosure. Load `skills/interaction-design`.
-5. **Search patterns first:** `python -m oii search "<problem>"`. Strongly prefer effects
+5. **Search patterns first:** `python -m motif search "<problem>"`. Strongly prefer effects
    with `enterprise_suitability: recommended`.
 6. **Rank and select** the simplest effective approach (`skills/effect-selection`).
    **Never** run continuous decorative motion behind dense work UIs; never make enterprise
@@ -34,7 +34,7 @@ decoration. Vue and Frappe-Vue are first-class targets.
    no jank on scroll/virtualised lists.
 10. **Responsiveness gate:** breakpoints + input modes; touch targets.
 11. **Record decision + provenance**; install approved components via
-    `python -m oii component install` (diff + rollback + manifest).
+    `python -m motif component install` (diff + rollback + manifest).
 12. **Validate** — see [validate-experience.md](validate-experience.md).
 
 ## Done when

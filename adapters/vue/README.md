@@ -1,7 +1,7 @@
-# OII Adapter — Vue
+# Motif Adapter — Vue
 
-How OII recipes map onto idiomatic Vue 3 (`<script setup>`, Composition API). Vue is
-a **first-class** OII target. Recipes stay CSS-first; Vue contributes reactivity,
+How Motif recipes map onto idiomatic Vue 3 (`<script setup>`, Composition API). Vue is
+a **first-class** Motif target. Recipes stay CSS-first; Vue contributes reactivity,
 its `<Transition>`/`<TransitionGroup>` primitives, lifecycle, and cleanup.
 
 > Provenance: original (clean-room). No third-party source is copied.
@@ -19,7 +19,7 @@ Prefer Vue's native `<Transition>` for enter/leave — it adds/removes the
 `*-enter-active` / `*-leave-to` classes you target in CSS, no JS animation needed.
 
 ```vue
-<Transition name="oii-fade">
+<Transition name="motif-fade">
   <p v-if="visible">Revealed</p>
 </Transition>
 ```
@@ -93,7 +93,7 @@ with the CSS `@media (prefers-reduced-motion: reduce)` guard.
 
 ```js
 const reduced = usePrefersReducedMotion();
-const transitionName = computed(() => (reduced.value ? 'oii-none' : 'oii-fade'));
+const transitionName = computed(() => (reduced.value ? 'motif-none' : 'motif-fade'));
 ```
 
 ## Testing
@@ -116,7 +116,7 @@ per the technique order.
 | Knob                 | Vue surface                                             |
 | -------------------- | ------------------------------------------------------- |
 | class override       | `:class` binding / `class` attr                         |
-| style override       | `:style`, `--oii-*` custom properties                   |
+| style override       | `:style`, `--motif-*` custom properties                   |
 | design tokens        | inherited CSS variables; `tokens` prop optional         |
 | intensity            | `defineProps({ intensity })`                            |
 | duration             | `duration` prop / CSS var                               |

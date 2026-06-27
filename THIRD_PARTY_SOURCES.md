@@ -1,6 +1,6 @@
 # Third-Party Sources
 
-OII catalogues external libraries, design systems and references as **source metadata** in
+Motif catalogues external libraries, design systems and references as **source metadata** in
 [`registry/sources/`](registry/sources/). This document summarises that metadata and the
 rules that govern it.
 
@@ -17,7 +17,7 @@ rules that govern it.
   `registry/sources/` and are validated against `schemas/source.schema.json`.
 - **Licence facts are confidence-rated and must be re-verified online.** Each record
   carries a `confidence` level and a `status` (`verified` / `pending-verification`).
-  Licences change; re-verify through `python -m oii source retrieve --refresh` before
+  Licences change; re-verify through `python -m motif source retrieve --refresh` before
   relying on them.
 - **Bundling requires a verified permissive licence _and_ trust tier ≥ 3.** See the
   LICENCE GATE and redistribution classes in [`LICENSE_POLICY.md`](LICENSE_POLICY.md).
@@ -84,8 +84,8 @@ fixture exists in the registry to exercise the rejection path.)
 ## Verifying for yourself
 
 ```bash
-python -m oii source completeness          # coverage by source
-python -m oii source retrieve --refresh    # re-verify against the allowlisted official host
+python -m motif source completeness          # coverage by source
+python -m motif source retrieve --refresh    # re-verify against the allowlisted official host
 make check                                 # validate the registry
 ```
 

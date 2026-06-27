@@ -67,7 +67,7 @@ Two layers, both honoured:
 1. A dependency-free `usePrefersReducedMotion`-style `ref` tracks
    `matchMedia('(prefers-reduced-motion: reduce)')` live (subscribed in
    `onMounted`, cleaned up in `onUnmounted`). When reduced (or `disableAnimation`
-   prop is set), the `<Transition>` name becomes `oii-none` — a transition with no
+   prop is set), the `<Transition>` name becomes `motif-none` — a transition with no
    CSS — so status swaps are **instant**.
 2. A scoped `@media (prefers-reduced-motion: reduce)` block disables the saving
    pulse and the chip enter/leave transition outright.
@@ -83,13 +83,13 @@ announcement still fires, so non-visual feedback is unchanged.
 | `label`            | String     | idle button label                          |
 | `savedDuration`    | Number     | ms the "Saved" state lingers               |
 | `disableAnimation` | Boolean    | force-off animation                        |
-| `--oii-accent` etc.| CSS var    | design-token colour overrides (scoped)     |
+| `--motif-accent` etc.| CSS var    | design-token colour overrides (scoped)     |
 | `@stateChange`     | event      | fires on every state transition            |
 | `@saved`           | event      | fires on success                           |
 | `@error`           | event      | fires with the rejection reason            |
 
-Colours read from CSS custom properties (`--oii-accent`, `--oii-danger`,
-`--oii-success`, `--oii-focus`, `--oii-muted`, `--oii-border`) for design-token
+Colours read from CSS custom properties (`--motif-accent`, `--motif-danger`,
+`--motif-success`, `--motif-focus`, `--motif-muted`, `--motif-border`) for design-token
 compatibility.
 
 ## Browser support

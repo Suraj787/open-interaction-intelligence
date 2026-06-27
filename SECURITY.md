@@ -1,6 +1,6 @@
 # Security Policy
 
-OII's core purpose includes governance: helping AI coding agents discover, select, adapt
+Motif's core purpose includes governance: helping AI coding agents discover, select, adapt
 and validate interaction code **without** taking the tempting-but-dangerous path of
 scraping a site, running its install script and copying its code into your project. This
 document describes the threat posture, how to report a vulnerability, and what the
@@ -8,15 +8,15 @@ built-in scanners do and do not guarantee.
 
 ## Threat posture
 
-OII is designed so that the unsafe path is the hard path:
+Motif is designed so that the unsafe path is the hard path:
 
 - **Offline approved registry is the default.** Normal use reads the committed local
   registry and never touches the network. Internet retrieval happens only through an
-  explicit `python -m oii source retrieve --refresh` against an allowlisted official host
+  explicit `python -m motif source retrieve --refresh` against an allowlisted official host
   (`security/domain-policy.yml`).
-- **Untrusted-by-default ingestion.** Retrieved material lands in `.oii/quarantine/` and
+- **Untrusted-by-default ingestion.** Retrieved material lands in `.motif/quarantine/` and
   is **never executed, imported or evaluated**. It is reviewed statically and moves
-  through `.oii/quarantine/ → reviewed/ → approved/ | rejected/`.
+  through `.motif/quarantine/ → reviewed/ → approved/ | rejected/`.
 - **Licence gate.** Unknown licence ⇒ `reference-only`, never bundled. Source-available
   and Commons-Clause terms are not treated as permissive OSS.
 - **Trust tiers 1–5.** Tier 5 is reference-only / rejected. Bundling requires a verified
@@ -29,7 +29,7 @@ Policies live in `security/*.yml` (`dangerous-patterns.yml`, `dependency-policy.
 `domain-policy.yml`, `network-policy.yml`, `sandbox-policy.yml`, `trust-policy.yml`).
 The full analysis is in [`docs/threat-model.md`](docs/threat-model.md).
 
-> **OII reduces risk but cannot guarantee that third-party code is completely safe.**
+> **Motif reduces risk but cannot guarantee that third-party code is completely safe.**
 > Static analysis has limits, licences change, and upstream sources can be compromised.
 > Human review remains required before any external material is adopted.
 

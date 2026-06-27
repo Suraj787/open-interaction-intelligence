@@ -1,6 +1,6 @@
 # Enterprise Dashboard — Payroll & Analytics
 
-A worked example from **Open Interaction Intelligence (OII)**. The discipline:
+A worked example from **Motif**. The discipline:
 search PATTERNS before EFFECTS, prefer browser-native CSS, keep accessibility and
 reduced-motion mandatory, and refuse motion that hurts a dense, data-heavy screen.
 

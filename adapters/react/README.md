@@ -1,6 +1,6 @@
-# OII Adapter — React
+# Motif Adapter — React
 
-How OII recipes map onto idiomatic React (18/19, function components + hooks).
+How Motif recipes map onto idiomatic React (18/19, function components + hooks).
 Recipes stay CSS-first; React owns *state, lifecycle, and cleanup*, not the motion.
 
 > Provenance: original (clean-room). No third-party source is copied.
@@ -19,7 +19,7 @@ Avoid inline animation in JS unless the Web Animations API is genuinely required
 function Reveal({ children, intensity }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   useBlurReveal(ref, { intensity });
-  return <div ref={ref} className="oii-reveal">{children}</div>;
+  return <div ref={ref} className="motif-reveal">{children}</div>;
 }
 ```
 
@@ -91,7 +91,7 @@ before hydration.
 
 ```tsx
 const reduced = usePrefersReducedMotion();
-return <div data-animate={!reduced} className="oii-reveal">{children}</div>;
+return <div data-animate={!reduced} className="motif-reveal">{children}</div>;
 ```
 
 ## Testing
@@ -114,7 +114,7 @@ escalation per the technique order.
 | Knob                 | Prop                                                    |
 | -------------------- | ------------------------------------------------------- |
 | class override       | `className`                                             |
-| style override       | `style` (and `--oii-*` custom properties via `style`)   |
+| style override       | `style` (and `--motif-*` custom properties via `style`)   |
 | design tokens        | inherits CSS variables; `tokens` prop optional          |
 | intensity            | `intensity`                                             |
 | duration             | `duration`                                              |

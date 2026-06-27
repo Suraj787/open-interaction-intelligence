@@ -1,11 +1,11 @@
 ---
-name: open-interaction-intelligence
+name: motif
 description: Use when an AI coding agent must choose and implement a UI interaction, motion, or effect for a website or web application, and needs to select the least-complex pattern that serves a real user need rather than reach for a flashy animation.
 ---
 
-# Open Interaction Intelligence (OII)
+# Motif
 
-OII is an intelligence and governance system, **not** an animation bundle. It helps you
+Motif is an intelligence and governance system, **not** an animation bundle. It helps you
 select the RIGHT interaction for a product context. First determine what the user needs
 to **understand, feel, or accomplish**; then select the **least complex** interaction
 that achieves it. Always search for a PATTERN before an EFFECT.
@@ -95,6 +95,6 @@ Load these selectively as the workflow demands:
 
 ## CLI
 
-The registry, ranking, and provenance tooling is exposed through `python -m oii`
+The registry, ranking, and provenance tooling is exposed through `python -m motif`
 (for example registry search, candidate ranking, and source-refresh). Prefer the CLI
 over ad-hoc internet retrieval; it enforces the offline-approved-registry default.

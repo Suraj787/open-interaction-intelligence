@@ -1,5 +1,5 @@
 """CLI smoke tests — exit codes + key behaviours."""
-from oii import cli
+from motif import cli
 
 
 def test_validate_ok(capsys):

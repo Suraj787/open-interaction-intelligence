@@ -83,10 +83,10 @@ span attributes. Theme via CSS custom properties (override per-instance with
 
 | Variable                   | Default     | Meaning              |
 | -------------------------- | ----------- | -------------------- |
-| `--oii-skeleton-base`      | `#e2e8f0`   | block base colour    |
-| `--oii-skeleton-sheen`     | `#f1f5f9`   | moving sheen colour  |
-| `--oii-skeleton-radius`    | `0.375rem`  | corner radius        |
-| `--oii-skeleton-duration`  | `1.4s`      | shimmer cycle length |
+| `--motif-skeleton-base`      | `#e2e8f0`   | block base colour    |
+| `--motif-skeleton-sheen`     | `#f1f5f9`   | moving sheen colour  |
+| `--motif-skeleton-radius`    | `0.375rem`  | corner radius        |
+| `--motif-skeleton-duration`  | `1.4s`      | shimmer cycle length |
 
 ## Browser support
 

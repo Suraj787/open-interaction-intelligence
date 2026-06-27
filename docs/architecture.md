@@ -1,6 +1,6 @@
-# OII Architecture
+# Motif Architecture
 
-Open Interaction Intelligence (OII) is an **intelligence and governance system** for UI
+Motif is an **intelligence and governance system** for UI
 interactions, motion and effects — not an animation bundle. Its job is to help an AI
 coding agent decide what a user needs to *understand, feel or accomplish*, then select
 and implement the **least complex interaction** that achieves it, safely and with full
@@ -37,7 +37,7 @@ flowchart TB
         SPEC["specialist skills:\nproduct-context-analysis · interaction-design\neffect-discovery · effect-selection · framework-adaptation\nmotion-accessibility · motion-performance\nimplementation-validation · source-governance"]
     end
 
-    subgraph CLI["oii CLI  (python -m oii)"]
+    subgraph CLI["motif CLI  (python -m motif)"]
         C1["search · rank-sources · generate-index"]
         C2["component search/inspect/alternatives"]
         C3["component plan-install/install/rollback"]
@@ -63,7 +63,7 @@ flowchart TB
 
     subgraph Ingest["Ingestion + Connectors"]
         CN["connectors/ (generic-github + source-specific)"]
-        QD[".oii/ quarantine → reviewed → approved/rejected"]
+        QD[".motif/ quarantine → reviewed → approved/rejected"]
     end
 
     subgraph Scan["Scanners (scanners/) + Policies (security/)"]
@@ -89,9 +89,9 @@ product type → user intent → page/screen type → interaction objective → 
 → implementation) and a 16-step workflow. Specialist skills in `skills/` are loaded
 selectively as the workflow demands. Skills hold judgement; the CLI holds enforcement.
 
-### oii CLI layer
+### motif CLI layer
 
-`python -m oii` is the single tool surface. It is **dependency-free core** (Python
+`python -m motif` is the single tool surface. It is **dependency-free core** (Python
 standard library only) so `make check` runs anywhere; optional tools such as
 `jsonschema` are used if present but never required. The CLI enforces the
 offline-approved-registry default — it is preferred over ad-hoc internet retrieval.
@@ -120,7 +120,7 @@ for `browser-native`, `react`, `vue` and `frappe-vue`. See
 connectors) retrieve **only** from approved official locations into quarantine. A
 connector may read public metadata and collect licence/attribution; it must **not**
 execute code, run install scripts, modify a target project, follow unknown domains,
-access secrets or open binaries. Quarantine state lives under `.oii/`.
+access secrets or open binaries. Quarantine state lives under `.motif/`.
 
 ### Scanners + policies layer
 
@@ -136,7 +136,7 @@ happens here, via an explicit source-refresh — never during normal registry us
 ```mermaid
 flowchart LR
     D["discover"] --> V["verify official source"]
-    V --> R["retrieve into\n.oii/quarantine/"]
+    V --> R["retrieve into\n.motif/quarantine/"]
     R --> P["pin version + SHA-256 checksum"]
     P --> L["identify licence"]
     L --> SS["static security analysis"]
@@ -164,13 +164,13 @@ Operating modes (the connector layer supports three; the runtime default is the 
 ### Quarantine state machine
 
 ```
-.oii/quarantine/  → material as retrieved, untrusted, never executed
+.motif/quarantine/  → material as retrieved, untrusted, never executed
         │ static scan + licence + dependency + behaviour review
         ▼
-.oii/reviewed/    → scanned, findings recorded
+.motif/reviewed/    → scanned, findings recorded
         │ decision
-        ├──► .oii/approved/   (redistributable, licence-clear, scans clean)
-        └──► .oii/rejected/   (unsafe, licence-incompatible, or unverifiable)
+        ├──► .motif/approved/   (redistributable, licence-clear, scans clean)
+        └──► .motif/rejected/   (unsafe, licence-incompatible, or unverifiable)
 ```
 
 A clean-room adaptation produces an **original** recipe that retains no source code; the
@@ -190,6 +190,6 @@ Sources carry a tier 1–5 (`source.schema.json`). Lower trust requires stronger
 
 ## Status and scope
 
-OII v0.1.0 ships a **working secure pipeline with representative, high-confidence
+Motif v0.1.0 ships a **working secure pipeline with representative, high-confidence
 records** rather than fabricated breadth. See `PHASE_STATUS.md` for what is complete vs
 representative, and [release-process.md](release-process.md) for release discipline.

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://oii.dev/schemas/pattern.schema.json",
-  "title": "OII Pattern",
+  "$id": "https://motif.dev/schemas/pattern.schema.json",
+  "title": "Motif Pattern",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "name", "problem", "user_intent", "interaction_states", "accessibility_requirements", "success_criteria"],

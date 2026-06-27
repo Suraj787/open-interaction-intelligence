@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://oii.dev/schemas/recipe.schema.json",
-  "title": "OII Recipe",
+  "$id": "https://motif.dev/schemas/recipe.schema.json",
+  "title": "Motif Recipe",
   "type": "object",
   "additionalProperties": false,
   "required": [

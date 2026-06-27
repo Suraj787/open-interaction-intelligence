@@ -7,7 +7,7 @@ effect, and keep a reduced-motion path.
 ## Preconditions
 
 - Target repo inspected (framework, design system, existing motion conventions).
-- OII runs in the default **offline approved registry** mode (no network needed).
+- Motif runs in the default **offline approved registry** mode (no network needed).
 
 ## Steps
 
@@ -18,7 +18,7 @@ effect, and keep a reduced-motion path.
 3. **Per screen, state the objective** — what the visitor must understand, feel or
    accomplish. Load `skills/interaction-design`.
 4. **Search patterns first:**
-   `python -m oii search "<problem>"` then inspect candidate patterns. Only then look at
+   `python -m motif search "<problem>"` then inspect candidate patterns. Only then look at
    effects via `skills/effect-discovery`.
 5. **Rank transparently.** Load `skills/effect-selection`; produce multiple candidates and
    score them (complexity, performance, accessibility, fit). Pick the **simplest fully
@@ -33,7 +33,7 @@ effect, and keep a reduced-motion path.
    budgets, no jank.
 10. **Responsiveness gate:** breakpoints and input modes (touch/coarse pointer).
 11. **Record the decision** (`schemas/decision.schema.json`) and provenance; install any
-    approved component via `python -m oii component install` (diff + rollback + manifest).
+    approved component via `python -m motif component install` (diff + rollback + manifest).
 12. **Validate the experience** — see [validate-experience.md](validate-experience.md).
 
 ## Done when

@@ -2,12 +2,12 @@
 
 A **component** record describes a concrete, catalogued UI component or distinct effect as
 it exists in a third-party source — its framework, technologies, licence, accessibility
-and the **usability mode** that governs how OII may use it. Components are evidence about
-the outside world; they are not OII's own implementations (those are *recipes*).
+and the **usability mode** that governs how Motif may use it. Components are evidence about
+the outside world; they are not Motif's own implementations (those are *recipes*).
 
 - **Schema:** `schemas/component.schema.json`
 - **Location:** `registry/components/`
-- **Validate:** `python -m oii validate`
+- **Validate:** `python -m motif validate`
 
 ## When to create one
 

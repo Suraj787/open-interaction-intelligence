@@ -1,13 +1,13 @@
 # Authoring a Pattern Record
 
-A **pattern** is the problem-first unit of OII intelligence. It describes a user problem,
+A **pattern** is the problem-first unit of Motif intelligence. It describes a user problem,
 the user intent behind it, the interaction states involved, and the accessibility and
-success criteria a solution must meet. Patterns are what OII searches **before** effects —
+success criteria a solution must meet. Patterns are what Motif searches **before** effects —
 they connect "what the user needs to understand/feel/accomplish" to candidate effects.
 
 - **Schema:** `schemas/pattern.schema.json`
 - **Location:** `registry/patterns/`
-- **Validate:** `python -m oii validate`
+- **Validate:** `python -m motif validate`
 
 ## Required fields
 
@@ -40,7 +40,7 @@ should read sensibly even if every `recommended_effects` entry were removed.
 
 `rejected_effects` is as important as `recommended_effects`. It records *why* a tempting
 effect is wrong for this problem (e.g. "continuous parallax rejected: competes with data
-scanning on dense screens"). This is how OII resists novelty-for-novelty's-sake. Align
+scanning on dense screens"). This is how Motif resists novelty-for-novelty's-sake. Align
 rejections with `intelligence/anti-patterns/`.
 
 ## Accessibility is structural
@@ -52,7 +52,7 @@ happy path.
 
 ## Required provenance
 
-Patterns are OII's own intelligence, derived from `intelligence/interaction-problems/`
+Patterns are Motif's own intelligence, derived from `intelligence/interaction-problems/`
 and selection policies rather than copied from a vendor. They carry no third-party code.
 Where a pattern is informed by an enterprise design system's guidance, cite that guidance
 as evidence in the surrounding documentation — but the pattern text is original.

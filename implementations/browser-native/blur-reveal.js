@@ -1,13 +1,13 @@
 /* ============================================================================
- * OII Recipe — Blur Reveal on Scroll (browser-native, progressive enhancement)
+ * Motif Recipe — Blur Reveal on Scroll (browser-native, progressive enhancement)
  * ----------------------------------------------------------------------------
- * Reveals elements ([data-oii="blur-reveal"]) as they scroll into view by
- * toggling [data-oii-reveal="shown"], which blur-reveal.css animates.
+ * Reveals elements ([data-motif="blur-reveal"]) as they scroll into view by
+ * toggling [data-motif-reveal="shown"], which blur-reveal.css animates.
  *
  * Strategy (cheapest accessible technique first):
  *   1. If the browser supports CSS scroll-driven animations AND the user has
  *      NOT requested reduced motion, hand the whole job to CSS (add the
- *      `oii-css-scroll` class) and attach NO JS observers. Zero runtime cost.
+ *      `motif-css-scroll` class) and attach NO JS observers. Zero runtime cost.
  *   2. Otherwise, use IntersectionObserver to toggle the shown state once.
  *   3. If the user prefers reduced motion, reveal everything immediately and
  *      observe nothing — content is shown with no blur, no movement.
@@ -15,8 +15,8 @@
  *      (graceful degradation — never leave content hidden).
  *
  * SSR/no-JS safe: the markup is readable before this runs; we only add the
- * `oii-js` class (which arms the resting state) once we are confident we can
- * also remove it again via reveal. We fire a CustomEvent('oii:reveal') per
+ * `motif-js` class (which arms the resting state) once we are confident we can
+ * also remove it again via reveal. We fire a CustomEvent('motif:reveal') per
  * element for consumers.
  *
  * Provenance: original (clean-room).
@@ -43,21 +43,21 @@ export function initBlurReveal(root = document) {
     CSS.supports("animation-timeline: view()");
 
   const docEl = document.documentElement;
-  const elements = Array.from(root.querySelectorAll('[data-oii="blur-reveal"]'));
-  elements.forEach((el) => el.classList.add("oii-reveal"));
+  const elements = Array.from(root.querySelectorAll('[data-motif="blur-reveal"]'));
+  elements.forEach((el) => el.classList.add("motif-reveal"));
 
   /** Mark an element revealed and announce it. */
   const reveal = (el) => {
     if (el.dataset.oiiReveal === "shown") return;
     el.dataset.oiiReveal = "shown";
     el.dispatchEvent(
-      new CustomEvent("oii:reveal", { bubbles: true, detail: { element: el } })
+      new CustomEvent("motif:reveal", { bubbles: true, detail: { element: el } })
     );
   };
 
   // ----- Path 3: reduced motion — reveal instantly, no observers. ----------
   if (reduceMotion.matches) {
-    docEl.classList.add("oii-js");
+    docEl.classList.add("motif-js");
     elements.forEach(reveal);
     return makeDisposer(() => {});
   }
@@ -65,22 +65,22 @@ export function initBlurReveal(root = document) {
   // ----- Path 1: native CSS scroll-driven animation. -----------------------
   // CSS owns the motion; we just opt the document in. No JS observers needed.
   if (supportsScrollTimeline) {
-    docEl.classList.add("oii-js", "oii-css-scroll");
+    docEl.classList.add("motif-js", "motif-css-scroll");
     // The CSS keyframes are authoritative; mark shown so the contract
-    // ([data-oii-reveal="shown"]) and the event still fire for consumers.
+    // ([data-motif-reveal="shown"]) and the event still fire for consumers.
     elements.forEach(reveal);
     return makeDisposer(() => {});
   }
 
   // ----- Path 4: no IntersectionObserver — reveal instantly. ---------------
   if (typeof IntersectionObserver === "undefined") {
-    docEl.classList.add("oii-js");
+    docEl.classList.add("motif-js");
     elements.forEach(reveal);
     return makeDisposer(() => {});
   }
 
   // ----- Path 2: IntersectionObserver timed fallback. ----------------------
-  docEl.classList.add("oii-js"); // arms the resting (blurred) state in CSS
+  docEl.classList.add("motif-js"); // arms the resting (blurred) state in CSS
 
   const observer = new IntersectionObserver(
     (entries, obs) => {

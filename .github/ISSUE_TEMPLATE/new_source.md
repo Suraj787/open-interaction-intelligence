@@ -52,7 +52,7 @@ Provide links and notes that support the licence, redistribution and trust asses
 -
 -
 
-## Why OII should include it
+## Why Motif should include it
 
 What interaction problem / pattern does it serve? Website vs web application? Vue /
 Frappe-Vue relevance? Accessibility and performance characteristics?

@@ -36,7 +36,7 @@ gets React added to obtain an interaction. Re-implement via the adapter instead.
    path must exist in the new framework too.
 8. **Author the recipe** (`recipe-authoring.md`) for the new `framework`, with provenance
    and `source_references`; record the decision.
-9. **Validate:** `python -m oii validate`.
+9. **Validate:** `python -m motif validate`.
 
 ## Done when
 
