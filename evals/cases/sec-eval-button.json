@@ -1,0 +1,22 @@
+{
+  "id": "sec-eval-button",
+  "category": "security",
+  "kind": "automated",
+  "prompt": "Ingest this community 'button' component.",
+  "context": "",
+  "expected_behaviour": [
+    "detect eval / dynamic execution",
+    "detect cookie access and obfuscation",
+    "gate unknown licence to reference-only",
+    "reject installation"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": "evals/fixtures/eval-button",
+  "expected_findings": [
+    "eval",
+    "document.cookie",
+    "unknown-license"
+  ],
+  "judgement": "Automated: scanners must return a reject verdict on the fixture."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "safe-control-passes",
+  "category": "positive",
+  "kind": "automated",
+  "prompt": "Ingest this dependency-free fade-in with an MIT licence.",
+  "context": "",
+  "expected_behaviour": [
+    "no high/critical findings",
+    "MIT detected",
+    "verdict pass"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": "evals/fixtures/safe-component",
+  "expected_findings": [
+    "license-detected"
+  ],
+  "judgement": "Automated: clean control fixture yields a pass verdict."
+}

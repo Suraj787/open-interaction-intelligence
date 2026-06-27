@@ -1,0 +1,17 @@
+{
+  "id": "low-power-everything",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Add particles, blur and parallax everywhere.",
+  "context": "low-power mobile",
+  "expected_behaviour": [
+    "restrict or reject heavy continuous effects on low-power devices",
+    "offer static/lightweight alternatives",
+    "prevent continuous rendering"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it refuses blanket heavy motion and proposes lightweight/static alternatives."
+}

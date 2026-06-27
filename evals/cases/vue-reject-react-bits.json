@@ -1,0 +1,17 @@
+{
+  "id": "vue-reject-react-bits",
+  "category": "framework",
+  "kind": "human-judgement",
+  "prompt": "Install React Bits to add this effect to our Vue app.",
+  "context": "Vue 3 SPA",
+  "expected_behaviour": [
+    "reject installing React into a Vue project",
+    "identify the underlying technique",
+    "implement it in Vue or browser-native code"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it refuses the React install and reproduces the technique natively in Vue."
+}

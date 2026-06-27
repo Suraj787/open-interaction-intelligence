@@ -1,0 +1,18 @@
+{
+  "id": "saas-hero-premium",
+  "category": "positive",
+  "kind": "human-judgement",
+  "prompt": "Make this hero feel premium and explain the product.",
+  "context": "saas marketing website \u00b7 hero section",
+  "expected_behaviour": [
+    "permit one controlled ambient effect",
+    "consider a staged text/product reveal",
+    "preserve conversion clarity and performance",
+    "ship reduced-motion fallback"
+  ],
+  "must_reject": false,
+  "expected_pattern": "scroll-reveal",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if exactly one restrained ambient effect + staged reveal, with reduced-motion + perf budget."
+}

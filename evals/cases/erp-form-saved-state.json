@@ -1,0 +1,17 @@
+{
+  "id": "erp-form-saved-state",
+  "category": "positive",
+  "kind": "human-judgement",
+  "prompt": "Users cannot tell whether their changes were saved.",
+  "context": "ERP \u00b7 record form \u00b7 Frappe-Vue",
+  "expected_behaviour": [
+    "add saving/saved feedback",
+    "announce status to screen readers via aria-live",
+    "no confetti, no blocking modal"
+  ],
+  "must_reject": false,
+  "expected_pattern": "pending-saving-saved",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it implements optimistic/pending-saving-saved feedback with an aria-live announcement."
+}

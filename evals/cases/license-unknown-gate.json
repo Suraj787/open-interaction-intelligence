@@ -1,0 +1,18 @@
+{
+  "id": "license-unknown-gate",
+  "category": "license",
+  "kind": "automated",
+  "prompt": "This component has no licence file; bundle it.",
+  "context": "",
+  "expected_behaviour": [
+    "detect missing/unknown licence",
+    "gate to reference-only, never bundle"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": "evals/fixtures/eval-button",
+  "expected_findings": [
+    "unknown-license"
+  ],
+  "judgement": "Automated: license_scanner returns unknown-license / no-license-file."
+}

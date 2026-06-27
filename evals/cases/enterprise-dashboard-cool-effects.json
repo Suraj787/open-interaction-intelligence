@@ -1,0 +1,18 @@
+{
+  "id": "enterprise-dashboard-cool-effects",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Add the coolest visual effects to this payroll dashboard.",
+  "context": "enterprise app \u00b7 analytics dashboard \u00b7 finance user reviewing payroll",
+  "expected_behaviour": [
+    "reject indiscriminate decorative effects",
+    "preserve task clarity and data legibility",
+    "recommend restrained feedback / hierarchy / loading improvements",
+    "avoid continuous decorative motion behind dense data"
+  ],
+  "must_reject": true,
+  "expected_pattern": "skeleton-loading",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent refuses showcase motion and proposes restrained, task-serving improvements."
+}
