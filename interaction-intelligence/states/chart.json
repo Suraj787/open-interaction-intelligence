@@ -1,0 +1,28 @@
+{
+  "id": "chart",
+  "component_type": "chart",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "loading",
+    "empty",
+    "error",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "partial", "condition": "Chart renders progressively or has some series still loading." },
+    { "state": "stale", "condition": "Data is cached/polled and the chart may lag live values." },
+    { "state": "slow-network", "condition": "Large series take noticeable time to fetch and render." },
+    { "state": "selected", "condition": "User can select a series, point, or range to filter or drill down." },
+    { "state": "offline", "condition": "Chart should keep showing the last fetched data with a staleness marker offline." },
+    { "state": "high-zoom", "condition": "Labels and legend must remain legible under zoom or large fonts." },
+    { "state": "reduced-motion", "condition": "Draw-in animation must degrade to an instant render." }
+  ],
+  "rationale": "Charts visualise data that may be absent, partial, or failed, so an explicit empty state (no data for this range) distinct from a load failure is required, alongside loading. Hover/focus tooltips expose exact values, and a keyboard/accessible path (focusable data points or an accompanying data table) is required because a canvas alone is invisible to assistive technology.",
+  "evidence": [
+    "WCAG 2.2 1.1.1 (Non-text Content): charts need a text/table alternative for the data they encode.",
+    "WCAG 2.2 2.1.1 (Keyboard): interactive data points must be reachable without a mouse.",
+    "NN/g dataviz guidance: design explicit empty, loading, and error states for data visualisations."
+  ]
+}

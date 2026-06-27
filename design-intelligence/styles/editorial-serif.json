@@ -1,0 +1,44 @@
+{
+  "id": "editorial-serif",
+  "name": "Editorial Serif",
+  "description": "A reading-first style modelled on print magazines and long-form journalism: expressive serif headlines, measured body columns, deliberate vertical rhythm, and restrained colour that lets typography and imagery carry the voice.",
+  "emotional_impression": "Sophisticated, authoritative, considered, and literary.",
+  "visual_principles": [
+    "Serif or contrast display type for headlines paired with a readable body face",
+    "Optimal measure (roughly 60-75 characters) for sustained reading",
+    "Strong vertical rhythm and baseline alignment",
+    "Generous margins and pull-quotes for pacing",
+    "Photography and illustration treated with editorial restraint"
+  ],
+  "industry_suitability": ["publishing", "media", "luxury and fashion", "non-profits", "thought leadership"],
+  "page_suitability": ["articles", "long-form", "about pages", "case studies", "landing pages"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "High-contrast display serifs at small sizes can reduce legibility for low-vision users",
+    "Tight tracking and decorative ligatures may impair dyslexic readers",
+    "Justified text with poor hyphenation creates rivers and uneven spacing"
+  ],
+  "performance_risks": ["Multiple custom serif weights add font payload; subset and preload to mitigate"],
+  "typography_compatibility": ["marketing-expressive", "transitional serif", "humanist serif"],
+  "layout_compatibility": ["progressive-disclosure", "cards", "timeline", "nested-navigation"],
+  "trend_maturity": "mature",
+  "overuse_risk": "low",
+  "ai_cliche_risk": "medium",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Content where reading comfort and tone of voice are the product",
+    "Brands wanting to signal heritage, craft, or intellectual authority",
+    "Marketing that competes on substance rather than flash"
+  ],
+  "inappropriate_contexts": [
+    "Dense application UI, dashboards, and data tables",
+    "Highly interactive transactional flows where serifs feel decorative",
+    "Tiny-text UI chrome where serif detail muddies at small sizes"
+  ],
+  "alternatives": ["minimal-functional", "swiss-grid", "warm-approachable"],
+  "evidence": [
+    "The New York Times, The Atlantic, and Medium demonstrate serif editorial systems optimised for reading",
+    "Legibility research (Larson & others) supports measure and rhythm guidance for long-form comprehension"
+  ],
+  "confidence": "high"
+}

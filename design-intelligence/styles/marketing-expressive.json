@@ -1,0 +1,47 @@
+{
+  "id": "marketing-expressive",
+  "name": "Marketing Expressive",
+  "description": "A conversion-and-emotion-led style for acquisition surfaces: large expressive type, bold colour and gradients, motion and scroll-driven storytelling, vivid imagery, and strong visual hierarchy guiding the eye toward a primary call to action.",
+  "emotional_impression": "Energetic, ambitious, persuasive, and brand-forward.",
+  "visual_principles": [
+    "Oversized display typography and dramatic scale contrast",
+    "Bold brand colour, gradients, and accent imagery",
+    "Scroll-driven and entrance motion to pace a narrative",
+    "Clear focal hierarchy funnelling toward primary CTAs",
+    "Section rhythm alternating density and breathing room"
+  ],
+  "industry_suitability": ["SaaS marketing", "consumer brands", "startups", "events", "campaigns"],
+  "page_suitability": ["landing pages", "homepages", "product launches", "campaigns", "pricing"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Text over busy gradients and imagery frequently fails contrast",
+    "Heavy entrance and parallax motion can violate prefers-reduced-motion and trigger vestibular issues",
+    "Decorative type at display sizes can hurt legibility if used for body copy"
+  ],
+  "performance_risks": [
+    "Large hero media, video, and animation libraries threaten LCP and CLS",
+    "Scroll-driven effects can cause main-thread jank without care"
+  ],
+  "typography_compatibility": ["marketing-expressive", "display sans", "editorial-serif"],
+  "layout_compatibility": ["cards", "timeline", "progressive-disclosure", "canvas"],
+  "trend_maturity": "current",
+  "overuse_risk": "medium",
+  "ai_cliche_risk": "medium",
+  "implementation_complexity": "high",
+  "appropriate_contexts": [
+    "Top-of-funnel acquisition where emotion and differentiation drive conversion",
+    "Product launches and campaigns with a clear single goal",
+    "Brands with the resources to execute motion and imagery well"
+  ],
+  "inappropriate_contexts": [
+    "In-product application UI and dashboards",
+    "Dense data or transactional workflows",
+    "Performance- or accessibility-constrained contexts that cannot afford heavy media"
+  ],
+  "alternatives": ["editorial-serif", "neo-brutalist", "warm-approachable"],
+  "evidence": [
+    "Stripe, Linear, and Vercel marketing sites exemplify expressive yet disciplined conversion design",
+    "Core Web Vitals (LCP, CLS, INP) make hero-media and motion budgets a measurable constraint"
+  ],
+  "confidence": "high"
+}

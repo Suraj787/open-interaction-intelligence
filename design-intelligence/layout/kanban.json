@@ -1,0 +1,20 @@
+{
+  "id": "kanban",
+  "name": "Kanban Board",
+  "when_to_use": "Use to visualise and manage work moving through a small set of discrete stages, where status is the primary axis and users advance items by moving them between columns, such as task tracking, pipelines, and hiring stages.",
+  "when_not_to_use": "Avoid when items have many attributes to compare (a table fits better), when there are too many stages or items to fit columns on screen, or when status is not the dominant way users think about the work.",
+  "information_structure": "Vertical columns representing ordered stages, each holding cards (work items); the card's column communicates its status, and within-column order can convey priority.",
+  "navigation": "Drag cards between columns to change status; click a card for detail; filter and swimlanes segment the board; column counts and WIP limits surface flow health.",
+  "density": ["comfortable", "compact"],
+  "responsive_behaviour": "Side-by-side columns do not fit narrow screens; switch to a single-column status-filtered view or a horizontally scrollable strip on mobile.",
+  "accessibility_notes": [
+    "Provide a keyboard mechanism to move cards between columns, since drag-and-drop alone excludes many users",
+    "Announce status changes when a card moves",
+    "Expose column as group with an accessible name and item count"
+  ],
+  "compares_with": ["table-first", "timeline", "cards", "canvas"],
+  "evidence": [
+    "Trello, Jira, and Linear validate kanban for stage-based work management",
+    "WAI-ARIA guidance and modern drag-and-drop libraries stress accessible keyboard alternatives to dragging"
+  ]
+}

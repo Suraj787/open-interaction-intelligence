@@ -1,0 +1,19 @@
+{
+  "id": "ib-round01-project-list",
+  "category": "positive",
+  "kind": "human-judgement",
+  "prompt": "Build the main screen: a list of projects the team can scan and act on.",
+  "context": "InterfaceBench longitudinal · Round 1 · internal project tracker for a services company · primary task is triage and action",
+  "expected_behaviour": [
+    "establish product context: users, domain, primary task before designing",
+    "choose a list structure that fits scanning real work (status, owner, due, health), not a vanity stat dashboard",
+    "define a reusable system (tokens, spacing, components) for later rounds",
+    "ship loading, empty, error and zero-results states for the list",
+    "avoid generic AI tells (gradient hero, decorative blur) standing in for hierarchy"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the structure is derived from the triage task with a reusable system and complete list states, free of generic dashboard defaults."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "recipe-status-pill",
+  "type": "recipe",
+  "label": "Status pill recipe",
+  "attributes": {
+    "composition": "semantic colour token + text label + optional icon",
+    "rule": "never colour alone; label always present",
+    "tokens": ["status.success", "status.warning", "status.danger", "status.info", "status.neutral"]
+  }
+}

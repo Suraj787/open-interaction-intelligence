@@ -1,0 +1,86 @@
+{
+  "id": "education",
+  "name": "Education & EdTech",
+  "users": [
+    {
+      "role": "Instructor / Teacher",
+      "context": "Builds courses, posts assignments, grades submissions, gives feedback, and tracks attendance and progress. Time-poor, manages many students across sections, often grading in long batch sessions.",
+      "expertise": "Domain expert in subject; variable LMS fluency. Needs efficient bulk grading and clear gradebook semantics."
+    },
+    {
+      "role": "Student / Learner",
+      "context": "Enrols in courses, consumes content, submits assignments, takes quizzes/exams, and checks grades. Wide age range, devices, and abilities; may have accommodations and varying connectivity.",
+      "expertise": "Novice to intermediate; high stakes around deadlines and grades, sensitive to fairness."
+    },
+    {
+      "role": "Registrar / Academic Administrator",
+      "context": "Manages enrolment, course catalog, scheduling, transcripts, and academic records. Custodian of the official student record and degree audit.",
+      "expertise": "Expert in academic policy and records; accountable for accuracy of the permanent transcript."
+    },
+    {
+      "role": "Academic Advisor",
+      "context": "Guides students on degree planning, monitors progress and at-risk indicators, approves registration overrides.",
+      "expertise": "Expert in program requirements; consumes progress dashboards and early-alert flags."
+    },
+    {
+      "role": "Parent / Guardian (K-12)",
+      "context": "Monitors child's grades, attendance, and communications; consents to activities and data use. Infrequent, mobile, privacy-sensitive.",
+      "expertise": "Novice; needs simple, glanceable summaries and clear consent."
+    },
+    {
+      "role": "Proctor / Assessment Administrator",
+      "context": "Configures and oversees timed exams, manages academic-integrity flags and accommodations, handles incidents.",
+      "expertise": "Expert in assessment policy and integrity tooling."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Assignment submission and grading",
+      "steps": ["Instructor posts assignment with rubric and deadline", "Student submits work before deadline (with late policy)", "Instructor grades against rubric and leaves feedback", "Grade posted to gradebook", "Student views grade and feedback", "Handle regrade requests"],
+      "frequency": "weekly / continuous per term",
+      "criticality": "high"
+    },
+    {
+      "name": "Online quiz / timed exam delivery",
+      "steps": ["Configure question pool, timing, and attempts", "Apply accommodations (extra time)", "Authenticate and start timed attempt", "Auto-save responses during the attempt", "Submit (manual or on timer)", "Auto/manual grade and release results"],
+      "frequency": "periodic (midterms/finals/quizzes)",
+      "criticality": "critical"
+    },
+    {
+      "name": "Enrolment / registration",
+      "steps": ["Open registration window with eligibility checks", "Student selects courses against prerequisites and capacity", "Resolve holds, conflicts, and waitlists", "Advisor/registrar overrides where needed", "Confirm schedule and update official record", "Process add/drop within deadlines"],
+      "frequency": "per term",
+      "criticality": "high"
+    },
+    {
+      "name": "Grade finalisation and transcript posting",
+      "steps": ["Instructor submits final grades by deadline", "Registrar validates and resolves incompletes", "Calculate GPA and academic standing", "Post to official transcript", "Lock the term", "Handle grade changes via controlled workflow"],
+      "frequency": "end of term",
+      "criticality": "critical"
+    },
+    {
+      "name": "Attendance and early-alert / at-risk tracking",
+      "steps": ["Record attendance/engagement", "Aggregate performance and participation signals", "Flag at-risk students", "Notify advisor and student", "Log intervention and outcome"],
+      "frequency": "weekly / continuous",
+      "criticality": "medium"
+    }
+  ],
+  "risks": [
+    "Submission lost or rejected at the deadline due to timing/timezone or upload failure",
+    "Wrong grade posted or gradebook miscalculation affecting GPA and standing",
+    "Timed-exam answers lost on disconnect or premature auto-submit",
+    "Student or parent accessing another student's records (privacy breach)",
+    "Accommodation (extra time, screen reader) not applied, disadvantaging a student",
+    "Unauthorised grade change without an audit trail",
+    "Academic-integrity false positive penalising an honest student",
+    "Enrolment override bypassing prerequisites, harming academic progress",
+    "Inaccessible content excluding students with disabilities",
+    "Missed registration/add-drop deadline with financial and academic consequences"
+  ],
+  "information_objects": ["Course / section", "Enrolment record", "Assignment and rubric", "Submission", "Gradebook entry / grade", "Quiz / exam and question bank", "Attendance record", "Official transcript", "Degree-audit / progress record", "Accommodation record", "Early-alert flag", "Consent / FERPA record"],
+  "environment_constraints": ["Hard deadlines and timezone differences across distributed learners", "Wide range of devices, bandwidth, and assistive technologies", "High-stakes moments (exams, grade posting) with low error tolerance", "Long grading sessions inviting fatigue errors", "Mixed-age users including minors (heightened privacy)", "Accommodation and accessibility legal mandates", "Seasonal load spikes (registration, finals)"],
+  "domain_patterns": ["Gradebook master-detail with weighting/rubrics", "Deadline and late-policy enforcement with timezone clarity", "Timed assessment with auto-save and resume", "Role-based access (instructor/student/advisor/parent)", "Override-with-approval (prerequisites, capacity)", "Official-record locking and controlled grade-change workflow", "Accommodation overlay on assessments", "Early-alert / at-risk dashboards"],
+  "audit_compliance": ["FERPA (US student-record privacy)", "COPPA for under-13 learners", "GDPR for EU students and minors", "WCAG 2.1 AA / Section 508 accessibility (ADA obligations)", "Accreditation and academic-integrity record retention", "Title IX and equity considerations where relevant"],
+  "accessibility_concerns": ["Full WCAG 2.1 AA conformance for learners with disabilities", "Captioning and transcripts for video/audio content", "Keyboard and screen-reader operable assessments; no colour-only feedback", "Configurable, accommodation-aware timing on exams", "Readable structure and alt text for course materials", "Plain-language deadlines with explicit timezone display"],
+  "anti_patterns": ["Silent submission failure at the deadline with no confirmation receipt", "Timed exams without auto-save or resume after disconnect", "Ambiguous deadlines without explicit timezone", "Colour-only pass/fail or grade indicators", "Editable grades with no change-history/audit trail", "Inaccessible PDFs and uncaptioned media as primary content", "Exposing classmates' grades or identities via insecure references", "Ignoring accommodation settings in assessment delivery"]
+}

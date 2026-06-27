@@ -1,0 +1,28 @@
+{
+  "id": "upload",
+  "component_type": "upload",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "loading",
+    "error",
+    "success",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "partial", "condition": "Multi-file or resumable upload where some files succeed and others are still in progress or failed." },
+    { "state": "disabled", "condition": "Uploading is blocked by quota, file-type, or current workflow step." },
+    { "state": "offline", "condition": "Upload must pause and resume or queue when connectivity drops mid-transfer." },
+    { "state": "slow-network", "condition": "Large files require a determinate progress indicator and time/percentage feedback." },
+    { "state": "permission-denied", "condition": "User lacks rights to upload to the target location." },
+    { "state": "touch", "condition": "Drag-and-drop must have a tap-to-browse equivalent on coarse-pointer devices." }
+  ],
+  "rationale": "Uploads are long-running, fallible transfers, so determinate loading (progress), explicit per-file error with retry, and a clear success confirmation are mandatory. The drop zone needs hover/active/focus affordances and a keyboard-accessible file picker because drag-and-drop alone is not operable by keyboard or assistive tech.",
+  "evidence": [
+    "WCAG 2.2 2.1.1 (Keyboard): drag-and-drop must have a keyboard-operable alternative.",
+    "WCAG 2.2 4.1.3 (Status Messages): upload progress and completion must be announced.",
+    "NN/g and platform guidelines: show determinate progress, per-file status, and a retry path for failed uploads."
+  ]
+}

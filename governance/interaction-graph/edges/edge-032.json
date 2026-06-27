@@ -1,0 +1,5 @@
+{
+  "from": "component-project-table",
+  "to": "constraint-token-spacing",
+  "relation": "governed-by"
+}

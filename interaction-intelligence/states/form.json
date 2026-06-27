@@ -1,0 +1,30 @@
+{
+  "id": "form",
+  "component_type": "form",
+  "required_states": [
+    "default",
+    "focus",
+    "active",
+    "disabled",
+    "loading",
+    "error",
+    "success",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "empty", "condition": "Form prefills from a record that may not yet exist or returns no data." },
+    { "state": "partial", "condition": "Multi-step or autosave form that can be saved or restored in an incomplete state." },
+    { "state": "offline", "condition": "Form submits over the network and must queue or warn when connectivity is lost." },
+    { "state": "stale", "condition": "Editing a record another user may have changed since it was loaded." },
+    { "state": "conflict", "condition": "Concurrent edit detected on save (optimistic-lock / version mismatch)." },
+    { "state": "permission-denied", "condition": "User can view the form but lacks rights to submit or edit some fields." },
+    { "state": "touch", "condition": "Rendered on a coarse-pointer device requiring larger targets and native input affordances." },
+    { "state": "reduced-motion", "condition": "User prefers reduced motion; validation transitions must not rely on animation." }
+  ],
+  "rationale": "Forms are the primary write surface. Field-level focus, submission loading, blocking disabled state during submit, and clear inline error/success feedback are mandatory because data loss and ambiguous submission outcomes are the most damaging form failures. Keyboard operability is required, not optional, since forms are routinely completed without a mouse.",
+  "evidence": [
+    "WCAG 2.2 3.3.1 (Error Identification) and 3.3.3 (Error Suggestion) require explicit, text-based error states.",
+    "Nielsen Norman Group: forms must show inline validation and disable the submit control while a request is in flight to prevent double submission.",
+    "Frappe/CRM and Helpdesk patterns: dirty-state tracking and conflict detection on shared records."
+  ]
+}

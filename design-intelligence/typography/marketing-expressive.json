@@ -1,0 +1,61 @@
+{
+  "id": "marketing-expressive",
+  "name": "Marketing Expressive",
+  "families": {
+    "sans": {
+      "name": "Inter",
+      "role": "Body copy, UI, captions",
+      "rationale": "A neutral, highly legible workhorse for paragraphs and supporting text so the display face can carry personality without compromising readability."
+    },
+    "mono": {
+      "name": "Space Mono",
+      "role": "Accents, labels, eyebrow text, code snippets",
+      "rationale": "A characterful monospace used sparingly for eyebrow labels, stats, and technical accents to add texture against the display and body faces."
+    },
+    "display": {
+      "name": "Clash Display",
+      "role": "Hero headlines and large statements",
+      "rationale": "A high-impact contemporary display face with strong personality for oversized marketing headlines; reserved for large sizes where its character reads well and never used for body copy."
+    }
+  },
+  "scale": {
+    "unit": "rem",
+    "base": "1rem (16px)",
+    "ratio": "1.333 (perfect fourth) for dramatic marketing hierarchy, with fluid clamp() scaling on hero sizes",
+    "steps": {
+      "sm": "0.875rem",
+      "base": "1rem",
+      "md": "1.25rem",
+      "lg": "1.667rem",
+      "xl": "2.222rem",
+      "2xl": "2.963rem",
+      "3xl": "3.95rem",
+      "hero": "clamp(3rem, 8vw, 6rem)"
+    },
+    "notes": "Body stays at base/md for comfortable reading; the large end of the scale is reserved for the display face. Hero sizes use clamp() so headlines scale fluidly between mobile and desktop without breakpoints."
+  },
+  "line_heights": {
+    "tight": "1.05 (oversized hero display, where large type needs negative-ish leading)",
+    "snug": "1.15 (headlines)",
+    "normal": "1.5 (body copy)",
+    "relaxed": "1.6 (intro and lead paragraphs)"
+  },
+  "tabular_numerals": false,
+  "fallback_stacks": {
+    "sans": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "mono": "'Space Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+    "display": "'Clash Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  },
+  "variable_fonts": true,
+  "localisation_notes": [
+    "Display faces like Clash Display often have limited language coverage; provide a strong sans fallback and test non-Latin headlines, which may need to drop to the body sans",
+    "Subset and preload the display font (it is only used for a few large headlines) to protect LCP and avoid layout shift; use font-display: swap with a metrics-matched fallback",
+    "Reduce display line-height as size increases; the 1.05 tight value prevents oversized hero lines from feeling gappy",
+    "For pricing or stat blocks, opt into tabular figures locally even though body default is proportional"
+  ],
+  "evidence": [
+    "Pairing a characterful display face with a neutral body sans is a standard editorial/marketing practice for expressive yet readable pages",
+    "Core Web Vitals (LCP, CLS) make font subsetting, preloading, and metrics-matched fallbacks a measurable requirement for hero typography",
+    "WCAG 2.2 SC 1.4.8 line-spacing guidance still applies to body copy regardless of expressive display sizing"
+  ]
+}

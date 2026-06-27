@@ -1,0 +1,168 @@
+{
+  "id": "enterprise-neutral",
+  "name": "Enterprise Neutral",
+  "primitives": {
+    "neutral": {
+      "0": "#ffffff",
+      "50": "#f8fafc",
+      "100": "#f1f5f9",
+      "200": "#e2e8f0",
+      "300": "#cbd5e1",
+      "400": "#94a3b8",
+      "500": "#64748b",
+      "600": "#475569",
+      "700": "#334155",
+      "800": "#1e293b",
+      "900": "#0f172a",
+      "950": "#020617"
+    },
+    "blue": {
+      "50": "#eff6ff",
+      "100": "#dbeafe",
+      "300": "#93c5fd",
+      "500": "#2563eb",
+      "600": "#1d4ed8",
+      "700": "#1e40af",
+      "900": "#1e3a8a"
+    },
+    "green": {
+      "50": "#ecfdf5",
+      "500": "#16a34a",
+      "600": "#15803d",
+      "700": "#166534"
+    },
+    "amber": {
+      "50": "#fffbeb",
+      "500": "#d97706",
+      "600": "#b45309",
+      "700": "#92400e"
+    },
+    "red": {
+      "50": "#fef2f2",
+      "500": "#dc2626",
+      "600": "#b91c1c",
+      "700": "#991b1b"
+    },
+    "cyan": {
+      "50": "#ecfeff",
+      "500": "#0891b2",
+      "600": "#0e7490"
+    }
+  },
+  "semantic_tokens": {
+    "bg": {
+      "canvas": "neutral.50",
+      "surface": "neutral.0",
+      "surface-raised": "neutral.0",
+      "surface-sunken": "neutral.100",
+      "overlay": "neutral.900"
+    },
+    "fg": {
+      "default": "neutral.900",
+      "muted": "neutral.600",
+      "subtle": "neutral.500",
+      "on-primary": "neutral.0",
+      "disabled": "neutral.400"
+    },
+    "border": {
+      "default": "neutral.200",
+      "strong": "neutral.300",
+      "focus": "blue.500"
+    },
+    "primary": {
+      "default": "blue.600",
+      "hover": "blue.700",
+      "active": "blue.900",
+      "fg": "neutral.0",
+      "subtle-bg": "blue.50"
+    },
+    "success": {
+      "default": "green.600",
+      "fg": "neutral.0",
+      "subtle-bg": "green.50",
+      "subtle-fg": "green.700"
+    },
+    "warning": {
+      "default": "amber.600",
+      "fg": "neutral.0",
+      "subtle-bg": "amber.50",
+      "subtle-fg": "amber.700"
+    },
+    "danger": {
+      "default": "red.600",
+      "hover": "red.700",
+      "fg": "neutral.0",
+      "subtle-bg": "red.50",
+      "subtle-fg": "red.700"
+    },
+    "info": {
+      "default": "cyan.600",
+      "fg": "neutral.0",
+      "subtle-bg": "cyan.50",
+      "subtle-fg": "cyan.600"
+    }
+  },
+  "component_tokens": {
+    "button-primary-bg": "primary.default",
+    "button-primary-bg-hover": "primary.hover",
+    "input-border": "border.default",
+    "input-border-focus": "border.focus",
+    "table-row-stripe": "neutral.50",
+    "table-header-bg": "neutral.100"
+  },
+  "state_tokens": {
+    "hover-overlay": "rgba(15,23,42,0.04)",
+    "active-overlay": "rgba(15,23,42,0.08)",
+    "selected-bg": "blue.50",
+    "focus-ring": "blue.500",
+    "disabled-fg": "neutral.400",
+    "disabled-bg": "neutral.100"
+  },
+  "chart_palette": [
+    {"name": "blue", "hex": "#2563eb"},
+    {"name": "teal", "hex": "#0d9488"},
+    {"name": "amber", "hex": "#d97706"},
+    {"name": "violet", "hex": "#7c3aed"},
+    {"name": "rose", "hex": "#e11d48"},
+    {"name": "green", "hex": "#16a34a"},
+    {"name": "slate", "hex": "#64748b"},
+    {"name": "cyan", "hex": "#0891b2"}
+  ],
+  "themes": {
+    "light": {
+      "bg-canvas": "#f8fafc",
+      "bg-surface": "#ffffff",
+      "fg-default": "#0f172a",
+      "fg-muted": "#475569",
+      "border-default": "#e2e8f0",
+      "primary": "#1d4ed8"
+    },
+    "dark": {
+      "bg-canvas": "#020617",
+      "bg-surface": "#0f172a",
+      "bg-surface-raised": "#1e293b",
+      "fg-default": "#f1f5f9",
+      "fg-muted": "#94a3b8",
+      "border-default": "#334155",
+      "primary": "#60a5fa",
+      "primary-fg": "#0f172a"
+    }
+  },
+  "contrast_notes": [
+    "Body text neutral.900 on neutral.0 yields ~17:1, far exceeding WCAG 2.2 SC 1.4.3 (4.5:1) for normal text",
+    "fg.muted neutral.600 (#475569) on white is ~7.5:1, safe for secondary text; do not use neutral.400 or lighter for text",
+    "primary.default blue.600 (#1d4ed8) on white is ~6.3:1, passing for text and UI components (SC 1.4.11)",
+    "In dark theme, primary is lightened to blue.300/400 (#60a5fa) because blue.600 lacks contrast on dark surfaces; pair with dark foreground",
+    "amber.600 (#b45309) is used instead of a lighter amber for warning text so it passes 4.5:1; the lighter amber.500 is reserved for fills with dark text"
+  ],
+  "colour_vision_notes": [
+    "Status is never encoded by colour alone (SC 1.4.1): success/warning/danger always pair with an icon and text label",
+    "The chart palette separates blue, amber, and violet/rose hues that remain distinguishable under deuteranopia and protanopia; verify with a simulator before shipping",
+    "Avoid adjacent red/green chart series; the palette orders blue-teal-amber-violet to maximise separation for the most common CVD types"
+  ],
+  "evidence": [
+    "Contrast ratios computed against WCAG 2.2 SC 1.4.3 and 1.4.11 thresholds",
+    "Palette structure follows IBM Carbon and Material data-visualisation colour-blind-safe guidance",
+    "Neutral ramp aligns with the widely-used Tailwind slate scale for predictable steps"
+  ]
+}

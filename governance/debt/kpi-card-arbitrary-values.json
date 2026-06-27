@@ -1,0 +1,14 @@
+{
+  "id": "kpi-card-arbitrary-values",
+  "category": "arbitrary-value",
+  "severity": "medium",
+  "evidence": [
+    "src/components/KpiCard.tsx:42 uses arbitrary padding p-[13px] outside the 4px spacing scale",
+    "src/components/KpiCard.tsx:55 hardcodes colour #2D6CDF instead of the primary token",
+    "governance/interaction-graph/nodes/component-kpi-card.json (uses_tokens: false)",
+    "graph edge: component-kpi-card conflicts-with constraint-token-spacing",
+    "violates governance/design-genome/enterprise-pm-genome.json#spacing.rules and geometry.rules"
+  ],
+  "weight": 3,
+  "remediation": "Replace p-[13px] with the nearest token (p-3 / 12px) and #2D6CDF with the primary colour token (var(--color-primary)). Add a lint rule rejecting bracketed Tailwind values and raw hex in components. Set component-kpi-card uses_tokens to true and remove the conflicts-with edge once resolved."
+}

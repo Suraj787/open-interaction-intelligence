@@ -1,0 +1,18 @@
+{
+  "id": "consistency-internal",
+  "name": "Internal Consistency",
+  "trigger": "A new component, pattern, label, or interaction is being introduced and could either reuse an existing product convention or diverge from it.",
+  "applicable_contexts": ["design systems", "component libraries", "terminology", "layouts", "interaction patterns"],
+  "recommendation": "Keep the same things looking and behaving the same way throughout the product: reuse established components, spacing, terminology, icon meanings, and interaction patterns so a behaviour learned in one place transfers everywhere. Centralise decisions in a design system and deviate only with deliberate, documented reason.",
+  "rejection": "Reject multiple bespoke versions of the same control, the same concept named differently across screens, primary buttons that look different per page, and one-off interaction patterns that duplicate an existing solved problem.",
+  "validation": [
+    "Audit for duplicate or divergent components solving the same problem and consolidate",
+    "Check terminology for the same concept is identical across the product",
+    "Confirm new patterns either reuse the system or are added to it with rationale"
+  ],
+  "evidence": [
+    "Nielsen Norman Group Heuristic 4: Consistency and Standards",
+    "Internal consistency reduces learning cost; external consistency (Jakob's Law) reduces it further"
+  ],
+  "source": "NN/g Heuristic 4 (Consistency and Standards)"
+}

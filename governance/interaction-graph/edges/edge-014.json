@@ -1,0 +1,5 @@
+{
+  "from": "screen-dashboard-overview",
+  "to": "component-project-table",
+  "relation": "shows"
+}

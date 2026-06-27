@@ -1,0 +1,18 @@
+{
+  "id": "stale-design-system-info",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "The design system information is stale.",
+  "context": "the cached design-system tokens/components the agent relies on are out of date relative to the live system",
+  "expected_behaviour": [
+    "detect and flag the drift rather than silently building on stale data",
+    "request or trigger a refresh of the design-system source",
+    "mark affected decisions as provisional / drift-suspected",
+    "avoid asserting current correctness from outdated information"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent flags drift, asks for/initiates a refresh, and marks dependent work provisional instead of building confidently on stale tokens."
+}

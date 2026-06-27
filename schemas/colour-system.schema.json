@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/colour-system.schema.json",
+  "title": "colour-system",
+  "type": "object",
+  "required": [
+    "id",
+    "primitives",
+    "semantic_tokens"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "primitives": {
+      "type": "object"
+    },
+    "semantic_tokens": {
+      "type": "object"
+    },
+    "component_tokens": {
+      "type": "object"
+    },
+    "state_tokens": {
+      "type": "object"
+    },
+    "chart_palette": {
+      "type": "array"
+    },
+    "themes": {
+      "type": "object"
+    },
+    "contrast_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "colour_vision_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

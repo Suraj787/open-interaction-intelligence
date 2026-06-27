@@ -1,0 +1,5 @@
+{
+  "from": "component-project-table",
+  "to": "recipe-status-pill",
+  "relation": "uses"
+}

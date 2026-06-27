@@ -1,0 +1,10 @@
+{
+  "id": "screen-dashboard-overview",
+  "type": "screen",
+  "label": "Portfolio Dashboard Overview",
+  "attributes": {
+    "route": "/dashboard",
+    "primary_object": "project",
+    "layout": "kpi-band over dense project table"
+  }
+}

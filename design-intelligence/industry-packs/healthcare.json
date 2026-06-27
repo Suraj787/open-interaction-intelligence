@@ -1,0 +1,86 @@
+{
+  "id": "healthcare",
+  "name": "Healthcare & Clinical",
+  "users": [
+    {
+      "role": "Registered Nurse (bedside)",
+      "context": "Administers medication, records vitals and assessments, executes care plans across a bay of patients. Constantly interrupted, moves between rooms, documents on a workstation-on-wheels or mobile device, often wearing gloves.",
+      "expertise": "Clinical expert; high domain knowledge, variable IT fluency. Operates under time pressure and cognitive load where a documentation error can harm a patient."
+    },
+    {
+      "role": "Physician / Clinician",
+      "context": "Reviews charts, places orders (CPOE) for medication, labs, imaging, writes notes, reviews results, and makes diagnostic/treatment decisions. Time-boxed per patient, mobile across wards or clinics.",
+      "expertise": "Deep clinical expertise; low tolerance for click-heavy ordering and alert fatigue."
+    },
+    {
+      "role": "Pharmacist",
+      "context": "Verifies medication orders for interactions, allergies, dose, and renal adjustment before dispensing; manages formulary and controlled substances.",
+      "expertise": "Expert in pharmacology and drug-interaction logic; relies on clinical decision support but must catch its gaps."
+    },
+    {
+      "role": "Triage / ED Nurse",
+      "context": "Rapidly assesses arriving patients, assigns acuity (e.g., ESI level), and prioritises the queue. High-stakes, fast, frequently interrupted, with incomplete information.",
+      "expertise": "Expert in triage protocols; needs speed and unambiguous prioritisation cues."
+    },
+    {
+      "role": "Medical Coder / Billing Specialist",
+      "context": "Abstracts diagnoses and procedures into ICD-10/CPT codes from clinical documentation for reimbursement and reporting. Detail-intensive, deadline-bound.",
+      "expertise": "Expert in coding standards and payer rules; needs traceability from code back to documentation."
+    },
+    {
+      "role": "Health Information / Privacy Officer",
+      "context": "Governs access to protected health information, audits record access, manages consent and breach response.",
+      "expertise": "Expert in HIPAA/privacy law and audit controls."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Medication administration (eMAR / five rights)",
+      "steps": ["Pull due medications for the patient", "Scan patient wristband to confirm identity", "Scan medication barcode", "System checks right patient/drug/dose/route/time and allergies", "Acknowledge alerts and administer", "Document administration, refusal, or hold with reason"],
+      "frequency": "continuous / per medication pass",
+      "criticality": "critical"
+    },
+    {
+      "name": "Emergency triage and acuity assignment",
+      "steps": ["Capture chief complaint and arrival", "Record vital signs and quick assessment", "Apply triage protocol to assign acuity level", "Place in prioritised queue", "Re-assess if waiting time exceeds threshold"],
+      "frequency": "continuous in ED",
+      "criticality": "critical"
+    },
+    {
+      "name": "Computerised provider order entry (CPOE)",
+      "steps": ["Select patient and verify context (patient, encounter)", "Choose order (medication, lab, imaging, referral)", "Set dose/frequency/route and indication", "Resolve interaction/allergy/duplicate alerts", "Sign order", "Order routed to pharmacy/lab/imaging"],
+      "frequency": "many times per encounter",
+      "criticality": "critical"
+    },
+    {
+      "name": "Clinical documentation / encounter note",
+      "steps": ["Open encounter and review prior history", "Document history, exam, assessment, and plan", "Reconcile problem list, allergies, and medications", "Sign/attest note", "Release for coding and continuity of care"],
+      "frequency": "per encounter",
+      "criticality": "high"
+    },
+    {
+      "name": "Results review and critical-value handling",
+      "steps": ["Receive lab/imaging result", "Flag critical/abnormal values", "Notify ordering clinician with acknowledgement", "Document action taken", "Update plan of care"],
+      "frequency": "continuous",
+      "criticality": "critical"
+    }
+  ],
+  "risks": [
+    "Wrong-patient error from selecting the wrong chart or context bleed across open records",
+    "Medication error (wrong drug, dose, route, time) reaching the patient",
+    "Missed drug allergy or interaction due to overridden or absent alert",
+    "Alert fatigue causing clinicians to dismiss a genuinely critical warning",
+    "Critical lab value not acknowledged or acted upon in time",
+    "Unauthorised access to PHI or snooping without legitimate need",
+    "Documentation lost when an interruption discards an unsaved note",
+    "Triage acuity mis-assigned, delaying care for a deteriorating patient",
+    "Copy-forward/cloned note propagating outdated or incorrect clinical data",
+    "Incorrect ICD-10/CPT code causing claim denial or compliance exposure"
+  ],
+  "information_objects": ["Patient / medical record (EHR)", "Encounter / visit", "Medication order and eMAR record", "Allergy and adverse-reaction list", "Problem list", "Vital signs / flowsheet", "Lab and imaging results", "Clinical note", "Care plan / order set", "Consent record", "ICD-10 / CPT code set", "Access audit log"],
+  "environment_constraints": ["Interruption-heavy: clinicians are routinely interrupted mid-task", "Shared workstations and workstations-on-wheels with rapid user switching", "Gloved hands and infection-control limits on touch surfaces", "Time pressure with high patient-to-staff ratios", "Bright clinical lighting and bedside/dim-room variation", "Mobile use across wards with intermittent Wi-Fi", "24/7 shift work with handover continuity needs"],
+  "domain_patterns": ["Barcode-verified five-rights medication administration", "Patient-context banner persistent across every screen", "Clinical decision support alerts with override-with-reason", "Order sets and care-plan bundles", "Problem/medication/allergy reconciliation", "Critical-value closed-loop acknowledgement", "Break-the-glass emergency access with logging", "Immutable, addendum-based note correction"],
+  "audit_compliance": ["HIPAA Privacy and Security Rules (US PHI)", "HITECH breach notification", "GDPR for EU patient data (special-category data)", "21 CFR Part 11 electronic signatures for regulated records", "Minimum-necessary access and break-the-glass auditing", "ICD-10 / CPT coding and CMS billing compliance", "Joint Commission / clinical safety standards"],
+  "accessibility_concerns": ["Persistent, unmistakable patient-identity banner to prevent wrong-patient errors", "Alerts must distinguish severity without colour alone (icon + text + ranking)", "Large touch targets usable with gloves at the bedside", "Legible at varying distances and lighting (dim rooms to bright wards)", "Fast keyboard/voice paths for high-frequency documentation", "Screen-reader support for clinicians with disabilities; no information conveyed by colour only"],
+  "anti_patterns": ["Allowing multiple patient charts open such that orders cross contexts", "Burying allergy/interaction warnings or making override frictionless and unlogged", "Excessive low-value alerts that train clinicians to click-through (alert fatigue)", "Auto-saving copy-forward notes that perpetuate stale data", "Discarding an in-progress note on interruption/timeout without recovery", "Colour-only acuity or abnormal-result encoding", "Hard session timeouts mid-administration with no safe resume", "Hiding who accessed a record, defeating privacy audit"]
+}

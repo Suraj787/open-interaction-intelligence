@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/typography-system.schema.json",
+  "title": "typography-system",
+  "type": "object",
+  "required": [
+    "id",
+    "families",
+    "scale"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "families": {
+      "type": "object"
+    },
+    "scale": {
+      "type": "object"
+    },
+    "line_heights": {
+      "type": "object"
+    },
+    "tabular_numerals": {
+      "type": "boolean"
+    },
+    "fallback_stacks": {
+      "type": "object"
+    },
+    "variable_fonts": {
+      "type": "boolean"
+    },
+    "localisation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

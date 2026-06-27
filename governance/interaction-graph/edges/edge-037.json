@@ -1,0 +1,5 @@
+{
+  "from": "effect-kpi-count-up",
+  "to": "constraint-reduced-motion",
+  "relation": "conflicts-with"
+}

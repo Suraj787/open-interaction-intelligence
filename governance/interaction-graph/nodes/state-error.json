@@ -1,0 +1,9 @@
+{
+  "id": "state-error",
+  "type": "state",
+  "label": "Error state",
+  "attributes": {
+    "treatment": "non-blocking banner with retry, preserves user input and filters",
+    "applies_when": "data load or mutation fails"
+  }
+}

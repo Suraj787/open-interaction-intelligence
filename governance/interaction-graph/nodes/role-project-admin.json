@@ -1,0 +1,9 @@
+{
+  "id": "role-project-admin",
+  "type": "role",
+  "label": "Project Administrator",
+  "attributes": {
+    "permissions": ["read-all-projects", "reassign-tasks", "export-reports"],
+    "scope": "organisation-wide"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "screen-project-detail",
+  "type": "screen",
+  "label": "Project Detail",
+  "attributes": {
+    "route": "/projects/:id",
+    "primary_object": "project",
+    "layout": "header summary over tabbed sections"
+  }
+}

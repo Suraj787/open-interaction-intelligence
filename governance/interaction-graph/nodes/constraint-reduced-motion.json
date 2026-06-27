@@ -1,0 +1,10 @@
+{
+  "id": "constraint-reduced-motion",
+  "type": "constraint",
+  "label": "Honour prefers-reduced-motion",
+  "attributes": {
+    "source": "accessibility_posture",
+    "rule": "all non-essential motion must be disabled or reduced when prefers-reduced-motion is set",
+    "wcag": "2.3.3 Animation from Interactions"
+  }
+}

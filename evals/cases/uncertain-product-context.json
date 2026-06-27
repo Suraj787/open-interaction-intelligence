@@ -1,0 +1,18 @@
+{
+  "id": "uncertain-product-context",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "The product context is uncertain.",
+  "context": "early request · who the users are, the domain, and the primary task are not yet established",
+  "expected_behaviour": [
+    "model the product context explicitly (users, domain, primary tasks, constraints)",
+    "mark unknowns as unresolved rather than inventing certainty",
+    "ask targeted clarifying questions or state assumptions plainly",
+    "avoid generic AI defaults that paper over the missing context"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent builds an explicit product-context model, marks unknowns as unresolved, and does not fabricate confident certainty."
+}

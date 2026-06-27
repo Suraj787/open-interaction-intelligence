@@ -1,0 +1,86 @@
+{
+  "id": "manufacturing",
+  "name": "Manufacturing & Production",
+  "users": [
+    {
+      "role": "Production / Shop-Floor Operator",
+      "context": "Executes work orders at a machine or station; records production quantity, scrap, and downtime; scans material and job travelers. Works standing, often gloved, in noisy environments with industrial glare on screens.",
+      "expertise": "Domain-expert at the physical process, low-to-moderate computer fluency. Needs large touch targets, minimal typing, and forgiving input."
+    },
+    {
+      "role": "Production Planner / Scheduler",
+      "context": "Builds the master production schedule, runs MRP, balances machine capacity against demand, releases and sequences work orders. Juggles material shortages and rush orders.",
+      "expertise": "Expert in MRP/capacity planning and BOM logic; high tool fluency with Gantt and sequencing views."
+    },
+    {
+      "role": "Quality Inspector / QA Engineer",
+      "context": "Performs incoming, in-process, and final inspection against specs; records measurements, raises non-conformance reports (NCRs), enforces hold/quarantine. Moves between lab bench and line.",
+      "expertise": "Expert in inspection plans, sampling, SPC, and quality standards (ISO 9001, IATF 16949)."
+    },
+    {
+      "role": "Maintenance Technician",
+      "context": "Executes preventive and breakdown maintenance work orders, logs parts consumed and labour, updates asset condition. Mobile around the plant, hands often dirty.",
+      "expertise": "Expert in equipment and CMMS workflows; intermediate computer skills, prefers mobile/tablet at the asset."
+    },
+    {
+      "role": "Warehouse / Inventory Controller",
+      "context": "Manages raw material, WIP, and finished goods; performs goods receipt, picking, stock transfers, and cycle counts. Barcode/RF scanner is the primary input device.",
+      "expertise": "Expert in stock movements, lot/serial traceability, and bin management."
+    },
+    {
+      "role": "Plant Manager",
+      "context": "Monitors OEE, throughput, and on-time delivery; reviews exceptions and approves overtime or expedites. Wall-mounted andon dashboards plus mobile glance.",
+      "expertise": "Expert in operations; consumes summarised real-time KPIs, drills into bottlenecks."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Work order execution and production reporting",
+      "steps": ["Receive and accept released work order", "Stage and confirm material/components (backflush or manual issue)", "Run operation and record good quantity, scrap, and reason codes", "Log machine downtime and changeover", "Complete operation and move WIP to next station", "Close work order and post finished goods to stock"],
+      "frequency": "continuous / per shift",
+      "criticality": "high"
+    },
+    {
+      "name": "MRP run and work-order release",
+      "steps": ["Confirm demand (sales orders, forecasts)", "Run material requirements planning", "Review planned orders and exception messages", "Check material and capacity availability", "Convert planned orders to work/purchase orders", "Sequence and release to the floor"],
+      "frequency": "daily / weekly",
+      "criticality": "critical"
+    },
+    {
+      "name": "Quality inspection and non-conformance handling",
+      "steps": ["Trigger inspection at receipt/in-process/final", "Record measurements against inspection plan", "Accept, reject, or place on hold", "Raise NCR and quarantine affected lot", "Disposition (rework, scrap, use-as-is, return to vendor)", "Close NCR with corrective action reference"],
+      "frequency": "continuous",
+      "criticality": "critical"
+    },
+    {
+      "name": "Preventive maintenance work order",
+      "steps": ["Generate PM schedule from meter/time triggers", "Assign technician and reserve spare parts", "Lockout/tagout and perform task checklist", "Record parts consumed and labour hours", "Update asset condition and next-due", "Close and return equipment to service"],
+      "frequency": "scheduled (daily generation)",
+      "criticality": "high"
+    },
+    {
+      "name": "Goods receipt and lot traceability",
+      "steps": ["Scan inbound delivery against PO", "Inspect and record lot/serial and quantity", "Put away to bin location", "Maintain genealogy link from raw lot to finished batch", "Enable forward/backward trace for recall"],
+      "frequency": "continuous",
+      "criticality": "high"
+    }
+  ],
+  "risks": [
+    "Wrong quantity or scrap reason booked, distorting inventory and yield metrics",
+    "Building against an outdated Bill of Materials or routing revision",
+    "Releasing a work order without material/capacity, starving the line or causing rework",
+    "Shipping product that should have been on quality hold (escaped defect)",
+    "Broken lot/serial genealogy preventing an effective recall",
+    "Maintenance performed without lockout-tagout, creating a safety hazard",
+    "Negative or phantom inventory from mis-sequenced backflush",
+    "Mis-scan of part or lot leading to wrong-material consumption",
+    "Stale real-time dashboard causing a wrong scheduling decision",
+    "Operator mis-tap on a glare-washed touchscreen recording the wrong machine state"
+  ],
+  "information_objects": ["Bill of Materials (BOM) with revision", "Routing / operation sequence", "Work order / production order", "Job traveler", "Inspection plan / quality spec", "Non-conformance report (NCR)", "Lot / serial / batch record", "Asset / equipment master", "Maintenance work order", "Stock entry / material transfer", "Capacity / machine calendar", "OEE / downtime record"],
+  "environment_constraints": ["Gloved hands and protective equipment reduce touch precision", "High ambient noise rules out audio-only feedback", "Screen glare and dust on industrial/ruggedised terminals", "Operators standing, mobile, and time-pressured per cycle time", "Barcode/RF scanners and kiosks rather than mouse-and-keyboard", "Intermittent network in metal-heavy plant areas requiring offline tolerance", "Safety-critical states (lockout, e-stop) must be unmistakable"],
+  "domain_patterns": ["Master-detail (work order header with operation/component lines)", "Real-time status board / andon", "Barcode/RFID scan-driven data capture", "Backflush and material genealogy chains", "Hold / quarantine / disposition state machine", "Revision-controlled master data (BOM/routing)", "Kiosk single-task mode with large targets", "Offline-first capture with later sync"],
+  "audit_compliance": ["ISO 9001 quality management", "IATF 16949 (automotive) / AS9100 (aerospace) where applicable", "FDA 21 CFR Part 820 for medical-device manufacturing", "Lot/serial traceability for recall (consumer/food/pharma)", "Material certifications and genealogy retention", "OSHA / machine-safety and lockout-tagout records"],
+  "accessibility_concerns": ["Large touch targets and gesture tolerance for gloved operation", "High-contrast, anti-glare UI legible under harsh plant lighting", "Status must not depend on colour alone (running/down/hold also need icon/text)", "Haptic or large visual feedback since audio is unreliable in noise", "Minimise required typing; favour scan, tap, and reason-code pick lists", "Readable at distance for wall-mounted andon displays"],
+  "anti_patterns": ["Tiny buttons and dense forms on a shop-floor kiosk", "Colour-only machine-state encoding washed out by glare", "Requiring keyboard text entry from gloved operators", "Allowing production against an unreleased or superseded BOM revision", "Silent inventory go-negative instead of blocking/flagging", "Audio-only alerts in a high-noise environment", "Burying the hold/quarantine action so defective lots flow downstream", "No offline buffer, so a network blip loses a shift's production counts"]
+}

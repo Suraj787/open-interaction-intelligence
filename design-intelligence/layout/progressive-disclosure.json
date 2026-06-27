@@ -1,0 +1,20 @@
+{
+  "id": "progressive-disclosure",
+  "name": "Progressive Disclosure",
+  "when_to_use": "Use when a feature has a simple common path plus advanced or rarely needed options, revealing complexity only on demand to keep the default experience focused, such as settings with advanced sections, forms with optional detail, and expandable rows.",
+  "when_not_to_use": "Avoid when users need all information visible to make a decision, when the hidden content is actually essential to most users, or when disclosure adds clicks to a frequently used path that should be flat.",
+  "information_structure": "A layered hierarchy where a primary surface shows the most common 80% and secondary layers (accordions, 'show more', drawers, expandable rows) hold advanced or detailed content revealed on interaction.",
+  "navigation": "Expand/collapse controls, 'advanced' toggles, and drill-in drawers reveal deeper layers; the user's location and what is hidden should remain clear.",
+  "density": ["comfortable", "compact"],
+  "responsive_behaviour": "Especially valuable on small screens: collapse secondary content by default and let users expand, reducing initial scroll length without removing access.",
+  "accessibility_notes": [
+    "Use proper disclosure/accordion semantics with aria-expanded so state is announced",
+    "Keep the trigger keyboard-focusable and move or retain focus sensibly on expand",
+    "Do not hide content that is required to complete a task behind non-obvious toggles"
+  ],
+  "compares_with": ["stepper", "nested-navigation", "cards"],
+  "evidence": [
+    "Nielsen Norman Group, 'Progressive Disclosure' shows it reduces cognitive load and error while keeping power available",
+    "WAI-ARIA Authoring Practices define the accessible disclosure and accordion patterns"
+  ]
+}

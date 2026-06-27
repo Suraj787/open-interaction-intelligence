@@ -1,0 +1,61 @@
+{
+  "id": "enterprise-readable",
+  "name": "Enterprise Readable",
+  "families": {
+    "sans": {
+      "name": "Inter",
+      "role": "Primary UI and body text",
+      "rationale": "A neutral humanist-grotesque sans with a large x-height, open apertures, and excellent legibility at small UI sizes; ships with tabular and slashed-zero OpenType features useful for data."
+    },
+    "mono": {
+      "name": "JetBrains Mono",
+      "role": "Code, identifiers, log output, fixed-width data",
+      "rationale": "A monospace with clearly differentiated 0/O, 1/l/I, and generous spacing for unambiguous reading of codes and code."
+    },
+    "display": {
+      "name": "Inter",
+      "role": "Headings and section titles",
+      "rationale": "Kept in the same family at heavier weights and tighter tracking to maximise consistency and minimise font payload; no separate display face is needed for an enterprise tool."
+    }
+  },
+  "scale": {
+    "unit": "rem",
+    "base": "1rem (16px)",
+    "ratio": "1.2 (minor third), tightened at small UI sizes",
+    "steps": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "md": "1.125rem",
+      "lg": "1.25rem",
+      "xl": "1.5rem",
+      "2xl": "1.875rem",
+      "3xl": "2.25rem"
+    },
+    "notes": "Body copy sits at base (16px); dense tables may use sm (14px) but never below xs (12px) for readable text. Captions and metadata use xs."
+  },
+  "line_heights": {
+    "tight": "1.2 (headings and large display)",
+    "snug": "1.35 (subheadings, dense table rows)",
+    "normal": "1.5 (body text, meeting WCAG 1.4.8 guidance of at least 1.5)",
+    "relaxed": "1.65 (long-form reading passages)"
+  },
+  "tabular_numerals": true,
+  "fallback_stacks": {
+    "sans": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "mono": "'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+    "display": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  },
+  "variable_fonts": true,
+  "localisation_notes": [
+    "Inter covers Latin, Cyrillic, and Greek; for CJK, Arabic, or Devanagari pair with Noto Sans variants and verify line-height increases needed for those scripts",
+    "Enable tabular-nums (font-variant-numeric) on all numeric columns so figures align and do not reflow as values change",
+    "Use slashed or dotted zero for codes and identifiers to avoid 0/O confusion",
+    "Allow line-height to grow for scripts with tall ascenders/descenders rather than clipping"
+  ],
+  "evidence": [
+    "Inter is purpose-built for screen UI (rsms.me/inter) with documented tabular and slashed-zero features",
+    "WCAG 2.2 SC 1.4.8 recommends line spacing of at least 1.5x within paragraphs for readability",
+    "Tabular figures are a standard requirement for financial and data tables to preserve column alignment"
+  ]
+}

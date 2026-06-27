@@ -1,0 +1,5 @@
+{
+  "from": "component-project-table",
+  "to": "pattern-dense-data-table",
+  "relation": "implements"
+}

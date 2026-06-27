@@ -1,0 +1,5 @@
+{
+  "from": "workflow-weekly-status-review",
+  "to": "task-export-status-report",
+  "relation": "uses"
+}

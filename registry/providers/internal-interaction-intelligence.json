@@ -1,0 +1,17 @@
+{
+  "id": "internal-interaction-intelligence",
+  "name": "Internal Interaction Intelligence",
+  "trust_tier": 2,
+  "licence": "MIT",
+  "version": "1.0.0",
+  "update_method": "in-repo",
+  "confidence": "high",
+  "evidence_quality": "curated+web-verified",
+  "supplies": [
+    "effects",
+    "patterns",
+    "recipes",
+    "sources",
+    "components"
+  ]
+}

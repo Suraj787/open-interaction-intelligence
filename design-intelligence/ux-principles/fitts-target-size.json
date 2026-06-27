@@ -1,0 +1,19 @@
+{
+  "id": "fitts-target-size",
+  "name": "Fitts's Law: Target Size and Proximity",
+  "trigger": "An interactive control (button, link, icon, checkbox, toggle) is being designed or reviewed, especially primary or frequently used actions, small icon buttons, or controls on touch surfaces.",
+  "applicable_contexts": ["touch interfaces", "primary actions", "icon-only buttons", "toolbars", "forms", "mobile"],
+  "recommendation": "Size and place targets so they are fast to acquire: make pointer targets at least 24x24 CSS px (WCAG 2.5.8 minimum) and prefer 44x44 px for primary or touch targets; give frequent actions larger or closer placement; exploit screen edges and corners (infinite-width edges) for high-traffic controls; and keep adequate spacing so adjacent targets are not mis-hit.",
+  "rejection": "Reject sub-24px touch targets, tightly packed icon clusters with no spacing, primary CTAs given the same small footprint as minor controls, and destructive actions placed adjacent to common ones where a slip causes damage.",
+  "validation": [
+    "Audit interactive elements for a minimum 24x24 px hit area (44x44 px on touch)",
+    "Check spacing between adjacent targets meets at least the minimum to avoid accidental activation",
+    "Confirm the most frequent action is the largest or most easily reachable"
+  ],
+  "evidence": [
+    "Fitts, P.M. (1954) movement-time model: acquisition time grows with distance and shrinks with target size",
+    "WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum) sets a 24x24 CSS px floor",
+    "Apple HIG recommends 44x44 pt and Material recommends 48x48 dp touch targets"
+  ],
+  "source": "Fitts's Law (1954); WCAG 2.2 SC 2.5.8; Apple HIG; Material Design"
+}

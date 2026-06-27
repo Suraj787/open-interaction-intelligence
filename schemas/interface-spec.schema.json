@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/interface-spec.schema.json",
+  "title": "interface-spec",
+  "type": "object",
+  "required": [
+    "interface"
+  ],
+  "properties": {
+    "interface": {
+      "type": "object",
+      "required": [
+        "id",
+        "product",
+        "user",
+        "task"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "product": {
+          "type": "object"
+        },
+        "user": {
+          "type": "object"
+        },
+        "task": {
+          "type": "object"
+        },
+        "information": {
+          "type": "object"
+        },
+        "interaction": {
+          "type": "object"
+        },
+        "accessibility": {
+          "type": "object"
+        },
+        "performance": {
+          "type": "object"
+        },
+        "identity": {
+          "type": "object"
+        },
+        "required_states": {
+          "type": "array"
+        },
+        "constraints": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

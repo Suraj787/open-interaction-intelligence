@@ -1,0 +1,20 @@
+{
+  "id": "dashboard-grid",
+  "name": "Dashboard Grid",
+  "when_to_use": "Use to give an at-a-glance overview of several related metrics, charts, and summaries on one screen, letting users assess overall state and then drill into specifics, such as analytics, product, and business dashboards.",
+  "when_not_to_use": "Avoid when users have a single primary task (the grid scatters focus), when metrics lack relationship and become a wall of vanity numbers, or when real-time operational monitoring demands the denser command-centre pattern.",
+  "information_structure": "A responsive grid of self-contained widgets (cards, charts, KPIs), each presenting one coherent piece of information, arranged by importance with the most decision-relevant items top-left.",
+  "navigation": "Scan top-level tiles, then click a widget or KPI to drill into detail; global filters (date range, segment) recompute all widgets consistently.",
+  "density": ["comfortable", "compact"],
+  "responsive_behaviour": "Reflow the grid from multi-column to single-column on narrow viewports, preserving priority order so the most important widgets appear first when stacked.",
+  "accessibility_notes": [
+    "Give each widget a programmatic heading so screen-reader users can navigate between sections",
+    "Provide chart data in an accessible text or table alternative",
+    "Ensure global filter changes are announced and focus is not lost on recompute"
+  ],
+  "compares_with": ["command-centre", "cards", "table-first"],
+  "evidence": [
+    "Nielsen Norman Group dashboard guidance recommends prioritising by decision value and supporting drill-down",
+    "Google Analytics, Stripe, and product analytics tools validate the overview-plus-drill-down model"
+  ]
+}

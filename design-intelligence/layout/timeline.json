@@ -1,0 +1,20 @@
+{
+  "id": "timeline",
+  "name": "Timeline",
+  "when_to_use": "Use when the chronological order of events is the primary meaning users seek, such as activity feeds, audit logs, order history, project schedules, version history, and incident postmortems.",
+  "when_not_to_use": "Avoid when ordering by time is irrelevant or misleading, when users need to compare attributes across items (a table is better), or when the volume of events without grouping becomes an unscannable wall.",
+  "information_structure": "A sequence of events positioned along a temporal axis (vertical for feeds, horizontal for schedules), each event marked with a timestamp, actor, and description, often grouped by day or milestone.",
+  "navigation": "Scroll along the time axis; filter by type, actor, or date range; expand events for detail; jump to a date or milestone for long histories.",
+  "density": ["comfortable", "compact"],
+  "responsive_behaviour": "Vertical timelines adapt well to mobile; horizontal schedule timelines (Gantt-style) usually need horizontal scroll or a condensed view on small screens.",
+  "accessibility_notes": [
+    "Mark up events as an ordered list so sequence is conveyed without relying on visual line decoration",
+    "Provide machine-readable timestamps and a human-readable relative time",
+    "Ensure grouping headers are real headings for navigation"
+  ],
+  "compares_with": ["table-first", "stepper", "kanban", "command-centre"],
+  "evidence": [
+    "GitHub activity, version history, and audit logs validate timeline for chronological narratives",
+    "Grouping by time period follows chunking principles to keep long histories scannable"
+  ]
+}

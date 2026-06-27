@@ -1,0 +1,5 @@
+{
+  "from": "pattern-dense-data-table",
+  "to": "task-review-project-health",
+  "relation": "solves"
+}

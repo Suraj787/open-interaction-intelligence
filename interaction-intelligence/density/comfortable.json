@@ -1,0 +1,38 @@
+{
+  "id": "comfortable",
+  "modes": {
+    "default": "comfortable",
+    "intent": "Balanced default for general-purpose SaaS used by mixed audiences on desktops and laptops with occasional touch.",
+    "primary_input": "fine-pointer",
+    "supported_inputs": ["fine-pointer", "keyboard", "coarse-pointer"]
+  },
+  "spacing_scale": {
+    "unit": "px",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "section": 32
+  },
+  "row_height": {
+    "unit": "px",
+    "table_row": 44,
+    "list_item": 48,
+    "toolbar": 56,
+    "control": 40
+  },
+  "hit_area_min_px": 40,
+  "responsive_transformations": [
+    "Below 768px viewport width, promote comfortable to touch so the layout is finger-friendly on phones and small tablets.",
+    "On a detected coarse-pointer device, raise interactive targets to the 44px touch minimum even while keeping comfortable spacing.",
+    "Multi-column tables collapse to stacked cards under 640px to preserve readable row content.",
+    "At high zoom or large base font, spacing scales with rem so density degrades gracefully rather than clipping."
+  ],
+  "notes": [
+    "This is the recommended global default when the audience and device mix are unknown.",
+    "Comfortable already clears the 40px target guideline for pointers; the touch mode exists for fingers specifically.",
+    "Pairs naturally with the saas-balanced motion grammar.",
+    "Keep the density toggle available so power users can drop to compact on demand."
+  ]
+}

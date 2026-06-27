@@ -1,0 +1,20 @@
+{
+  "id": "canvas",
+  "name": "Canvas (Freeform Workspace)",
+  "when_to_use": "Use for spatial, open-ended creation where users arrange, connect, and manipulate objects on an unbounded 2D surface, such as design tools, diagramming, whiteboards, node editors, and flow builders.",
+  "when_not_to_use": "Avoid for linear or list-based tasks, for read-mostly content, for small screens where panning a large canvas is awkward, or where a structured form or table would capture the data more reliably.",
+  "information_structure": "An infinite or large bounded 2D plane holding freely positioned objects, with spatial relationships (proximity, connection, grouping) carrying meaning, surrounded by tool palettes and contextual inspectors.",
+  "navigation": "Pan and zoom to move around; select and direct-manipulate objects; contextual toolbars and inspector panels edit the selection; mini-map or zoom-to-fit aids orientation.",
+  "density": ["comfortable", "spacious"],
+  "responsive_behaviour": "Poorly suited to small screens; offer a simplified view-only or limited-edit mode on mobile and reserve full canvas editing for larger pointer-driven displays.",
+  "accessibility_notes": [
+    "Provide a keyboard-navigable alternative to select and move objects, since drag is not enough",
+    "Expose object names, roles, and relationships to assistive tech, not just visual position",
+    "Offer non-spatial entry points (lists, search) to reach objects without precise pointing"
+  ],
+  "compares_with": ["split-view", "kanban", "timeline"],
+  "evidence": [
+    "Figma, Miro, and node-based editors validate canvas for spatial creative work",
+    "Accessibility audits of canvas tools repeatedly highlight keyboard and screen-reader access as the central challenge"
+  ]
+}

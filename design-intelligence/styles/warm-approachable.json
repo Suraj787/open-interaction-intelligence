@@ -1,0 +1,44 @@
+{
+  "id": "warm-approachable",
+  "name": "Warm Approachable",
+  "description": "A humane, inviting style that uses warm neutral backgrounds, earthy or muted accent colours, soft (not extreme) radii, friendly humanist sans typography, and natural imagery to feel trustworthy and human without tipping into childish playfulness.",
+  "emotional_impression": "Welcoming, reassuring, human, grounded, and calm.",
+  "visual_principles": [
+    "Warm off-white and beige neutrals instead of clinical cool greys",
+    "Muted earthy or warm accent palette",
+    "Moderate corner radii that soften without infantilising",
+    "Humanist sans typography with open apertures",
+    "Authentic photography and gentle, purposeful motion"
+  ],
+  "industry_suitability": ["healthcare", "wellness", "education", "non-profits", "consumer fintech", "hospitality"],
+  "page_suitability": ["onboarding", "marketing", "account flows", "support", "dashboards"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Warm low-contrast neutrals can fall below text contrast thresholds",
+    "Beige-on-cream pairings are a frequent legibility trap",
+    "Soft styling can under-communicate critical or error states if warmth is over-applied"
+  ],
+  "performance_risks": ["Photography-heavy variants need responsive images and lazy loading"],
+  "typography_compatibility": ["enterprise-readable", "humanist sans", "editorial-serif"],
+  "layout_compatibility": ["cards", "progressive-disclosure", "stepper", "master-detail"],
+  "trend_maturity": "current",
+  "overuse_risk": "medium",
+  "ai_cliche_risk": "medium",
+  "implementation_complexity": "low",
+  "appropriate_contexts": [
+    "Products handling sensitive or anxiety-inducing tasks (health, money, care)",
+    "Brands that need to feel trustworthy and human, not corporate or clinical",
+    "Audiences spanning a wide range of digital literacy"
+  ],
+  "inappropriate_contexts": [
+    "High-density professional tools where warmth wastes space",
+    "Bold, edgy brands wanting to signal disruption",
+    "Contexts requiring stark, high-contrast clarity above all"
+  ],
+  "alternatives": ["minimal-functional", "playful-rounded", "editorial-serif"],
+  "evidence": [
+    "Calm, Headspace, and many modern health products use warm humane palettes to reduce anxiety",
+    "Colour-emotion research associates warm muted tones with comfort and approachability, though contrast must still meet WCAG"
+  ],
+  "confidence": "medium"
+}

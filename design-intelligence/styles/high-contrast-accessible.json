@@ -1,0 +1,42 @@
+{
+  "id": "high-contrast-accessible",
+  "name": "High-Contrast Accessible",
+  "description": "An accessibility-led style that treats WCAG conformance as a design driver rather than an afterthought: strong foreground/background contrast, clear non-colour state indicators, large targets, visible focus rings, and predictable, conventional patterns.",
+  "emotional_impression": "Clear, dependable, inclusive, and confidently legible.",
+  "visual_principles": [
+    "Foreground/background contrast comfortably exceeding 4.5:1 (often targeting 7:1)",
+    "State communicated by icon, text, and shape, never colour alone",
+    "Large touch and click targets and generous spacing",
+    "Always-visible, high-contrast focus indicators",
+    "Conventional, predictable component behaviour"
+  ],
+  "industry_suitability": ["government", "healthcare", "education", "banking", "public services", "enterprise"],
+  "page_suitability": ["forms", "account flows", "dashboards", "transactional flows", "settings"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Very high contrast can cause glare or halation for some photosensitive users, so an adjustable theme helps",
+    "Maximising contrast everywhere can flatten hierarchy if not paired with type scale and spacing"
+  ],
+  "performance_risks": ["Negligible"],
+  "typography_compatibility": ["enterprise-readable", "humanist sans", "neutral grotesque"],
+  "layout_compatibility": ["stepper", "progressive-disclosure", "master-detail", "table-first"],
+  "trend_maturity": "mature",
+  "overuse_risk": "low",
+  "ai_cliche_risk": "low",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Public-sector and regulated products with legal accessibility obligations",
+    "Any product with a broad, ageing, or low-vision user base",
+    "High-stakes transactional flows where errors are costly"
+  ],
+  "inappropriate_contexts": [
+    "Brand-led marketing wanting subtle, atmospheric, low-contrast mood (though it can be adapted)",
+    "Contexts that mistake 'accessible' for 'visually boring' and skip craft"
+  ],
+  "alternatives": ["enterprise-dense", "swiss-grid", "minimal-functional"],
+  "evidence": [
+    "WCAG 2.2 (1.4.3, 1.4.11, 2.4.7, 2.5.8) and the GOV.UK Design System exemplify this approach",
+    "GOV.UK research shows conventional, high-contrast, large-target patterns reduce error and support assistive tech"
+  ],
+  "confidence": "high"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "workflow-weekly-status-review",
+  "type": "workflow",
+  "label": "Weekly status review",
+  "attributes": {
+    "steps": ["review project health", "reassign overdue work", "export status report"],
+    "cadence": "weekly",
+    "note": "deliberately omits an offline-capable requirement — surfaced by the workflows-lacking-offline-handling query"
+  }
+}

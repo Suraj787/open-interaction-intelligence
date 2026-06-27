@@ -1,0 +1,13 @@
+{
+  "id": "task-board-missing-error-state",
+  "category": "missing-state",
+  "severity": "high",
+  "evidence": [
+    "governance/interaction-graph/nodes/screen-task-board.json declares only a loading state",
+    "graph query 'screens lacking error recovery' returns screen-task-board",
+    "src/screens/TaskBoard.tsx renders data and skeleton but has no error branch or retry affordance",
+    "violates governance/design-genome/enterprise-pm-genome.json#error_patterns ('every async surface declares loading, empty, and error states')"
+  ],
+  "weight": 8,
+  "remediation": "Add an error state to the Task Board: non-blocking banner with retry that preserves board filters and in-progress selections, per the genome error_patterns. Add a has-state edge from screen-task-board to state-error and cover it with an error-recovery test."
+}

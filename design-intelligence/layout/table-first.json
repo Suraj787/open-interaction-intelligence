@@ -1,0 +1,21 @@
+{
+  "id": "table-first",
+  "name": "Table-First",
+  "when_to_use": "Use when the primary task is scanning, sorting, filtering, and comparing many records across consistent attributes, such as admin lists, financial ledgers, order management, and CRMs where the row-and-column model matches the data.",
+  "when_not_to_use": "Avoid when records are heterogeneous or media-rich, when each item needs a narrative rather than columns, or on small screens where wide tables force horizontal scrolling that breaks comparison.",
+  "information_structure": "A tabular grid of rows (records) and columns (attributes), with the table as the central object and supporting controls (filters, search, bulk actions, pagination) arranged around it.",
+  "navigation": "Column headers sort and configure; filters and search narrow the set; row click or an action column opens detail; bulk selection enables batch operations.",
+  "density": ["compact", "comfortable"],
+  "responsive_behaviour": "Prioritise essential columns and collapse the rest behind a row-expand or switch to a stacked card-per-row layout on narrow viewports; freeze the identifier column when horizontal scroll is unavoidable.",
+  "accessibility_notes": [
+    "Use real table semantics with header cells and scope so screen readers can navigate by row and column",
+    "Make sort controls buttons with announced ascending/descending state",
+    "Ensure sticky headers and row actions remain reachable by keyboard",
+    "Provide tabular numerals so numeric columns align for visual scanning"
+  ],
+  "compares_with": ["cards", "master-detail", "dashboard-grid", "data-dense-terminal"],
+  "evidence": [
+    "Enterprise admin consoles and CRMs validate table-first as the default for record management",
+    "WAI-ARIA Authoring Practices document accessible data grid and sortable table patterns"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "from": "recipe-status-pill",
+  "to": "constraint-wcag-aa",
+  "relation": "governed-by"
+}

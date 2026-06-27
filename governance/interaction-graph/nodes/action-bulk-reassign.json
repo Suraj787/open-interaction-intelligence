@@ -1,0 +1,10 @@
+{
+  "id": "action-bulk-reassign",
+  "type": "action",
+  "label": "Bulk reassign tasks",
+  "attributes": {
+    "kind": "bulk-mutation",
+    "reversible": true,
+    "confirmation": "modal for bulk irreversible scope, optimistic with undo otherwise"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "interface": {
+    "id": "checkout-mobile",
+    "product": {
+      "type": "ecommerce",
+      "profile": "ecommerce-conversion"
+    },
+    "user": {
+      "role": "shopper",
+      "expertise": "novice"
+    },
+    "task": {
+      "primary": "complete-purchase",
+      "frequency": "infrequent",
+      "criticality": "high"
+    },
+    "information": {
+      "density": "low",
+      "hierarchy": [
+        "order-summary",
+        "payment",
+        "shipping"
+      ]
+    },
+    "interaction": {
+      "navigation": "stepper",
+      "feedback": "inline",
+      "motion": "minimal"
+    },
+    "accessibility": {
+      "keyboard": "required",
+      "touch_targets": "44px",
+      "reduced_motion": "required"
+    },
+    "performance": {
+      "bundle_budget_kb": 40
+    },
+    "identity": {
+      "genome": "marketing-saas-genome"
+    },
+    "required_states": [
+      "loading",
+      "error",
+      "permission-denied",
+      "offline",
+      "success"
+    ],
+    "constraints": [
+      "idempotent submit",
+      "no layout shift on validation"
+    ]
+  }
+}

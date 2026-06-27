@@ -1,0 +1,10 @@
+{
+  "id": "test-error-recovery",
+  "type": "test",
+  "label": "Error recovery test",
+  "attributes": {
+    "path": "tests/dashboard/error-recovery.spec.ts",
+    "asserts": "failed load shows retry banner, preserves filters, recovers on retry",
+    "covers_state": "state-error"
+  }
+}

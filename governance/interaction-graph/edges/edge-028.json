@@ -1,0 +1,5 @@
+{
+  "from": "pattern-dense-data-table",
+  "to": "evidence-usability-study",
+  "relation": "evidenced-by"
+}

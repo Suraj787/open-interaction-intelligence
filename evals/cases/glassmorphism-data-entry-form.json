@@ -1,0 +1,18 @@
+{
+  "id": "glassmorphism-data-entry-form",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Use glassmorphism throughout this data-entry form.",
+  "context": "operational app · dense data-entry form completed daily by staff",
+  "expected_behaviour": [
+    "reject blanket translucency/blur on a legibility-critical form",
+    "cite contrast, focus visibility and reading-speed harm",
+    "propose solid surfaces, clear field boundaries and strong label/value contrast",
+    "permit at most a contained decorative surface away from inputs, if at all"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent refuses pervasive glassmorphism on data entry and defends legibility, contrast and focus visibility."
+}

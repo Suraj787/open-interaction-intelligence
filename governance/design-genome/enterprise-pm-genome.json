@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "product": "Enterprise Project Management Suite",
+  "confidence": 0.86,
+  "brand_traits": [
+    "trustworthy",
+    "information-dense",
+    "calm-under-load",
+    "precise",
+    "efficient",
+    "neutral-professional"
+  ],
+  "prohibited_traits": [
+    "playful",
+    "decorative",
+    "attention-seeking",
+    "high-saturation",
+    "gamified",
+    "novelty-animation"
+  ],
+  "colour_semantics": {
+    "primary": "#1F4E79",
+    "primary_hover": "#163A5A",
+    "surface": "#FFFFFF",
+    "surface_muted": "#F4F6F8",
+    "border": "#D5DBE1",
+    "text": "#1A1F26",
+    "text_muted": "#5A6470",
+    "status": {
+      "success": "#1E7F4E",
+      "warning": "#B26A00",
+      "danger": "#B3261E",
+      "info": "#1F4E79",
+      "neutral": "#5A6470"
+    },
+    "rules": [
+      "status colour is reserved for state, never decoration",
+      "no more than one accent hue per screen",
+      "danger may only be used for destructive or failed states"
+    ]
+  },
+  "typography": {
+    "font_family": "Inter, 'Segoe UI', system-ui, sans-serif",
+    "numeric_font": "tabular-nums",
+    "scale": {
+      "display": 28,
+      "heading": 20,
+      "subheading": 16,
+      "body": 14,
+      "caption": 12
+    },
+    "line_height": 1.45,
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "rules": [
+      "tabular numerals mandatory in tables and KPI figures",
+      "max two type weights per view",
+      "no letter-spacing on body text"
+    ]
+  },
+  "geometry": {
+    "radius": {
+      "control": 4,
+      "card": 6,
+      "pill": 999
+    },
+    "border_width": 1,
+    "rules": [
+      "radius tokens only; arbitrary px radius is a debt finding",
+      "sharp, rectilinear layout favoured over rounded blobs"
+    ]
+  },
+  "spacing": {
+    "base_unit": 4,
+    "scale": [4, 8, 12, 16, 24, 32, 48],
+    "rules": [
+      "all spacing must resolve to a 4px multiple from the scale",
+      "table row padding fixed at 8px vertical"
+    ]
+  },
+  "density": "high",
+  "elevation": {
+    "scale": {
+      "flat": "none",
+      "raised": "0 1px 2px rgba(16,24,40,0.08)",
+      "overlay": "0 8px 24px rgba(16,24,40,0.12)"
+    },
+    "rules": [
+      "elevation communicates layering, not emphasis",
+      "tables stay flat; only menus and dialogs use overlay"
+    ]
+  },
+  "iconography": "16px line icons, 1.5px stroke, monochrome, no filled novelty glyphs",
+  "imagery": "minimal; avatars and small status glyphs only, no marketing photography in app shell",
+  "content_tone": "concise, factual, second person, no exclamation marks, action-first labels",
+  "motion_character": "restrained and functional; 120-180ms ease-out transitions, motion only to clarify state change or spatial relationship, never to entertain",
+  "confirmation_patterns": [
+    "inline optimistic update with undo for reversible actions",
+    "modal confirmation only for destructive or bulk-irreversible actions",
+    "toast confirmation for background completion"
+  ],
+  "error_patterns": [
+    "inline field-level validation on blur",
+    "non-blocking banner for recoverable load errors with retry",
+    "preserve user input on failure, never clear the form",
+    "every async surface declares loading, empty, and error states"
+  ],
+  "navigation_patterns": [
+    "persistent left rail for primary navigation",
+    "breadcrumb for hierarchy depth beyond two levels",
+    "in-context drill-down preserves filter state",
+    "keyboard shortcuts for power-user navigation"
+  ],
+  "accessibility_posture": "WCAG 2.2 AA enforced; full keyboard operability, visible focus rings, 4.5:1 text contrast, prefers-reduced-motion honoured, no information by colour alone",
+  "performance_posture": "dashboard interactive within 2s on mid-tier hardware; virtualised tables beyond 100 rows; route-level code splitting; budget 200KB JS per route",
+  "framework_conventions": {
+    "stack": "React + TypeScript",
+    "styling": "design tokens via CSS variables, utility classes constrained to token scale",
+    "state": "server-state via query cache, optimistic mutations",
+    "rules": [
+      "no arbitrary Tailwind bracket values; tokenised utilities only",
+      "components consume tokens, never raw hex or px"
+    ]
+  },
+  "component_conventions": {
+    "data_table": "virtualised, sortable, sticky header, density toggle, keyboard row navigation",
+    "kpi_card": "single metric, tabular figure, delta indicator, token spacing only",
+    "status_pill": "semantic colour plus text label, never colour alone",
+    "rules": [
+      "prefer one canonical component per role; duplicates are debt",
+      "every interactive component ships loading, empty, and error states"
+    ]
+  },
+  "exceptions": [
+    {
+      "id": "legacy-gantt-canvas",
+      "scope": "Gantt timeline module",
+      "rule_waived": "virtualised-table-density",
+      "reason": "third-party canvas renderer cannot consume density tokens",
+      "approved_by": "design-system-council",
+      "expires": "2026-12-31"
+    }
+  ],
+  "evidence": [
+    "evidence/usability-study-2026-q1.md",
+    "evidence/wcag-audit-2026-04.pdf",
+    "evidence/perf-budget-dashboard-route.json",
+    "design-system/tokens.css"
+  ]
+}

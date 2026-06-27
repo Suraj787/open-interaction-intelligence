@@ -1,0 +1,24 @@
+{
+  "id": "chose-table-over-cards",
+  "problem": "The portfolio dashboard must let expert managers triage dozens to hundreds of projects quickly. We had to choose between a dense data table and a card grid as the primary layout for the project list.",
+  "context": "Primary users are portfolio managers on desktop reviewing project health weekly. The enterprise-pm-genome declares density 'high' and a 'dense data table' component convention, and prohibits decorative, attention-seeking layouts.",
+  "alternatives": [
+    "Card grid: visually richer, one project per card, better on mobile but low information density and high scroll cost for large portfolios",
+    "Dense data table: high information density, sortable columns, scannable rows, supports keyboard navigation and virtualisation",
+    "Hybrid: cards above the fold for at-risk projects with a table below — rejected as duplicative and inconsistent"
+  ],
+  "decision": "Use a virtualised dense data table (component-project-table implementing pattern-dense-data-table) as the primary project layout, with a status pill recipe for health, and reserve KPI cards only for the summary band.",
+  "rationale": "Expert users scan and compare many records far faster in a table; this aligns with the genome's high-density posture and the dense-data-table component convention. Cards optimise for browsing single items, which is not the triage task.",
+  "evidence": [
+    "evidence/usability-study-2026-q1.md: table scanned 38% faster than cards for triage across 12 portfolio managers",
+    "governance/interaction-graph/nodes/pattern-dense-data-table.json",
+    "governance/design-genome/enterprise-pm-genome.json#component_conventions.data_table"
+  ],
+  "accessibility_impact": "Table requires explicit keyboard row navigation, sortable column semantics, and a density toggle; status conveyed by pill label plus colour, never colour alone.",
+  "performance_impact": "Table is virtualised beyond 100 rows to stay within the 200KB/route JS budget and 2s interactive target.",
+  "implementation": "component-project-table is virtualised, sticky-header, keyboard-navigable, and ships loading/empty/error states.",
+  "validation": "Reviewed against enterprise-pm-genome; covered by error-recovery and empty-state tests.",
+  "date": "2026-06-28",
+  "status": "active",
+  "supersedes": null
+}

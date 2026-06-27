@@ -1,0 +1,5 @@
+{
+  "from": "state-error",
+  "to": "test-error-recovery",
+  "relation": "validated-by"
+}

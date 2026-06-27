@@ -1,0 +1,26 @@
+{
+  "id": "button",
+  "component_type": "button",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "disabled",
+    "loading"
+  ],
+  "conditional_states": [
+    { "state": "success", "condition": "Button triggers an action whose completion is worth confirming in place (e.g. Copy, Save)." },
+    { "state": "error", "condition": "The triggered action can fail and the button should reflect or allow retry." },
+    { "state": "selected", "condition": "Button acts as a toggle or segmented option with an on/off state." },
+    { "state": "permission-denied", "condition": "Action is visible but the user lacks rights; the disabled reason must be explained." },
+    { "state": "touch", "condition": "Rendered on a coarse-pointer device requiring a 44px minimum target." },
+    { "state": "reduced-motion", "condition": "Loading spinner and success animation must have a static equivalent." }
+  ],
+  "rationale": "Buttons are the atomic action trigger, so the full interaction set — default, hover, focus, active (pressed), disabled, and loading — is mandatory. The loading state is required to prevent double submission and to communicate that an async action is in flight; disabled must always be visually and semantically distinct from default.",
+  "evidence": [
+    "WCAG 2.2 2.4.7 (Focus Visible) and 2.5.8 (Target Size Minimum, 24px CSS / 44px touch) apply directly to buttons.",
+    "Material and Apple HIG both define pressed (active) and disabled as required button states.",
+    "NN/g: disable and show a spinner on submit buttons during async work to prevent duplicate actions."
+  ]
+}

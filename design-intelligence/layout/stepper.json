@@ -1,0 +1,21 @@
+{
+  "id": "stepper",
+  "name": "Stepper (Wizard)",
+  "when_to_use": "Use to break a long or complex task into a guided sequence of discrete steps with clear progress, such as checkout, onboarding, account setup, or multi-part forms where order matters and chunking reduces overwhelm.",
+  "when_not_to_use": "Avoid for short tasks that fit on one screen (a wizard adds needless friction), for non-linear tasks where users need to jump freely, or for expert users who prefer a single dense form they can complete at their own pace.",
+  "information_structure": "A linear (or lightly branching) sequence of steps, each containing a focused subset of inputs, with a progress indicator showing completed, current, and upcoming steps.",
+  "navigation": "Next/back controls advance the sequence; a visible step indicator communicates position and total; completed steps may be revisitable; validation gates progression.",
+  "density": ["comfortable", "spacious"],
+  "responsive_behaviour": "Collapse the step indicator to a compact 'Step 2 of 5' label on narrow viewports while keeping one step's content per screen.",
+  "accessibility_notes": [
+    "Announce step changes and current position to assistive tech",
+    "Move focus to the new step's heading or first field on navigation",
+    "Validate inline and surface errors clearly before allowing or after attempting to advance",
+    "Indicate current step with more than colour in the progress indicator"
+  ],
+  "compares_with": ["progressive-disclosure", "timeline", "nested-navigation"],
+  "evidence": [
+    "Baymard Institute checkout research supports chunked, clearly-progressed multi-step flows for complex tasks",
+    "Miller's chunking and reduced working-memory load underpin step decomposition"
+  ]
+}

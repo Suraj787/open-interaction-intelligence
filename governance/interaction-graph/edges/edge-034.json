@@ -1,0 +1,5 @@
+{
+  "from": "component-kpi-card",
+  "to": "constraint-token-spacing",
+  "relation": "conflicts-with"
+}

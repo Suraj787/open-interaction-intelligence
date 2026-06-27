@@ -1,0 +1,31 @@
+{
+  "id": "marketing-expressive",
+  "principles": [
+    "Motion is part of the brand voice: it sets tone, rhythm, and personality on top-of-funnel pages.",
+    "Expressiveness is earned by context — marketing and onboarding canvases, never dense operational tooling.",
+    "Choreograph sequences with stagger and easing so attention flows in a deliberate reading order.",
+    "Performance and accessibility are non-negotiable: 60fps transform/opacity only, and a full reduced-motion path.",
+    "Never trap or hijack the user; scroll, focus, and navigation remain under their control at all times."
+  ],
+  "duration_scale": {
+    "instant": 0,
+    "fast": 200,
+    "base": 360,
+    "slow": 600,
+    "unit": "ms"
+  },
+  "easing": {
+    "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "decelerate": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "accelerate": "cubic-bezier(0.7, 0, 0.84, 0)"
+  },
+  "entrance": "Sections reveal on scroll with a 24px translate, 0.96 to 1.0 scale and fade over base (360ms), staggered ~60ms per child using the decelerate curve.",
+  "exit": "Elements leave with a fade and 16px translate over fast (200ms) accelerate; full-screen overlays scale down slightly as they dismiss.",
+  "spatial_navigation": "Page and route transitions use a slow (600ms) layered crossfade with parallax depth between foreground and background; direction reflects nav intent but never blocks input.",
+  "list_changes": "Galleries and feature grids animate items in with a staggered scale-and-fade; reordering uses FLIP with the decelerate curve over base (360ms).",
+  "status_change": "Marketing status (e.g. plan selected, form accepted) gets an expressive but single-shot flourish — a check draw or colour sweep over base (360ms) — never a repeating loop.",
+  "loading": "Hero and media use a graceful blur-up / fade-in from placeholder over base (360ms); long operations show a branded determinate indicator, not a fake animated bar.",
+  "errors": "Form errors fade in with the inline message and a single soft shake (one cycle, ~180ms); colour and text always carry the meaning so the shake is pure emphasis.",
+  "decorative_motion": "Permitted and intentional: gradient drifts, parallax, hover micro-interactions and looping ambient accents — but only in hero/marketing zones, paused when offscreen, and capped so they never compete with a primary CTA.",
+  "reduced_motion": "All scroll-reveals, parallax, stagger, blur-up, drift, and shake are disabled. Content renders in its final position and full opacity immediately; any loop becomes a static frame and transitions become instant or a single fast (200ms) fade."
+}

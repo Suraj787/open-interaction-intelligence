@@ -1,0 +1,173 @@
+{
+  "id": "saas-vibrant",
+  "name": "SaaS Vibrant",
+  "primitives": {
+    "ink": {
+      "0": "#ffffff",
+      "50": "#f9fafb",
+      "100": "#f3f4f6",
+      "200": "#e5e7eb",
+      "300": "#d1d5db",
+      "400": "#9ca3af",
+      "500": "#6b7280",
+      "600": "#4b5563",
+      "700": "#374151",
+      "800": "#1f2937",
+      "900": "#111827",
+      "950": "#030712"
+    },
+    "violet": {
+      "50": "#f5f3ff",
+      "100": "#ede9fe",
+      "300": "#c4b5fd",
+      "500": "#7c3aed",
+      "600": "#6d28d9",
+      "700": "#5b21b6"
+    },
+    "indigo": {
+      "50": "#eef2ff",
+      "500": "#6366f1",
+      "600": "#4f46e5"
+    },
+    "emerald": {
+      "50": "#ecfdf5",
+      "500": "#10b981",
+      "600": "#059669",
+      "700": "#047857"
+    },
+    "amber": {
+      "50": "#fffbeb",
+      "500": "#f59e0b",
+      "600": "#d97706",
+      "700": "#b45309"
+    },
+    "rose": {
+      "50": "#fff1f2",
+      "500": "#f43f5e",
+      "600": "#e11d48",
+      "700": "#be123c"
+    },
+    "sky": {
+      "50": "#f0f9ff",
+      "500": "#0ea5e9",
+      "600": "#0284c7"
+    }
+  },
+  "semantic_tokens": {
+    "bg": {
+      "canvas": "ink.50",
+      "surface": "ink.0",
+      "surface-raised": "ink.0",
+      "surface-sunken": "ink.100",
+      "overlay": "ink.950"
+    },
+    "fg": {
+      "default": "ink.900",
+      "muted": "ink.600",
+      "subtle": "ink.500",
+      "on-primary": "ink.0",
+      "disabled": "ink.400"
+    },
+    "border": {
+      "default": "ink.200",
+      "strong": "ink.300",
+      "focus": "violet.500"
+    },
+    "primary": {
+      "default": "violet.600",
+      "hover": "violet.700",
+      "active": "violet.700",
+      "fg": "ink.0",
+      "subtle-bg": "violet.50",
+      "gradient-from": "violet.500",
+      "gradient-to": "indigo.500"
+    },
+    "success": {
+      "default": "emerald.600",
+      "fg": "ink.0",
+      "subtle-bg": "emerald.50",
+      "subtle-fg": "emerald.700"
+    },
+    "warning": {
+      "default": "amber.600",
+      "fg": "ink.900",
+      "subtle-bg": "amber.50",
+      "subtle-fg": "amber.700"
+    },
+    "danger": {
+      "default": "rose.600",
+      "hover": "rose.700",
+      "fg": "ink.0",
+      "subtle-bg": "rose.50",
+      "subtle-fg": "rose.700"
+    },
+    "info": {
+      "default": "sky.600",
+      "fg": "ink.0",
+      "subtle-bg": "sky.50",
+      "subtle-fg": "sky.600"
+    }
+  },
+  "component_tokens": {
+    "button-primary-bg": "primary.default",
+    "button-primary-gradient": "linear-gradient(135deg, #7c3aed, #6366f1)",
+    "input-border-focus": "border.focus",
+    "badge-new-bg": "violet.100",
+    "card-shadow-accent": "rgba(124,58,237,0.15)"
+  },
+  "state_tokens": {
+    "hover-overlay": "rgba(17,24,39,0.04)",
+    "active-overlay": "rgba(17,24,39,0.08)",
+    "selected-bg": "violet.50",
+    "focus-ring": "violet.500",
+    "disabled-fg": "ink.400",
+    "disabled-bg": "ink.100"
+  },
+  "chart_palette": [
+    {"name": "violet", "hex": "#7c3aed"},
+    {"name": "sky", "hex": "#0ea5e9"},
+    {"name": "emerald", "hex": "#10b981"},
+    {"name": "amber", "hex": "#f59e0b"},
+    {"name": "rose", "hex": "#f43f5e"},
+    {"name": "indigo", "hex": "#4f46e5"},
+    {"name": "teal", "hex": "#14b8a6"},
+    {"name": "fuchsia", "hex": "#c026d3"}
+  ],
+  "themes": {
+    "light": {
+      "bg-canvas": "#f9fafb",
+      "bg-surface": "#ffffff",
+      "fg-default": "#111827",
+      "fg-muted": "#4b5563",
+      "border-default": "#e5e7eb",
+      "primary": "#6d28d9"
+    },
+    "dark": {
+      "bg-canvas": "#030712",
+      "bg-surface": "#111827",
+      "bg-surface-raised": "#1f2937",
+      "fg-default": "#f3f4f6",
+      "fg-muted": "#9ca3af",
+      "border-default": "#374151",
+      "primary": "#a78bfa",
+      "primary-fg": "#1f2937"
+    }
+  },
+  "contrast_notes": [
+    "primary violet.600 (#6d28d9) on white is ~6.6:1, passing SC 1.4.3 for text and SC 1.4.11 for the control; the brighter violet.500 (#7c3aed, ~5.1:1) is acceptable for large text but reserved mainly for fills and gradients",
+    "warning amber.600 (#d97706) uses dark (ink.900) foreground rather than white, since white on amber fails contrast; never place white text on amber/yellow fills",
+    "Gradient buttons must guarantee the label meets 4.5:1 against the darkest point of the gradient, not just the lightest",
+    "In dark theme, primary is lightened to violet.300/#a78bfa with dark foreground because violet.600 lacks contrast on dark surfaces",
+    "fg.muted ink.600 (#4b5563) on white is ~7.5:1; do not drop secondary text below ink.500 (#6b7280, ~4.8:1)"
+  ],
+  "colour_vision_notes": [
+    "Despite the vibrant palette, status meaning is always reinforced with icon and text, never colour alone (SC 1.4.1)",
+    "The chart palette leads violet-sky-emerald-amber so the first four series stay separable under deuteranopia and protanopia; rose and emerald are kept non-adjacent to avoid red/green confusion",
+    "Saturated rose and emerald can be hard to tell apart for red-green CVD users; rely on order, labels, and direct data labels rather than hue alone in legends"
+  ],
+  "evidence": [
+    "Contrast ratios computed against WCAG 2.2 SC 1.4.3 and 1.4.11",
+    "Vibrant violet/indigo SaaS branding mirrors Linear, Stripe, and similar product palettes",
+    "Colour-blind-safe ordering follows IBM Carbon and Material data-vis guidance; verify gradients and saturated pairs in a CVD simulator"
+  ]
+}

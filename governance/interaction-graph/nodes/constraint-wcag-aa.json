@@ -1,0 +1,9 @@
+{
+  "id": "constraint-wcag-aa",
+  "type": "constraint",
+  "label": "WCAG 2.2 AA conformance",
+  "attributes": {
+    "source": "accessibility_posture",
+    "rule": "4.5:1 text contrast, full keyboard operability, visible focus, no info by colour alone"
+  }
+}

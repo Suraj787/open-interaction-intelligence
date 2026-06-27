@@ -1,0 +1,24 @@
+{
+  "id": "restrained-motion-for-dense-ui",
+  "problem": "Stakeholders requested lively animations (count-ups, row cascades, parallax) to make the dashboard feel modern. In a dense, data-heavy interface this risks distraction, motion sickness, and perceived sluggishness.",
+  "context": "The enterprise-pm-genome motion_character is 'restrained and functional; 120-180ms ease-out, motion only to clarify state change or spatial relationship' and prohibits 'novelty-animation'. Users work in the tool daily for long sessions.",
+  "alternatives": [
+    "Expressive motion system with entrance cascades and count-ups, matching consumer SaaS trends",
+    "No motion at all — risks losing useful state-change and spatial cues",
+    "Restrained, functional motion: short ease-out transitions only where they clarify state or layering, all gated behind prefers-reduced-motion"
+  ],
+  "decision": "Adopt a restrained, functional motion budget: 120-180ms ease-out transitions used only to clarify state change or spatial relationship; no decorative count-ups or cascades; every effect honours prefers-reduced-motion.",
+  "rationale": "Dense professional UIs reward calm; motion should reduce cognitive load, not add to it. This conforms to the genome motion_character and accessibility posture and keeps long sessions comfortable.",
+  "evidence": [
+    "governance/design-genome/enterprise-pm-genome.json#motion_character",
+    "governance/interaction-graph/nodes/constraint-reduced-motion.json",
+    "evidence/wcag-audit-2026-04.pdf: WCAG 2.3.3 animation-from-interactions checks"
+  ],
+  "accessibility_impact": "Directly satisfies WCAG 2.3.3; all non-essential motion disabled when prefers-reduced-motion is set. Note: effect-kpi-count-up currently violates this and is tracked as motion debt.",
+  "performance_impact": "Avoids heavy animation libraries on the main route, protecting the JS budget and main-thread time.",
+  "implementation": "effect-row-hover-highlight and effect-toast-confirmation are governed-by constraint-reduced-motion; durations capped at 180ms.",
+  "validation": "Audited in the 2026-04 WCAG review; reduced-motion behaviour spot-checked per effect.",
+  "date": "2026-06-28",
+  "status": "active",
+  "supersedes": null
+}

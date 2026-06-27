@@ -1,0 +1,18 @@
+{
+  "id": "particles-blur-parallax-low-power",
+  "category": "performance",
+  "kind": "human-judgement",
+  "prompt": "Use particles, blur and parallax on a low-powered mobile device.",
+  "context": "consumer app · target hardware is a low-end Android phone on a constrained network",
+  "expected_behaviour": [
+    "reject continuous particles, heavy blur and scroll parallax on low-power hardware",
+    "cite frame-rate, battery, thermal and main-thread cost",
+    "propose static or one-shot lightweight alternatives",
+    "prevent continuous rendering and respect device/perf signals"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it refuses blanket heavy continuous effects on low-power hardware and offers lightweight/static alternatives with a stated budget."
+}

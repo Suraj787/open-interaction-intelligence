@@ -1,0 +1,14 @@
+{
+  "id": "ibm-carbon",
+  "name": "IBM Carbon (reference provider)",
+  "trust_tier": 2,
+  "licence": "Apache-2.0",
+  "version": "current",
+  "update_method": "manual",
+  "confidence": "medium",
+  "evidence_quality": "official-oss",
+  "supplies": [
+    "motion-tokens",
+    "components"
+  ]
+}

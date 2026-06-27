@@ -1,0 +1,18 @@
+{
+  "id": "ib-round03-client-portal-identity",
+  "category": "framework",
+  "kind": "human-judgement",
+  "prompt": "The same data needs a read-only, client-facing portal view.",
+  "context": "InterfaceBench longitudinal · Round 3 · a second audience and permission model over the same data",
+  "expected_behaviour": [
+    "reuse the existing system and adapt to a read-only client audience, not fork/duplicate the codebase",
+    "reduce columns and strip internal-only fields; prevent internal data leaking to clients",
+    "ship a permission-denied and empty state for the portal",
+    "preserve product identity across both views; differentiate by audience need, not arbitrary restyling"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the portal reuses the system, hides internal data, ships permission-denied/empty states, and keeps the product recognisably itself."
+}

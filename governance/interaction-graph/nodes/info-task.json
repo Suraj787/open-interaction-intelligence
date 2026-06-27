@@ -1,0 +1,10 @@
+{
+  "id": "info-task",
+  "type": "information-object",
+  "label": "Task",
+  "attributes": {
+    "fields": ["title", "assignee", "status", "priority", "due_date"],
+    "identity": "id",
+    "status_values": ["todo", "in-progress", "blocked", "done"]
+  }
+}

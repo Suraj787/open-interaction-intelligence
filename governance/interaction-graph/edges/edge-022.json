@@ -1,0 +1,5 @@
+{
+  "from": "action-filter-by-status",
+  "to": "screen-dashboard-overview",
+  "relation": "belongs-to"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "kanban-board",
+  "component_type": "kanban-board",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "loading",
+    "empty",
+    "error",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "selected", "condition": "Cards can be multi-selected for bulk move or edit." },
+    { "state": "partial", "condition": "Columns paginate or lazy-load cards beyond an initial window." },
+    { "state": "stale", "condition": "Board is shared/real-time and another user may move a card." },
+    { "state": "conflict", "condition": "A drag is committed against a column another user already changed (optimistic move rejected)." },
+    { "state": "offline", "condition": "Moves must queue and reconcile when connectivity returns." },
+    { "state": "permission-denied", "condition": "User may view a column but cannot move cards into or out of it." },
+    { "state": "touch", "condition": "Drag works via long-press on coarse-pointer devices with a tap-to-move fallback." },
+    { "state": "reduced-motion", "condition": "Card move/reflow animation must degrade to an instant position change." }
+  ],
+  "rationale": "A kanban board is a drag-driven, often collaborative surface, so the active (dragging) state, per-column empty state, and the loading/error of the board fetch are all required. Drag-and-drop must have a keyboard equivalent (pick up, move, drop) and an optimistic move must reconcile on conflict so a rejected drag does not leave a card in the wrong column.",
+  "evidence": [
+    "WCAG 2.2 2.1.1 (Keyboard) and 2.5.7 (Dragging Movements): drag operations need a single-pointer / keyboard alternative.",
+    "WAI-ARIA: announce drag pickup, target column, and drop result via status messages (4.1.3).",
+    "Frappe Helpdesk / CRM and Trello-style optimistic-move patterns: reconcile and revert card position on server rejection."
+  ]
+}

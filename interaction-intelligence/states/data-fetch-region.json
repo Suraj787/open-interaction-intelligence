@@ -1,0 +1,25 @@
+{
+  "id": "data-fetch-region",
+  "component_type": "data-fetch-region",
+  "required_states": [
+    "loading",
+    "empty",
+    "error",
+    "success",
+    "stale",
+    "slow-network"
+  ],
+  "conditional_states": [
+    { "state": "offline", "condition": "Region must remain useful (cached content + offline banner) without connectivity." },
+    { "state": "partial", "condition": "Region streams or paginates data and can render before the full set arrives." },
+    { "state": "permission-denied", "condition": "The fetch can return 403/authorization failure that must be surfaced distinctly from a generic error." },
+    { "state": "conflict", "condition": "Revalidation detects the underlying data changed since first render." },
+    { "state": "reduced-motion", "condition": "Skeleton and refresh indicators must degrade to static under reduced motion." }
+  ],
+  "rationale": "Any region that fetches data asynchronously must explicitly model the full async lifecycle. Loading, empty, error, and success are the irreducible quartet; stale is required because cached/revalidated data must signal freshness, and slow-network is required so a slow response shows progress rather than appearing frozen or empty. Collapsing any of these (especially treating error or stale as empty) is the single most common interaction-completeness defect.",
+  "evidence": [
+    "TanStack Query / SWR model fetch as explicit loading | error | success | stale (isFetching/isStale) states.",
+    "WCAG 2.2 4.1.3 (Status Messages) requires programmatic announcement of loading and result status.",
+    "NN/g response-time research: show progress feedback after ~1s and a determinate cue past ~10s for slow networks."
+  ]
+}

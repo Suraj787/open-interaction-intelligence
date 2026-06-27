@@ -1,0 +1,5 @@
+{
+  "from": "component-kpi-card",
+  "to": "effect-kpi-count-up",
+  "relation": "uses"
+}

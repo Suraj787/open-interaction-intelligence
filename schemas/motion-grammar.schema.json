@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/motion-grammar.schema.json",
+  "title": "motion-grammar",
+  "type": "object",
+  "required": [
+    "id",
+    "duration_scale",
+    "easing"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duration_scale": {
+      "type": "object"
+    },
+    "easing": {
+      "type": "object"
+    },
+    "entrance": {
+      "type": "string"
+    },
+    "exit": {
+      "type": "string"
+    },
+    "spatial_navigation": {
+      "type": "string"
+    },
+    "list_changes": {
+      "type": "string"
+    },
+    "status_change": {
+      "type": "string"
+    },
+    "loading": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "string"
+    },
+    "decorative_motion": {
+      "type": "string"
+    },
+    "reduced_motion": {
+      "type": "string"
+    }
+  }
+}

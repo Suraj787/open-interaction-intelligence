@@ -1,0 +1,19 @@
+{
+  "id": "ib-round02-bulk-actions-state-completeness",
+  "category": "positive",
+  "kind": "human-judgement",
+  "prompt": "Let users select multiple projects and act on them at once (archive, reassign, change status).",
+  "context": "InterfaceBench longitudinal · Round 2 · adds multi-select bulk actions to the Round-1 list",
+  "expected_behaviour": [
+    "model selection as a first-class state set: none, one, many, select-all, partial/indeterminate",
+    "show a contextual action bar only with a selection, announcing the selected count",
+    "make selection keyboard-operable and resilient to sorting",
+    "guard destructive bulk actions with confirm and/or undo",
+    "reuse the Round-1 system rather than introducing a new pattern"
+  ],
+  "must_reject": false,
+  "expected_pattern": "bulk-selection",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the full selection state set (incl. indeterminate and empty-selection) is present, keyboard-operable, count-announced, with safe destructive actions."
+}

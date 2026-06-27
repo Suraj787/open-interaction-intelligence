@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "confidence": 0.5,
+  "product": {
+    "type": "ecommerce-checkout-flow",
+    "purpose": "Convert an intent-to-buy into a completed, paid order with the least friction and the highest trust, then confirm it.",
+    "business_model": "b2c-transactional-retail",
+    "audience": "public",
+    "maturity": "established",
+    "regulatory_sensitivity": "moderate-to-high (payment data under PCI-DSS; consumer/PII and consent under GDPR/CCPA-class law)"
+  },
+  "users": [
+    {
+      "role": "shopper-purchaser",
+      "expertise": "novice-to-the-specific-store",
+      "frequency": "infrequent, often a first or one-off checkout",
+      "goals": [
+        "buy the chosen item quickly and feel safe paying",
+        "not be forced to create an account or re-enter known data",
+        "understand the total cost (taxes, shipping) before committing",
+        "recover gracefully from a card error or a flaky connection"
+      ]
+    },
+    {
+      "role": "returning-customer",
+      "expertise": "intermediate",
+      "frequency": "occasional",
+      "goals": [
+        "check out in as few taps as possible with saved details",
+        "confirm the order landed"
+      ]
+    }
+  ],
+  "workflows": [
+    "Guest checkout: enter shipping, choose delivery, pay, confirm, all without an account.",
+    "Express checkout: pay with a stored wallet (Apple Pay / Google Pay / saved card) in one or two taps.",
+    "Recover from payment failure: re-attempt or switch payment method without losing cart or entered data.",
+    "Apply a discount or adjust quantity: see the total update and re-confirm intent.",
+    "Resume an interrupted checkout: return after a dropped connection or app switch and continue where left off."
+  ],
+  "information": {
+    "density": "low (one decision per step; progressive disclosure; minimise on-screen choices)",
+    "objects": [
+      "cart-item",
+      "shipping-address",
+      "delivery-option",
+      "payment-method",
+      "order-total",
+      "tax",
+      "discount-code",
+      "order-confirmation"
+    ]
+  },
+  "environment": {
+    "primary_device": "mobile phone (touch, small screen, one-handed, frequently interrupted)",
+    "secondary_device": "desktop browser",
+    "connectivity": "consumer mobile networks; low connectivity tolerance required, must survive flaky/slow links",
+    "localisation": ["en-US", "es-US"]
+  },
+  "risks": [
+    "Conversion risk: any added field, surprise cost, or extra step measurably drops completion.",
+    "Connectivity loss between submit and confirmation creates fear of a double charge or a lost order.",
+    "Hidden costs (tax/shipping revealed late) cause abandonment and distrust.",
+    "Forced account creation pushes one-off shoppers away.",
+    "Payment errors with vague messaging strand the shopper instead of guiding a retry.",
+    "Mishandled payment/PII data breaches PCI-DSS and privacy obligations."
+  ],
+  "constraints": [
+    "Mobile-first, thumb-reachable, large touch targets; avoid keyboard-heavy steps.",
+    "Each step must be idempotent and resumable so a retry never double-charges.",
+    "Total cost must be transparent before the final commit.",
+    "Guest checkout must be a first-class path, not a buried fallback.",
+    "Payment capture must be PCI-DSS compliant; PII collection must be minimal and consented."
+  ],
+  "verified": [
+    "The primary user is a shopper completing a purchase.",
+    "Use is infrequent and the flow is conversion-critical.",
+    "The primary device is mobile.",
+    "Low connectivity tolerance is a stated requirement."
+  ],
+  "inferred": [
+    "Guest and express (wallet) checkout matter most, inferred from infrequent, conversion-critical mobile use.",
+    "Idempotent submit/confirm is required, inferred from low connectivity tolerance.",
+    "Cost transparency before commit reduces abandonment, inferred from conversion criticality."
+  ],
+  "assumptions": [
+    "Payment is handled via a third-party processor, so PCI scope is largely delegated.",
+    "A cart/catalogue system of record exists upstream.",
+    "US English with Spanish is a reasonable initial localisation set.",
+    "Wallet payment methods (Apple/Google Pay) are available to the audience."
+  ],
+  "unresolved": [
+    "Actual baseline conversion and abandonment data to target improvements against.",
+    "Which payment methods and currencies must be supported per market.",
+    "Whether one-page or multi-step checkout performs better for this catalogue.",
+    "Real localisation footprint (currencies, languages, tax jurisdictions).",
+    "Accessibility commitments required by the operating markets."
+  ],
+  "evidence": [
+    "task-brief: shopper, infrequent, conversion-critical, mobile-primary, low connectivity tolerance",
+    "inference-only: e-commerce conversion priors applied; no analytics, A/B data, or store access available"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "material-design",
+  "name": "Material Design (reference provider)",
+  "trust_tier": 1,
+  "licence": "guidance",
+  "version": "m3",
+  "update_method": "manual",
+  "confidence": "medium",
+  "evidence_quality": "official-guidance",
+  "supplies": [
+    "motion-tokens",
+    "components"
+  ]
+}

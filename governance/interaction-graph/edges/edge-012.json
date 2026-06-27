@@ -1,0 +1,5 @@
+{
+  "from": "screen-task-board",
+  "to": "info-task",
+  "relation": "shows"
+}

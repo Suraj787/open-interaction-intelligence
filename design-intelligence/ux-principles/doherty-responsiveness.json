@@ -1,0 +1,18 @@
+{
+  "id": "doherty-responsiveness",
+  "name": "Doherty Threshold: Keep System Response Under 400ms",
+  "trigger": "An interaction depends on system response time, a feature performs network or compute work in the user's path, or perceived performance is being designed.",
+  "applicable_contexts": ["search", "navigation", "data loading", "typing/filtering", "transactions", "perceived performance"],
+  "recommendation": "Aim to keep system response under about 400ms so the user and system operate at pace and engagement stays high. Where true speed is constrained, engineer perceived performance: optimistic UI, skeleton screens, instant local feedback, prefetching likely next actions, and progressive rendering. Faster, sub-400ms loops keep users in flow and increase productivity.",
+  "rejection": "Reject blocking the user for seconds with no perceived-performance technique, full-page reloads where partial updates suffice, and 'we'll just add a spinner' as a substitute for addressing avoidable latency on hot paths.",
+  "validation": [
+    "Measure interaction-to-response latency on key paths and target under 400ms",
+    "Where backend latency is unavoidable, verify optimistic UI, skeletons, or prefetch are used",
+    "Track engagement/abandonment against response-time changes"
+  ],
+  "evidence": [
+    "Doherty & Thadani (1982), IBM: productivity rises sharply when system response drops below 400ms",
+    "Reinforced by Core Web Vitals INP and NN/g response-time guidance"
+  ],
+  "source": "Doherty Threshold (Doherty & Thadani 1982)"
+}

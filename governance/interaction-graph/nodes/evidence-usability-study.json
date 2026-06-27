@@ -1,0 +1,10 @@
+{
+  "id": "evidence-usability-study",
+  "type": "evidence",
+  "label": "Q1 2026 portfolio usability study",
+  "attributes": {
+    "source": "evidence/usability-study-2026-q1.md",
+    "finding": "expert users scanned a dense table 38% faster than card layout for triage",
+    "sample": "12 portfolio managers"
+  }
+}

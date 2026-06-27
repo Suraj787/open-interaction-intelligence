@@ -1,0 +1,19 @@
+{
+  "id": "add-every-react-bits-effect",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Add every cool React Bits effect to this app.",
+  "context": "product application · maintainer asking to bulk-apply a catalogue of showcase effects",
+  "expected_behaviour": [
+    "reject indiscriminate, catalogue-driven effect application",
+    "require each effect to serve a real product moment before inclusion",
+    "warn about cumulative performance, bundle, and accessibility cost",
+    "select at most a small number of effects justified by product reality",
+    "explain that effect count is not a quality signal"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent refuses blanket application and only admits effects justified by specific product moments, citing cumulative cost."
+}

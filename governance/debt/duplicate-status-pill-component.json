@@ -1,0 +1,13 @@
+{
+  "id": "duplicate-status-pill-component",
+  "category": "duplicate-component",
+  "severity": "medium",
+  "evidence": [
+    "src/components/StatusPill.tsx and src/components/Badge.tsx render the same semantic status concept with divergent colour maps",
+    "Badge.tsx maps 'at-risk' to a non-token orange while StatusPill.tsx uses status.warning",
+    "governance/interaction-graph/nodes/recipe-status-pill.json defines a single canonical status-pill recipe",
+    "violates governance/design-genome/enterprise-pm-genome.json#component_conventions.rules ('prefer one canonical component per role; duplicates are debt')"
+  ],
+  "weight": 4,
+  "remediation": "Consolidate Badge.tsx into the canonical StatusPill driven by recipe-status-pill, mapping all status values to semantic tokens with text labels. Codemod existing Badge usages, then delete Badge.tsx and add a registry rule pointing status rendering at the single recipe."
+}

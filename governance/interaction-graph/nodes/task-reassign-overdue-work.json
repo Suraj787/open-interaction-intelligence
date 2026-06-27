@@ -1,0 +1,10 @@
+{
+  "id": "task-reassign-overdue-work",
+  "type": "task",
+  "label": "Reassign overdue work",
+  "attributes": {
+    "trigger": "overdue tasks detected during review",
+    "success_criteria": "overdue tasks reassigned to available owners",
+    "note": "deliberately has no feedback edge — surfaced by the tasks-lacking-feedback query"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "component-kpi-card",
+  "type": "component",
+  "label": "KpiCard",
+  "attributes": {
+    "path": "src/components/KpiCard.tsx",
+    "uses_tokens": false,
+    "violation": "arbitrary padding value p-[13px] and raw hex #2D6CDF outside token scale",
+    "note": "deliberately violates the genome geometry/spacing tokens — surfaced by the components-violating-genome query"
+  }
+}

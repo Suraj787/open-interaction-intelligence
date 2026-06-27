@@ -1,0 +1,5 @@
+{
+  "from": "effect-row-hover-highlight",
+  "to": "constraint-reduced-motion",
+  "relation": "governed-by"
+}

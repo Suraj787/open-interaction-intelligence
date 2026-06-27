@@ -1,174 +1,134 @@
-# Motif
+# Interface Intelligence OS
 
-**Interaction-design intelligence and governance for AI coding agents.** Motif helps
-agents securely discover, select, adapt and validate UI motion, effects and
-interaction patterns for websites and web applications.
+**Design judgment, interface engineering, assurance, and governance for AI coding agents.**
 
-> This is not an animation bundle, a list of effect websites, or a prompt that
-> sprinkles random motion. It is a reasoning and governance system. Its first job is
-> to decide what the user needs to understand, feel or accomplish, then choose the
-> **least complex interaction** that achieves it, and to refuse motion that hurts
-> usability, accessibility, performance or licensing.
+AI coding agents already know how to generate interface code. They do not reliably know
+what should be built, why a design choice belongs, whether a pattern fits the user and
+workflow, whether the output is generic, whether it is accessible, whether it is fast on
+real devices, whether third-party code is safe and legally reusable, whether it fits the
+existing design language, or whether the codebase stays coherent after many changes.
+Interface Intelligence OS is the intelligence and governance layer that answers those
+questions.
 
 [![CI](https://github.com/Suraj787/motif/actions/workflows/ci.yml/badge.svg)](https://github.com/Suraj787/motif/actions)
-&nbsp;Licence: MIT. Status: v1.0.0
+&nbsp;Licence: MIT. Status: v0.2.0 (built on the Motif v1.0.0 secure interaction foundation)
 
----
+> Defining principle: first determine what the user needs to understand, feel, decide, or
+> accomplish, then choose the least complex interface and interaction that achieves it.
+> Visual novelty never outranks usability, accessibility, security, performance, or
+> maintainability.
 
-## What it does
+## Honesty first
 
-Motif reasons from product context down to implementation, and it searches for a
-pattern before an effect:
+This README distinguishes what is **implemented**, **experimental**, and **planned**. See
+the full [capability matrix](docs/capability-matrix.md). Nothing marked planned is claimed
+to work. Anything you can run is covered by `make check`.
+
+## The six engines
 
 ```
-development purpose > product type > user intent > page/screen type
-> interaction objective > pattern > effect > implementation
+Product intent
+> Product Intelligence      (context manifest: facts vs inference vs assumption)
+> Design Intelligence       (styles, colour, typography, layout, ux-principles, industry packs)
+> Interaction Intelligence  (patterns before effects, motion + density grammars, state completeness)
+> Implementation            (framework detection, controlled install, rollback, provenance)
+> Assurance                 (security static scans, evidence model; runtime checks planned)
+> Governance and Learning   (design genome, interaction graph, originality, decisions, debt, drift)
 ```
 
-It distinguishes websites from web applications, keeps Vue and Frappe-Vue first-class
-alongside React and browser-native, and treats accessibility and reduced-motion as
-mandatory rather than optional.
+The Interaction Intelligence Engine and Secure Component Supply Chain are the validated
+**Motif / Open Interaction Intelligence** foundation (90 web-verified sources, 64
+components, 30 effects, 28 patterns, 14 recipes, 5 scanners, controlled installer). Vue and
+Frappe-Vue are first-class.
 
-## Why it's safe
+## What you can run today (implemented)
 
-The tempting-but-dangerous path (scrape a site, run its install script, copy its code
-into your project) is the hard path here. Instead:
+```bash
+ii inspect                              # detect the target project's framework + conventions
+ii model-product                        # scaffold a Product Context Manifest
+ii context validate                     # validate manifests (uncertainty stays explicit)
+ii genome validate|explain|diff <name>  # Product Design Genome
+ii graph validate|query <name>          # Interaction Specification Graph (surfaces real gaps)
+ii originality audit <path>             # Aesthetic Convergence Score over real source
+ii states matrix|validate|inspect       # State Completeness Engine
+ii motion validate ; ii density validate
+ii debt calculate <path>                # explainable Interface Debt Score
+ii decision create|list                 # design decision ledger
+ii source scan <path>                   # 5 security scanners (foundation)
+ii component plan-install <id> --target <dir>   # controlled install plan
+ii search "<query>" ; ii rank <pattern> # registry search + transparent ranking
+ii validate ; ii doctor                 # validate all engine data; health check
+make check                              # full local gate (mirrors CI)
+```
 
-- **Offline approved registry is the default.** Normal use reads the committed local
-  registry and never touches the network. Internet retrieval happens only through an
-  explicit `source retrieve --refresh` against an allowlisted official host.
-- **Untrusted-by-default ingestion.** Retrieved material lands in `.motif/quarantine/`
-  and is never executed. Five static scanners (dangerous patterns, browser behaviour,
-  dependencies, licence, secrets) review it before anything is approved.
-- **Licence gate.** Unknown licence becomes `reference-only`, never bundled.
-  Source-available and Commons-Clause terms are not treated as permissive OSS.
-- **Controlled installation.** Plan, snapshot, controlled patch, validate, auto-rollback
-  on failure, then a provenance manifest. Third-party installers never run against your
-  project.
-
-> Motif reduces risk but cannot guarantee that third-party code is completely safe.
-> Human review remains required. See [`docs/threat-model.md`](docs/threat-model.md).
+`oii` and `motif` remain as compatibility aliases for the foundation commands.
 
 ## Installation
 
-**Requirements:** Python 3.11+ and `git`. Node.js 18+ is optional (only for
-adapter/implementation tooling). The core CLI has no Python dependencies, so it runs on
-a stock interpreter.
-
-### 1. Get the repository
+Requirements: Python 3.11+ and `git`. Node.js 18+ is optional. The core CLI has no Python
+dependencies.
 
 ```bash
-git clone https://github.com/Suraj787/motif.git
-cd motif
+git clone https://github.com/Suraj787/motif.git interface-intelligence-os
+cd interface-intelligence-os
+python -m ii doctor          # run in place, zero install
+# or install the entry points:
+python -m pip install -e .   # gives `ii`, `oii`, `motif`
+ii doctor
 ```
 
-### 2. Use it (pick one)
-
-**Option A, run in place with zero install.** From the repo root:
-
-```bash
-python -m motif doctor      # checks environment and registry
-make check                  # full local gate (validation, scanners, ranking)
-```
-
-**Option B, install the `motif` command.** This adds an entry point so you can call
-`motif` from anywhere. Add `[dev]` for the pytest and ruff toolchain used by CI:
-
-```bash
-python -m pip install -e .          # gives the `motif` command
-python -m pip install -e ".[dev]"   # plus pytest, ruff (optional)
-motif doctor
-```
-
-### 3. Use it as a Claude Code Agent Skill
-
-Point Claude Code at this repo (open it as your working directory, or copy/symlink the
-skill folders into your skills path). The root [`SKILL.md`](SKILL.md) is the
-orchestrator; specialist skills live in [`skills/`](skills/). For example:
-
-```bash
-# expose the skills to a Claude Code skills directory (adjust the target path)
-ln -s "$(pwd)/skills" ~/.claude/skills/motif-specialists
-ln -s "$(pwd)/SKILL.md" ~/.claude/skills/motif.md
-```
-
-Then verify with `python -m motif validate` (it should report `OK`).
-
-## Quick start
-
-```bash
-# no dependencies required for the core CLI (stdlib only, Python 3.11+)
-python -m motif doctor              # environment and registry health
-python -m motif validate            # validate the registry against schemas
-python -m motif search "save"       # search patterns/effects/recipes
-python -m motif rank skeleton-loading --profile enterprise-strict   # transparent ranking
-python -m motif source completeness # component coverage by source
-python -m motif source scan evals/fixtures/eval-button   # run the scanners on a path
-make check                          # the full local gate (mirrors CI)
-```
-
-### Use with Claude Code / Agent Skills
-
-The root [`SKILL.md`](SKILL.md) is an orchestrator, not a knowledge dump. It inspects
-your repo, classifies the product/page/user/problem, loads only the relevant local
-intelligence, produces and transparently ranks candidates, selects the simplest
-effective approach in your framework, then validates accessibility, performance and
-responsiveness before recording the decision and provenance. Specialist skills live in
-[`skills/`](skills/); reusable runbooks in [`workflows/`](workflows/).
+Use it as a Claude Code Agent Skill by pointing Claude Code at this repo. The root
+[`SKILL.md`](SKILL.md) is the orchestrator (an 18-step workflow with hard rules); specialist
+skills live in [`skills/`](skills/).
 
 ## Repository map
 
 | Area | What's there |
 |------|--------------|
-| `SKILL.md`, `skills/`, `agents/` | Root orchestrator, 10 specialist skills, 8 reviewer agents |
-| `intelligence/` | The 8-level model, taxonomies, anti-patterns, 10 quality profiles |
-| `registry/` | Machine-readable sources, components, effects, patterns, recipes, licences |
-| `schemas/` | 7 strict JSON Schemas every record must satisfy |
-| `connectors/`, `ingestion/`, `security/`, `scanners/` | Secure retrieval pipeline, policies, 5 scanners |
-| `adapters/`, `implementations/` | Framework contracts and clean-room implementations (browser-native, Vue, Frappe-Vue, React) |
-| `motif/` | The dependency-free Python CLI (search, ranking, install, validation) |
-| `evals/` | Judgement and security evaluations, plus malicious fixtures |
-| `examples/` | Worked decision records (enterprise dashboard, ERP form, SaaS hero, and more) |
-| `docs/` | Architecture, threat model, authoring guides, ADRs |
+| `SKILL.md`, `skills/`, `agents/` | Orchestrator, 11 specialist skills, 15 reviewer agents |
+| `product-intelligence/` | Product Context Manifest + sub-models |
+| `design-intelligence/` | Styles, colour, typography, layout, ux-principles, 10 industry packs |
+| `interaction-intelligence/` | Motion + density grammars, state requirements, anti-patterns |
+| `governance/` | Design genome, interaction graph, decision ledger, debt, drift |
+| `registry/`, `scanners/`, `security/`, `connectors/`, `ingestion/` | Secure supply chain (foundation) |
+| `adapters/`, `implementations/`, `compiler/` | Framework adaptation and the controlled installer |
+| `assurance/` | Assurance evidence model (static scans implemented; runtime planned) |
+| `specifications/` | Interface Specification Language (schema + examples) |
+| `interfacebench/` | Production-survival benchmark (15 capabilities, 10-round scenario) |
+| `ii/`, `motif/` | The `ii` CLI and the Motif foundation engine |
+| `schemas/` | 25 strict JSON Schemas every record must satisfy |
+| `evals/`, `tests/` | Adversarial judgement + security evaluations; test suite |
+| `docs/` | Research, competitive analysis, architecture, capability matrix, ADRs |
 
-## What v1.0.0 contains
+## What v0.2.0 contains
 
-v1.0.0 broadens coverage to a thoroughly reviewed source set while keeping every record
-honest:
+- All six engines have functioning, schema-validated foundations.
+- Design intelligence: 12 styles, 12 layouts, 15 executable UX principles, colour and
+  typography systems, 10 deep industry packs (workflow and risk, not themes).
+- Governance: 2 design genomes, a 31-node / 40-edge interaction graph with six deliberately
+  seeded gaps that the queries surface, a decision ledger, and an explainable debt analyzer.
+- Honesty discipline: the Product Context Manifest separates verified facts from inference
+  and assumptions; recommendations carry confidence levels; performance is never reported as
+  measured without measurement.
+- `make check`: foundation self-check (75) plus the `ii` self-check (20), engine-data and
+  graph validation, and a secret scan.
 
-- **90 reviewed sources**, each new one's licence verified against its actual `LICENSE`
-  file, `package.json`, or official terms page (recorded under `evidence`). Split: 53
-  redistributable, 20 adaptable-concept, 17 reference-only.
-- **64 component records** across all five usability modes (37 installable, 17 adaptable,
-  9 reference-only, 1 rejected), each carrying the source's licence and a usability mode.
-- **30 effects, 28 patterns, 14 clean-room recipe implementations**, 10 quality profiles.
-- Working search, transparent ranking, and a controlled installer with framework
-  detection, dependency planning, a static security scan, snapshot and rollback.
-- 5 scanners, malicious fixtures, 12+ evaluation cases, and a dependency-free `make check`
-  (60 self-checks).
+Planned next (v0.3.0): live `ii compile plan/apply`, workflow simulation (Playwright),
+visual-regression assurance, drift trend tracking, external provider imports, and the
+automated InterfaceBench runner. See the [capability matrix](docs/capability-matrix.md) and
+[`docs/product/roadmap.md`](docs/product/roadmap.md).
 
-Licence facts carry a confidence level. The verification pass corrected several naive
-assumptions (p5.js is LGPL, ScrollReveal is GPL-3.0, Shopify Polaris is field-of-use
-restricted, vue-bits/svelte-bits carry a Commons Clause, Theatre.js is dual-licensed).
-See [`THIRD_PARTY_SOURCES.md`](THIRD_PARTY_SOURCES.md) and
-[`docs/research-methodology.md`](docs/research-methodology.md).
+## Honest limitations
 
-## Roadmap beyond v1.0.0
-
-- Deepen component catalogues per source (more verified records, previews).
-- Implement live network connectors for the source-refresh workflow (currently declarative).
-- Grow the recipe library and adapter coverage (Angular, more Svelte/vanilla).
-- Re-verify `pending-verification` and medium-confidence licences on a schedule.
-
-## Contributing and security
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md) and
-[`LICENSE_POLICY.md`](LICENSE_POLICY.md). AI-generated contributions require human
-review. The strongest version of this project is not the one with the most effects. It
-is the one that selects the right effect, proves where it came from, adapts it safely,
-and refuses inappropriate motion.
+- Live network connectors are declarative; ingestion is offline and proven on fixtures.
+- Accessibility and performance assurance are static estimates plus state completeness, not
+  runtime measurement.
+- The design-intelligence and governance catalogues are representative, not exhaustive.
+- Third-party code can never be guaranteed completely safe; automated accessibility checks
+  are incomplete; AI-generated contributions require human review.
 
 ## Licence
 
-Original Motif code is [MIT](LICENSE). This licence covers only original code; every
-third-party source keeps its own licence and obligations.
+Original code is [MIT](LICENSE). Third-party sources keep their own licences and
+obligations; public source metadata does not imply redistribution rights. See
+[`LICENSE_POLICY.md`](LICENSE_POLICY.md) and [`THIRD_PARTY_SOURCES.md`](THIRD_PARTY_SOURCES.md).

@@ -1,0 +1,5 @@
+{
+  "from": "user-portfolio-manager",
+  "to": "role-project-admin",
+  "relation": "belongs-to"
+}

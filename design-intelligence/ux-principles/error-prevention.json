@@ -1,0 +1,18 @@
+{
+  "id": "error-prevention",
+  "name": "Error Prevention Over Error Messages",
+  "trigger": "A flow contains an action that can fail, lose data, or cause irreversible or costly consequences (deletes, payments, bulk operations, format-sensitive inputs).",
+  "applicable_contexts": ["forms", "destructive actions", "payments", "bulk operations", "data entry"],
+  "recommendation": "Prevent errors before they happen rather than only reporting them after: constrain inputs to valid values (pickers, masks, sensible defaults), disable or guard actions until preconditions are met, confirm or require explicit intent for destructive operations, and make recovery easy via undo. Prefer designs where the error is impossible over designs that explain the error well.",
+  "rejection": "Reject free-text fields where a constrained control fits, irreversible destructive actions with no confirmation or undo, validation that only fires after submission, and silent acceptance of malformed input that fails downstream.",
+  "validation": [
+    "Identify each error a user could make and check whether the design prevents or only reports it",
+    "Confirm destructive actions have confirmation, undo, or both",
+    "Verify inputs constrain to valid formats and provide inline, pre-submit validation"
+  ],
+  "evidence": [
+    "Nielsen Norman Group Heuristic 5: Error Prevention",
+    "Offering undo is often preferable to confirmation dialogs, which users learn to dismiss reflexively"
+  ],
+  "source": "NN/g Heuristic 5 (Error Prevention)"
+}

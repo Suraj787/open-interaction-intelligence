@@ -1,0 +1,18 @@
+{
+  "id": "jakobs-convention",
+  "name": "Jakob's Law: Follow Established Conventions",
+  "trigger": "A common interface element or flow is being designed (navigation, search, cart, login, form controls, icons) and there is temptation to invent a novel pattern.",
+  "applicable_contexts": ["navigation", "e-commerce", "authentication", "forms", "iconography", "standard flows"],
+  "recommendation": "Match the conventions users already know from the other sites and apps they spend most of their time on: place logo/home, search, and account where users expect; use standard icons with their conventional meanings; behave like the platform's native controls; and reserve novelty for genuine differentiators, not core mechanics. Conventions are a usability asset because users transfer learned expectations.",
+  "rejection": "Reject reinventing standard controls without cause (custom scrollbars/selects that break expectations), repurposing well-known icons to mean something else, hiding search or navigation in non-standard places, and novelty that increases learning cost without user benefit.",
+  "validation": [
+    "Compare key patterns against platform guidelines and category leaders",
+    "Run a first-click or five-second test to confirm users find core actions where expected",
+    "Flag any custom control that replaces a well-understood native one and justify the trade-off"
+  ],
+  "evidence": [
+    "Jakob Nielsen: 'Users spend most of their time on other sites,' so they prefer your site to work like the ones they already know",
+    "Nielsen Norman Group consistency-and-standards heuristic"
+  ],
+  "source": "Jakob's Law (Nielsen); NN/g Heuristic 4 (Consistency and Standards)"
+}

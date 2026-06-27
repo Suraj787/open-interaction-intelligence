@@ -1,0 +1,10 @@
+{
+  "id": "action-filter-by-status",
+  "type": "action",
+  "label": "Filter projects by status",
+  "attributes": {
+    "kind": "non-destructive",
+    "reversible": true,
+    "persists_state": "filter retained across drill-down"
+  }
+}

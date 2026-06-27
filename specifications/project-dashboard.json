@@ -1,0 +1,52 @@
+{
+  "interface": {
+    "id": "project-dashboard",
+    "product": {
+      "type": "enterprise-project-management",
+      "profile": "enterprise-strict"
+    },
+    "user": {
+      "role": "delivery-manager",
+      "expertise": "advanced"
+    },
+    "task": {
+      "primary": "identify-project-risk",
+      "frequency": "daily",
+      "criticality": "high"
+    },
+    "information": {
+      "density": "high",
+      "hierarchy": [
+        "critical-risk",
+        "delayed-milestone",
+        "team-capacity"
+      ]
+    },
+    "interaction": {
+      "navigation": "master-detail",
+      "feedback": "inline",
+      "motion": "restrained"
+    },
+    "accessibility": {
+      "keyboard": "required",
+      "zoom": "200-percent",
+      "reduced_motion": "required"
+    },
+    "performance": {
+      "bundle_budget_kb": 20
+    },
+    "identity": {
+      "genome": "enterprise-pm-genome"
+    },
+    "required_states": [
+      "loading",
+      "empty",
+      "error",
+      "stale",
+      "slow-network"
+    ],
+    "constraints": [
+      "no continuous decorative motion behind dense data"
+    ]
+  }
+}

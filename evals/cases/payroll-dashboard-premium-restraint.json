@@ -1,0 +1,19 @@
+{
+  "id": "payroll-dashboard-premium-restraint",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Make this payroll dashboard look premium.",
+  "context": "enterprise HR app · payroll dashboard · finance/HR user reconciling pay runs under time pressure",
+  "expected_behaviour": [
+    "interpret 'premium' as restraint, hierarchy and craft, not showcase motion",
+    "reject ambient/decorative animation behind dense financial data",
+    "propose typographic hierarchy, spacing, restrained colour, clear states and alignment",
+    "preserve scannability, contrast and task speed",
+    "explain why a payroll context rejects marketing-style flourish"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if 'premium' is reframed as quiet craft (hierarchy, spacing, restraint) and the agent refuses showcase motion on financial data."
+}

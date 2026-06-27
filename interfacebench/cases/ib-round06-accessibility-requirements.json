@@ -1,0 +1,19 @@
+{
+  "id": "ib-round06-accessibility-requirements",
+  "category": "accessibility",
+  "kind": "human-judgement",
+  "prompt": "This now has to meet accessibility requirements: keyboard, screen readers, 200% zoom, reduced motion.",
+  "context": "InterfaceBench longitudinal · Round 6 · retrofitting accessibility onto the accumulated interface",
+  "expected_behaviour": [
+    "provide full keyboard operability with visible focus and correct roles/labels (incl. icon buttons)",
+    "announce async and bulk-action results via aria-live and manage focus in overlays",
+    "keep the layout usable and reflowed at 200% zoom",
+    "honour prefers-reduced-motion with meaningful static fallbacks",
+    "make real fixes, not an accessibility overlay widget"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if keyboard, AT semantics, 200% zoom and reduced-motion are genuinely handled in the components, not delegated to an overlay plugin."
+}

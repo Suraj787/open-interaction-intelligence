@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "confidence": 0.55,
+  "product": {
+    "type": "clinical-medication-administration-application",
+    "purpose": "Help nurses administer the right medication to the right patient at the right time and record it accurately, preventing medication errors.",
+    "business_model": "b2b-healthcare-enterprise-license",
+    "audience": "internal",
+    "maturity": "established-regulated",
+    "regulatory_sensitivity": "high (PHI under HIPAA/GDPR-equivalent; safety-critical; subject to clinical audit and the five-rights standard)"
+  },
+  "users": [
+    {
+      "role": "bedside-nurse",
+      "expertise": "domain-expert-clinically, variable-with-software",
+      "frequency": "frequent, many administrations per shift, often under time pressure",
+      "goals": [
+        "confirm patient identity and the correct medication, dose, route, and time",
+        "administer and document at the bedside without losing place when interrupted",
+        "catch and safely resolve allergy, dose, and interaction warnings",
+        "hand over cleanly at end of shift with nothing missed"
+      ]
+    },
+    {
+      "role": "charge-nurse-supervisor",
+      "expertise": "domain-expert",
+      "frequency": "frequent",
+      "goals": [
+        "see overdue and missed administrations across the unit",
+        "reassign and cover when a nurse is pulled away"
+      ]
+    },
+    {
+      "role": "pharmacist",
+      "expertise": "domain-expert",
+      "frequency": "periodic",
+      "goals": [
+        "verify orders and respond to flagged interactions or overrides"
+      ]
+    }
+  ],
+  "workflows": [
+    "Administer a scheduled dose: scan patient wristband, scan medication, verify the five rights, confirm, document.",
+    "Resume after interruption: return to a half-finished administration and re-confirm state without double-dosing.",
+    "Handle a safety warning: read an allergy/dose/interaction alert, decide, and either stop or record a justified override.",
+    "Document a refusal or hold: record that a dose was not given and why, with required reason codes.",
+    "Shift handover: review outstanding, overdue, and held medications for assigned patients."
+  ],
+  "information": {
+    "density": "moderate-but-focused (one patient and one administration in focus at a time, dense context on demand)",
+    "objects": [
+      "patient",
+      "medication-order",
+      "dose",
+      "administration-record",
+      "allergy",
+      "interaction-warning",
+      "override-reason",
+      "barcode-scan",
+      "vital-sign",
+      "schedule-window"
+    ]
+  },
+  "environment": {
+    "primary_device": "shared/mobile workstation-on-wheels or tablet with barcode scanner at the bedside",
+    "secondary_device": "fixed nursing-station desktop",
+    "connectivity": "hospital wifi with dead zones; intermittent connectivity is expected and must be tolerated",
+    "localisation": ["en-US"]
+  },
+  "risks": [
+    "Permission/authorization risk: a nurse acting on the wrong patient's record, or an override performed without the authority to grant it.",
+    "Interruption mid-task leads to a missed, duplicated, or mis-recorded dose.",
+    "Alert fatigue causes a genuine contraindication warning to be dismissed reflexively.",
+    "Connectivity loss during documentation drops or duplicates an administration record.",
+    "Shared-device session bleed: actions attributed to the previous logged-in nurse.",
+    "Ambiguous confirmation UI lets a high-risk action complete without true intent."
+  ],
+  "constraints": [
+    "Safety-critical actions must require unambiguous, hard-to-mis-tap confirmation.",
+    "Identity must be re-established quickly on shared devices; idle sessions must lock.",
+    "The interface must be fully recoverable after interruption and after connectivity loss.",
+    "Every administration, override, and refusal must be auditable and attributable.",
+    "Permission boundaries (who may override, who may administer) must be enforced server-side, not just hidden in UI."
+  ],
+  "verified": [
+    "The primary user is a nurse performing medication administration.",
+    "Use is frequent and the task is safety-critical.",
+    "The environment is interruption-heavy.",
+    "Permission/authorization is a named, material risk."
+  ],
+  "inferred": [
+    "Barcode scanning of patient and medication is part of the flow, inferred from the five-rights safety standard.",
+    "Devices are shared and mobile (workstation-on-wheels/tablet), inferred from bedside frequent use.",
+    "Alert fatigue is a live risk, inferred from frequent safety prompts.",
+    "Connectivity is intermittent, inferred from a hospital-floor setting."
+  ],
+  "assumptions": [
+    "PHI handling places the product under HIPAA-class regulation.",
+    "An order/pharmacy system of record exists upstream and is integrated.",
+    "English-only localisation is acceptable for the initial deployment.",
+    "Authentication supports fast user switching on shared hardware (e.g. badge tap)."
+  ],
+  "unresolved": [
+    "Exact override authority model: who can grant, and whether co-sign is required.",
+    "Offline behaviour contract: queue-and-sync vs hard block when disconnected.",
+    "Which alerts are hard stops versus soft warnings, per clinical policy.",
+    "Device fleet specifics (scanner model, screen size) that constrain layout.",
+    "Jurisdiction(s), which determines the precise regulatory regime."
+  ],
+  "evidence": [
+    "task-brief: nurse, frequent, safety-critical, interruption-heavy, permission risk",
+    "inference-only: clinical-safety norms (five rights, alert fatigue) applied as priors; no site observation available"
+  ]
+}

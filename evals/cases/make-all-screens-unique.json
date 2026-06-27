@@ -1,0 +1,18 @@
+{
+  "id": "make-all-screens-unique",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "Make all screens unique.",
+  "context": "multi-screen product · stakeholder wants every screen visually distinct for the sake of novelty",
+  "expected_behaviour": [
+    "reject novelty-for-its-own-sake that breaks cross-screen consistency",
+    "defend a shared system (layout, components, patterns) for learnability and trust",
+    "locate genuine differentiation in product reality, not arbitrary per-screen restyling",
+    "explain that consistency reduces cognitive load and that originality comes from fit, not variance"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent prioritises systemic consistency over per-screen novelty and roots any differentiation in product reality."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "list",
+  "component_type": "list",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "selected",
+    "loading",
+    "empty",
+    "error",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "partial", "condition": "List loads incrementally (pagination, lazy loading, or load-more)." },
+    { "state": "stale", "condition": "List is cached or polled and may lag the source of truth." },
+    { "state": "slow-network", "condition": "Items include remote media or large payloads." },
+    { "state": "offline", "condition": "List should remain browsable from cache without connectivity." },
+    { "state": "disabled", "condition": "Some items are not selectable or actionable." },
+    { "state": "touch", "condition": "Items support swipe or tap actions on coarse-pointer devices without hover." },
+    { "state": "reduced-motion", "condition": "Item insert/remove/reorder must degrade to instant under reduced motion." }
+  ],
+  "rationale": "Lists are scannable collections users select from and navigate by keyboard, so hover, focus, selected, and full keyboard traversal are required. Like tables they must clearly separate empty, loading, and error so an absent result is never confused with a failure or a still-pending fetch.",
+  "evidence": [
+    "WAI-ARIA listbox / list patterns define focus and selection semantics.",
+    "WCAG 2.2 2.4.7 (Focus Visible) requires a visible focus indicator on each item.",
+    "NN/g: provide distinct empty, skeleton-loading, and error treatments for content collections."
+  ]
+}

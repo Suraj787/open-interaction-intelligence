@@ -1,0 +1,44 @@
+{
+  "id": "dark-technical",
+  "name": "Dark Technical",
+  "description": "A dark-surface style tuned for developer and engineering tools: low-luminance backgrounds, precise accent colours for syntax and status, monospace accents, fine borders, and carefully managed contrast to reduce eye strain during long focused sessions.",
+  "emotional_impression": "Focused, technical, precise, and built for deep work in low-light environments.",
+  "visual_principles": [
+    "Dark neutral surfaces (not pure black) with layered elevation via subtle lightness steps",
+    "Restrained, saturated accents reserved for syntax, status, and primary actions",
+    "Monospace type for code, identifiers, and metrics",
+    "Fine 1px borders and subtle separators instead of heavy shadow",
+    "Carefully tuned non-pure-white foreground to limit halation"
+  ],
+  "industry_suitability": ["developer tools", "infrastructure", "observability", "data platforms", "security"],
+  "page_suitability": ["IDEs", "consoles", "dashboards", "logs", "terminals", "settings"],
+  "density_compatibility": ["compact", "comfortable"],
+  "accessibility_risks": [
+    "Pure white on pure black causes halation and discomfort for astigmatism and some low-vision users",
+    "Saturated accents on dark backgrounds can fail contrast or vibrate",
+    "Dark mode is not universally easier; some users with astigmatism read light mode better"
+  ],
+  "performance_risks": ["Negligible, though OLED power savings are a minor benefit"],
+  "typography_compatibility": ["enterprise-readable", "monospace", "neutral grotesque"],
+  "layout_compatibility": ["command-centre", "table-first", "master-detail", "data-dense-terminal"],
+  "trend_maturity": "current",
+  "overuse_risk": "medium",
+  "ai_cliche_risk": "medium",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Developer and engineering tools used for long sessions",
+    "Low-light or focus-intensive environments",
+    "Products where a light-mode counterpart is also offered for choice"
+  ],
+  "inappropriate_contexts": [
+    "Long-form reading where dark backgrounds slow some readers",
+    "Audiences with high rates of astigmatism without a light-mode option",
+    "Marketing surfaces needing bright, energetic warmth"
+  ],
+  "alternatives": ["data-dense-terminal", "enterprise-dense", "high-contrast-accessible"],
+  "evidence": [
+    "VS Code, GitHub dark, and Linear demonstrate mature dark-technical systems",
+    "Nielsen Norman Group, 'Dark Mode vs. Light Mode' finds light mode often yields better performance for users with normal vision, so dark mode should be a choice not a default"
+  ],
+  "confidence": "high"
+}

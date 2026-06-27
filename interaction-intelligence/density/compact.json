@@ -1,0 +1,38 @@
+{
+  "id": "compact",
+  "modes": {
+    "default": "compact",
+    "intent": "Maximise information density for expert, mouse-and-keyboard users on large screens (dashboards, admin consoles, data grids).",
+    "primary_input": "fine-pointer",
+    "supported_inputs": ["fine-pointer", "keyboard"]
+  },
+  "spacing_scale": {
+    "unit": "px",
+    "xs": 2,
+    "sm": 4,
+    "md": 8,
+    "lg": 12,
+    "xl": 16,
+    "section": 24
+  },
+  "row_height": {
+    "unit": "px",
+    "table_row": 32,
+    "list_item": 36,
+    "toolbar": 40,
+    "control": 28
+  },
+  "hit_area_min_px": 32,
+  "responsive_transformations": [
+    "Below 1024px viewport width, promote compact to comfortable so targets and spacing grow for smaller screens.",
+    "On any coarse-pointer (touch) device, override to touch regardless of viewport — never serve 32px targets to fingers.",
+    "When the user zooms past 150% or sets a large base font, relax row heights toward comfortable to prevent clipping.",
+    "Sticky headers and frozen columns retain compact metrics but keep a 32px minimum interactive height."
+  ],
+  "notes": [
+    "Compact is opt-in or expert-default, not the universal default; it assumes a pointer with sub-pixel precision.",
+    "Hit areas may visually appear dense but must still satisfy a 32px interactive box via padding, not just the icon glyph.",
+    "Pair compact with restrained motion; dense grids amplify any animation churn.",
+    "Provide a one-click density toggle so users can escape compact without leaving the screen."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "modal",
+  "component_type": "modal",
+  "required_states": [
+    "default",
+    "focus",
+    "active",
+    "loading",
+    "error",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "success", "condition": "Modal confirms a completed action before or as it closes." },
+    { "state": "empty", "condition": "Modal renders content that may be absent (e.g. a picker with no items)." },
+    { "state": "disabled", "condition": "Primary modal action is gated until inputs are valid." },
+    { "state": "conflict", "condition": "Modal edits a record that changed underneath it before confirm." },
+    { "state": "touch", "condition": "Modal becomes a full-height sheet with 44px targets on coarse-pointer devices." },
+    { "state": "reduced-motion", "condition": "Open/close transition must degrade to an instant show/hide." }
+  ],
+  "rationale": "A modal seizes the user's focus, so correct focus management is the defining requirement: focus moves into the dialog on open, is trapped within it, returns to the trigger on close, and Escape dismisses. Because modals usually host an async confirm, in-dialog loading and error states are required so the user is not bounced out on failure.",
+  "evidence": [
+    "WAI-ARIA Authoring Practices dialog pattern: initial focus, focus trap, focus restore, Escape to close.",
+    "WCAG 2.2 2.4.3 (Focus Order) and 2.1.2 (No Keyboard Trap, with intentional dialog exception via Escape).",
+    "NN/g: keep validation and error feedback inside the modal rather than dismissing it on failure."
+  ]
+}

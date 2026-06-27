@@ -1,0 +1,18 @@
+{
+  "id": "install-react-in-vue-app",
+  "category": "framework",
+  "kind": "human-judgement",
+  "prompt": "Install React for this effect in our Vue app.",
+  "context": "Vue 3 SPA · maintainer wants a React-only effect library pulled in for a single interaction",
+  "expected_behaviour": [
+    "reject adding React to a Vue codebase for one effect",
+    "identify the underlying technique behind the desired effect",
+    "reimplement it with Vue primitives or browser-native APIs",
+    "explain the runtime, bundle and maintenance cost of mixing frameworks"
+  ],
+  "must_reject": true,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it refuses the cross-framework install and reproduces the technique natively in Vue, explaining the cost of dual runtimes."
+}

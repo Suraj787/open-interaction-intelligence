@@ -1,0 +1,86 @@
+{
+  "id": "compliance",
+  "name": "Governance, Risk & Compliance (GRC)",
+  "users": [
+    {
+      "role": "Compliance Officer",
+      "context": "Maintains the control framework, maps regulations to controls, tracks attestations and policy acknowledgements, and reports compliance posture to leadership and regulators. Deadline- and evidence-driven.",
+      "expertise": "Expert in regulatory frameworks and control design; high tooling fluency in GRC platforms."
+    },
+    {
+      "role": "Internal Auditor",
+      "context": "Plans and executes audits, tests control effectiveness, samples evidence, documents findings, and tracks remediation. Read-mostly into operational systems, write into audit workpapers.",
+      "expertise": "Expert in audit methodology and sampling; needs traceable evidence and immutable workpapers."
+    },
+    {
+      "role": "Risk Manager",
+      "context": "Maintains the risk register, scores likelihood/impact, defines treatments, monitors KRIs, and runs risk assessments across the enterprise.",
+      "expertise": "Expert in risk frameworks (e.g., ISO 31000, COSO); works with heatmaps and registers."
+    },
+    {
+      "role": "Control Owner / First-line Manager",
+      "context": "Operates and attests to assigned controls, uploads evidence, and responds to findings. Compliance is secondary to their day job, so friction must be low.",
+      "expertise": "Domain expert in their function, novice in GRC terminology; needs guided, low-burden tasks."
+    },
+    {
+      "role": "Data Protection / Privacy Officer (DPO)",
+      "context": "Maintains records of processing, runs DPIAs, handles data-subject requests (DSARs) and breach reporting under privacy law.",
+      "expertise": "Expert in GDPR/CCPA and privacy operations."
+    },
+    {
+      "role": "Vendor / Third-Party Risk Analyst",
+      "context": "Assesses third-party risk, collects security questionnaires and certifications, monitors ongoing vendor compliance.",
+      "expertise": "Expert in TPRM and security frameworks (SOC 2, ISO 27001)."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Control attestation and evidence collection",
+      "steps": ["Assign periodic control attestations to owners", "Owner reviews control and uploads evidence", "Attest effectiveness or flag deficiency", "Compliance reviews and accepts/returns", "Aggregate posture and exceptions", "Archive evidence for audit"],
+      "frequency": "periodic (monthly/quarterly)",
+      "criticality": "high"
+    },
+    {
+      "name": "Internal audit lifecycle",
+      "steps": ["Plan audit scope and risk-based selection", "Request and sample evidence", "Test controls and document results", "Raise findings with severity", "Agree remediation owners and dates", "Track to closure and re-test"],
+      "frequency": "per audit cycle",
+      "criticality": "high"
+    },
+    {
+      "name": "Risk assessment and register maintenance",
+      "steps": ["Identify and describe risks", "Score inherent likelihood and impact", "Map mitigating controls", "Determine residual risk and treatment", "Assign owner and monitor KRIs", "Periodically reassess"],
+      "frequency": "periodic / continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Regulatory change and policy management",
+      "steps": ["Monitor regulatory updates", "Assess applicability and impact", "Update policies and controls", "Publish and require acknowledgement", "Track attestation completion", "Evidence for audit"],
+      "frequency": "continuous",
+      "criticality": "medium"
+    },
+    {
+      "name": "Incident / breach and findings remediation",
+      "steps": ["Log incident/finding and classify severity", "Assess regulatory reporting obligation and clock", "Notify regulator/affected parties within deadline", "Define and assign corrective actions", "Track remediation to closure", "Validate and document lessons learned"],
+      "frequency": "as-triggered, deadline-bound",
+      "criticality": "critical"
+    }
+  ],
+  "risks": [
+    "Missing a regulatory reporting deadline (e.g., 72-hour breach notification) and incurring penalties",
+    "Attesting a control as effective without adequate evidence (false assurance)",
+    "Broken evidence trail so an audit finding cannot be substantiated",
+    "Evidence or workpaper altered after the fact, destroying audit integrity",
+    "Granting access that breaks the three-lines independence (auditor able to edit operational data)",
+    "Stale risk register hiding a materialised risk",
+    "Mis-mapped regulation-to-control leaving a requirement uncovered",
+    "Overdue remediation silently slipping past its due date",
+    "Sensitive evidence (PII, security findings) exposed to unauthorised users",
+    "Policy change not acknowledged by required population, leaving a control gap"
+  ],
+  "information_objects": ["Control / control framework", "Regulation / requirement mapping", "Attestation record", "Evidence artifact", "Audit / workpaper", "Finding / observation", "Risk register entry", "Key risk indicator (KRI)", "Policy and acknowledgement", "Incident / breach record", "Remediation / corrective-action plan", "Vendor / third-party assessment"],
+  "environment_constraints": ["Deadline-driven with hard regulatory clocks", "Evidence must be immutable, timestamped, and traceable for years", "Three-lines-of-defence separation between operators, oversight, and audit", "Cross-functional users with low GRC literacy (control owners)", "High sensitivity of contents (security findings, PII, legal)", "Periodic spikes around audit and reporting cycles", "Strong access-control and least-privilege expectations"],
+  "domain_patterns": ["Framework mapping (regulation -> control -> evidence)", "Maker-checker attestation and review", "Immutable, timestamped evidence and audit trail", "Risk heatmap and register (likelihood x impact)", "Workflow with due dates, owners, and escalation", "Status state machine (open/in-progress/closed/overdue)", "Sampling and traceability from finding to source evidence", "Role separation enforcing independence"],
+  "audit_compliance": ["SOX internal-control attestation", "ISO 27001 / SOC 2 security controls", "GDPR / CCPA privacy (DPIA, DSAR, 72-hour breach notice)", "ISO 31000 / COSO ERM risk frameworks", "NIST CSF / 800-53 control catalogs", "Industry rules (HIPAA, PCI-DSS, Basel) as mapped", "Records retention and legal-hold for evidence"],
+  "accessibility_concerns": ["Risk heatmaps must not encode severity by colour alone (add labels/patterns/ranking)", "Dense control matrices need screen-reader-friendly headers and navigation", "Status and overdue states need text/icon, not colour only", "Plain-language task framing for non-expert control owners", "Keyboard-navigable evidence upload and attestation forms", "Accessible exports (tagged PDFs) for auditors and regulators"],
+  "anti_patterns": ["Editable evidence/workpapers that break immutability and chain of custody", "Colour-only risk heatmaps illegible to colour-blind users", "Burying the regulatory deadline clock so reporting slips", "Letting overdue remediations disappear instead of escalating", "Jargon-laden control tasks dumped on non-expert owners", "Allowing the same person to operate and independently attest a control", "Free-text attestations with no required evidence linkage", "Exposing sensitive findings broadly instead of least-privilege scoping"]
+}

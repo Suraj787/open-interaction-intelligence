@@ -1,0 +1,86 @@
+{
+  "id": "fintech",
+  "name": "Fintech & Banking",
+  "users": [
+    {
+      "role": "Compliance / AML Analyst",
+      "context": "Reviews transaction-monitoring alerts, investigates suspicious activity, files SARs/STRs, and clears or escalates cases. Queue-driven, evidence-heavy, accountable to regulators.",
+      "expertise": "Expert in AML/CFT typologies and sanctions; needs full investigative context and immutable case notes."
+    },
+    {
+      "role": "KYC / Onboarding Specialist",
+      "context": "Verifies new customer identity, screens against sanctions/PEP/adverse-media, assesses risk rating, and approves or rejects account opening. Balances fraud prevention against onboarding friction.",
+      "expertise": "Expert in identity verification and CDD/EDD; works through document checks and watchlist hits."
+    },
+    {
+      "role": "Retail Banking Customer",
+      "context": "Opens accounts, transfers money, pays bills, applies for credit, and disputes transactions via mobile/web app. Expects instant, trustworthy, secure interactions; anxious about money and fraud.",
+      "expertise": "Novice to intermediate; assumes nothing technical, highly sensitive to errors involving their money."
+    },
+    {
+      "role": "Fraud Operations Analyst",
+      "context": "Monitors real-time fraud signals, reviews flagged transactions, places holds, and contacts customers. Speed-critical: false declines anger customers, missed fraud loses money.",
+      "expertise": "Expert in fraud patterns and risk scoring; needs low-latency decisioning tools."
+    },
+    {
+      "role": "Relationship / Wealth Manager",
+      "context": "Advises clients, executes/approves trades and transfers, ensures suitability and disclosures. Fiduciary duty and record-keeping obligations.",
+      "expertise": "Expert in products and suitability rules; needs client 360 and compliant communication logging."
+    },
+    {
+      "role": "Risk / Treasury Officer",
+      "context": "Monitors liquidity, exposure, and limits; approves large transfers and settlements. Real-time positions with hard cut-offs.",
+      "expertise": "Expert in market/credit/liquidity risk and limit frameworks."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "KYC / customer onboarding and CDD",
+      "steps": ["Collect identity and beneficial-ownership data", "Verify documents and liveness", "Screen against sanctions, PEP, and adverse media", "Resolve potential watchlist matches", "Assign risk rating and apply EDD if high-risk", "Approve, reject, or request more information"],
+      "frequency": "continuous",
+      "criticality": "critical"
+    },
+    {
+      "name": "Transaction monitoring and SAR/STR filing",
+      "steps": ["Ingest transactions and run monitoring rules/models", "Generate and prioritise alerts", "Investigate with customer and transaction context", "Decide false positive vs. escalate", "File SAR/STR within regulatory deadline", "Maintain immutable case record"],
+      "frequency": "continuous",
+      "criticality": "critical"
+    },
+    {
+      "name": "Money transfer / payment initiation",
+      "steps": ["Customer enters beneficiary and amount", "Validate balance, limits, and beneficiary details", "Apply fraud and sanctions screening", "Step-up authentication (SCA/2FA) for risk", "Confirm with clear review screen", "Execute and provide receipt/traceability"],
+      "frequency": "continuous / high volume",
+      "criticality": "critical"
+    },
+    {
+      "name": "Transaction dispute / chargeback handling",
+      "steps": ["Customer raises dispute on a transaction", "Provisionally credit if required by regulation", "Gather evidence and contact merchant/network", "Investigate within regulatory timeframe", "Resolve and adjust funds", "Notify customer with outcome and rights"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Credit / loan application and decisioning",
+      "steps": ["Capture application and consent", "Pull credit bureau and affordability data", "Score and apply policy rules", "Adverse-action handling and explainability", "Approve/decline with terms", "Disburse and set up servicing"],
+      "frequency": "continuous",
+      "criticality": "high"
+    }
+  ],
+  "risks": [
+    "Approving an account that should have failed KYC/sanctions screening (regulatory breach)",
+    "Missing or late SAR/STR filing exposing the firm to enforcement penalties",
+    "Money sent to the wrong beneficiary or amount with no easy reversal",
+    "False fraud decline blocking a legitimate customer; or missed fraud causing loss",
+    "Exposing account/balance data to the wrong customer (authorization/IDOR failure)",
+    "Sanctions/PEP match wrongly auto-cleared, processing a prohibited payment",
+    "Inadequate strong customer authentication enabling account takeover",
+    "Incorrect interest/fee calculation or rounding error at scale",
+    "Unexplainable automated credit decision violating fair-lending/adverse-action rules",
+    "Breaching a treasury/exposure limit due to stale real-time position data"
+  ],
+  "information_objects": ["Customer / KYC profile", "Account and balance", "Transaction / payment instruction", "Monitoring alert / case", "SAR/STR filing", "Sanctions / PEP / watchlist hit", "Dispute / chargeback case", "Credit application and decision", "Beneficiary / payee", "Risk rating", "Statement", "Immutable audit / case log"],
+  "environment_constraints": ["Real-time, low-latency decisioning with hard settlement cut-offs", "High-trust, money-on-the-line context where errors are unforgiving", "Heavy regulatory examination and reporting deadlines", "Adversarial: active fraud and social-engineering attempts", "Mobile-first consumer apps on untrusted devices and networks", "Strong authentication friction must be balanced against UX", "24/7 availability expectations"],
+  "domain_patterns": ["Queue-based alert/case management", "Risk scoring with step-up (adaptive) authentication", "Maker-checker for high-value transfers", "Immutable audit trail and case notes", "Explainable decisions / adverse-action reasons", "Confirmation review screen before irreversible money movement", "Watchlist match-resolution workflow", "Real-time limit and balance checks"],
+  "audit_compliance": ["PCI-DSS for cardholder data", "AML/CFT, BSA, and FATF recommendations (SAR/STR, CDD/EDD)", "KYC and sanctions (OFAC) screening obligations", "PSD2 / strong customer authentication (EU)", "GDPR / CCPA data protection", "SOX financial controls for public institutions", "Fair-lending / adverse-action (e.g., ECOA) and SOC 2 for service providers"],
+  "accessibility_concerns": ["Money amounts and account numbers must be unambiguous and screen-reader friendly", "Critical confirmations must not rely on colour (e.g., success/error) alone", "Authentication flows (OTP, biometrics) need accessible fallbacks", "Time-limited steps (OTP entry) need adequate, adjustable timeouts", "Clear, jargon-free language for financial decisions and disclosures", "High contrast and large targets for stressed users completing money transfers"],
+  "anti_patterns": ["Frictionless irreversible transfer with no clear review/confirmation step", "Auto-clearing sanctions/PEP hits without analyst review", "Exposing object IDs allowing access to another customer's account (IDOR)", "Colour-only encoding of transaction success/decline or risk", "Aggressive session timeouts that drop a transfer mid-flow", "Opaque declines with no reason (fails adverse-action requirements)", "Storing or displaying full card/PAN data unnecessarily", "Editable case notes that destroy the immutable investigative trail"]
+}

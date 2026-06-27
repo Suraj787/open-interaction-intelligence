@@ -1,0 +1,44 @@
+{
+  "id": "swiss-grid",
+  "name": "Swiss Grid (International Typographic)",
+  "description": "A disciplined style rooted in the International Typographic Style: strict mathematical grids, flush-left ragged-right neutral sans typography, objective hierarchy, asymmetric balance, and a near-total absence of decoration. Order and clarity are the aesthetic.",
+  "emotional_impression": "Rational, precise, objective, confident, and timeless.",
+  "visual_principles": [
+    "Strict modular grid governing every element's placement",
+    "Neutral grotesque typography (Helvetica/Akzidenz lineage) in a tight scale",
+    "Flush-left, ragged-right text and clear typographic hierarchy",
+    "Asymmetric but mathematically balanced composition",
+    "Functional use of negative space and rule lines"
+  ],
+  "industry_suitability": ["design", "architecture", "B2B SaaS", "institutions", "professional services"],
+  "page_suitability": ["marketing", "documentation", "dashboards", "case studies", "design systems"],
+  "density_compatibility": ["compact", "comfortable", "spacious"],
+  "accessibility_risks": [
+    "Neutral greys chosen for restraint can drift below contrast thresholds",
+    "Strict minimalism can under-signal interactive affordances",
+    "Tight type scales may force small body sizes"
+  ],
+  "performance_risks": ["Negligible; the style is structural, not effect-heavy"],
+  "typography_compatibility": ["enterprise-readable", "neutral grotesque", "swiss sans"],
+  "layout_compatibility": ["dashboard-grid", "master-detail", "table-first", "cards"],
+  "trend_maturity": "mature",
+  "overuse_risk": "low",
+  "ai_cliche_risk": "low",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Products that benefit from a durable, credible, non-trendy foundation",
+    "Design-literate audiences who value rigour and clarity",
+    "Systems needing a consistent grid across many surfaces"
+  ],
+  "inappropriate_contexts": [
+    "Brands needing overt warmth, whimsy, or emotional storytelling",
+    "Consumer entertainment products where neutrality reads as cold",
+    "Contexts demanding strong brand differentiation through ornament"
+  ],
+  "alternatives": ["minimal-functional", "enterprise-dense", "editorial-serif"],
+  "evidence": [
+    "Müller-Brockmann's 'Grid Systems in Graphic Design' codifies the underlying principles",
+    "Its grid-and-restraint discipline remains a low-cliche foundation precisely because it predates and outlasts UI trends"
+  ],
+  "confidence": "high"
+}

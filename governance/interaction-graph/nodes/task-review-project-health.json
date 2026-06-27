@@ -1,0 +1,10 @@
+{
+  "id": "task-review-project-health",
+  "type": "task",
+  "label": "Review project health",
+  "attributes": {
+    "trigger": "weekly status cadence",
+    "success_criteria": "every at-risk project identified and acknowledged",
+    "frequency": "weekly"
+  }
+}

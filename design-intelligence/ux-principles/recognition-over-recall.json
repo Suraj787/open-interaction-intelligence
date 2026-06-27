@@ -1,0 +1,18 @@
+{
+  "id": "recognition-over-recall",
+  "name": "Recognition Over Recall",
+  "trigger": "A task requires the user to remember information from one part of the interface to use in another, or to recall codes, names, prior choices, or commands from memory.",
+  "applicable_contexts": ["forms", "search", "command interfaces", "multi-step flows", "navigation", "settings"],
+  "recommendation": "Minimise what users must remember by making objects, actions, and options visible or easily retrievable: offer autocomplete and recent/suggested values, keep entered data visible across steps, show selected filters as chips, surface available commands rather than requiring memorised syntax, and provide visible labels rather than relying on remembered icon meanings.",
+  "rejection": "Reject forcing users to memorise a reference code to type later, hiding previously entered data on subsequent steps, command-only interfaces with no discoverable list, and icon-only controls whose meaning must be recalled without labels or tooltips.",
+  "validation": [
+    "Trace each task for any point requiring memory of off-screen information and provide an on-screen aid",
+    "Confirm inputs offer suggestions, recents, or autocomplete where a value must be recalled",
+    "Verify prior selections remain visible or editable across multi-step flows"
+  ],
+  "evidence": [
+    "Nielsen Norman Group Heuristic 6: Recognition Rather Than Recall",
+    "Recognition memory is more reliable and lower-effort than free recall in cognitive psychology"
+  ],
+  "source": "NN/g Heuristic 6 (Recognition Rather Than Recall)"
+}

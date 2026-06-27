@@ -1,0 +1,86 @@
+{
+  "id": "project-management",
+  "name": "Project & Work Management",
+  "users": [
+    {
+      "role": "Project Manager",
+      "context": "Plans scope, schedule, and budget; assigns work, tracks progress against the baseline, manages risks/issues and stakeholder communication. Lives in plans, dashboards, and status meetings; juggles competing priorities.",
+      "expertise": "Expert in PM methodology (waterfall/agile/hybrid), dependencies, and critical path; high tool fluency."
+    },
+    {
+      "role": "Team Member / Individual Contributor",
+      "context": "Receives and updates tasks, logs time, raises blockers, and collaborates on deliverables. Wants minimal admin overhead and a clear view of what to do next.",
+      "expertise": "Intermediate; cares about clarity of assignment and low-friction updates, not project-management theory."
+    },
+    {
+      "role": "Scrum Master / Agile Coach",
+      "context": "Facilitates sprints, manages the board, removes impediments, tracks velocity and burndown. Runs ceremonies and protects flow.",
+      "expertise": "Expert in agile practice and board mechanics; needs fast board manipulation and metrics."
+    },
+    {
+      "role": "Product Owner / Stakeholder",
+      "context": "Prioritises the backlog, defines acceptance, approves deliverables, and tracks outcomes. Time-poor, decision-focused, often mobile.",
+      "expertise": "Expert in the product domain; consumes roadmaps and progress summaries, drills into risks."
+    },
+    {
+      "role": "Resource / Portfolio Manager",
+      "context": "Allocates people across projects, monitors capacity vs. demand and utilisation, and balances the portfolio against strategy and budget.",
+      "expertise": "Expert in capacity planning and portfolio governance."
+    },
+    {
+      "role": "Finance / PMO Controller",
+      "context": "Tracks project budgets, actuals, forecasts, and billing; enforces governance gates and reporting standards.",
+      "expertise": "Expert in project accounting and PMO governance."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Project planning and baselining",
+      "steps": ["Define scope and deliverables (WBS)", "Build schedule with tasks, durations, and dependencies", "Assign owners and estimate effort", "Set budget and baseline the plan", "Identify risks and mitigation", "Publish plan and kick off"],
+      "frequency": "per project / phase",
+      "criticality": "high"
+    },
+    {
+      "name": "Sprint planning and execution",
+      "steps": ["Refine and estimate backlog items", "Commit sprint scope to capacity", "Move work across board states (to-do/in-progress/review/done)", "Daily stand-up and impediment removal", "Track burndown", "Review and retrospective"],
+      "frequency": "per sprint (1-4 weeks)",
+      "criticality": "medium"
+    },
+    {
+      "name": "Task assignment and status tracking",
+      "steps": ["Create task with description and acceptance", "Assign owner and due date", "Owner updates status and logs progress/time", "Flag and resolve blockers", "Submit for review/approval", "Close and roll up to project status"],
+      "frequency": "continuous / daily",
+      "criticality": "medium"
+    },
+    {
+      "name": "Resource allocation and capacity planning",
+      "steps": ["Forecast demand across projects", "Match skills and availability", "Allocate and resolve over-allocation conflicts", "Monitor utilisation", "Re-balance as priorities change"],
+      "frequency": "weekly / continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Status reporting and stakeholder review / gate approval",
+      "steps": ["Aggregate progress, budget, and RAG status", "Surface risks, issues, and decisions needed", "Distribute status report", "Hold review and capture decisions", "Approve phase gate or change request", "Update plan and baseline"],
+      "frequency": "weekly / per gate",
+      "criticality": "high"
+    }
+  ],
+  "risks": [
+    "Mis-assigned task or unclear ownership causing work to be dropped",
+    "Hidden or broken dependency causing schedule slip and cascade delays",
+    "Inaccurate status (green when actually red) masking project trouble until too late",
+    "Scope creep accepted without a controlled change/approval",
+    "Resource over-allocation or double-booking burning out people and missing dates",
+    "Budget overrun undetected due to lagging actuals vs. forecast",
+    "Missed deadline or gate due to no deadline visibility or escalation",
+    "Wrong permission letting someone alter the baseline or others' tasks",
+    "Lost context when comments/decisions are not captured against the work item",
+    "Notification overload causing real blockers and mentions to be missed"
+  ],
+  "information_objects": ["Project / phase", "Work breakdown structure (WBS)", "Task / work item", "Milestone and dependency", "Sprint / backlog", "Board and column/state", "Timesheet / effort log", "Risk and issue register", "Resource allocation / capacity", "Budget / actuals / forecast", "Status report (RAG)", "Change request / gate approval"],
+  "environment_constraints": ["Many concurrent projects and context-switching", "Distributed/async teams across timezones", "Frequent re-planning as priorities shift", "Mobile glance for approvals and status by busy stakeholders", "Information overload risk from notifications and updates", "Integration with code, docs, chat, and calendar tools", "Pressure to minimise administrative update burden"],
+  "domain_patterns": ["Kanban board with drag-and-drop state transitions", "Gantt/timeline with dependencies and critical path", "Master-detail (project -> task -> subtask/comment)", "Assignment, due date, and ownership semantics", "RAG/status roll-up from task to portfolio", "Backlog prioritisation and estimation", "Capacity heatmap and utilisation views", "Change-control and approval gates"],
+  "audit_compliance": ["Change-control and approval audit trail for scope/baseline", "Time-tracking for billing and labour/regulatory records", "Portfolio governance and stage-gate documentation", "Data-residency/privacy for personal data in tasks (GDPR where relevant)", "SOC 2 for SaaS PM tools handling customer data", "Retention of project records per contractual/regulatory need"],
+  "accessibility_concerns": ["Drag-and-drop boards must have a full keyboard-operable alternative", "RAG status must not rely on red/amber/green colour alone (add labels/icons)", "Dense Gantt/timeline views need screen-reader-friendly structure", "Clear focus order and ARIA for interactive board cards", "Adjustable, non-overwhelming notification settings", "Sufficient contrast and target size on dense planning grids"],
+  "anti_patterns": ["RAG and priority encoded only by colour", "Drag-only boards with no keyboard path (excludes keyboard/AT users)", "Vague ownership ('the team') instead of a single accountable owner", "Letting status be set manually green with no link to real progress signals", "Allowing baseline/scope edits without change-control or audit", "Notification floods that bury genuine blockers and mentions", "Burying due dates and dependencies so slips surface late", "Over-granular mandatory time logging that drives avoidance and bad data"]
+}

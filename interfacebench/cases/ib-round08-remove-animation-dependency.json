@@ -1,0 +1,18 @@
+{
+  "id": "ib-round08-remove-animation-dependency",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "Drop the third-party animation library we pulled in earlier; we're trimming dependencies.",
+  "context": "InterfaceBench longitudinal · Round 8 · removing a vendored animation dependency",
+  "expected_behaviour": [
+    "identify what the library provided and reproduce the essential motion natively (CSS / Web Animations)",
+    "keep the native reimplementation reduced-motion aware",
+    "remove the dependency cleanly with no dead imports and confirm no regressions elsewhere",
+    "record the dependency removal as a tracked decision"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the library is removed cleanly, essential motion reproduced natively and reduced-motion-aware, with nothing left depending on it."
+}

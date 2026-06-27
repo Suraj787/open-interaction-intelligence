@@ -1,0 +1,13 @@
+{
+  "id": "approved-registry",
+  "name": "Approved Component Registry",
+  "trust_tier": 2,
+  "licence": "per-source",
+  "version": "1.0.0",
+  "update_method": "source-refresh",
+  "confidence": "high",
+  "evidence_quality": "licence-verified",
+  "supplies": [
+    "components"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "millers-chunking",
+  "name": "Chunking: Group Information into Digestible Units",
+  "trigger": "A screen presents a long sequence of items, a lengthy form, a string of digits, or dense content that the user must read, hold in mind, or input.",
+  "applicable_contexts": ["forms", "long content", "phone/card/code inputs", "navigation lists", "onboarding"],
+  "recommendation": "Group related information into a small number of meaningful chunks rather than one long undifferentiated stream: format long numbers in groups (e.g. card numbers in 4-4-4-4), section long forms under clear headings, cluster navigation into labelled categories, and use whitespace and headings to create scannable units. Chunking reduces working-memory load and error.",
+  "rejection": "Reject unbroken 30-field forms, unformatted long numeric inputs, flat lists of dozens of links with no grouping, and walls of text with no headings or sections.",
+  "validation": [
+    "Check long inputs and content are segmented into labelled or formatted chunks",
+    "Verify forms group fields by topic under headings",
+    "Confirm no single ungrouped list forces users to hold many items in memory at once"
+  ],
+  "evidence": [
+    "Miller, G.A. (1956) 'The Magical Number Seven, Plus or Minus Two' on chunking and short-term memory",
+    "Note: the '7±2' figure is about chunk capacity for recall, not a hard limit on menu items; the durable lesson is chunking, not a magic number"
+  ],
+  "source": "Miller (1956); chunking principle"
+}

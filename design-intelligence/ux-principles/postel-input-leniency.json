@@ -1,0 +1,18 @@
+{
+  "id": "postel-input-leniency",
+  "name": "Postel's Law: Be Liberal in What You Accept",
+  "trigger": "An input field or parser receives user-entered data that can appear in multiple valid formats, such as phone numbers, dates, currency, names, codes, or pasted values.",
+  "applicable_contexts": ["forms", "search", "data entry", "parsers", "pasted input", "validation"],
+  "recommendation": "Be liberal in what you accept and conservative in what you produce: accept input in any reasonable format the user might type or paste, then normalise it internally rather than rejecting it. Strip spaces and dashes from card and phone numbers, parse flexible date and currency formats, trim whitespace, and tolerate case. Reserve hard rejection for genuinely invalid data, and explain clearly when you must.",
+  "rejection": "Reject brittle validation that fails on a trailing space, a dash in a phone number, or a non-preferred date format; reject forcing users to match an exact rigid pattern the system could easily normalise.",
+  "validation": [
+    "Test inputs with spaces, dashes, mixed case, and alternate formats to confirm graceful acceptance",
+    "Verify the system normalises rather than rejects reasonable variations",
+    "Confirm rejection only occurs for truly invalid input, with a clear corrective message"
+  ],
+  "evidence": [
+    "Postel's Robustness Principle (RFC 761/793): 'be conservative in what you send, liberal in what you accept'",
+    "Baymard Institute form research shows lenient, forgiving inputs reduce abandonment and error"
+  ],
+  "source": "Postel's Law / Robustness Principle"
+}

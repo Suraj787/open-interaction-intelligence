@@ -1,0 +1,20 @@
+{
+  "id": "split-view",
+  "name": "Split View",
+  "when_to_use": "Use when users need to view or compare two related but independent contexts simultaneously, such as code-and-preview, source-and-translation, diff comparisons, or an editor beside live output.",
+  "when_not_to_use": "Avoid when one pane is almost always ignored, when the panes are sequential steps rather than parallel contexts, or on small screens where neither pane gets enough room to be usable.",
+  "information_structure": "Two (or more) peer panes of comparable importance shown side by side, each potentially independently scrollable, often with a draggable divider to rebalance space.",
+  "navigation": "Each pane maintains its own scroll and focus context; a resizable splitter lets users allocate space; optional sync-scroll links the panes for comparison.",
+  "density": ["compact", "comfortable"],
+  "responsive_behaviour": "Stack vertically or switch to a tabbed toggle between panes on narrow viewports, since side-by-side comparison rarely fits small screens.",
+  "accessibility_notes": [
+    "Make the splitter keyboard-operable with a separator role and arrow-key resizing",
+    "Maintain independent, logical focus order within each pane",
+    "Announce which pane is active when focus moves between them"
+  ],
+  "compares_with": ["master-detail", "canvas", "dashboard-grid"],
+  "evidence": [
+    "VS Code, diff tools, and translation editors demonstrate split-view for parallel comparison",
+    "WAI-ARIA defines the separator role with aria-valuenow for resizable splitters"
+  ]
+}

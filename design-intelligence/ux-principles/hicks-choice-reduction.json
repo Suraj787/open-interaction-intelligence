@@ -1,0 +1,18 @@
+{
+  "id": "hicks-choice-reduction",
+  "name": "Hick's Law: Reduce and Structure Choices",
+  "trigger": "A screen, menu, navigation, or form presents users with many simultaneous options or actions, or a decision point offers a long undifferentiated list.",
+  "applicable_contexts": ["navigation menus", "settings", "onboarding", "pricing", "action toolbars", "forms"],
+  "recommendation": "Reduce the number of simultaneous choices and structure those that remain: show the smallest set needed for the current task, group and categorise options, use progressive disclosure for advanced choices, highlight a recommended default, and break long decisions into sequential steps so each moment has fewer branches.",
+  "rejection": "Reject dumping every possible action at one altitude, mega-menus with dozens of ungrouped links, settings pages that expose all options at once with no grouping, and pricing tables with so many tiers that comparison stalls.",
+  "validation": [
+    "Count primary choices per decision point and challenge any with an unstructured long list",
+    "Verify options are grouped, ordered by likely use, or staged via disclosure",
+    "Confirm a sensible default or recommended option is offered where appropriate"
+  ],
+  "evidence": [
+    "Hick, W.E. (1952) and Hyman (1953): decision time increases logarithmically with the number of equally probable choices",
+    "Caveat: Hick's Law applies to undifferentiated simultaneous choices; well-grouped, scannable, or learned options do not incur the same cost"
+  ],
+  "source": "Hick-Hyman Law (1952-1953)"
+}

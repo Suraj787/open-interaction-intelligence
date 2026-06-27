@@ -1,0 +1,11 @@
+{
+  "id": "effect-row-hover-highlight",
+  "type": "effect",
+  "label": "Row hover highlight",
+  "attributes": {
+    "trigger": "pointer hover on table row",
+    "duration_ms": 120,
+    "easing": "ease-out",
+    "reduced_motion": "instant background change, no transition"
+  }
+}

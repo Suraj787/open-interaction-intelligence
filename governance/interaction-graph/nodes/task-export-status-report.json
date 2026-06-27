@@ -1,0 +1,10 @@
+{
+  "id": "task-export-status-report",
+  "type": "task",
+  "label": "Export status report",
+  "attributes": {
+    "trigger": "end of weekly review",
+    "success_criteria": "stakeholder-ready report generated and downloaded",
+    "frequency": "weekly"
+  }
+}

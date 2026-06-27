@@ -1,0 +1,86 @@
+{
+  "id": "government",
+  "name": "Government & Public Sector",
+  "users": [
+    {
+      "role": "Caseworker / Benefits Examiner",
+      "context": "Processes citizen applications (benefits, permits, licences), verifies eligibility against documents and rules, determines outcomes, and records decisions. High caseload, queue-driven, accountable for fairness and due process.",
+      "expertise": "Expert in program policy and eligibility rules; moderate IT fluency on legacy line-of-business systems."
+    },
+    {
+      "role": "Citizen / Constituent (self-service)",
+      "context": "Submits applications and documents, checks status, pays fees, and renews licences through a public portal. Extremely varied digital literacy, devices, languages, and abilities; may be in a stressful situation (benefits, immigration).",
+      "expertise": "Novice and infrequent; assumes nothing. Must succeed on first attempt with plain language."
+    },
+    {
+      "role": "Records / FOIA Officer",
+      "context": "Manages official records retention, responds to public-records/FOIA requests, applies redactions and exemptions, and certifies disclosures.",
+      "expertise": "Expert in records law, retention schedules, and exemption categories."
+    },
+    {
+      "role": "Inspector / Field Officer",
+      "context": "Conducts site inspections (permits, code, safety), captures evidence (photos, notes), and issues findings or citations. Works offline in the field, often on a tablet or phone.",
+      "expertise": "Expert in codes and field procedure; needs offline capture and geo-tagging."
+    },
+    {
+      "role": "Program Supervisor / Adjudicator",
+      "context": "Reviews and approves caseworker determinations, handles appeals and exceptions, monitors SLA and backlog, ensures consistency and audit readiness.",
+      "expertise": "Expert in policy and oversight; consumes queue/SLA dashboards and exception views."
+    },
+    {
+      "role": "Procurement / Contracting Officer",
+      "context": "Runs solicitations, evaluates bids, awards and administers contracts under public procurement law; maintains an auditable competitive trail.",
+      "expertise": "Expert in procurement regulation and evaluation scoring."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Citizen application intake and eligibility determination",
+      "steps": ["Citizen submits application and supporting documents", "Intake validation and routing to a queue", "Caseworker verifies identity and evidence", "Apply eligibility rules and request missing information", "Make determination (approve/deny/refer) with stated reasons", "Notify applicant and record decision with appeal rights"],
+      "frequency": "continuous / high volume",
+      "criticality": "critical"
+    },
+    {
+      "name": "Permit / licence issuance and renewal",
+      "steps": ["Receive application and fee", "Check prerequisites and prior history", "Schedule inspection if required", "Approve and issue permit/licence", "Set expiry and renewal reminders", "Process renewals or revocations"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Public records / FOIA request handling",
+      "steps": ["Log request and acknowledge within statutory clock", "Search and collect responsive records", "Apply exemptions and redactions", "Supervisor/legal review", "Release records and log disclosure", "Track fees and appeal"],
+      "frequency": "continuous, deadline-bound",
+      "criticality": "high"
+    },
+    {
+      "name": "Field inspection and citation",
+      "steps": ["Assign inspection from schedule", "Travel and capture findings offline (photos, geo, notes)", "Score against code checklist", "Issue pass/fail or citation", "Sync record on reconnection", "Schedule re-inspection if needed"],
+      "frequency": "daily",
+      "criticality": "medium"
+    },
+    {
+      "name": "Public procurement / solicitation and award",
+      "steps": ["Publish solicitation", "Receive sealed bids by deadline", "Evaluate against published criteria with multiple scorers", "Document scoring rationale", "Award and notify, handle protests", "Execute and administer contract"],
+      "frequency": "periodic",
+      "criticality": "high"
+    }
+  ],
+  "risks": [
+    "Wrong eligibility determination wrongfully denying or granting a citizen benefit",
+    "Missed statutory deadline (FOIA clock, appeal window, benefit timeliness) creating legal liability",
+    "Improper disclosure of PII/sensitive data, or failure to redact exempt material",
+    "Inconsistent or biased decisions across caseworkers undermining equal treatment",
+    "Granting a citizen or staff member access beyond their authorisation",
+    "Records altered or deleted contrary to retention schedule, breaking the official record",
+    "Inaccessible portal excluding people with disabilities (legal non-compliance) or non-English speakers",
+    "Procurement trail that cannot withstand a bid protest or audit",
+    "Lost field inspection data due to no offline capture",
+    "Citizen abandons a confusing form, failing to receive entitled services"
+  ],
+  "information_objects": ["Citizen / constituent profile", "Application / case file", "Supporting document / evidence", "Determination / decision record with reasons", "Permit / licence", "Public-records (FOIA) request", "Retention schedule classification", "Inspection report / citation", "Solicitation / bid / contract", "Notice / correspondence", "Appeal record", "Access and disclosure audit log"],
+  "environment_constraints": ["Extremely diverse public users: assistive tech, low literacy, many languages, low-end devices, low bandwidth", "Legacy mainframe/line-of-business systems behind modern front-ends", "Strict statutory deadlines and due-process requirements", "Field work offline with later synchronisation", "Public scrutiny, transparency, and audit obligations", "Long retention horizons (years to permanent)", "Equity and non-discrimination mandates"],
+  "domain_patterns": ["Queue/case management with SLA timers", "Rules-based eligibility with explainable decisions", "Maker-checker adjudication and appeals", "Records retention and legal-hold lifecycle", "Redaction and exemption workflow", "Multi-language and plain-language content", "Offline field capture with sync", "Immutable decision audit trail with stated reasons"],
+  "audit_compliance": ["Section 508 / WCAG 2.1 AA accessibility (legally mandated for public services)", "GDPR / national privacy law and data-minimisation for PII", "FOIA / public-records statutes and retention schedules", "Records-management standards (e.g., NARA, ISO 15489)", "Procurement regulations (e.g., FAR) and competitive-bid auditability", "Due-process and equal-treatment requirements", "FedRAMP / security accreditation for hosting where applicable"],
+  "accessibility_concerns": ["Mandatory WCAG 2.1 AA / Section 508 conformance across public-facing services", "Plain-language content at a low reading grade level", "Full keyboard and screen-reader operability, no colour-only status", "Multi-language support and right-to-left layouts", "Resilience on low bandwidth and older/assistive devices", "Clear error recovery and save-and-resume for long forms", "Accessible PDFs and downloadable notices"],
+  "anti_patterns": ["Jargon-heavy, agency-internal terminology shown to citizens", "Long unsaveable forms that lose work on timeout", "Colour-only or icon-only status with no text equivalent", "Opaque denials without stated reasons or appeal path", "Hiding the statutory deadline clock from staff", "Hard-coding rules so policy changes require redeploys instead of being auditable/configurable", "English-only flows in a multilingual jurisdiction", "Allowing record deletion outside the retention/legal-hold framework"]
+}

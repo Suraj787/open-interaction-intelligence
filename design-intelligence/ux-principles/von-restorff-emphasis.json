@@ -1,0 +1,18 @@
+{
+  "id": "von-restorff-emphasis",
+  "name": "Von Restorff (Isolation) Effect: Emphasise the One That Matters",
+  "trigger": "A screen needs to draw attention to a single most-important element among peers, such as a primary CTA, a recommended plan, a critical alert, or a key metric.",
+  "applicable_contexts": ["primary CTAs", "pricing", "alerts", "empty states", "key metrics", "promotions"],
+  "recommendation": "Make the single most important item visually distinct from its surroundings so it stands out and is remembered: give the primary action a unique, higher-emphasis treatment, distinguish the recommended option, and reserve a strong accent for the one thing you most want noticed. The effect depends on scarcity, so emphasise sparingly.",
+  "rejection": "Reject giving several elements equal high emphasis (which cancels the effect and creates competition), styling every button as primary, and over-using accent colour so nothing stands out.",
+  "validation": [
+    "Confirm there is exactly one clear primary emphasis per view or decision",
+    "Check competing high-emphasis elements are demoted to secondary or tertiary",
+    "Run a five-second test to verify users notice the intended element first"
+  ],
+  "evidence": [
+    "Von Restorff (1933): an item that differs from its surroundings is more likely to be remembered",
+    "Visual hierarchy and pre-attentive processing research support a single dominant focal point"
+  ],
+  "source": "Von Restorff Effect (1933)"
+}

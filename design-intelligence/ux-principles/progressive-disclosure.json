@@ -1,0 +1,18 @@
+{
+  "id": "progressive-disclosure",
+  "name": "Progressive Disclosure of Complexity",
+  "trigger": "A feature or screen contains a mix of commonly-needed and rarely-needed options, or its full complexity risks overwhelming the typical user on first encounter.",
+  "applicable_contexts": ["settings", "forms", "advanced options", "onboarding", "data tables", "configuration"],
+  "recommendation": "Show the few options most users need by default and move advanced or infrequent ones to a clearly labelled secondary layer (an 'Advanced' section, accordion, drawer, or 'show more'). This keeps the primary path simple while preserving power for those who need it. Ensure the path to hidden complexity is obvious and that nothing essential to the common task is hidden.",
+  "rejection": "Reject exposing every option at once on a single overwhelming screen, and equally reject burying frequently-needed controls behind disclosure that adds friction to the common path.",
+  "validation": [
+    "Confirm the default view contains only what the majority need for the primary task",
+    "Verify advanced options are reachable via a clearly labelled, discoverable affordance",
+    "Check that no task-critical control for the common case is hidden by default"
+  ],
+  "evidence": [
+    "Nielsen Norman Group, 'Progressive Disclosure' shows reduced cognitive load and error rates",
+    "Tesler's Law: complexity must live somewhere; disclosure manages where the user encounters it"
+  ],
+  "source": "NN/g (Progressive Disclosure); related to Tesler's Law"
+}

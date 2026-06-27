@@ -1,0 +1,18 @@
+{
+  "id": "support-thousand-records",
+  "category": "performance",
+  "kind": "human-judgement",
+  "prompt": "Support 1,000 records.",
+  "context": "list/table view that must remain responsive as the dataset grows to thousands of rows",
+  "expected_behaviour": [
+    "introduce virtualisation/windowing or pagination so render cost is bounded",
+    "preserve keyboard navigation, selection and accessibility under virtualisation",
+    "avoid adding continuous decorative motion that scales with row count",
+    "state a performance budget (scroll/frame, initial render) for the large dataset"
+  ],
+  "must_reject": false,
+  "expected_pattern": "virtualised-list",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if scale is handled with virtualisation/pagination under a budget, accessibility preserved, and no decorative motion that grows with the data."
+}

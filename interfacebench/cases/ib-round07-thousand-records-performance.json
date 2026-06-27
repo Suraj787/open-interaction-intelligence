@@ -1,0 +1,18 @@
+{
+  "id": "ib-round07-thousand-records-performance",
+  "category": "performance",
+  "kind": "human-judgement",
+  "prompt": "Teams now have up to 1,000 projects; the list must stay fast.",
+  "context": "InterfaceBench longitudinal · Round 7 · the list must scale without degrading",
+  "expected_behaviour": [
+    "introduce virtualisation/windowing or pagination so render cost is bounded",
+    "preserve keyboard navigation, selection and screen-reader row semantics under virtualisation",
+    "avoid decorative motion that scales with row count",
+    "state a performance budget (initial render, scroll/frame) for the large dataset"
+  ],
+  "must_reject": false,
+  "expected_pattern": "virtualised-list",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if scale is handled by virtualisation/pagination under a stated budget, with accessibility preserved and no decorative cost growth."
+}

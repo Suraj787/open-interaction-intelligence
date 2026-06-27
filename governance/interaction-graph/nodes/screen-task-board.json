@@ -1,0 +1,11 @@
+{
+  "id": "screen-task-board",
+  "type": "screen",
+  "label": "Task Board",
+  "attributes": {
+    "route": "/projects/:id/tasks",
+    "primary_object": "task",
+    "layout": "column board with bulk actions",
+    "note": "deliberately has no error state — surfaced by the screens-lacking-error-recovery query"
+  }
+}

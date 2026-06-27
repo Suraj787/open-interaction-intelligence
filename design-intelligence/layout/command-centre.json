@@ -1,0 +1,21 @@
+{
+  "id": "command-centre",
+  "name": "Command Centre",
+  "when_to_use": "Use for real-time monitoring and operations where users must observe many live signals at once and act quickly, such as NOC/SOC dashboards, trading desks, logistics control, and incident response.",
+  "when_not_to_use": "Avoid for casual or occasional users, for tasks that are sequential rather than monitoring-driven, or where the data does not change in real time and a simpler dashboard or report suffices.",
+  "information_structure": "A dense, multi-zone composition combining live status panels, alert feeds, key metrics, and quick-action controls, typically with a primary focus area and peripheral awareness regions.",
+  "navigation": "Keyboard shortcuts and command palettes for speed; drill-down from summary tiles into detail; persistent alert and status regions that update without navigation.",
+  "density": ["compact"],
+  "responsive_behaviour": "Designed for large or multi-monitor displays; degrade gracefully by prioritising critical alerts and metrics and hiding peripheral panels on smaller screens rather than shrinking everything.",
+  "accessibility_notes": [
+    "Use polite or assertive live regions appropriately so critical alerts are announced without flooding",
+    "Never rely on colour alone for severity; pair with icons and text",
+    "Provide a non-flashing alternative for urgent indicators to respect photosensitivity",
+    "Ensure keyboard access to every quick action"
+  ],
+  "compares_with": ["dashboard-grid", "data-dense-terminal", "table-first", "timeline"],
+  "evidence": [
+    "Grafana, Datadog, and trading desks exemplify command-centre layouts for live operations",
+    "WCAG 2.2.2 and 2.3.1 constrain moving and flashing content used for alerts"
+  ]
+}

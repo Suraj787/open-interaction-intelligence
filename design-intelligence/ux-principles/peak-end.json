@@ -1,0 +1,18 @@
+{
+  "id": "peak-end",
+  "name": "Peak-End Rule: Design the Highs and the Finish",
+  "trigger": "An end-to-end experience or flow is being designed where overall satisfaction and memory matter, such as onboarding, checkout, support resolution, task completion, or error recovery.",
+  "applicable_contexts": ["onboarding", "checkout", "support flows", "completion states", "error recovery", "cancellation"],
+  "recommendation": "Recognise that people judge an experience largely by its most intense moment (the peak) and how it ends, not by the average of every step. Deliberately craft a positive peak (a moment of delight, a meaningful 'aha', or relief at a hard point) and a strong, satisfying ending (clear success confirmation, a graceful completion, an easy next step). Pay special attention to painful moments and to final screens.",
+  "rejection": "Reject pouring effort evenly across every step while neglecting the emotional high point and the conclusion, ending a successful task on an abrupt or anticlimactic screen, and leaving painful moments (errors, waits, cancellations) unmitigated.",
+  "validation": [
+    "Map the flow's emotional arc and identify the intended peak and ending",
+    "Confirm completion states clearly confirm success and offer a sensible next step",
+    "Check that the worst moments are softened, since negative peaks weigh heavily on memory"
+  ],
+  "evidence": [
+    "Kahneman & Redelmeier peak-end research on how experiences are remembered",
+    "Nielsen Norman Group, 'The Peak-End Rule' applies it to UX flows and completion states"
+  ],
+  "source": "Peak-End Rule (Kahneman et al.); NN/g"
+}

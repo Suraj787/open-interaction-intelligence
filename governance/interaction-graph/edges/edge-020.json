@@ -1,0 +1,5 @@
+{
+  "from": "screen-project-detail",
+  "to": "state-error",
+  "relation": "has-state"
+}

@@ -1,0 +1,5 @@
+{
+  "from": "screen-dashboard-overview",
+  "to": "state-error",
+  "relation": "has-state"
+}

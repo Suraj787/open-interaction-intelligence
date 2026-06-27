@@ -1,0 +1,20 @@
+{
+  "id": "master-detail",
+  "name": "Master-Detail",
+  "when_to_use": "Use when users browse a list of homogeneous items and need to inspect or edit one at a time while keeping the list in view for context and rapid switching, such as inboxes, file browsers, settings, or record managers.",
+  "when_not_to_use": "Avoid when the detail content is wider than the viewport can spare alongside the list, when items are highly heterogeneous, or when users almost always act on the list as a whole rather than drilling into single items.",
+  "information_structure": "A two-pane parent-child relationship: a persistent list (master) of peer items on one side and a contextual detail view of the selected item on the other. Selection in the master drives the content of the detail.",
+  "navigation": "Selecting a list item updates the detail pane in place without a full page change; keyboard up/down should move selection and the detail should follow.",
+  "density": ["compact", "comfortable"],
+  "responsive_behaviour": "On narrow viewports collapse to a single column: show the list first, then push or replace it with the detail on selection, providing a clear back affordance to return to the list.",
+  "accessibility_notes": [
+    "Manage focus when the detail updates so screen-reader users are informed the content changed",
+    "Expose the master as a list with proper roles and announce the selected state",
+    "Ensure the collapsed mobile back navigation is keyboard-operable and preserves scroll position"
+  ],
+  "compares_with": ["split-view", "table-first", "nested-navigation", "cards"],
+  "evidence": [
+    "Apple HIG and Material Design both document master-detail (list-detail) as a canonical pattern for browsing collections",
+    "Email clients (Gmail, Outlook) and IDEs validate the pattern at scale"
+  ]
+}

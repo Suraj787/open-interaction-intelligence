@@ -1,0 +1,18 @@
+{
+  "id": "playful-yet-legally-conservative",
+  "category": "rejection",
+  "kind": "human-judgement",
+  "prompt": "The design must be both playful and legally conservative.",
+  "context": "regulated product · brand wants warmth and personality, legal/compliance requires restraint and accuracy",
+  "expected_behaviour": [
+    "treat the tension as resolvable through the product's design genome, not as a contradiction",
+    "locate playfulness in tone, microcopy, illustration and restrained accent, away from compliance surfaces",
+    "keep legal/disclosure/data surfaces sober, accurate and unambiguous",
+    "state explicitly where playful expression is allowed and where it is not"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent reconciles both goals via the genome, scoping playfulness to safe surfaces and keeping legal surfaces conservative, rather than picking one."
+}

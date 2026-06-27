@@ -1,0 +1,19 @@
+{
+  "id": "ib-round10-audit-interface-debt",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "Audit the interface debt accumulated over these rounds and report it.",
+  "context": "InterfaceBench longitudinal · Round 10 · honest debt audit after a brand redesign and nine prior rounds of change",
+  "expected_behaviour": [
+    "produce an honest audit: duplicated components, divergent patterns, missing states, dependency growth, accessibility gaps",
+    "catch residue from the Round-5 status change and Round-9 brand redesign (drift in forgotten surfaces)",
+    "record provenance and licence status of any sourced techniques",
+    "demonstrate debt stayed bounded and propose a prioritised remediation path",
+    "avoid declaring 'no debt' or papering over known gaps"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the audit honestly surfaces real debt incl. drift from Rounds 5 and 9, tracks provenance, and offers a prioritised remediation plan."
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/density-grammar.schema.json",
+  "title": "density-grammar",
+  "type": "object",
+  "required": [
+    "id",
+    "modes"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "modes": {
+      "type": "object"
+    },
+    "spacing_scale": {
+      "type": "object"
+    },
+    "row_height": {
+      "type": "object"
+    },
+    "hit_area_min_px": {
+      "type": "integer"
+    },
+    "responsive_transformations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

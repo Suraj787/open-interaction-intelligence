@@ -1,0 +1,18 @@
+{
+  "id": "ib-round05-status-model-drift",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "Status is changing from three states to a seven-state workflow with transitions.",
+  "context": "InterfaceBench longitudinal · Round 5 · a model change that must propagate across list, filters, bulk actions and the portal",
+  "expected_behaviour": [
+    "update the status model in one place and propagate it everywhere it is consumed",
+    "detect and flag every site that assumed the old three-state model (drift detection)",
+    "keep status colours/labels unambiguous across all seven states and represent transitions",
+    "record the change as an explained decision"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the new model propagates to list, filters, bulk and portal with old-model assumptions detected and flagged, not left as silent drift."
+}

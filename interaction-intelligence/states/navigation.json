@@ -1,0 +1,26 @@
+{
+  "id": "navigation",
+  "component_type": "navigation",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "selected",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "disabled", "condition": "A destination is temporarily unavailable or gated." },
+    { "state": "loading", "condition": "Route transition fetches data and the nav reflects an in-progress change." },
+    { "state": "permission-denied", "condition": "Items are hidden or shown-disabled based on the user's role." },
+    { "state": "offline", "condition": "Some destinations are unavailable offline and should indicate so." },
+    { "state": "touch", "condition": "Nav collapses to a drawer/bottom bar with 44px targets on small or coarse-pointer devices." },
+    { "state": "high-zoom", "condition": "Nav must remain reachable and not clip at 200% zoom or large fonts." }
+  ],
+  "rationale": "Navigation orients the user, so the current location must be unambiguously shown via a selected/current state, and every item must be reachable and operable by keyboard with a visible focus ring. Hover and active give pointer feedback; selected (aria-current) is the load-bearing state that answers 'where am I'.",
+  "evidence": [
+    "WCAG 2.2 2.4.8 (Location) and aria-current=page: indicate the user's position within the app.",
+    "WCAG 2.2 2.1.1 / 2.4.7: keyboard operability and visible focus for all nav items.",
+    "WAI-ARIA navigation and menu patterns define expected keyboard interaction for nav structures."
+  ]
+}

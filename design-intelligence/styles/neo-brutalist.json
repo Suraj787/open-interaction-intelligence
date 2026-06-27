@@ -1,0 +1,44 @@
+{
+  "id": "neo-brutalist",
+  "name": "Neo-Brutalist",
+  "description": "A deliberately raw, high-contrast style featuring thick black borders, hard offset drop shadows, saturated or clashing colours, exposed structure, and chunky system-like typography. It rejects polish in favour of bold, attention-grabbing honesty about the interface as a constructed object.",
+  "emotional_impression": "Bold, confident, irreverent, energetic, and intentionally unpolished.",
+  "visual_principles": [
+    "Thick solid borders and hard, non-blurred offset shadows",
+    "Saturated, sometimes intentionally clashing colour blocks",
+    "Flat fills with no gradients; structure is exposed rather than smoothed",
+    "Heavy, geometric, or monospace-adjacent typography",
+    "Visible grid seams and unapologetic asymmetry"
+  ],
+  "industry_suitability": ["design agencies", "developer tools", "creative portfolios", "web3", "indie products"],
+  "page_suitability": ["landing pages", "portfolios", "marketing", "feature announcements"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Clashing saturated colour pairings frequently fail contrast and induce visual stress",
+    "Aggressive colour can be hostile to users with visual sensitivities or migraine triggers",
+    "Decorative borders and shadows can compete with content focus order"
+  ],
+  "performance_risks": ["Low; effects are CSS-cheap, though heavy custom fonts can add weight"],
+  "typography_compatibility": ["marketing-expressive", "grotesque display", "monospace display"],
+  "layout_compatibility": ["cards", "dashboard-grid", "canvas"],
+  "trend_maturity": "current",
+  "overuse_risk": "high",
+  "ai_cliche_risk": "high",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Brands deliberately signalling anti-corporate, independent, or maker identity",
+    "Short-lived campaign or launch pages where memorability beats longevity",
+    "Audiences that read the rawness as authenticity"
+  ],
+  "inappropriate_contexts": [
+    "Regulated or trust-sensitive products (banking, healthcare, government)",
+    "High-density data tools where the heavy chrome steals attention from content",
+    "Accessibility-critical contexts without a carefully audited palette"
+  ],
+  "alternatives": ["high-contrast-accessible", "marketing-expressive", "playful-rounded"],
+  "evidence": [
+    "Neo-brutalism surged across Gumroad-era indie sites and design Twitter circa 2021-2024, now widely cloned by templates",
+    "Its prevalence in template galleries makes it a recognisable AI/template tell, raising cliche risk"
+  ],
+  "confidence": "high"
+}

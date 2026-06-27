@@ -1,0 +1,18 @@
+{
+  "id": "aesthetic-usability-caveat",
+  "name": "Aesthetic-Usability Effect (and Its Caveat)",
+  "trigger": "Visual polish is being added or evaluated, or usability testing results seem unexpectedly positive despite known friction, or a beautiful design is being shipped without usability validation.",
+  "applicable_contexts": ["visual design", "usability testing", "first impressions", "marketing", "product UI"],
+  "recommendation": "Invest in clean, attractive visual design because users perceive aesthetically pleasing interfaces as more usable and are more forgiving of minor issues, which aids trust and first impressions. But treat this as a caveat, not a licence: do not let surface polish substitute for real usability. Beauty can mask problems in testing, so still validate task success and never trade core usability for decoration.",
+  "rejection": "Reject the assumption that a beautiful interface is therefore usable, dismissing real task failures because the design 'looks good', and prioritising decoration over fixing measured usability defects.",
+  "validation": [
+    "Pair aesthetic work with task-based usability testing, not just preference ratings",
+    "Watch for the effect masking problems: probe whether positive sentiment reflects real success",
+    "Confirm visual polish never overrides a known, measured usability fix"
+  ],
+  "evidence": [
+    "Kurosu & Kashimura (1995) and Tractinsky (1997) established the aesthetic-usability effect",
+    "Nielsen Norman Group, 'The Aesthetic-Usability Effect' warns it can hide usability problems during testing"
+  ],
+  "source": "Aesthetic-Usability Effect (Kurosu & Kashimura 1995; NN/g)"
+}

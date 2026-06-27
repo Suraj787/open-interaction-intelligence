@@ -1,0 +1,5 @@
+{
+  "from": "workflow-weekly-status-review",
+  "to": "task-reassign-overdue-work",
+  "relation": "uses"
+}

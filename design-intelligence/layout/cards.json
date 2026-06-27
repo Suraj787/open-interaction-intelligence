@@ -1,0 +1,20 @@
+{
+  "id": "cards",
+  "name": "Cards",
+  "when_to_use": "Use to present a collection of heterogeneous or media-rich items as self-contained, scannable units, where each item benefits from an image, mixed content, and its own actions, such as product grids, content galleries, and dashboards of mixed widgets.",
+  "when_not_to_use": "Avoid when users must compare items across precise attributes (a table aligns data far better), when the dataset is large and dense (cards waste vertical space), or when items are uniform records better served by rows.",
+  "information_structure": "A grid or list of bounded containers, each grouping related content (media, title, metadata, actions) for one item as an independent unit, with consistent internal structure across cards.",
+  "navigation": "Scan the grid, click a card or its primary action to drill in; filters and sorting reorganise the set; pagination or infinite scroll handles volume.",
+  "density": ["comfortable", "spacious"],
+  "responsive_behaviour": "Reflow the number of columns to viewport width, collapsing to a single column on mobile while preserving each card's internal layout.",
+  "accessibility_notes": [
+    "Make the whole card's primary action a single clear link or button rather than nesting many competing targets",
+    "Give each card a heading so screen-reader users can navigate the collection",
+    "Maintain a logical reading and focus order matching the visual grid"
+  ],
+  "compares_with": ["table-first", "kanban", "dashboard-grid", "master-detail"],
+  "evidence": [
+    "Material Design documents cards for heterogeneous content; e-commerce and content sites validate the pattern",
+    "Nielsen Norman Group notes cards aid scannability but warn against using them where tables compare better"
+  ]
+}

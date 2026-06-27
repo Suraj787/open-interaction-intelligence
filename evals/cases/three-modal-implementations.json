@@ -1,0 +1,18 @@
+{
+  "id": "three-modal-implementations",
+  "category": "source-governance",
+  "kind": "human-judgement",
+  "prompt": "The project already has three modal implementations.",
+  "context": "existing codebase · three divergent modal/dialog components with overlapping behaviour",
+  "expected_behaviour": [
+    "refuse to add a fourth modal implementation",
+    "audit the three, name the interface debt and inconsistency cost (focus trap, escape, aria differences)",
+    "reuse or consolidate onto one canonical, accessible modal",
+    "propose a migration path and record the consolidation decision"
+  ],
+  "must_reject": false,
+  "expected_pattern": null,
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if the agent reuses/consolidates rather than adding another modal, names the debt, and proposes a migration to one canonical component."
+}

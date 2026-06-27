@@ -1,0 +1,9 @@
+{
+  "id": "constraint-token-spacing",
+  "type": "constraint",
+  "label": "Spacing and colour resolve to tokens",
+  "attributes": {
+    "source": "spacing, geometry, framework_conventions",
+    "rule": "all spacing, radius and colour values must come from the token scale; arbitrary values are debt"
+  }
+}

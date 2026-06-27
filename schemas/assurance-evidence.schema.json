@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/assurance-evidence.schema.json",
+  "title": "assurance-evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "target",
+    "dimension",
+    "checks",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "target": {
+      "type": "string"
+    },
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "accessibility",
+        "performance",
+        "security",
+        "responsive",
+        "visual",
+        "behavioural",
+        "workflow",
+        "design-system",
+        "content",
+        "provenance"
+      ]
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "automated-static",
+        "automated-runtime",
+        "human-review"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "review",
+        "fail"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

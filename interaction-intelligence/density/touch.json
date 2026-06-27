@@ -1,0 +1,38 @@
+{
+  "id": "touch",
+  "modes": {
+    "default": "touch",
+    "intent": "Finger-first layout for phones, tablets, kiosks, and any coarse-pointer context where precision is low and targets must be generous.",
+    "primary_input": "coarse-pointer",
+    "supported_inputs": ["coarse-pointer", "keyboard", "fine-pointer"]
+  },
+  "spacing_scale": {
+    "unit": "px",
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "section": 40
+  },
+  "row_height": {
+    "unit": "px",
+    "table_row": 56,
+    "list_item": 56,
+    "toolbar": 64,
+    "control": 48
+  },
+  "hit_area_min_px": 44,
+  "responsive_transformations": [
+    "Touch is the floor for coarse pointers and is never downgraded below a 44px target, even on a large tablet.",
+    "Above 1024px with a confirmed fine-pointer, the app may offer comfortable as an optional denser mode but defaults to touch on first load.",
+    "Primary actions move to a thumb-reachable bottom zone on tall phone viewports.",
+    "Adjacent targets keep at least 8px of separation so neighbouring controls are not mis-tapped."
+  ],
+  "notes": [
+    "hit_area_min_px of 44 satisfies the WCAG / platform touch-target minimum; this is a hard floor, not a target to shrink under.",
+    "Hover-only affordances are forbidden here — every action must be reachable by tap, with focus and active states for keyboard users.",
+    "Generous spacing also leaves room for the on-screen keyboard and avoids accidental activation while scrolling.",
+    "Pair with reduced or balanced motion; heavy decorative motion drains battery on mobile."
+  ]
+}

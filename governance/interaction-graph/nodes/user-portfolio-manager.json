@@ -1,0 +1,11 @@
+{
+  "id": "user-portfolio-manager",
+  "type": "user",
+  "label": "Portfolio Manager",
+  "attributes": {
+    "goals": ["assess delivery health across projects", "unblock at-risk work"],
+    "expertise": "expert",
+    "frequency": "daily",
+    "context": "desktop, high information tolerance"
+  }
+}

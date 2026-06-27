@@ -7,10 +7,49 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- Deepen per-source component catalogues with previews and more verified records.
-- Implement live network connectors for the source-refresh workflow (currently declarative).
-- Grow recipe and adapter coverage (Angular, more Svelte/vanilla).
-- Re-verify `pending-verification` and medium-confidence licences on a schedule.
+Toward v0.3.0: live `ii compile plan/apply`, workflow simulation (Playwright),
+visual-regression assurance, drift trend tracking, external provider imports, and the
+automated InterfaceBench runner.
+
+## [0.2.0] - 2026-06-28 — Interface Intelligence OS
+
+Evolves the Motif secure interaction foundation (tagged below as 1.0.0) into Interface
+Intelligence OS: the intelligence, compilation, assurance, and governance layer for AI
+coding agents. History preserved; `ii` is the primary CLI with `oii` and `motif` aliases.
+
+### Added
+
+- **Six-engine architecture** built on the validated foundation. New top-level engines:
+  Product Intelligence, Design Intelligence, Governance and Learning, plus the Assurance
+  evidence model and the Implementation compiler scaffold.
+- **Design Intelligence Engine**: 12 styles (with honest AI-cliche and overuse risk), 12
+  layouts, 15 executable UX principles (trigger/recommendation/rejection/validation),
+  colour and typography systems, and 10 deep industry packs (users, workflows, risks,
+  regulations, anti-patterns).
+- **Product Intelligence Engine**: the Product Context Manifest separating verified facts
+  from inference, assumptions and unresolved questions, with `ii inspect`,
+  `ii model-product`, `ii context validate|explain`.
+- **Governance and Learning Engine**: Product Design Genome (`ii genome
+  validate|explain|diff`), Interaction Specification Graph with queryable gap detection
+  (`ii graph validate|query`), Aesthetic Convergence Detector (`ii originality audit`),
+  decision ledger (`ii decision create|list`), and an explainable Interface Debt score
+  (`ii debt calculate`).
+- **Interaction Intelligence** additions: motion and density grammars and a State
+  Completeness Engine (`ii motion|density validate`, `ii states matrix|validate|inspect`).
+- **Interface Specification Language** (schema + JSON/YAML examples), **InterfaceBench**
+  foundation (15 capabilities, 10-round longitudinal scenario, rubric, machine-readable
+  cases), **provider architecture** declarations, and 18 new JSON Schemas (25 total).
+- **`ii` CLI** that unifies the new engines and delegates foundation commands to Motif;
+  15 adversarial judgement evals added; `make check` extended (foundation self-check 75 +
+  `ii` self-check 20 + engine-data/graph validation + secret scan).
+- Honesty artifacts: `docs/capability-matrix.md` (implemented/experimental/planned),
+  migration ADR, gap analysis, research and competitive analysis, and `PROJECT_STATUS.md`.
+
+### Notes
+
+Live network connectors, runtime accessibility/performance/visual assurance, `ii compile
+apply` beyond the installer, and the automated bench runner are marked planned, not
+claimed as implemented. See the capability matrix.
 
 ## [1.0.0] - 2026-06-27
 

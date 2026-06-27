@@ -1,0 +1,10 @@
+{
+  "id": "test-empty-state",
+  "type": "test",
+  "label": "Empty state test",
+  "attributes": {
+    "path": "tests/dashboard/empty-state.spec.ts",
+    "asserts": "no-match filter shows explanatory empty state with create action",
+    "covers_state": "state-empty"
+  }
+}

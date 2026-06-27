@@ -1,0 +1,5 @@
+{
+  "from": "state-empty",
+  "to": "test-empty-state",
+  "relation": "validated-by"
+}

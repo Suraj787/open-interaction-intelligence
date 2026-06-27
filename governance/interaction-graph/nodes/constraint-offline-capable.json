@@ -1,0 +1,10 @@
+{
+  "id": "constraint-offline-capable",
+  "type": "constraint",
+  "label": "Offline-capable read and queued writes",
+  "attributes": {
+    "source": "performance_posture",
+    "rule": "primary workflows must render cached data offline and queue mutations for sync",
+    "applies_to": "field and travelling users"
+  }
+}

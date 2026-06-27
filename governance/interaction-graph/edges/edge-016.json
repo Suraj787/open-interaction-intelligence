@@ -1,0 +1,5 @@
+{
+  "from": "screen-project-detail",
+  "to": "screen-task-board",
+  "relation": "navigates-to"
+}

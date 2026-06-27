@@ -1,0 +1,31 @@
+{
+  "id": "enterprise-restrained",
+  "principles": [
+    "Motion serves comprehension, never decoration; if an animation does not explain a change it is removed.",
+    "Favour opacity and small positional shifts over scale, rotation, or bounce.",
+    "Durations stay short so dense, data-heavy screens never feel sluggish under repeated use.",
+    "Every motion has an instant, non-animated equivalent for reduced-motion and low-power contexts.",
+    "Consistency over delight: the same change always animates the same way across the product."
+  ],
+  "duration_scale": {
+    "instant": 0,
+    "fast": 100,
+    "base": 160,
+    "slow": 240,
+    "unit": "ms"
+  },
+  "easing": {
+    "standard": "cubic-bezier(0.2, 0, 0.2, 1)",
+    "decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+    "accelerate": "cubic-bezier(0.4, 0, 1, 1)"
+  },
+  "entrance": "Fade in over fast (100ms) with at most a 4px upward translate using the decelerate curve. No scale or overshoot.",
+  "exit": "Fade out over fast (100ms) with the accelerate curve; element leaves without movement to avoid drawing attention away from the next focus target.",
+  "spatial_navigation": "Cross-view transitions are an immediate content swap with a base (160ms) crossfade; no slide between routes so back/forward never feels directional or disorienting.",
+  "list_changes": "Inserted and removed rows fade over fast (100ms); neighbours reflow with a base (160ms) position tween. Reordering is instant when more than ~20 rows move to avoid distracting churn.",
+  "status_change": "Status pills transition colour and label over fast (100ms) and are always paired with a text/icon change so the meaning is never colour-or-motion only.",
+  "loading": "Skeletons appear only after a 200ms delay to avoid flashes on fast responses; spinners use a steady, non-pulsing rotation and never bounce.",
+  "errors": "Error surfaces appear with a fade (no shake); the field/region border and an inline message change together so the error is conveyed statically.",
+  "decorative_motion": "Not used. No ambient, looping, or hover-triggered ornamental animation in work areas.",
+  "reduced_motion": "All transitions collapse to duration 0 (instant state swap). Skeletons and final states render immediately; opacity may still cut between values but nothing translates, scales, or loops."
+}

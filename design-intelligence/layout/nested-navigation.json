@@ -1,0 +1,21 @@
+{
+  "id": "nested-navigation",
+  "name": "Nested Navigation",
+  "when_to_use": "Use when an application has deep, hierarchical structure with many sections and subsections that users move between, such as documentation, settings trees, admin suites, and large multi-area products.",
+  "when_not_to_use": "Avoid when the structure is shallow (flat or mega-menu navigation is simpler), when deep nesting hides important destinations too many levels down, or when the hierarchy is unstable and users rely on search instead.",
+  "information_structure": "A tree of sections and subsections, typically a persistent sidebar with expandable groups, reflecting parent-child relationships in the information architecture down two or more levels.",
+  "navigation": "Expand/collapse groups in a sidebar to reveal children; breadcrumbs show depth and allow upward jumps; the current location is clearly highlighted at every level.",
+  "density": ["compact", "comfortable"],
+  "responsive_behaviour": "Collapse the sidebar into a drawer or off-canvas menu on narrow viewports; preserve the expanded path to the current page when reopened.",
+  "accessibility_notes": [
+    "Use tree or nested-list semantics with aria-expanded on group toggles",
+    "Mark the current page with aria-current so it is announced",
+    "Keep the entire tree keyboard-navigable and the collapsed mobile drawer focus-trapped while open",
+    "Provide breadcrumbs as a labelled navigation landmark"
+  ],
+  "compares_with": ["master-detail", "progressive-disclosure", "dashboard-grid"],
+  "evidence": [
+    "Documentation sites and large admin consoles validate nested sidebar navigation for deep IA",
+    "WAI-ARIA Authoring Practices define accessible tree view, breadcrumb, and disclosure navigation patterns"
+  ]
+}

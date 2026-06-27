@@ -1,0 +1,11 @@
+{
+  "id": "component-project-table",
+  "type": "component",
+  "label": "ProjectTable",
+  "attributes": {
+    "path": "src/components/ProjectTable.tsx",
+    "uses_tokens": true,
+    "virtualised": true,
+    "states": ["loading", "empty", "error"]
+  }
+}

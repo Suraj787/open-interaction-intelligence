@@ -1,0 +1,44 @@
+{
+  "id": "data-dense-terminal",
+  "name": "Data-Dense Terminal",
+  "description": "An extreme-density, monospace-forward style inspired by financial terminals and command-line tooling: fixed-width grids, tabular numerals, minimal chrome, keyboard-first interaction, and colour used strictly as a semantic signal for status and deltas.",
+  "emotional_impression": "Hyper-efficient, expert-grade, fast, and utilitarian.",
+  "visual_principles": [
+    "Monospace and tabular numerals for perfect column alignment",
+    "Maximal information density with minimal padding and chrome",
+    "Colour reserved for semantic deltas (up/down, severity, status)",
+    "Keyboard-first navigation and command palettes over pointer chrome",
+    "Fixed grids and virtualised streaming data"
+  ],
+  "industry_suitability": ["trading and finance", "observability", "DevOps", "security operations", "data engineering"],
+  "page_suitability": ["command centres", "live grids", "logs", "monitoring", "consoles"],
+  "density_compatibility": ["compact"],
+  "accessibility_risks": [
+    "Extreme density yields very small targets and tight rows, challenging motor and low-vision users",
+    "Heavy reliance on colour for deltas needs redundant glyphs or signs",
+    "Keyboard-first design must still expose accessible names and roles to assistive tech"
+  ],
+  "performance_risks": ["High-frequency streaming updates require virtualisation and throttled rendering to stay responsive"],
+  "typography_compatibility": ["monospace", "enterprise-readable with tabular numerals"],
+  "layout_compatibility": ["command-centre", "table-first", "split-view", "timeline"],
+  "trend_maturity": "mature",
+  "overuse_risk": "low",
+  "ai_cliche_risk": "low",
+  "implementation_complexity": "high",
+  "appropriate_contexts": [
+    "Expert users monitoring many live values simultaneously",
+    "Domains where information latency and density directly affect outcomes",
+    "Keyboard-driven power workflows"
+  ],
+  "inappropriate_contexts": [
+    "Novice or occasional users",
+    "Consumer or marketing surfaces",
+    "Mobile-first experiences where density cannot fit"
+  ],
+  "alternatives": ["enterprise-dense", "dark-technical", "command-centre"],
+  "evidence": [
+    "Bloomberg Terminal, k9s, htop, and Grafana exemplify sustained expert demand for terminal-grade density",
+    "WCAG 1.4.1 (Use of Colour) requires non-colour cues, directly relevant to delta colouring"
+  ],
+  "confidence": "high"
+}

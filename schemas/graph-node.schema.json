@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/graph-node.schema.json",
+  "title": "graph-node",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "user",
+        "role",
+        "task",
+        "workflow",
+        "screen",
+        "information-object",
+        "action",
+        "state",
+        "pattern",
+        "effect",
+        "recipe",
+        "component",
+        "constraint",
+        "evidence",
+        "test",
+        "decision"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

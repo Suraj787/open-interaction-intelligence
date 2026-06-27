@@ -1,0 +1,10 @@
+{
+  "id": "pattern-dense-data-table",
+  "type": "pattern",
+  "label": "Dense data table",
+  "attributes": {
+    "intent": "scan and compare many records at high information density",
+    "applicability": "expert users, desktop, large row counts",
+    "requires": ["virtualisation", "sticky header", "keyboard row navigation"]
+  }
+}

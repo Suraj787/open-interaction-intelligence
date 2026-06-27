@@ -1,0 +1,31 @@
+{
+  "id": "saas-balanced",
+  "principles": [
+    "Motion confirms cause and effect: the user should feel that the interface responded to their action.",
+    "Use gentle scale and translate to give surfaces a sense of origin (where a menu or modal came from).",
+    "Keep durations in the perceptible-but-quick band so the product feels alive without slowing power users.",
+    "Reserve celebratory motion for rare, meaningful milestones, not routine saves.",
+    "Always ship a reduced-motion fallback that preserves the information, dropping only the embellishment."
+  ],
+  "duration_scale": {
+    "instant": 0,
+    "fast": 150,
+    "base": 220,
+    "slow": 320,
+    "unit": "ms"
+  },
+  "easing": {
+    "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "decelerate": "cubic-bezier(0, 0, 0.2, 1)",
+    "accelerate": "cubic-bezier(0.4, 0, 1, 1)"
+  },
+  "entrance": "Fade in plus an 8px translate and a 0.98 to 1.0 scale over base (220ms) with the decelerate curve, anchored to the element's trigger when one exists.",
+  "exit": "Fade out plus a 6px translate over fast (150ms) with the accelerate curve; menus and popovers collapse toward their trigger.",
+  "spatial_navigation": "Forward navigation slides the incoming view 16px from the trailing edge while the outgoing view fades; back reverses direction over base (220ms) to reinforce hierarchy.",
+  "list_changes": "Inserts fade and grow from 0.98 scale over base (220ms); removes fade and collapse height; siblings animate to new positions with a spring-like decelerate curve.",
+  "status_change": "Status changes cross-fade colour and icon over fast (150ms); a brief, single highlight pulse (no loop) may draw the eye on a change the user did not directly trigger.",
+  "loading": "Skeletons fade in after 150ms and cross-fade to content over fast (150ms); progress for known-length work uses a determinate bar that eases, never resets backwards.",
+  "errors": "Errors fade in with the inline message and a one-time 2px horizontal nudge (single, ~120ms) to signal rejection without an aggressive shake; the nudge is dropped under reduced-motion.",
+  "decorative_motion": "Limited and opt-in: subtle hover elevation on cards and a one-shot success check draw. No infinite ambient loops in primary work areas.",
+  "reduced_motion": "Translate, scale, spring, pulse, and nudge are all removed. Transitions become a fast (150ms) opacity cross-fade or an instant swap; loaders show static skeletons and final content with no animated transition."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "playful-rounded",
+  "name": "Playful Rounded",
+  "description": "A friendly, approachable style defined by large corner radii, soft pastel or candy colours, rounded sans typography, bouncy micro-animations, and illustrative or 3D-blob accents. It aims to lower intimidation and feel human and inviting.",
+  "emotional_impression": "Friendly, optimistic, approachable, light-hearted, and unintimidating.",
+  "visual_principles": [
+    "Large border radii on cards, buttons, and inputs",
+    "Soft pastel or saturated candy palettes",
+    "Rounded geometric sans typography with relaxed weights",
+    "Playful illustration, mascots, or 3D blob shapes",
+    "Springy, bouncy micro-interactions"
+  ],
+  "industry_suitability": ["consumer apps", "education", "wellness", "kids products", "early-stage SaaS"],
+  "page_suitability": ["onboarding", "marketing", "empty states", "consumer dashboards"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Pastel-on-pastel palettes frequently fail text contrast requirements",
+    "Bouncy animations can violate prefers-reduced-motion expectations and trigger vestibular discomfort",
+    "Over-rounded inputs can blur the boundary between interactive and static elements"
+  ],
+  "performance_risks": ["3D illustration and spring animation libraries can add bundle weight"],
+  "typography_compatibility": ["marketing-expressive", "rounded geometric sans"],
+  "layout_compatibility": ["cards", "stepper", "progressive-disclosure", "dashboard-grid"],
+  "trend_maturity": "current",
+  "overuse_risk": "high",
+  "ai_cliche_risk": "high",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Consumer products that must feel welcoming to non-technical users",
+    "Education and wellness contexts where warmth reduces anxiety",
+    "Brands whose personality is genuinely light and human"
+  ],
+  "inappropriate_contexts": [
+    "Enterprise, financial, legal, or medical tools where it undermines credibility",
+    "Data-dense professional interfaces",
+    "Audiences who read excessive roundness and pastels as unserious"
+  ],
+  "alternatives": ["warm-approachable", "minimal-functional", "marketing-expressive"],
+  "evidence": [
+    "Duolingo and many consumer onboarding flows show rounded/playful systems reducing perceived difficulty",
+    "The pattern is heavily templated in starter kits, making it a common AI/generated-look cliche",
+    "WCAG 2.3.3 (Animation from Interactions) and prefers-reduced-motion address the motion risk"
+  ],
+  "confidence": "high"
+}

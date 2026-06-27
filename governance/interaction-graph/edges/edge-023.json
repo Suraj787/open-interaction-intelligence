@@ -1,0 +1,5 @@
+{
+  "from": "action-bulk-reassign",
+  "to": "screen-task-board",
+  "relation": "belongs-to"
+}

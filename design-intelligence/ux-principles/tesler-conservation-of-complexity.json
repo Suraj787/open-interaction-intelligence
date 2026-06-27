@@ -1,0 +1,18 @@
+{
+  "id": "tesler-conservation-of-complexity",
+  "name": "Tesler's Law: Conservation of Complexity",
+  "trigger": "A feature has inherent complexity and a decision must be made about whether the system or the user absorbs it, such as configuration, data entry, formatting, or reconciliation tasks.",
+  "applicable_contexts": ["forms", "configuration", "data import", "automation", "defaults", "onboarding"],
+  "recommendation": "Recognise that every process has irreducible complexity that cannot be removed, only shifted. Wherever feasible, have the system absorb it rather than the user: smart defaults, automatic formatting and inference, pre-filled and derived values, and sensible assumptions. Move effort from the user to the software, and only push complexity to the user when their control genuinely matters.",
+  "rejection": "Reject offloading avoidable work onto users (asking for data the system already knows or can derive, requiring manual formatting the system could normalise) and reject hiding necessary complexity in ways that strip needed user control.",
+  "validation": [
+    "For each user input, ask whether the system could infer, default, or derive it instead",
+    "Confirm formatting and normalisation are handled by the system, not demanded of the user",
+    "Check that complexity pushed to the user is genuinely something they need to control"
+  ],
+  "evidence": [
+    "Larry Tesler's Law of Conservation of Complexity: total complexity is constant and can only be moved between system and user",
+    "Postel's Law and smart defaults are common mechanisms for absorbing complexity in software"
+  ],
+  "source": "Tesler's Law (Law of Conservation of Complexity)"
+}

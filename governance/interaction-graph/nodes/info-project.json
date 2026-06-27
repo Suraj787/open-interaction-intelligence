@@ -1,0 +1,10 @@
+{
+  "id": "info-project",
+  "type": "information-object",
+  "label": "Project",
+  "attributes": {
+    "fields": ["name", "owner", "status", "health", "due_date", "completion_pct"],
+    "identity": "id",
+    "status_values": ["on-track", "at-risk", "delayed", "blocked", "done"]
+  }
+}

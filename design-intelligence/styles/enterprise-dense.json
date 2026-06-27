@@ -1,0 +1,44 @@
+{
+  "id": "enterprise-dense",
+  "name": "Enterprise Dense",
+  "description": "A high-information-density style built for power users who spend hours in a tool. It prioritises getting maximum relevant data and controls on screen with compact spacing, tight rows, persistent navigation, and predictable conventions over visual flourish.",
+  "emotional_impression": "Capable, serious, efficient, and built for work rather than delight.",
+  "visual_principles": [
+    "Compact spacing scale and small-to-medium type sizes to maximise data per viewport",
+    "Tabular data, persistent toolbars, and multi-pane layouts",
+    "Conservative, conventional component patterns that reward muscle memory",
+    "Functional colour used semantically (status, severity) rather than decoratively",
+    "Clear, dense hierarchy with strong alignment and consistent column rhythm"
+  ],
+  "industry_suitability": ["ERP", "trading and finance", "logistics", "healthcare records", "B2B SaaS", "admin consoles"],
+  "page_suitability": ["data tables", "record detail", "command centres", "admin panels", "reporting"],
+  "density_compatibility": ["compact", "comfortable"],
+  "accessibility_risks": [
+    "Small touch and click targets can violate target-size guidance",
+    "Dense rows reduce readability and increase mis-click risk",
+    "Tight contrast budgets when fitting many states into limited space"
+  ],
+  "performance_risks": ["Large tables and live grids require virtualisation to avoid jank"],
+  "typography_compatibility": ["enterprise-readable", "neutral grotesque with tabular numerals"],
+  "layout_compatibility": ["table-first", "master-detail", "command-centre", "split-view"],
+  "trend_maturity": "mature",
+  "overuse_risk": "low",
+  "ai_cliche_risk": "low",
+  "implementation_complexity": "high",
+  "appropriate_contexts": [
+    "Professional tools where users value information throughput over aesthetics",
+    "Workflows requiring side-by-side comparison of many records",
+    "Domains where users are trained and return daily"
+  ],
+  "inappropriate_contexts": [
+    "Consumer onboarding or first-run experiences for novices",
+    "Marketing and acquisition surfaces",
+    "Mobile-first products where density does not fit small screens"
+  ],
+  "alternatives": ["data-dense-terminal", "minimal-functional", "swiss-grid"],
+  "evidence": [
+    "Bloomberg Terminal and enterprise admin consoles demonstrate sustained demand for high-density interfaces among trained users",
+    "WCAG 2.2 SC 2.5.8 Target Size (Minimum) sets a 24x24 CSS px floor that dense UIs frequently approach"
+  ],
+  "confidence": "high"
+}

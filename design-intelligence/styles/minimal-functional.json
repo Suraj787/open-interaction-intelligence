@@ -1,0 +1,44 @@
+{
+  "id": "minimal-functional",
+  "name": "Minimal Functional",
+  "description": "A restrained, content-first style that strips ornament in favour of generous whitespace, a tight neutral palette, and a small number of clear type sizes. Decoration is earned, not assumed; every element must justify its presence by serving comprehension or action.",
+  "emotional_impression": "Calm, trustworthy, focused, and uncluttered without feeling sterile.",
+  "visual_principles": [
+    "Generous whitespace and consistent spacing scale carry the composition rather than borders or fills",
+    "Limited neutral palette with a single restrained accent for primary actions",
+    "Strong typographic hierarchy using size, weight, and spacing instead of colour blocks",
+    "Flat surfaces, hairline dividers, and minimal shadow",
+    "Content alignment to a clear grid"
+  ],
+  "industry_suitability": ["productivity software", "fintech", "healthcare", "documentation", "professional services"],
+  "page_suitability": ["dashboards", "settings", "forms", "reading views", "onboarding"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Low-contrast grey-on-white text is a common failure when 'minimal' is read as 'low contrast'",
+    "Over-reliance on whitespace can hide affordances; users may not realise an element is interactive",
+    "Hairline 1px dividers can disappear for low-vision users"
+  ],
+  "performance_risks": ["Negligible; minimal assets and effects keep payloads small"],
+  "typography_compatibility": ["enterprise-readable", "humanist sans", "neutral grotesque"],
+  "layout_compatibility": ["dashboard-grid", "master-detail", "progressive-disclosure", "cards"],
+  "trend_maturity": "mature",
+  "overuse_risk": "medium",
+  "ai_cliche_risk": "medium",
+  "implementation_complexity": "low",
+  "appropriate_contexts": [
+    "Tools used daily where visual fatigue must be minimised",
+    "Information-dense products that need the content to dominate",
+    "Teams without dedicated design resourcing who need a safe, durable baseline"
+  ],
+  "inappropriate_contexts": [
+    "Marketing pages that must create emotional excitement or differentiate a brand",
+    "Products targeting children or entertainment where personality matters",
+    "Contexts where the minimalism becomes indistinguishable from a default framework template"
+  ],
+  "alternatives": ["swiss-grid", "warm-approachable", "enterprise-dense"],
+  "evidence": [
+    "Nielsen Norman Group, 'The Roots of Minimalism in Web Design' notes minimalism aids focus but warns of discoverability loss",
+    "WCAG 2.2 SC 1.4.3 requires 4.5:1 contrast for normal text, the most frequent minimal-style violation"
+  ],
+  "confidence": "high"
+}

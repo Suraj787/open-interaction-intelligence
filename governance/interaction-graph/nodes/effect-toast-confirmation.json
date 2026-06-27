@@ -1,0 +1,11 @@
+{
+  "id": "effect-toast-confirmation",
+  "type": "effect",
+  "label": "Toast confirmation",
+  "attributes": {
+    "trigger": "background action completion",
+    "duration_ms": 160,
+    "easing": "ease-out",
+    "reduced_motion": "fade only, no slide"
+  }
+}

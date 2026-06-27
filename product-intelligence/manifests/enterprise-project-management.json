@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "confidence": 0.62,
+  "product": {
+    "type": "enterprise-project-management-application",
+    "purpose": "Let delivery managers plan, track, and unblock multi-team project delivery so commitments are met and risk is surfaced early.",
+    "business_model": "b2b-saas-seat-based",
+    "audience": "internal",
+    "maturity": "established",
+    "regulatory_sensitivity": "low-to-moderate (internal financial and resourcing data, no regulated PII beyond employee records)"
+  },
+  "users": [
+    {
+      "role": "delivery-manager",
+      "expertise": "expert",
+      "frequency": "daily, multiple sessions per day",
+      "goals": [
+        "see the true status of every active project at a glance",
+        "identify blocked and at-risk work before it slips",
+        "rebalance assignments and deadlines quickly",
+        "produce a defensible status narrative for stakeholders"
+      ]
+    },
+    {
+      "role": "team-member-contributor",
+      "expertise": "intermediate",
+      "frequency": "daily",
+      "goals": [
+        "find what to work on next",
+        "update task state and log progress with minimal friction"
+      ]
+    },
+    {
+      "role": "executive-stakeholder",
+      "expertise": "novice-in-tool",
+      "frequency": "weekly or on-demand",
+      "goals": [
+        "understand portfolio health without learning the tool",
+        "drill into a specific at-risk initiative"
+      ]
+    }
+  ],
+  "workflows": [
+    "Triage the daily portfolio: scan all active projects, sort by risk, open the worst offenders.",
+    "Resolve a blocker: open a blocked task, read context, reassign or escalate, record the decision.",
+    "Replan a sprint or milestone: drag work across dates/owners and confirm capacity is not exceeded.",
+    "Generate a status report: filter to a project, summarise progress, flag risks, export or share.",
+    "Cross-link dependencies: connect a task to the upstream work it waits on and surface the chain."
+  ],
+  "information": {
+    "density": "high",
+    "objects": [
+      "project",
+      "milestone",
+      "task",
+      "dependency",
+      "assignee",
+      "sprint",
+      "status",
+      "risk-flag",
+      "comment",
+      "time-log",
+      "saved-view"
+    ]
+  },
+  "environment": {
+    "primary_device": "desktop (large monitor, keyboard-and-mouse, often dual-screen)",
+    "secondary_device": "laptop; occasional tablet for read-only review",
+    "connectivity": "stable corporate network or home broadband; offline not expected",
+    "localisation": ["en-US", "en-GB"]
+  },
+  "risks": [
+    "Stale or misleading status causes a missed commitment to surface too late.",
+    "Density overwhelms newer or occasional users (executives), who then distrust the data.",
+    "A fast bulk edit (drag-replan, multi-assign) silently violates capacity or overwrites another manager's change.",
+    "Filtered/saved views hide work, creating false confidence that nothing is at risk.",
+    "Notification volume trains managers to ignore genuinely urgent escalations."
+  ],
+  "constraints": [
+    "Primary screens must remain legible and scannable at high information density.",
+    "Destructive or wide-reaching edits must be reversible or clearly confirmed.",
+    "Keyboard-first navigation expected by power users for daily throughput.",
+    "Must integrate with existing SSO and corporate identity."
+  ],
+  "verified": [
+    "The product is an internal B2B project-management application (stated in the brief).",
+    "The primary user is a delivery manager who uses it daily.",
+    "Information density is high and the primary device is desktop.",
+    "Criticality of accurate status is high for this user."
+  ],
+  "inferred": [
+    "Power users will expect keyboard-first navigation and saved views, based on daily expert use.",
+    "Executives interact rarely and need a lower-density entry point, inferred from the stakeholder role.",
+    "Replanning involves bulk edits whose blast radius must be controlled, inferred from manager goals."
+  ],
+  "assumptions": [
+    "Sessions happen on a stable network; offline support is out of scope.",
+    "English-only localisation is acceptable for the initial audience.",
+    "Capacity/resourcing data exists and can back a 'do not over-allocate' guardrail.",
+    "SSO is the expected authentication model."
+  ],
+  "unresolved": [
+    "Exact team and portfolio sizes (tens vs thousands of tasks) that drive virtualization needs.",
+    "Whether status is human-entered, integration-fed, or both, which changes how much to trust it.",
+    "Whether regulated client data ever lands in project fields (would raise regulatory_sensitivity).",
+    "Accessibility obligations of the buying organisations."
+  ],
+  "evidence": [
+    "task-brief: delivery manager, daily, high criticality, desktop-primary, high density",
+    "inference-only: no telemetry, interviews, or repository access were available at authoring time"
+  ]
+}

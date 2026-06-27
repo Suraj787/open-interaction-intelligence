@@ -1,0 +1,9 @@
+{
+  "id": "role-team-lead",
+  "type": "role",
+  "label": "Team Lead",
+  "attributes": {
+    "permissions": ["read-team-projects", "reassign-team-tasks"],
+    "scope": "team-scoped"
+  }
+}

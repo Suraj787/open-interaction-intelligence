@@ -1,0 +1,86 @@
+{
+  "id": "ecommerce",
+  "name": "E-commerce & Retail",
+  "users": [
+    {
+      "role": "Shopper / Customer",
+      "context": "Browses, searches, compares, adds to cart, and checks out across mobile and desktop; tracks orders and returns. Impatient, distractible, price- and trust-sensitive; abandons at any friction.",
+      "expertise": "Novice to intermediate; assumes nothing, decides in seconds, highly sensitive to surprise costs and checkout friction."
+    },
+    {
+      "role": "Merchandiser / Category Manager",
+      "context": "Manages catalog, pricing, promotions, collections, and on-site search/ranking. Curates the storefront to drive conversion and margin.",
+      "expertise": "Expert in merchandising and pricing; works in bulk across many SKUs and variants."
+    },
+    {
+      "role": "Customer Service / Support Agent",
+      "context": "Handles order issues, returns/refunds, address changes, and disputes. Needs a fast customer-and-order 360 to resolve in one contact.",
+      "expertise": "Intermediate; needs efficient lookup, clear order/return state, and guarded refund actions."
+    },
+    {
+      "role": "Fulfilment / Operations Manager",
+      "context": "Oversees order routing, inventory availability, shipping, and returns processing; manages oversell and stockouts across channels.",
+      "expertise": "Expert in OMS/inventory and multi-channel fulfilment."
+    },
+    {
+      "role": "Store Associate (omnichannel)",
+      "context": "Handles buy-online-pickup-in-store, ship-from-store, and in-store lookups on a handheld. On the floor, frequently interrupted, scan-driven.",
+      "expertise": "Intermediate; needs fast, scan-based, glanceable tools."
+    },
+    {
+      "role": "Growth / Marketing Analyst",
+      "context": "Runs campaigns, A/B tests, and funnel analysis; monitors conversion, AOV, and retention. Data-driven optimisation of the journey.",
+      "expertise": "Expert in funnels, experimentation, and attribution."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Browse, search, and product discovery",
+      "steps": ["Land via search/home/category", "Search or filter and sort results", "View product detail (variants, price, availability, reviews)", "Compare options", "Add to cart or save for later"],
+      "frequency": "continuous / high volume",
+      "criticality": "high"
+    },
+    {
+      "name": "Checkout and payment",
+      "steps": ["Review cart and apply promo code", "Enter or select shipping address and method", "Show full price breakdown (tax, shipping, fees) before pay", "Authenticate and pay (with SCA where required)", "Confirm order and show receipt", "Send confirmation and tracking"],
+      "frequency": "continuous",
+      "criticality": "critical"
+    },
+    {
+      "name": "Order fulfilment and tracking",
+      "steps": ["Allocate inventory and route order", "Pick, pack, and ship (or pickup-ready)", "Update status and tracking", "Notify customer of progress", "Handle exceptions (stockout, delay)", "Mark delivered"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Returns, refunds, and exchanges (RMA)",
+      "steps": ["Customer initiates return within policy window", "Validate eligibility and generate RMA/label", "Receive and inspect returned item", "Approve refund/exchange/restock", "Process refund to original method", "Update inventory and notify customer"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Catalog and pricing / promotion management",
+      "steps": ["Create/update products, variants, and media", "Set price, tax class, and inventory", "Configure promotions and discount rules", "Preview and validate", "Publish across channels", "Bulk-edit and monitor for errors"],
+      "frequency": "daily / continuous",
+      "criticality": "medium"
+    }
+  ],
+  "risks": [
+    "Hidden costs (tax, shipping, fees) revealed late, causing cart abandonment or distrust",
+    "Overselling stock not actually available, leading to cancellations and angry customers",
+    "Payment failure or double-charge from a non-idempotent checkout",
+    "Wrong or expired price/promotion published (mispricing) at scale via bulk edit",
+    "Order placed against the wrong variant (size/colour) due to unclear selection",
+    "Refund issued to the wrong order/amount or without proper authorisation",
+    "Storing/exposing card data improperly (PCI-DSS breach)",
+    "Inaccessible checkout excluding shoppers using assistive technology (lost sales + legal risk)",
+    "Inventory desync across channels causing stockouts or oversell",
+    "Account takeover at login/checkout exposing saved payment and addresses"
+  ],
+  "information_objects": ["Product / SKU / variant", "Catalog / category / collection", "Price / promotion / discount rule", "Inventory / availability (per location)", "Cart", "Order", "Payment / transaction", "Shipment / tracking", "Return / RMA / refund", "Customer profile and saved payment/address", "Review / rating", "Funnel / conversion metric"],
+  "environment_constraints": ["Mobile-first, fast, distractible shoppers who abandon on friction", "High-trust money-and-payment context with fraud and chargeback risk", "Peak load spikes (sales, holiday, flash promotions)", "Multi-channel inventory sync (web, marketplace, store)", "Variable devices, networks, and assistive technologies for the public", "Bulk catalog operations across thousands of SKUs", "Regulatory pricing/tax transparency requirements"],
+  "domain_patterns": ["Faceted search, filter, and sort", "Cart and multi-step checkout with full price breakdown before payment", "Idempotent payment and order confirmation", "Inventory allocation and oversell guards", "Master-detail (order with line items / variants)", "RMA / returns state machine", "Bulk catalog edit with preview and validation", "Order/customer 360 for support"],
+  "audit_compliance": ["PCI-DSS for cardholder data (never store raw PAN/CVV; use tokenisation)", "GDPR / CCPA for customer personal data and consent/cookies", "PSD2 / strong customer authentication for EU payments", "Consumer-protection price and tax transparency rules", "Accessibility (ADA / WCAG 2.1 AA) for public storefronts", "SOC 2 for hosted commerce platforms", "Sales-tax/VAT calculation and reporting compliance"],
+  "accessibility_concerns": ["WCAG 2.1 AA conformant storefront and especially checkout", "Variant selection (size/colour) must not rely on colour/swatch alone", "Price, error, and stock status conveyed with text, not colour only", "Keyboard and screen-reader operable cart and checkout with clear labels/ARIA", "Sufficient timeouts for OTP/payment steps with accessible fallbacks", "Alt text on product imagery and accessible review content"],
+  "anti_patterns": ["Revealing shipping/tax/fees only on the final step (drip pricing)", "Forcing account creation before guest checkout", "Showing in-stock and overselling instead of real-time availability", "Variant chosen by colour swatch with no text/aria label", "Non-idempotent submit allowing double orders/charges on retry", "Colour-only price-drop, error, or stock indicators", "Storing raw card data instead of tokenising via a compliant processor", "Bulk price/promo edits with no preview or confirmation, risking mass mispricing"]
+}

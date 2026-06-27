@@ -1,0 +1,9 @@
+{
+  "id": "state-empty",
+  "type": "state",
+  "label": "Empty state",
+  "attributes": {
+    "treatment": "explanatory message with primary create action",
+    "applies_when": "no projects match active filter"
+  }
+}

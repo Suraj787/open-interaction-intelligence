@@ -1,0 +1,92 @@
+{
+  "id": "logistics",
+  "name": "Logistics & Supply Chain",
+  "users": [
+    {
+      "role": "Warehouse Picker / Packer",
+      "context": "Picks items against pick lists, packs and labels parcels, scans barcodes at each step. Mobile across aisles with an RF scanner or wearable, gloved, time-and-rate measured.",
+      "expertise": "Domain-fluent on the floor, low computer fluency. Needs scan-driven, minimal-typing, high-target UI."
+    },
+    {
+      "role": "Dispatcher / Transport Planner",
+      "context": "Plans routes, assigns loads to drivers/vehicles, monitors ETAs and exceptions, reschedules around delays. High-tempo control-room work across maps and queues.",
+      "expertise": "Expert in routing, capacity, and service levels; high tool fluency with map/Gantt views."
+    },
+    {
+      "role": "Delivery Driver",
+      "context": "Executes the route, scans deliveries, captures proof-of-delivery (signature/photo), reports exceptions (failed delivery, damage). On the road, one-handed phone use, variable connectivity.",
+      "expertise": "Intermediate; needs glanceable, offline-tolerant, distraction-safe mobile UI."
+    },
+    {
+      "role": "Customs / Trade Compliance Officer",
+      "context": "Prepares and validates customs declarations, classifies goods (HS codes), screens against denied parties and dual-use controls, manages duties and documentation.",
+      "expertise": "Expert in trade regulation, Incoterms, and classification."
+    },
+    {
+      "role": "Inventory / Fulfilment Manager",
+      "context": "Oversees stock accuracy, cycle counts, replenishment, and order fulfilment SLAs; investigates shrinkage and exceptions.",
+      "expertise": "Expert in WMS operations and inventory accuracy."
+    },
+    {
+      "role": "Freight / 3PL Customer",
+      "context": "Books shipments, tracks status, and manages claims via a portal. Expects accurate real-time tracking and proactive exception alerts.",
+      "expertise": "Intermediate; outcome-focused on visibility and reliability."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Order picking, packing, and dispatch",
+      "steps": ["Release order to wave/pick list", "Direct picker to bin and scan item/quantity", "Confirm pick and route to pack station", "Pack, weigh, and generate shipping label", "Manifest and load to carrier/route", "Confirm dispatch and update tracking"],
+      "frequency": "continuous / high volume",
+      "criticality": "high"
+    },
+    {
+      "name": "Route planning and dispatch",
+      "steps": ["Aggregate orders and constraints (time windows, capacity)", "Optimise and sequence routes", "Assign to drivers and vehicles", "Publish routes and navigation", "Monitor live ETAs and exceptions", "Re-plan on delay/failure"],
+      "frequency": "daily / continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Delivery execution and proof-of-delivery",
+      "steps": ["Driver follows sequenced stops", "Scan parcel at delivery", "Capture proof (signature/photo/geo)", "Record success or exception with reason", "Sync on connectivity", "Trigger customer notification"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Goods receipt and put-away",
+      "steps": ["Scan inbound ASN/PO", "Verify quantity and condition", "Assign and scan put-away bin", "Update stock and location", "Flag discrepancies/damage", "Release for availability"],
+      "frequency": "continuous",
+      "criticality": "high"
+    },
+    {
+      "name": "Customs declaration and clearance",
+      "steps": ["Classify goods with HS codes", "Screen parties against denied/sanctions lists", "Compile commercial and shipping documents", "Calculate duties and taxes", "Submit declaration to customs", "Resolve holds and obtain release"],
+      "frequency": "per cross-border shipment",
+      "criticality": "critical"
+    },
+    {
+      "name": "Cycle count and inventory reconciliation",
+      "steps": ["Generate count tasks by bin/ABC class", "Scan and count on hand", "Compare to system quantity", "Investigate and approve adjustments", "Post reconciled stock"],
+      "frequency": "daily / rolling",
+      "criticality": "medium"
+    }
+  ],
+  "risks": [
+    "Mis-pick or mis-scan shipping the wrong item or quantity to a customer",
+    "Wrong delivery address or stop sequencing causing failed/misdelivered parcels",
+    "Inventory inaccuracy (phantom or negative stock) breaking fulfilment promises",
+    "Lost proof-of-delivery leading to disputed deliveries and chargebacks",
+    "Customs misclassification (wrong HS code) causing fines, seizure, or delay",
+    "Shipping to a denied/sanctioned party (export-control breach)",
+    "Driver distraction from a non-glanceable app causing a safety incident",
+    "Field data lost because the app has no offline buffer",
+    "Cold-chain or hazmat handling rule missed, spoiling goods or breaching safety",
+    "Missed delivery time window breaching SLA and incurring penalties"
+  ],
+  "information_objects": ["Sales / fulfilment order", "Pick list / wave", "Stock-keeping unit (SKU) and bin location", "Shipment / parcel and label", "Manifest / load", "Route and stop", "Proof-of-delivery", "Advance shipping notice (ASN)", "Customs declaration / HS classification", "Tracking event", "Cycle-count task", "Carrier / vehicle / driver"],
+  "environment_constraints": ["Scan-driven workflows on RF guns, wearables, and rugged mobiles", "Gloved hands, cold-store and outdoor conditions, glare and dust", "Variable and intermittent connectivity requiring offline tolerance", "Driver attention is safety-critical; minimal interaction while moving", "Rate/productivity-measured work demanding low-friction steps", "Real-time control room with map and exception monitoring", "Hard delivery time windows and carrier cut-offs"],
+  "domain_patterns": ["Barcode/RFID scan-driven step confirmation", "Real-time tracking and exception/event stream", "Route optimisation and sequenced stop list", "Offline-first capture with deferred sync", "Master-detail (order with parcels/lines)", "Denied-party and HS-classification screening", "Status state machine (picked/packed/in-transit/delivered/exception)", "Proof-of-delivery capture (signature/photo/geo)"],
+  "audit_compliance": ["Customs and export-control regulations (HS codes, Incoterms, denied-party screening)", "Dangerous-goods / hazmat (IATA/ADR) handling and documentation", "Cold-chain / GDP for pharma and perishables", "C-TPAT / AEO supply-chain security programs", "GDPR for recipient personal data and signatures", "Carrier and customer SLA / contractual obligations"],
+  "accessibility_concerns": ["Large scan-confirm targets usable with gloves and one hand", "High-contrast, anti-glare display for outdoor/cold-store use", "Status not by colour alone (in-transit/delivered/exception need icon+text)", "Driver UI must be glanceable and minimise interaction while moving", "Audible/haptic confirmation tolerant of noisy environments", "Legible at a glance for fast-paced pick/pack rate work"],
+  "anti_patterns": ["Requiring manual typing where a scan would do", "No offline buffer, losing scans and POD on connectivity drops", "Colour-only shipment status indicators", "Dense, interaction-heavy driver app unsafe to use while moving", "Silent inventory go-negative instead of flagging discrepancies", "Skipping denied-party/HS validation before customs submission", "Tiny touch targets unusable with gloves", "Hiding the delivery time-window/SLA clock from the planner"]
+}

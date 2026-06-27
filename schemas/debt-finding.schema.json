@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/debt-finding.schema.json",
+  "title": "debt-finding",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "severity",
+    "evidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "token-violation",
+        "duplicate-component",
+        "custom-css-growth",
+        "arbitrary-value",
+        "one-off-variant",
+        "accessibility-regression",
+        "missing-state",
+        "motion-violation",
+        "dependency-growth",
+        "bundle-growth",
+        "responsive-failure",
+        "semantic-colour-inconsistency",
+        "unused-component",
+        "outdated-recipe",
+        "unapproved-exception",
+        "provenance-gap"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "weight": {
+      "type": "number"
+    },
+    "remediation": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

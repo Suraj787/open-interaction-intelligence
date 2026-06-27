@@ -1,0 +1,11 @@
+{
+  "id": "effect-kpi-count-up",
+  "type": "effect",
+  "label": "KPI count-up animation",
+  "attributes": {
+    "trigger": "KPI card mount",
+    "duration_ms": 900,
+    "easing": "ease-out",
+    "note": "decorative number roll-up that ignores prefers-reduced-motion — surfaced by the effects-conflicting-with-reduced-motion query"
+  }
+}

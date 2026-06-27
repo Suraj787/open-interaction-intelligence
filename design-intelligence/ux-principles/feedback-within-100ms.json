@@ -1,0 +1,19 @@
+{
+  "id": "feedback-within-100ms",
+  "name": "Immediate Feedback Within 100ms",
+  "trigger": "A user performs any direct action (tap, click, keypress, drag) that does not complete instantaneously, or initiates an operation with latency.",
+  "applicable_contexts": ["buttons", "form submission", "navigation", "loading", "drag-and-drop", "search"],
+  "recommendation": "Acknowledge every user action within about 100ms so the interface feels instantaneous, even if the result is not ready: show pressed/active states immediately, reflect optimistic changes where safe, and for operations beyond ~1 second show a clear progress indicator (determinate when duration is known). The 0.1s, 1s, and 10s response-time thresholds govern the type of feedback required.",
+  "rejection": "Reject controls that give no visual acknowledgement on press, submissions that appear frozen with no spinner or disabled state, navigations with no loading indication, and long operations that show nothing until completion.",
+  "validation": [
+    "Confirm every interactive element has an immediate visible active/pressed state",
+    "Verify operations over ~1s show a loading or progress indicator, determinate where possible",
+    "Measure perceived responsiveness and check INP/interaction latency under load"
+  ],
+  "evidence": [
+    "Miller (1968) and Card et al. on the 0.1s, 1s, 10s response-time limits",
+    "Nielsen Norman Group, 'Response Times: The 3 Important Limits'",
+    "Doherty & Thadani (1982) on the productivity benefit of sub-400ms system response"
+  ],
+  "source": "Response-Time Limits (Miller 1968; NN/g); Doherty Threshold"
+}

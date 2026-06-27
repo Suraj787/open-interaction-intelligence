@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interface-intelligence-os.dev/schemas/recommendation.schema.json",
+  "title": "recommendation",
+  "type": "object",
+  "required": [
+    "id",
+    "problem",
+    "selected_pattern",
+    "confidence",
+    "rationale"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "selected_pattern": {
+      "type": "string"
+    },
+    "selected_effect": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "high-confidence-inference",
+        "medium-confidence-recommendation",
+        "low-confidence-suggestion",
+        "human-review-required",
+        "experiment-recommended"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "project_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "external_guidance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rejected_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accessibility_impact": {
+      "type": "string"
+    },
+    "performance_impact": {
+      "type": "string"
+    },
+    "security_impact": {
+      "type": "string"
+    },
+    "maintenance_impact": {
+      "type": "string"
+    },
+    "validation_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_review_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

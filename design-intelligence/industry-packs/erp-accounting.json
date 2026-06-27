@@ -1,0 +1,92 @@
+{
+  "id": "erp-accounting",
+  "name": "ERP & Accounting",
+  "users": [
+    {
+      "role": "Financial Controller",
+      "context": "Owns the integrity of the general ledger; reviews and approves journal entries, oversees month-end and year-end close, signs off on trial balance and reconciliations. Works under deadline pressure during close week with many tabs open across sub-ledgers.",
+      "expertise": "Expert in double-entry accounting, GAAP/IFRS, chart of accounts structure, and the ERP's posting logic. High tool fluency; impatient with slow screens and redundant clicks."
+    },
+    {
+      "role": "Accounts Payable Clerk",
+      "context": "Enters supplier invoices, performs 3-way match (PO, goods receipt, invoice), schedules payment runs. High-volume, repetitive data entry from PDFs and emails; frequently interrupted by vendor calls.",
+      "expertise": "Intermediate; knows AP workflow and tax codes deeply but relies on defaults for GL coding. Keyboard-heavy worker who values tab order and barcode/scan input."
+    },
+    {
+      "role": "Accounts Receivable Clerk",
+      "context": "Raises customer invoices, applies incoming payments, manages dunning and collections, handles credit notes and disputes. Tracks aging buckets daily.",
+      "expertise": "Intermediate; strong on cash application and reconciliation, moderate on revenue recognition rules."
+    },
+    {
+      "role": "External / Statutory Auditor",
+      "context": "Read-mostly access during audit windows; samples transactions, traces documents to source, tests controls, exports evidence. Cannot mutate data and must see an immutable trail.",
+      "expertise": "Expert in audit assertions and SOX controls; low familiarity with this specific ERP UI, so discoverability and export fidelity matter."
+    },
+    {
+      "role": "CFO / Finance Executive",
+      "context": "Consumes dashboards and consolidated statements; approves high-value payments and budget variances above threshold. Mobile-first, glances at KPIs, drills into exceptions.",
+      "expertise": "Expert in finance strategy, low patience for operational detail; needs summarised, exception-driven views."
+    },
+    {
+      "role": "Tax Accountant",
+      "context": "Prepares VAT/GST returns, withholding tax filings, and reconciles tax ledgers to statutory reports. Period-driven deadlines tied to jurisdictions.",
+      "expertise": "Expert in multi-jurisdiction tax rules and filing formats."
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Month-end / period close",
+      "steps": ["Freeze sub-ledger posting cut-off", "Run and review accruals and prepayments", "Reconcile bank, AP, AR, intercompany, and inventory control accounts", "Post adjusting journal entries", "Review trial balance for anomalies", "Lock the period and generate financial statements"],
+      "frequency": "monthly (with heavier quarter-end and year-end variants)",
+      "criticality": "critical"
+    },
+    {
+      "name": "Purchase-to-Pay 3-way match",
+      "steps": ["Receive supplier invoice", "Match invoice lines to purchase order and goods receipt", "Resolve quantity/price variances within tolerance", "Route exceptions for approval", "Post to AP sub-ledger", "Schedule in payment run"],
+      "frequency": "continuous / daily",
+      "criticality": "high"
+    },
+    {
+      "name": "Bank reconciliation",
+      "steps": ["Import or fetch bank statement", "Auto-match transactions to ledger entries", "Investigate unmatched items", "Create adjustment entries for bank fees/interest", "Confirm closing balance agreement"],
+      "frequency": "daily to weekly",
+      "criticality": "high"
+    },
+    {
+      "name": "Journal entry creation and approval",
+      "steps": ["Draft journal with debit/credit lines", "Validate balanced and correct cost centres/dimensions", "Attach supporting documentation", "Submit for reviewer approval", "Post to GL"],
+      "frequency": "daily",
+      "criticality": "critical"
+    },
+    {
+      "name": "Order-to-Cash collections / dunning",
+      "steps": ["Generate aging report", "Identify overdue accounts by bucket", "Send tiered reminders", "Log promise-to-pay and disputes", "Apply received payments and clear invoices"],
+      "frequency": "daily / weekly cycle",
+      "criticality": "medium"
+    },
+    {
+      "name": "VAT/GST return preparation and filing",
+      "steps": ["Reconcile tax ledger to transactions", "Generate jurisdiction return", "Review exceptions and reverse charges", "Submit to tax authority", "Record filing and payment"],
+      "frequency": "monthly / quarterly per jurisdiction",
+      "criticality": "high"
+    }
+  ],
+  "risks": [
+    "Posting to a closed or wrong accounting period, corrupting comparative financials",
+    "Unbalanced or mis-coded journal entry distorting the trial balance",
+    "Duplicate supplier invoice or duplicate payment due to weak match controls",
+    "Granting posting/approval rights that breach segregation of duties (same user creates and approves)",
+    "Editing a posted/submitted transaction without an audit trail, breaking immutability",
+    "Wrong tax code or jurisdiction causing under/over-remittance and penalties",
+    "Currency or exchange-rate error in multi-currency consolidation",
+    "Missed statutory filing or close deadline triggering fines",
+    "Reconciliation forced to balance with a plug entry that hides a real discrepancy",
+    "Mass/bulk edit applied to the wrong filtered set of records"
+  ],
+  "information_objects": ["Chart of accounts", "General ledger entry", "Journal voucher", "Purchase order", "Goods receipt note", "Supplier/customer invoice", "Payment entry", "Bank statement", "Trial balance", "Aging report", "Cost center / dimension", "Tax return", "Fiscal period / fiscal year"],
+  "environment_constraints": ["Open-plan office with frequent phone interruptions during data entry", "Dual-monitor desk workflows with many concurrent records open", "Hard external deadlines (close week, tax filing dates) creating time pressure", "Frequent reference to scanned PDFs and email attachments alongside the ERP", "Occasional remote/auditor access over VPN with read-only scope"],
+  "domain_patterns": ["Master-detail (invoice header with line items / distributions)", "Maker-checker approval (segregation of duties)", "Immutable audit trail with reversal/credit-note instead of edit", "Bulk reconciliation and bulk allocation", "Period/ledger locking", "Dimensional accounting (cost center, project, department tags)", "Document numbering series and sequential integrity", "Drill-down from statement to source voucher"],
+  "audit_compliance": ["SOX (Sarbanes-Oxley) internal controls over financial reporting", "GAAP / IFRS recognition and disclosure", "Segregation of duties (SoD) controls", "Immutable, timestamped audit log of who-changed-what", "Local statutory tax rules (VAT/GST, withholding)", "Document retention requirements (typically 7+ years)"],
+  "accessibility_concerns": ["Numeric data-entry grids must be fully keyboard-navigable with logical tab order", "Debit/credit and positive/negative states must not rely on colour (red/green) alone", "Dense financial tables need screen-reader-friendly row/column headers", "Right-aligned monospaced figures for column scanning and reduced transposition errors", "High-contrast mode for long sessions to reduce eye strain"],
+  "anti_patterns": ["Allowing free in-place edits of posted transactions instead of reversals", "Hiding the audit trail or making it hard to export for auditors", "Auto-balancing journals silently with a plug rather than flagging the imbalance", "Defaulting GL/tax codes without making them visible and overridable", "Confirmation-less bulk actions on filtered grids", "Colour-only encoding of debits, credits, overdue status", "Burying segregation-of-duties violations until after posting rather than blocking at entry"]
+}

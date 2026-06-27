@@ -1,0 +1,5 @@
+{
+  "from": "screen-dashboard-overview",
+  "to": "component-kpi-card",
+  "relation": "shows"
+}

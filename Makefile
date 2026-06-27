@@ -1,14 +1,20 @@
-.PHONY: check validate selfcheck test lint index doctor secrets clean
+.PHONY: check validate ii-validate selfcheck ii-selfcheck test lint index doctor secrets clean
 
 # One command that mirrors CI. Dependency-free by default.
-check: validate selfcheck secrets
+check: validate ii-validate selfcheck ii-selfcheck secrets
 	@echo "==> make check: OK"
 
 validate:
 	@python3 -m motif validate
 
+ii-validate:
+	@python3 -m ii validate
+
 selfcheck:
 	@python3 tools/selfcheck.py
+
+ii-selfcheck:
+	@python3 tools/ii_selfcheck.py
 
 # Full pytest suite (requires dev extras: pip install -e '.[dev]')
 test:

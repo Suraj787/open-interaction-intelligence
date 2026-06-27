@@ -1,0 +1,9 @@
+{
+  "id": "state-loading",
+  "type": "state",
+  "label": "Loading state",
+  "attributes": {
+    "treatment": "skeleton rows preserving table layout",
+    "note": "deliberately has no validated-by test — surfaced by the states-lacking-tests query"
+  }
+}

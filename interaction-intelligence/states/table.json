@@ -1,0 +1,30 @@
+{
+  "id": "table",
+  "component_type": "table",
+  "required_states": [
+    "default",
+    "hover",
+    "focus",
+    "selected",
+    "loading",
+    "empty",
+    "error",
+    "keyboard"
+  ],
+  "conditional_states": [
+    { "state": "partial", "condition": "Paginated or infinite-scroll table where only some rows are loaded." },
+    { "state": "stale", "condition": "Data can change server-side and is cached or polled rather than live." },
+    { "state": "slow-network", "condition": "Large result sets that may take noticeable time to fetch or sort." },
+    { "state": "disabled", "condition": "Rows or bulk actions are not actionable in the current context." },
+    { "state": "offline", "condition": "Table backed by data that should remain readable without connectivity." },
+    { "state": "permission-denied", "condition": "User may see the table but cannot access certain rows or row actions." },
+    { "state": "high-zoom", "condition": "Wide tables must remain navigable under 200% zoom or large fonts." },
+    { "state": "touch", "condition": "Row selection and actions must work without hover on coarse-pointer devices." }
+  ],
+  "rationale": "Tables present many rows and selectable actions, so per-row hover, keyboard navigation between cells/rows, and a visible selected state for bulk operations are required. A first-class empty state (no rows yet vs no matches) and a distinct error state prevent users from mistaking a failed fetch for genuinely empty data.",
+  "evidence": [
+    "WCAG 2.2 2.1.1 (Keyboard) requires full keyboard operability of interactive grids.",
+    "ARIA grid pattern (WAI-ARIA Authoring Practices) defines roving-focus keyboard navigation for data tables.",
+    "NN/g empty-state guidance: distinguish 'no data yet', 'no results for filter', and 'failed to load'."
+  ]
+}

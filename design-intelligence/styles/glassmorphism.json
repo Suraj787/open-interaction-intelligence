@@ -1,0 +1,48 @@
+{
+  "id": "glassmorphism",
+  "name": "Glassmorphism",
+  "description": "A style built on translucent, frosted-glass surfaces using background blur, layered transparency, subtle borders, and soft light effects to create depth and a sense of floating panels over colourful or photographic backgrounds.",
+  "emotional_impression": "Modern, premium, light, and atmospheric, with a sense of depth and softness.",
+  "visual_principles": [
+    "Backdrop blur behind semi-transparent panels",
+    "Subtle 1px light borders to define glass edges",
+    "Layered depth through stacked translucent surfaces",
+    "Soft vivid background gradients or imagery shining through",
+    "Gentle inner and outer glows rather than hard shadows"
+  ],
+  "industry_suitability": ["consumer apps", "music and media", "crypto and fintech marketing", "device and OS UI"],
+  "page_suitability": ["hero sections", "cards", "modals", "lock screens", "marketing"],
+  "density_compatibility": ["comfortable", "spacious"],
+  "accessibility_risks": [
+    "Text over translucent blurred backgrounds frequently fails WCAG contrast because the background luminance varies",
+    "Contrast is non-deterministic since it depends on whatever sits behind the glass",
+    "Low-vision and bright-sunlight users struggle with low-opacity surfaces"
+  ],
+  "performance_risks": [
+    "backdrop-filter blur is GPU-expensive and can cause scroll jank on low-end devices",
+    "Stacked blurs compound cost and drain battery on mobile"
+  ],
+  "typography_compatibility": ["marketing-expressive", "geometric sans", "minimal sans"],
+  "layout_compatibility": ["cards", "dashboard-grid", "canvas"],
+  "trend_maturity": "declining",
+  "overuse_risk": "high",
+  "ai_cliche_risk": "high",
+  "implementation_complexity": "medium",
+  "appropriate_contexts": [
+    "Showcase surfaces with controlled backgrounds where contrast can be guaranteed",
+    "OS-style overlays where the platform manages legibility scrims",
+    "Hero or marketing moments where atmosphere matters more than dense reading"
+  ],
+  "inappropriate_contexts": [
+    "Text-heavy or data-dense screens where legibility is paramount",
+    "Accessibility-first or low-end-device contexts",
+    "Any surface where the background behind glass is uncontrolled user content"
+  ],
+  "alternatives": ["minimal-functional", "warm-approachable", "marketing-expressive"],
+  "evidence": [
+    "Popularised by Apple's macOS Big Sur and iOS frosted panels and Microsoft Fluent Acrylic",
+    "Nielsen Norman Group and accessibility audits repeatedly flag translucent-over-image text as a top contrast-failure pattern",
+    "Heavy template reuse since 2020-2021 makes it a strong AI/generated-look cliche"
+  ],
+  "confidence": "high"
+}

@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "product": "Marketing SaaS Growth Platform",
+  "confidence": 0.79,
+  "brand_traits": [
+    "energetic",
+    "approachable",
+    "confident",
+    "expressive",
+    "conversion-focused",
+    "modern"
+  ],
+  "prohibited_traits": [
+    "sterile",
+    "bureaucratic",
+    "low-contrast",
+    "cluttered",
+    "intimidating",
+    "dated"
+  ],
+  "colour_semantics": {
+    "primary": "#6D28D9",
+    "primary_hover": "#5B21B6",
+    "accent": "#F59E0B",
+    "surface": "#FFFFFF",
+    "surface_alt": "#FAF7FF",
+    "border": "#E6E0F5",
+    "text": "#1B1230",
+    "text_muted": "#6B6480",
+    "status": {
+      "success": "#15803D",
+      "warning": "#C2410C",
+      "danger": "#BE123C",
+      "info": "#6D28D9"
+    },
+    "gradients": {
+      "hero": "linear-gradient(135deg, #6D28D9 0%, #DB2777 100%)"
+    },
+    "rules": [
+      "gradients permitted in marketing surfaces, never in data UI",
+      "accent amber reserved for primary CTAs",
+      "status colours keep semantic meaning even in expressive contexts"
+    ]
+  },
+  "typography": {
+    "font_family": "'Sora', 'Inter', system-ui, sans-serif",
+    "display_family": "'Sora', sans-serif",
+    "scale": {
+      "hero": 56,
+      "display": 40,
+      "heading": 28,
+      "subheading": 20,
+      "body": 16,
+      "caption": 13
+    },
+    "line_height": 1.5,
+    "weights": {
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700
+    },
+    "rules": [
+      "hero type may use tight tracking for impact",
+      "body remains 16px minimum for readability",
+      "max three weights per page"
+    ]
+  },
+  "geometry": {
+    "radius": {
+      "control": 10,
+      "card": 16,
+      "pill": 999
+    },
+    "border_width": 1,
+    "rules": [
+      "generous rounding signals friendliness",
+      "radius tokens only; arbitrary values are debt"
+    ]
+  },
+  "spacing": {
+    "base_unit": 4,
+    "scale": [4, 8, 12, 16, 24, 32, 48, 64, 96],
+    "rules": [
+      "marketing sections use generous vertical rhythm (64-96px)",
+      "spacing must resolve to the token scale"
+    ]
+  },
+  "density": "comfortable",
+  "elevation": {
+    "scale": {
+      "flat": "none",
+      "raised": "0 4px 12px rgba(109,40,217,0.10)",
+      "floating": "0 16px 40px rgba(109,40,217,0.18)"
+    },
+    "rules": [
+      "soft tinted shadows reinforce brand hue",
+      "CTAs may use floating elevation on hover"
+    ]
+  },
+  "iconography": "24px duotone icons, rounded terminals, brand-tinted accents allowed",
+  "imagery": "vivid product screenshots, illustrative gradients, expressive lifestyle photography in marketing surfaces",
+  "content_tone": "warm, benefit-led, second person, active voice, momentum-oriented; one CTA per section",
+  "motion_character": "expressive but purposeful; 200-320ms spring transitions, entrance reveals on scroll, hover delight on CTAs, all gated behind prefers-reduced-motion",
+  "confirmation_patterns": [
+    "celebratory toast on conversion or signup completion",
+    "inline success state with momentum cue for form submission",
+    "modal confirmation reserved for cancellation or downgrade"
+  ],
+  "error_patterns": [
+    "friendly inline validation with corrective guidance",
+    "non-blocking banner with retry for recoverable errors",
+    "preserve input and never blame the user in copy"
+  ],
+  "navigation_patterns": [
+    "sticky top navigation with prominent primary CTA",
+    "mega-menu for product and solutions",
+    "anchored in-page navigation on long marketing pages",
+    "mobile drawer navigation"
+  ],
+  "accessibility_posture": "WCAG 2.2 AA; motion and parallax honour prefers-reduced-motion, CTA contrast 4.5:1, focus visible, captions on hero video",
+  "performance_posture": "LCP under 2.5s on marketing pages; lazy-load below-fold media, responsive images, defer non-critical animation libs, JS budget 150KB above the fold",
+  "framework_conventions": {
+    "stack": "Next.js + TypeScript",
+    "styling": "Tailwind with token-mapped theme, motion via Framer Motion",
+    "rules": [
+      "animation libraries dynamically imported below the fold",
+      "no arbitrary bracket values; extend the theme instead"
+    ]
+  },
+  "component_conventions": {
+    "hero": "headline, subhead, single primary CTA, optional gradient backdrop",
+    "pricing_card": "tier name, price with tabular figure, feature list, one CTA, highlighted recommended tier",
+    "cta_button": "accent fill, hover elevation, motion gated by reduced-motion",
+    "rules": [
+      "one canonical CTA component; variants must be sanctioned",
+      "particle and parallax effects disabled on mobile and reduced-motion"
+    ]
+  },
+  "exceptions": [
+    {
+      "id": "campaign-microsite-particles",
+      "scope": "seasonal campaign landing pages",
+      "rule_waived": "no-particles-on-mobile",
+      "reason": "flagship launch microsite with bespoke performance budget and art direction",
+      "approved_by": "brand-design-lead",
+      "expires": "2026-09-30"
+    }
+  ],
+  "evidence": [
+    "evidence/conversion-ab-test-2026-q2.md",
+    "evidence/lcp-field-data-marketing.json",
+    "evidence/brand-system-2026.pdf",
+    "design-system/theme.ts"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "save-state-uncertainty-feedback",
+  "category": "positive",
+  "kind": "human-judgement",
+  "prompt": "Users cannot tell whether changes were saved.",
+  "context": "product form · edits persist via async API · users unsure if work is safe",
+  "expected_behaviour": [
+    "implement an explicit pending → saving → saved (and error) state model",
+    "announce save status to assistive tech via aria-live",
+    "surface failure and retry, not just success",
+    "avoid confetti, blocking modals or ambiguous spinners"
+  ],
+  "must_reject": false,
+  "expected_pattern": "pending-saving-saved",
+  "fixture": null,
+  "expected_findings": [],
+  "judgement": "Pass if it ships a complete pending/saving/saved/error model with an aria-live announcement and a visible error path."
+}

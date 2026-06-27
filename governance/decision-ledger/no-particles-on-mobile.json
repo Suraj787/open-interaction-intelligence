@@ -1,0 +1,24 @@
+{
+  "id": "no-particles-on-mobile",
+  "problem": "The marketing team wanted animated particle and parallax backgrounds on hero sections across all breakpoints. On mobile this harms LCP, drains battery, and conflicts with reduced-motion preferences.",
+  "context": "The marketing-saas-genome permits expressive motion but its component_conventions state 'particle and parallax effects disabled on mobile and reduced-motion', with an LCP target under 2.5s and a 150KB above-the-fold JS budget.",
+  "alternatives": [
+    "Particles everywhere including mobile — maximal visual impact, worst performance and accessibility",
+    "Static gradient on mobile, particles on desktop only, all gated by prefers-reduced-motion",
+    "Remove particles entirely on all breakpoints"
+  ],
+  "decision": "Disable particle and parallax effects on mobile breakpoints and whenever prefers-reduced-motion is set; desktop may use them only via a dynamically imported, below-the-fold animation bundle.",
+  "rationale": "Mobile field data showed particle scripts pushing LCP past budget on mid-tier devices. Restricting them protects conversion-critical load time while preserving desktop expressiveness, consistent with the genome.",
+  "evidence": [
+    "evidence/lcp-field-data-marketing.json: particle hero raised mobile LCP by ~1.4s on mid-tier devices",
+    "governance/design-genome/marketing-saas-genome.json#component_conventions.rules",
+    "evidence/conversion-ab-test-2026-q2.md"
+  ],
+  "accessibility_impact": "Honours prefers-reduced-motion across all breakpoints; eliminates large background motion that can trigger vestibular discomfort.",
+  "performance_impact": "Keeps mobile LCP under 2.5s and the animation library out of the above-the-fold bundle via dynamic import.",
+  "implementation": "Particle component guarded by a viewport and reduced-motion check; desktop bundle dynamically imported below the fold. Exception: campaign-microsite-particles (expires 2026-09-30).",
+  "validation": "Validated against marketing LCP field data and the Q2 conversion A/B test.",
+  "date": "2026-06-28",
+  "status": "active",
+  "supersedes": null
+}

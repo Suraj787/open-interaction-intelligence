@@ -1,0 +1,25 @@
+{
+  "id": "async-action",
+  "component_type": "async-action",
+  "required_states": [
+    "default",
+    "loading",
+    "success",
+    "error",
+    "disabled"
+  ],
+  "conditional_states": [
+    { "state": "offline", "condition": "Action mutates server state and must warn or queue when offline." },
+    { "state": "slow-network", "condition": "Action may take long enough to need progress or a cancel affordance." },
+    { "state": "conflict", "condition": "Optimistic mutation can be rejected by a version/lock conflict and must roll back visibly." },
+    { "state": "permission-denied", "condition": "The action can be rejected with 403 and must explain why rather than failing silently." },
+    { "state": "stale", "condition": "Optimistic UI shows a provisional result pending server confirmation." },
+    { "state": "reduced-motion", "condition": "In-flight spinner and success confirmation need a static equivalent." }
+  ],
+  "rationale": "An async action (save, delete, send, approve) must guarantee the user knows it started, finished, and whether it worked. Loading prevents duplicate triggers, disabled guards invalid contexts, and success/error are required so the outcome is never ambiguous. Optimistic flows additionally need a rollback path so a failed mutation does not leave a false success on screen.",
+  "evidence": [
+    "WCAG 2.2 4.1.3 (Status Messages): success and failure of an action must be programmatically conveyed.",
+    "NN/g: every user-initiated action needs visible system feedback within ~1 second.",
+    "Optimistic-UI guidance (React Query mutations): reconcile and roll back on error to avoid phantom success."
+  ]
+}
