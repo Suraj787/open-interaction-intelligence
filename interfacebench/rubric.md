@@ -1,15 +1,15 @@
-# InterfaceBench — Human-Review Rubric
+# InterfaceBench, Human-Review Rubric
 
-A reviewer scores each of the 15 capabilities on a **0–3** scale against the output of a
+A reviewer scores each of the 15 capabilities on a **0-3** scale against the output of a
 run (single case or full longitudinal scenario). Automated checks gate the result: a
-hard automated failure caps the related capability at 0–1 regardless of the reviewer's
+hard automated failure caps the related capability at 0-1 regardless of the reviewer's
 impression.
 
 **Scale**
-- **0 — Absent / harmful:** the capability is missing, or the agent did the wrong thing.
-- **1 — Token / superficial:** gestured at but unreliable, incomplete, or generic.
-- **2 — Solid:** done correctly for the common cases; minor gaps.
-- **3 — Exemplary:** complete, deliberate, justified, and robust under pressure.
+- **0, Absent / harmful:** the capability is missing, or the agent did the wrong thing.
+- **1, Token / superficial:** gestured at but unreliable, incomplete, or generic.
+- **2, Solid:** done correctly for the common cases; minor gaps.
+- **3, Exemplary:** complete, deliberate, justified, and robust under pressure.
 
 Score each block. The run total is the sum (max 45). Record one-line evidence per score.
 

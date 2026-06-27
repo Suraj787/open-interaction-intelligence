@@ -1,4 +1,4 @@
-# InterfaceBench — The Longitudinal Scenario
+# InterfaceBench, The Longitudinal Scenario
 
 One product, ten rounds, building on the same codebase. The point is not any single
 round but the **trajectory**: does the interface stay correct, usable, accessible,
@@ -10,13 +10,12 @@ from nothing; every later round edits the artefact produced by the previous roun
 
 ---
 
-## Round 1 — Build the project list
+## Round 1, Build the project list
 
 **Prompt:** "Build the main screen: a list of projects the team can scan and act on."
 
 **What a good agent does:** Establishes product context (who uses it, the primary
-task: triage and act on projects). Chooses a structure that fits scanning real work —
-density, sort, the columns that matter (status, owner, due, health). Defines the
+task: triage and act on projects). Chooses a structure that fits scanning real work, density, sort, the columns that matter (status, owner, due, health). Defines the
 shared system (tokens, spacing, components) it will reuse later. Ships list states:
 loading, empty, error, zero-results.
 
@@ -29,12 +28,12 @@ aesthetics, required-state completeness.
 
 ---
 
-## Round 2 — Add bulk actions
+## Round 2, Add bulk actions
 
 **Prompt:** "Let users select multiple projects and act on them at once (archive,
 reassign, change status)."
 
-**What a good agent does:** Adds selection as a first-class state — select one, select
+**What a good agent does:** Adds selection as a first-class state, select one, select
 all, partial/indeterminate, none. A contextual action bar appears only with a
 selection, announces the count, and exposes destructive actions safely (confirm,
 undo). Keyboard-selectable; selection survives sort.
@@ -48,12 +47,12 @@ keyboard support, consistency with the Round-1 system.
 
 ---
 
-## Round 3 — Client portal mode
+## Round 3, Client portal mode
 
 **Prompt:** "Same data needs a read-only client-facing portal view."
 
 **What a good agent does:** Reuses the system but adapts to a different audience and
-permission model — read-only, reduced columns, no internal fields, clear
+permission model, read-only, reduced columns, no internal fields, clear
 permission-denied and empty states. Differentiation comes from the audience's real
 needs, not arbitrary restyling.
 
@@ -66,7 +65,7 @@ identity; no permission-denied state.
 
 ---
 
-## Round 4 — Dark mode
+## Round 4, Dark mode
 
 **Prompt:** "Support dark mode."
 
@@ -83,17 +82,16 @@ preserving product identity.
 
 ---
 
-## Round 5 — Change the status model
+## Round 5, Change the status model
 
 **Prompt:** "Status is changing from three states to a seven-state workflow with
 transitions."
 
-**What a good agent does:** Updates the status model in one place and lets it propagate
-— list badges, filters, bulk actions, portal view all reflect the new model. Detects
+**What a good agent does:** Updates the status model in one place and lets it propagate, list badges, filters, bulk actions, portal view all reflect the new model. Detects
 and flags everywhere the old model was assumed. Records the change as a decision.
 
 **Failure modes:** New statuses added in the list but old three-state assumptions left
-in filters/bulk/portal — the first real **drift**; colours reused ambiguously across
+in filters/bulk/portal, the first real **drift**; colours reused ambiguously across
 seven states; transitions not represented.
 
 **Measured:** coherence after modification, drift detection, consistency, decision
@@ -101,12 +99,12 @@ explanation.
 
 ---
 
-## Round 6 — Accessibility requirements
+## Round 6, Accessibility requirements
 
 **Prompt:** "This now has to meet accessibility requirements: keyboard, screen readers,
 200% zoom, reduced motion."
 
-**What a good agent does:** Audits and fixes — full keyboard paths, visible focus,
+**What a good agent does:** Audits and fixes, full keyboard paths, visible focus,
 correct roles/labels, `aria-live` for async and bulk-action results, focus management
 in any overlay, usable layout at 200% zoom, `prefers-reduced-motion` fallbacks. Treats
 this as completing existing work, not bolting on a plugin.
@@ -120,7 +118,7 @@ completeness.
 
 ---
 
-## Round 7 — Support 1,000 records
+## Round 7, Support 1,000 records
 
 **Prompt:** "Teams now have up to 1,000 projects; the list must stay fast."
 
@@ -138,7 +136,7 @@ virtualisation, effect rejection.
 
 ---
 
-## Round 8 — Remove an animation dependency
+## Round 8, Remove an animation dependency
 
 **Prompt:** "Drop the third-party animation library we pulled in earlier; we're
 trimming dependencies."
@@ -156,9 +154,9 @@ coherence.
 
 ---
 
-## Round 9 — Brand redesign
+## Round 9, Brand redesign
 
-**Prompt:** "The company rebranded — new colours, type and tone. Apply it."
+**Prompt:** "The company rebranded, new colours, type and tone. Apply it."
 
 **What a good agent does:** Applies the new brand through the token layer so the change
 is systemic and coherent across list, portal, dark mode and all states. Evolves the
@@ -174,11 +172,11 @@ edits instead of token changes.
 
 ---
 
-## Round 10 — Audit interface debt
+## Round 10, Audit interface debt
 
 **Prompt:** "Audit the interface debt accumulated over these rounds and report it."
 
-**What a good agent does:** Produces an honest audit — duplicated components, divergent
+**What a good agent does:** Produces an honest audit, duplicated components, divergent
 patterns, missing states, dependency growth, accessibility gaps, places where the
 status/brand changes left residue. Tracks provenance of sourced techniques. Proposes a
 prioritised remediation path. Demonstrates that debt stayed bounded and known, not
@@ -194,17 +192,17 @@ maintainability, dependency growth.
 
 ## Trajectory metrics (scored across all ten rounds)
 
-- **Correctness** — each round does what was asked.
-- **Usability** — tasks stay fast and clear as features accrue.
-- **Accessibility** — keyboard/AT/zoom/reduced-motion hold from Round 6 onward and are
+- **Correctness**, each round does what was asked.
+- **Usability**, tasks stay fast and clear as features accrue.
+- **Accessibility**, keyboard/AT/zoom/reduced-motion hold from Round 6 onward and are
   never regressed by later rounds.
-- **Performance** — budgets defined in Round 7 are respected in Rounds 8–10.
-- **State completeness** — the full state set is maintained, not eroded, as surfaces
+- **Performance**, budgets defined in Round 7 are respected in Rounds 8-10.
+- **State completeness**, the full state set is maintained, not eroded, as surfaces
   multiply.
-- **Consistency / coherence** — one system, not a patchwork, after ten edits.
-- **Drift** — old assumptions (status model, brand) do not survive in forgotten
+- **Consistency / coherence**, one system, not a patchwork, after ten edits.
+- **Drift**, old assumptions (status model, brand) do not survive in forgotten
   corners.
-- **Debt** — interface debt stays bounded, named and remediable.
-- **Dependency growth** — dependencies are justified and trend toward fewer, not more.
-- **Provenance** — sourced techniques carry recorded origin and licence status.
-- **Maintainability** — a new engineer could extend the result without fighting it.
+- **Debt**, interface debt stays bounded, named and remediable.
+- **Dependency growth**, dependencies are justified and trend toward fewer, not more.
+- **Provenance**, sourced techniques carry recorded origin and licence status.
+- **Maintainability**, a new engineer could extend the result without fighting it.
