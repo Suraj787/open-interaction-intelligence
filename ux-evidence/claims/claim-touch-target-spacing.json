@@ -8,20 +8,58 @@
     "force": "normative"
   },
   "applicability": {
-    "product_forms": ["web-app", "mobile-web", "native-mobile", "pwa"],
-    "purposes": ["productivity", "transactional", "data-entry"],
-    "workflows": ["forms", "navigation", "data-tables", "bulk-actions"],
-    "expertise": ["novice", "intermediate", "expert"],
-    "abilities": ["motor-impairment"],
-    "devices": ["touch", "mobile"],
-    "audience_roles": ["end-user", "operator"]
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "native-mobile",
+      "pwa"
+    ],
+    "purposes": [
+      "productivity",
+      "transactional",
+      "data-entry"
+    ],
+    "workflows": [
+      "forms",
+      "navigation",
+      "data-tables",
+      "bulk-actions"
+    ],
+    "expertise": [
+      "novice",
+      "intermediate",
+      "expert"
+    ],
+    "abilities": [
+      "motor-impairment"
+    ],
+    "devices": [
+      "touch",
+      "mobile"
+    ],
+    "audience_roles": [
+      "end-user",
+      "operator"
+    ],
+    "restrict": [
+      "devices"
+    ]
   },
   "evidence": {
     "tier": 1,
-    "sources": ["src-wcag22", "src-material", "src-apple-hig"],
-    "methodology": ["normative-standard", "platform-guideline"],
+    "sources": [
+      "src-wcag22",
+      "src-material",
+      "src-apple-hig"
+    ],
+    "methodology": [
+      "normative-standard",
+      "platform-guideline"
+    ],
     "confidence": "high",
-    "limitations": ["Spacing requirement interacts with the 24px size rule; dense data tables may need design trade-offs"]
+    "limitations": [
+      "Spacing requirement interacts with the 24px size rule; dense data tables may need design trade-offs"
+    ]
   },
   "recommendation": {
     "do": [
@@ -43,13 +81,24 @@
   "repair": {
     "automatable": "partial",
     "approval_required": false,
-    "strategies": ["add margin/gap between targets", "increase target size to clear the circle test", "introduce dividers"]
+    "strategies": [
+      "add margin/gap between targets",
+      "increase target size to clear the circle test",
+      "introduce dividers"
+    ]
   },
   "validation": {
-    "methods": ["geometric overlap test on bounding boxes", "automated accessibility scan", "device touch testing"],
+    "methods": [
+      "geometric overlap test on bounding boxes",
+      "automated accessibility scan",
+      "device touch testing"
+    ],
     "automatable": "partial",
     "requires_human_eval": false,
-    "metrics": ["inter-target-gap-px", "percent-target-pairs-overlapping-circles"]
+    "metrics": [
+      "inter-target-gap-px",
+      "percent-target-pairs-overlapping-circles"
+    ]
   },
   "legal": {
     "compliance_claim_allowed": false,

@@ -39,7 +39,10 @@
       "office"
     ],
     "audience_roles": [],
-    "jurisdiction": []
+    "jurisdiction": [],
+    "restrict": [
+      "devices"
+    ]
   },
   "evidence": {
     "tier": 1,

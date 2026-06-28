@@ -8,20 +8,54 @@
     "force": "strong-recommendation"
   },
   "applicability": {
-    "product_forms": ["web-app", "mobile-web", "pwa"],
-    "purposes": ["data-entry", "transactional", "productivity"],
-    "workflows": ["forms", "search"],
-    "expertise": ["novice", "intermediate", "expert"],
-    "abilities": ["motor-impairment", "cognitive"],
-    "devices": ["touch", "mobile"],
-    "audience_roles": ["end-user"]
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "pwa"
+    ],
+    "purposes": [
+      "data-entry",
+      "transactional",
+      "productivity"
+    ],
+    "workflows": [
+      "forms",
+      "search"
+    ],
+    "expertise": [
+      "novice",
+      "intermediate",
+      "expert"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "cognitive"
+    ],
+    "devices": [
+      "touch",
+      "mobile"
+    ],
+    "audience_roles": [
+      "end-user"
+    ],
+    "restrict": [
+      "devices"
+    ]
   },
   "evidence": {
     "tier": 2,
-    "sources": ["src-material", "src-apple-hig"],
-    "methodology": ["platform-guideline", "industry-best-practice"],
+    "sources": [
+      "src-material",
+      "src-apple-hig"
+    ],
+    "methodology": [
+      "platform-guideline",
+      "industry-best-practice"
+    ],
     "confidence": "high",
-    "limitations": ["Exact keyboard rendering for inputmode differs between iOS and Android"]
+    "limitations": [
+      "Exact keyboard rendering for inputmode differs between iOS and Android"
+    ]
   },
   "recommendation": {
     "do": [
@@ -43,13 +77,22 @@
   "repair": {
     "automatable": "full",
     "approval_required": false,
-    "strategies": ["set input type attribute", "set inputmode attribute", "add autocomplete tokens"]
+    "strategies": [
+      "set input type attribute",
+      "set inputmode attribute",
+      "add autocomplete tokens"
+    ]
   },
   "validation": {
-    "methods": ["static attribute audit", "device keyboard inspection"],
+    "methods": [
+      "static attribute audit",
+      "device keyboard inspection"
+    ],
     "automatable": "partial",
     "requires_human_eval": false,
-    "metrics": ["percent-fields-with-appropriate-inputmode"]
+    "metrics": [
+      "percent-fields-with-appropriate-inputmode"
+    ]
   },
   "legal": {
     "compliance_claim_allowed": false,
