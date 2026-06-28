@@ -235,6 +235,65 @@ def cmd_mcp(a) -> int:
     return 2
 
 
+def cmd_sources(a) -> int:
+    from . import sources as src
+    act = a.action
+    val = a.value
+    if act == "list":
+        for r in src.search(framework=a.framework or "", category=a.category or ""):
+            _p(f"  {r['id']:30} {r['classification'].get('registry_category',''):22} "
+               f"{r['assurance']['status']}")
+        return 0
+    if act == "search":
+        for r in src.search(val or "", framework=a.framework or ""):
+            _p(f"  {r['id']:30} {r['identity']['name']}")
+        return 0
+    if act == "show":
+        r = src.get(val or "")
+        _jp(r or {"error": "source not found"})
+        return 0 if r else 1
+    if act == "verify":  # deterministic assurance
+        r = src.get(val or "")
+        _jp(src.assurance(r) if r else {"error": "source not found"})
+        return 0 if r else 1
+    if act == "compare":
+        _jp(src.compare(val or "", a.candidate or getattr(a, "value2", None) or ""))
+        return 0
+    if act == "recommend":
+        _jp(src.recommend(need=a.need or "", product_form=a.product_form or "",
+                          workflow=a.workflow or "", framework=a.framework or "", ability=a.ability or ""))
+        return 0
+    if act == "adapt-plan":
+        _jp(src.adapt_plan(val or "", project=a.target or "./app"))
+        return 0
+    if act == "discover":
+        _jp(src.discover(query=a.query or "", source=a.source or "known-registry",
+                         opt_in=a.opt_in, online=a.online, url=a.url or ""))
+        return 0
+    if act == "quarantine":
+        _jp({"quarantine": src.quarantine_list()})
+        return 0
+    if act == "contribute":
+        _jp(src.contribution_bundle(val or ""))
+        return 0
+    if act == "validate":
+        n, errs = src.validate()
+        _p(f"  sources: {n}")
+        for e in errs[:30]:
+            _p(f"  - {e}")
+        _p("OK: source registry valid" if not errs else f"{len(errs)} error(s)")
+        return 0 if not errs else 1
+    if act == "doctor":
+        pol = src._net_policy()
+        n, errs = src.validate()
+        _p(f"# Motif Sources doctor\n  registry sources: {n} (schema errors: {len(errs)})")
+        _p(f"  discovery enabled by default: {pol['discovery_enabled_by_default']} (must be False)")
+        _p(f"  network during audit/repair/ci: {pol['network_during_audit']}/{pol['network_during_repair']}/{pol['network_during_ci']}")
+        return 0
+    _p("usage: motif sources [list|search|show|verify|compare|recommend|adapt-plan|discover|quarantine|contribute|validate|doctor]")
+    return 2
+
+
 def cmd_bench(a) -> int:
     if getattr(a, "scenario", None) in ("vue-dashboard-evidence-repair", "golden"):
         t = a.target or "evals/fixtures/sample-vue-app"
@@ -466,6 +525,16 @@ def register(sub) -> None:
     sp = add("system", cmd_system, "design-system extraction", [T]); sp.add_argument("action", choices=["extract", "violations"])
     sp = add("guard", cmd_guard, "Guardian: scan a diff", [T, (("--base",), {}), (("--format",), {})]); sp.add_argument("action", choices=["staged", "branch"])
     sp = add("mcp", cmd_mcp, "MCP server", [(("--allow-write",), {"action": "store_true"})]); sp.add_argument("action", choices=["serve"])
+    sp = add("sources", cmd_sources, "source intelligence registry (offline; discovery opt-in)",
+             [T, (("--framework",), {}), (("--category",), {}), (("--candidate",), {}),
+              (("--need",), {}), (("--product-form",), {"dest": "product_form"}), (("--workflow",), {}),
+              (("--ability",), {}), (("--query",), {}), (("--source",), {}), (("--url",), {}),
+              (("--opt-in",), {"action": "store_true", "dest": "opt_in"}),
+              (("--online",), {"action": "store_true"})])
+    sp.add_argument("action", choices=["list", "search", "show", "verify", "compare", "recommend",
+                                       "adapt-plan", "discover", "quarantine", "contribute", "validate", "doctor"])
+    sp.add_argument("value", nargs="?")
+    sp.add_argument("value2", nargs="?")
     add("bench", cmd_bench, "InterfaceBench runner (automated measures or golden scenario)",
         [T, (("--scenario",), {}), (("--require-browser",), {"action": "store_true", "dest": "require_browser"})])
     add("studio", cmd_studio, "local Studio viewer", [T, (("--port",), {"type": int}), (("--build-only",), {"action": "store_true"})])
