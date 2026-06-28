@@ -219,8 +219,9 @@ def golden(target, route: str | None = None, require_browser: bool = False,
     # --- after state (browser): start the repaired worktree app ---
     after_status = "not-executed"
     runtime_closed = "not-executed"
-    if browser_ok and applied.get("used_worktree"):
-        wt_fixture = pathlib.Path(applied["file"]).parent.parent.parent  # .../src/components/X.vue -> fixture root
+    if browser_ok and applied.get("changed"):
+        # .../src/components/ProjectStatus.vue -> fixture root (works for worktree and copy fallback)
+        wt_fixture = pathlib.Path(applied["file"]).parent.parent.parent
         _link_node_modules(wt_fixture, target)
         after_app = app_mod.start(wt_fixture, approve=True)
         after_url = _route_url(after_app.url, route) if after_app.status == "started" else None

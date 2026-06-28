@@ -67,10 +67,21 @@ def capture(url: str, out_dir: str | pathlib.Path, viewport=(1280, 800),
             page.on("console", lambda m: console_msgs.append({"type": m.type, "text": m.text}))
             page.on("requestfailed", lambda r: failed_requests.append({"url": r.url, "failure": str(r.failure)}))
             resp = page.goto(url, wait_until="networkidle", timeout=30000)
+            page.wait_for_timeout(400)
             result["http_status"] = resp.status if resp else None
             result["final_url"] = page.url
             page.screenshot(path=str(out / "screenshot.png"), full_page=True)
-            (out / "accessibility.json").write_text(json.dumps(page.accessibility.snapshot() or {}, indent=2))
+            # Accessibility representation: prefer the modern aria snapshot; fall back gracefully.
+            a11y = None
+            try:
+                a11y = {"aria_snapshot": page.locator("body").aria_snapshot()}
+            except Exception:
+                try:
+                    a11y = page.accessibility.snapshot() or {}
+                except Exception as e:  # noqa: BLE001
+                    a11y = {"note": "accessibility snapshot API unavailable in this Playwright version",
+                            "error": str(e)}
+            (out / "accessibility.json").write_text(json.dumps(a11y, indent=2))
             # axe-core via CDN
             try:
                 page.add_script_tag(url=AXE_CDN)
@@ -114,6 +125,7 @@ def has_text(url: str, text: str, viewport=(1280, 800)) -> dict:
             browser = p.chromium.launch(args=["--no-sandbox"])
             page = browser.new_page(viewport={"width": viewport[0], "height": viewport[1]})
             page.goto(url, wait_until="networkidle", timeout=30000)
+            page.wait_for_timeout(800)  # let the SPA mount and render
             count = page.get_by_text(text, exact=False).count()
             browser.close()
             return {"status": "executed-and-passed" if count > 0 else "executed-and-failed",
