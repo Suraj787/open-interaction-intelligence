@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/schemas/run-record.schema.json",
+  "title": "run-record",
+  "type": "object",
+  "required": [
+    "id",
+    "mode",
+    "goal",
+    "started"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "create",
+        "improve",
+        "audit",
+        "repair",
+        "redesign",
+        "govern",
+        "benchmark"
+      ]
+    },
+    "goal": {
+      "type": "string"
+    },
+    "started": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "target_commit": {
+      "type": "string"
+    },
+    "policy_profile": {
+      "type": "string"
+    },
+    "commands": {
+      "type": "array"
+    },
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selected_plan": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "delivered",
+        "rolled-back",
+        "exported",
+        "pr-opened",
+        "audit-only",
+        "aborted"
+      ]
+    },
+    "rollback": {
+      "type": "object"
+    },
+    "gates": {
+      "type": "array"
+    }
+  }
+}

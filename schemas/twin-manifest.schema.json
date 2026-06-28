@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/schemas/twin-manifest.schema.json",
+  "title": "twin-manifest",
+  "type": "object",
+  "required": [
+    "project",
+    "generated"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "target_commit": {
+      "type": "string"
+    },
+    "framework": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array"
+    },
+    "screens": {
+      "type": "array"
+    },
+    "components": {
+      "type": "array"
+    },
+    "viewport_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rendered": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
