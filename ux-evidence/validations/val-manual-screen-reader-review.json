@@ -1,0 +1,15 @@
+{
+  "id": "val-manual-screen-reader-review",
+  "method": "Have a knowledgeable tester navigate key journeys with real screen readers (e.g. NVDA, JAWS, VoiceOver) to assess announced names, roles, states, reading order, meaningful alt text and overall comprehensibility.",
+  "automatable": false,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": true,
+  "metrics": [
+    "journeys-reviewed",
+    "blocking-issues-found",
+    "name-role-state-defects",
+    "comprehension-issues"
+  ],
+  "expected_output": "Qualitative findings per journey: barriers encountered, confusing or missing announcements, and severity-ranked issues that automated tools cannot detect. Requires human judgement."
+}

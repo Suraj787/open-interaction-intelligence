@@ -40,6 +40,24 @@ performance validation notes.
 (paste here)
 ```
 
+## Guardian / contribution checklist
+
+Motif Guardian runs on every PR (`make check` + `motif guard branch`) and posts a report
+comment. Confirm the governance basics before requesting review:
+
+- [ ] **Provenance recorded**, source id and evidence links for any source-derived material.
+- [ ] **Licence verified** against the official source; redistribution class is correct
+      (unknown ⇒ reference-only; source-available / Commons-Clause are not permissive).
+- [ ] **Reduced-motion handled**, a `prefers-reduced-motion` path exists wherever motion is used.
+- [ ] **Accessibility notes**, keyboard, focus, semantics; nothing essential is hover- or
+      motion-only.
+- [ ] **Performance notes**, transform/opacity within budget; no jank, no decorative
+      continuous motion behind dense UIs.
+- [ ] **No secrets** committed (Guardian's secret scan is clean).
+- [ ] **`make check` passes** locally and in CI.
+- [ ] **Decision / memory updated if applicable**, a `governance/decision-ledger/` entry
+      (or memory record) reflects any precedent this PR sets or relies on.
+
 ## Notes for reviewers
 
 Anything that needs special attention (licence nuance, trade-offs, follow-ups).

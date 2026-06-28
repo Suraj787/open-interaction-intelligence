@@ -1,0 +1,102 @@
+{
+  "id": "claim-dragging-movements-032",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Functionality that uses a dragging movement must also be achievable with a single pointer without dragging, unless dragging is essential.",
+    "category": "pointer-gestures",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "configure",
+      "create"
+    ],
+    "workflows": [
+      "data-entry",
+      "bulk-action",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "touch",
+      "mobile",
+      "desktop"
+    ],
+    "environments": [
+      "office",
+      "field"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level AA, SC 2.5.7). Reorderable lists and sliders need click alternatives."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Provide click/tap alternatives to drag-and-drop reordering.",
+      "Add increment buttons alongside drag sliders."
+    ],
+    "avoid": [
+      "Kanban or list reorder operable only by dragging.",
+      "Range sliders with no input alternative."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-non-drag-alternative"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-non-drag-alternative"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-non-drag-alt"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

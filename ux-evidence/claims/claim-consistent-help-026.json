@@ -1,0 +1,104 @@
+{
+  "id": "claim-consistent-help-026",
+  "schema_version": 1,
+  "claim": {
+    "statement": "If a help mechanism is provided, it must occur in the same relative order on each page where it appears.",
+    "category": "consistent-help",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "communicate"
+    ],
+    "workflows": [
+      "onboarding",
+      "account-management",
+      "error-recovery"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level A, SC 3.2.6). Help can be contact details, a chat, or a self-help link."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Place help (contact, chat, help link) consistently across pages.",
+      "Keep it in the same relative location in the layout."
+    ],
+    "avoid": [
+      "Help link that moves between header, footer and menu unpredictably."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "standardise-help-location"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-consistent-help-location"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "help-location-consistent"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

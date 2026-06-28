@@ -1,0 +1,14 @@
+{
+  "id": "val-focus-visible-check",
+  "method": "Tab through all interactive elements and confirm each has a clearly visible focus indicator with sufficient contrast against its background (WCAG 2.4.7 Focus Visible, 2.4.11 Focus Appearance).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "focusable-element-count",
+    "elements-without-visible-focus",
+    "focus-indicator-contrast-ratio"
+  ],
+  "expected_output": "Per focusable element: whether a visible focus indicator appears on keyboard focus and its measured contrast; fail list of elements with missing or low-contrast focus styles."
+}

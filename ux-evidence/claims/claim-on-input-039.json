@@ -1,0 +1,103 @@
+{
+  "id": "claim-on-input-039",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Changing the setting of a user interface component must not automatically cause a change of context unless the user has been advised beforehand.",
+    "category": "predictability",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed",
+      "novice"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-vision"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A change of context includes navigation, new windows, or major content reorganisation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Require an explicit submit rather than acting on selection change.",
+      "Warn the user if a control will change context."
+    ],
+    "avoid": [
+      "Auto-submitting a form when a select value changes.",
+      "Opening a new window on field focus."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "require-explicit-submit",
+      "warn-before-context-change"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-no-unexpected-context-change"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "no-auto-context-change"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

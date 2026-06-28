@@ -1,0 +1,102 @@
+{
+  "id": "claim-no-keyboard-trap-008",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Keyboard focus must be able to move away from any component using only the keyboard; users must never be trapped.",
+    "category": "keyboard",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "navigate"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "screen-reader",
+      "motor-impairment"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "keyboard",
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Modal dialogs may cycle focus internally but must release on close/Escape."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Ensure focus can leave widgets, embeds and dialogs via Tab or Escape.",
+      "Provide an explicit close that returns focus."
+    ],
+    "avoid": [
+      "Embedded plugins or editors that capture all keystrokes.",
+      "Modals with no keyboard exit."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-escape-handler",
+      "fix-focus-loop"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-no-keyboard-trap"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "focus-can-exit"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

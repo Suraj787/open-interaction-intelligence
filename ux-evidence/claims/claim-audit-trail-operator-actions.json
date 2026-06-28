@@ -1,0 +1,64 @@
+{
+  "id": "claim-audit-trail-operator-actions",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Record an audit trail for consequential operator and admin actions (who did what, to which object, when, and the prior/after state) so high-impact changes are traceable, recoverable, and reviewable. Make recent actions visible to the operator where feasible.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "hypothesis"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa"],
+    "purposes": ["operations", "transactional"],
+    "workflows": ["bulk-actions", "settings", "data-tables"],
+    "expertise": ["intermediate", "expert"],
+    "risks": ["legal", "irreversible", "financial"],
+    "devices": ["desktop", "keyboard"],
+    "audience_roles": ["operator", "admin"]
+  },
+  "evidence": {
+    "tier": 4,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "low",
+    "limitations": ["This is a UX/operational-traceability recommendation, not legal or regulatory advice; retention and content requirements are domain- and jurisdiction-specific"]
+  },
+  "recommendation": {
+    "do": [
+      "Log actor, action, target, timestamp, and before/after state for consequential changes",
+      "Expose a recent-activity or history view to operators",
+      "Use the trail to support recovery and review of high-impact actions"
+    ],
+    "avoid": [
+      "High-impact operator actions with no record of who or what changed",
+      "Treating audit logging as a substitute for preventing accidental destructive actions"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": false,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add audit logging on consequential mutations", "capture before/after snapshots", "expose an activity history UI"]
+  },
+  "validation": {
+    "methods": ["log-coverage review", "traceability testing", "expert review"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["percent-consequential-actions-audited", "audit-record-completeness"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

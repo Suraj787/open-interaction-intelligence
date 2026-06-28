@@ -1,0 +1,102 @@
+{
+  "id": "claim-pointer-cancellation-024",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For single-pointer functionality, actions must not complete on down-event; provide abort, undo, or completion on up-event.",
+    "category": "pointer-cancellation",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact"
+    ],
+    "workflows": [
+      "checkout",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment"
+    ],
+    "risks": [
+      "financial",
+      "irreversible"
+    ],
+    "devices": [
+      "touch",
+      "mobile",
+      "desktop"
+    ],
+    "environments": [
+      "field",
+      "public"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Down-event activation is allowed only where essential (e.g. a piano key)."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Trigger actions on up-event (click), not pointerdown.",
+      "Allow the user to slide off a control to cancel."
+    ],
+    "avoid": [
+      "Destructive actions firing on touchstart/pointerdown.",
+      "No way to abort a press in progress."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "activate-on-up-event",
+      "add-cancel-affordance"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-pointer-cancellation"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "activates-on-up-event"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

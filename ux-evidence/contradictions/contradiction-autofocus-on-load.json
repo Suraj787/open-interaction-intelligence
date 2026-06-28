@@ -1,0 +1,14 @@
+{
+  "id": "contradiction-autofocus-on-load",
+  "topic": "Autofocusing an input on page load",
+  "competing_claims": [
+    "Autofocusing the primary field (e.g. a search box or first form field) speeds up task start and signals where to begin.",
+    "Autofocus on load can disorient screen-reader and keyboard users, cause unexpected scroll jumps, and trigger the on-screen keyboard prematurely on mobile."
+  ],
+  "resolution_type": "context-dependent",
+  "resolution": "Autofocus is appropriate on single-purpose pages whose sole task is that input (a dedicated search page, a login page, a one-field step) and where it will not move the viewport unexpectedly. Avoid autofocus on content-rich pages, on mobile where it forces the keyboard up over content, and anywhere it would skip past meaningful context for assistive-technology users. When used, ensure focus placement is announced and does not cause a disorienting scroll.",
+  "unresolved": [
+    "Acceptable autofocus behaviour on mixed content/form pages for assistive-technology users remains debated."
+  ],
+  "human_decision_required": true
+}

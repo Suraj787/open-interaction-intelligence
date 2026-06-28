@@ -1,0 +1,66 @@
+{
+  "id": "claim-slow-down-financial-legal-emergency",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Deliberately slow down actions with financial, legal, safety, or emergency consequences (transfers, payments, signing agreements, dispatching emergency services). Add a review/confirmation step that summarises amounts, parties, and effects, and avoid one-tap execution or optimistic shortcuts for these actions.",
+    "category": "high-risk-action",
+    "type": "principle",
+    "force": "hypothesis"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["transactional", "operations"],
+    "workflows": ["forms", "transactional", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["cognitive"],
+    "risks": ["financial", "legal", "safety", "emergency"],
+    "devices": ["touch", "mobile", "desktop"],
+    "environments": ["high-stakes"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 4,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "analogical-reasoning"],
+    "confidence": "low",
+    "limitations": ["Not backed by a single authoritative standard; appropriate friction is domain- and regulation-specific. Treated as a hypothesis to validate per context"]
+  },
+  "recommendation": {
+    "do": [
+      "Add an explicit review screen summarising amount, recipient/parties, and effect",
+      "Require deliberate confirmation rather than implicit/one-tap execution",
+      "Surface irreversibility and timing (e.g. when a transfer settles)"
+    ],
+    "avoid": [
+      "One-tap or optimistic execution of money-moving, legal, or emergency actions",
+      "Burying critical figures or parties below the fold of the confirm step"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "none",
+    "approval_required": true,
+    "strategies": ["insert a review/summary step", "remove one-tap shortcuts for high-stakes actions", "add explicit irreversibility messaging"]
+  },
+  "validation": {
+    "methods": ["domain/risk review", "usability testing with high-stakes scenarios", "expert review"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["high-stakes-error-rate", "post-action-reversal-requests"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

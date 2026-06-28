@@ -1,0 +1,7 @@
+# Motif UX Evidence ontology: expertise
+values:
+  - novice
+  - intermittent
+  - domain-professional
+  - expert
+  - mixed

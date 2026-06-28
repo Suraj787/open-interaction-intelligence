@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/schemas/concept.schema.json",
+  "title": "concept",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "direction",
+    "information_architecture"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "information_architecture": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "string"
+    },
+    "navigation": {
+      "type": "string"
+    },
+    "component_strategy": {
+      "type": "string"
+    },
+    "interaction_model": {
+      "type": "string"
+    },
+    "motion": {
+      "type": "string"
+    },
+    "accessibility": {
+      "type": "string"
+    },
+    "performance": {
+      "type": "string"
+    },
+    "implementation_complexity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "migration_risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "score": {
+      "type": "number"
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

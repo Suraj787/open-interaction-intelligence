@@ -1,0 +1,21 @@
+{
+  "id": "src-gov-uk-service-manual",
+  "title": "GOV.UK Service Manual and GOV.UK Design System",
+  "organisation": "Government Digital Service (GDS), UK Government",
+  "date": "2026",
+  "url": "https://www.gov.uk/service-manual",
+  "tier": 1,
+  "methodology": [
+    "government-usability-research",
+    "field-tested-patterns",
+    "accessibility-auditing"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Optimised for UK public-service contexts and gov.uk audiences",
+    "Some patterns assume transactional government services",
+    "Design System components carry UK styling conventions"
+  ]
+}

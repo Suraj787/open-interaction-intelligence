@@ -1,0 +1,111 @@
+{
+  "id": "claim-current-location-indication",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Indicate the user's current location within the site or app (a 'you are here' cue) so they can orient and decide where to go next.",
+    "category": "navigation-and-ia",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "documentation",
+      "public-service-system",
+      "dashboard",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "monitor",
+      "learn"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-vision",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup",
+      "src-wcag22"
+    ],
+    "methodology": [
+      "moderated-usability-testing",
+      "heuristic-evaluation",
+      "normative-standard"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 2.4.8 Location is Level AAA, so this is a strong recommendation rather than a Level AA obligation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Highlight the active nav item",
+      "Use headings, breadcrumbs, and titles to confirm location"
+    ],
+    "avoid": [
+      "Identical-looking pages with no location cue"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-08-20",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

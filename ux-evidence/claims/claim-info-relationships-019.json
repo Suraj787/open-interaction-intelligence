@@ -1,0 +1,104 @@
+{
+  "id": "claim-info-relationships-019",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Information, structure and relationships conveyed through presentation must be programmatically determinable using semantic markup and landmarks.",
+    "category": "structure",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "documentation",
+      "dashboard"
+    ],
+    "purposes": [
+      "navigate",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "blind",
+      "cognitive"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Use native elements (lists, tables, headings, landmarks) before ARIA roles."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Mark up lists, tables, headings and regions with correct semantics.",
+      "Provide landmark regions (header, nav, main, footer)."
+    ],
+    "avoid": [
+      "Tables built from divs for layout of data.",
+      "Headings faked with bold text."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "use-semantic-markup",
+      "add-landmarks"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-semantic-structure"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-landmarks",
+      "semantic-coverage"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

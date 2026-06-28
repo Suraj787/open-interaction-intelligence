@@ -1,0 +1,108 @@
+{
+  "id": "claim-back-button-preserve-state",
+  "schema_version": 1,
+  "claim": {
+    "statement": "When users return via Back, preserve their prior context (scroll position, filters, entered data) rather than resetting or timing out and losing their work.",
+    "category": "navigation-and-ia",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "ecommerce",
+      "website",
+      "public-service-system",
+      "mobile-web"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "transact",
+      "analyse"
+    ],
+    "workflows": [
+      "search-and-filter",
+      "checkout",
+      "data-entry",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "home",
+      "office",
+      "high-interruption",
+      "low-connectivity"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "moderated-usability-testing",
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "State restoration can conflict with caching of sensitive data; balance against privacy needs."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Restore scroll, filters, and form values on Back",
+      "Avoid session timeouts that discard in-progress work"
+    ],
+    "avoid": [
+      "Returning users to a blank or reset page after Back"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-02-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

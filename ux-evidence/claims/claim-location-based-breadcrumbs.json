@@ -1,0 +1,102 @@
+{
+  "id": "claim-location-based-breadcrumbs",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Make breadcrumbs reflect the site's hierarchy (where the page sits), not the user's click history, so they remain a stable orientation aid.",
+    "category": "navigation-and-ia",
+    "type": "anti-pattern",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "ecommerce",
+      "documentation",
+      "public-service-system",
+      "web-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "learn"
+    ],
+    "workflows": [
+      "search-and-filter",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "moderated-usability-testing",
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "History-based breadcrumbs duplicate the Back button and confuse users arriving from external links."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Render the page's position in the IA",
+      "Keep breadcrumbs identical regardless of entry path"
+    ],
+    "avoid": [
+      "Reconstructing the user's visited-page trail as breadcrumbs"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2018-09-30",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

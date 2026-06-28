@@ -1,0 +1,21 @@
+{
+  "id": "src-coga",
+  "title": "Making Content Usable for People with Cognitive and Learning Disabilities",
+  "organisation": "World Wide Web Consortium (W3C) Web Accessibility Initiative",
+  "date": "2021-04-29",
+  "url": "https://www.w3.org/TR/coga-usable/",
+  "tier": 1,
+  "methodology": [
+    "working-group-note",
+    "literature-synthesis",
+    "design-pattern-catalogue"
+  ],
+  "access_type": "standard",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Published as a W3C Working Group Note, not a normative Recommendation",
+    "Guidance is qualitative; objective pass/fail thresholds are limited",
+    "Cognitive needs are heterogeneous and context-specific"
+  ]
+}

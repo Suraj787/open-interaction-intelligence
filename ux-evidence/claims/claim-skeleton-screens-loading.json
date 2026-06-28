@@ -1,0 +1,105 @@
+{
+  "id": "claim-skeleton-screens-loading",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Use skeleton screens as placeholders during full-page or content loads to reduce perceived wait time and help users build a mental model of the incoming layout.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "website",
+      "dashboard",
+      "ecommerce"
+    ],
+    "purposes": [
+      "browse",
+      "monitor",
+      "analyse"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "reporting"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "mobile",
+      "touch",
+      "desktop",
+      "low-power"
+    ],
+    "environments": [
+      "home",
+      "low-connectivity",
+      "office"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "perceived-performance-research"
+    ],
+    "confidence": "low",
+    "limitations": [
+      "Benefit is on perceived rather than actual load time; poorly animated skeletons can backfire. Spinners or progress bars suit other cases."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Match skeleton shapes to the final layout",
+      "Reserve skeletons for predictable content"
+    ],
+    "avoid": [
+      "Skeletons that don't resemble the loaded content"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-05-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

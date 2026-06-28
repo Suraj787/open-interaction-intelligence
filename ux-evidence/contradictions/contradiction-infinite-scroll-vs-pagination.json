@@ -1,0 +1,14 @@
+{
+  "id": "contradiction-infinite-scroll-vs-pagination",
+  "topic": "Infinite scroll versus pagination for long result sets",
+  "competing_claims": [
+    "Infinite scroll reduces interaction cost and keeps users in a continuous browsing flow.",
+    "Pagination gives a sense of position and completion, supports findability and back-navigation, and avoids losing scroll position."
+  ],
+  "resolution_type": "context-dependent",
+  "resolution": "Use infinite or lazy loading for exploratory, low-stakes, feed-style browsing where the goal is open-ended discovery; use pagination (or a hybrid 'load more' with a stable URL) for goal-directed search, comparison, or any flow where users need to remember position, reach a footer, or return to a specific item. Avoid pure infinite scroll above an important footer or for results users must compare systematically.",
+  "unresolved": [
+    "Optimal hybrid patterns (load-more plus pagination markers) for very large catalogues remain debated."
+  ],
+  "human_decision_required": true
+}

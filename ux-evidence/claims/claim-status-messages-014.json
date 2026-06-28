@@ -1,0 +1,104 @@
+{
+  "id": "claim-status-messages-014",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Status messages must be programmatically determinable through role or properties so assistive technologies announce them without moving focus.",
+    "category": "live-regions",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "monitor",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "blind"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.1, carried into 2.2 (Level AA, SC 4.1.3). Implemented via ARIA live regions / role=status/alert."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Render success, error, progress and result counts in an aria-live region.",
+      "Use role=status for polite and role=alert for assertive updates."
+    ],
+    "avoid": [
+      "Toasts and result counts that are silent to screen readers.",
+      "Moving focus just to announce a status."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-live-region",
+      "use-role-status",
+      "use-role-alert"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-status-message-announced"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-live-region"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

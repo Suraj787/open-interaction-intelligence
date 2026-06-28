@@ -1,0 +1,23 @@
+{
+  "id": "myth-more-choices-always-better",
+  "statement": "Offering users more choices and options is always better.",
+  "why_it_spreads": "Intuition that flexibility and feature-richness equal value, plus stakeholder requests to add options.",
+  "evidence_against": [
+    "NN/g on choice and Hick's Law (src-nngroup): more options increase decision time and can cause choice overload and abandonment.",
+    "Baymard (src-baymard): overly complex e-commerce flows and option overload contribute to checkout abandonment."
+  ],
+  "replacement_principle": "Curate and prioritise choices around the user's likely goal, using sensible defaults and progressive disclosure, so flexibility does not become paralysis.",
+  "disposition": "warn",
+  "confidence": "medium",
+  "applicable_contexts": [
+    "ecommerce",
+    "navigation",
+    "forms",
+    "configuration",
+    "decision-support"
+  ],
+  "still_applies_when": [
+    "Expert and configuration tools may genuinely need many options exposed",
+    "Removing meaningful choice to oversimplify can also harm users"
+  ]
+}

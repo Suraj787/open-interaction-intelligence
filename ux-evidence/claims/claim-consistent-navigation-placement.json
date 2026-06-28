@@ -1,0 +1,110 @@
+{
+  "id": "claim-consistent-navigation-placement",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Present navigational mechanisms that repeat across pages in the same relative order and location each time, unless the user initiates a change.",
+    "category": "navigation-and-ia",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "public-service-system",
+      "documentation",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "comply",
+      "learn"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-vision",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "normative-standard",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 3.2.3 Consistent Navigation is Level AA and concerns repeated mechanisms within a set of pages."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep nav order and placement stable across pages",
+      "Change navigation only on user request"
+    ],
+    "avoid": [
+      "Reordering or relocating navigation from page to page"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "automated-accessibility-scan",
+      "manual-audit"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "wcag-sc-3.2.3-pass",
+      "navigation-error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

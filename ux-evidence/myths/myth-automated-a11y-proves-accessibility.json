@@ -1,0 +1,20 @@
+{
+  "id": "myth-automated-a11y-proves-accessibility",
+  "statement": "Passing an automated accessibility scanner with zero errors proves a product is accessible.",
+  "why_it_spreads": "Automated tools are fast, cheap and produce a reassuring green pass/fail, which is mistaken for full coverage and treated as legal cover.",
+  "evidence_against": [
+    "WebAIM (src-webaim): automated tools detect only around 40% of WCAG failures and absence of detected errors does not indicate conformance.",
+    "W3C WAI (src-w3c-wai) and WCAG (src-wcag22): many success criteria require human judgement (meaningful alt text, focus order, reading level, context).",
+    "Assistive-technology and keyboard testing routinely surface barriers no scanner reports."
+  ],
+  "replacement_principle": "Treat automated scanning as one input in a layered process that also includes manual keyboard testing, screen-reader review and assessment against WCAG by a knowledgeable person.",
+  "disposition": "block",
+  "confidence": "high",
+  "applicable_contexts": [
+    "any",
+    "accessibility",
+    "compliance",
+    "qa"
+  ],
+  "still_applies_when": []
+}

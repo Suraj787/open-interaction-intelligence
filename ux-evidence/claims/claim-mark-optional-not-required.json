@@ -1,0 +1,104 @@
+{
+  "id": "claim-mark-optional-not-required",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Only ask for information you need, and mark optional fields with '(optional)' rather than flagging every required field, reducing visual noise on the form.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "public-service-system",
+      "web-app",
+      "website",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "account-management",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-gov-uk-service-manual"
+    ],
+    "methodology": [
+      "service-pattern-guidance"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "This is a GOV.UK convention; forms with many optional fields may need required indicators instead. Required status must still be programmatically clear for assistive tech."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Append '(optional)' to optional field labels",
+      "Remove fields you do not strictly need"
+    ],
+    "avoid": [
+      "Marking mandatory fields with asterisks when most fields are required"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-03-10",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "contradiction-dark-mode-default",
+  "topic": "Whether dark mode should be the default appearance",
+  "competing_claims": [
+    "Dark mode reduces eye strain and battery use and is increasingly expected, so it should be the default.",
+    "Light mode is better for legibility of dense text for many users and some visual conditions (e.g. astigmatism), so light should remain the default."
+  ],
+  "resolution_type": "context-dependent",
+  "resolution": "Do not hard-code either as a universal default. Respect the operating-system preference (prefers-color-scheme) on first load and let the user override and persist their choice. Ensure both themes independently meet contrast requirements. The 'correct' default depends on environment (ambient light), content type and audience, not on a single rule.",
+  "unresolved": [
+    "Long-term effects of dark versus light mode on reading performance and fatigue are not conclusively settled."
+  ],
+  "human_decision_required": true
+}

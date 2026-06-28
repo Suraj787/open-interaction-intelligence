@@ -1,0 +1,94 @@
+{
+  "id": "claim-status-colour-001",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Status must not be conveyed by colour alone; provide a text label or icon.",
+    "category": "use-of-colour",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard"
+    ],
+    "purposes": [
+      "monitor"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "colour-vision-deficiency"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 1.4.1 is a floor; meaning must also be programmatically determinable."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Add a visible text label or icon alongside the colour."
+    ],
+    "avoid": [
+      "Encoding state in colour alone."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-text-label",
+      "add-icon"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-colour-independent-meaning"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-text-or-icon"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/evidence-claim.schema.json",
+  "title": "evidence-claim",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "claim",
+    "applicability",
+    "evidence",
+    "detection",
+    "validation",
+    "freshness"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^claim-[a-z0-9-]+$"
+    },
+    "schema_version": {
+      "type": "integer"
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "statement",
+        "category",
+        "type",
+        "force"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "requirement",
+            "recommendation",
+            "principle",
+            "anti-pattern"
+          ]
+        },
+        "force": {
+          "type": "string",
+          "enum": [
+            "normative",
+            "strong-recommendation",
+            "contextual-recommendation",
+            "hypothesis"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "applicability": {
+      "type": "object",
+      "properties": {
+        "product_forms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "workflows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expertise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "abilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "audience_roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jurisdiction": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "tier",
+        "sources",
+        "confidence"
+      ],
+      "properties": {
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "methodology": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "recommendation": {
+      "type": "object",
+      "properties": {
+        "do": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "detection": {
+      "type": "object",
+      "properties": {
+        "static": {
+          "type": "boolean"
+        },
+        "browser": {
+          "type": "boolean"
+        },
+        "model_review": {
+          "type": "boolean"
+        },
+        "human": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "repair": {
+      "type": "object",
+      "properties": {
+        "automatable": {
+          "type": "string",
+          "enum": [
+            "none",
+            "partial",
+            "full"
+          ]
+        },
+        "approval_required": {
+          "type": "boolean"
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "automatable": {
+          "type": "string",
+          "enum": [
+            "none",
+            "partial",
+            "full"
+          ]
+        },
+        "requires_human_eval": {
+          "type": "boolean"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "legal": {
+      "type": "object",
+      "properties": {
+        "compliance_claim_allowed": {
+          "type": "boolean"
+        },
+        "disclaimer_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "freshness": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "published_at": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string"
+        },
+        "review_after": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "current",
+            "stale",
+            "deprecated"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

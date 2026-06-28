@@ -1,0 +1,64 @@
+{
+  "id": "claim-keyboard-operable-all-interactive",
+  "schema_version": 1,
+  "claim": {
+    "statement": "All functionality must be operable through a keyboard interface without requiring specific timings for individual keystrokes (WCAG 2.2 SC 2.1.1 Keyboard, Level A). Custom controls (menus, comboboxes, drag interactions) need keyboard equivalents and must not create keyboard traps.",
+    "category": "keyboard-input",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa", "mobile-web"],
+    "purposes": ["productivity", "transactional", "data-entry", "operations"],
+    "workflows": ["forms", "navigation", "data-tables", "bulk-actions", "search"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "screen-reader", "low-vision"],
+    "devices": ["keyboard", "desktop"],
+    "audience_roles": ["end-user", "operator", "admin"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22"],
+    "methodology": ["normative-standard"],
+    "confidence": "high",
+    "limitations": ["Drag-and-drop and pointer-path gestures require deliberately designed keyboard alternatives"]
+  },
+  "recommendation": {
+    "do": [
+      "Use native interactive elements (button, a, input, select) wherever possible",
+      "Implement ARIA authoring-practice keyboard patterns for custom widgets",
+      "Provide keyboard alternatives for drag, swipe, and pointer-only actions"
+    ],
+    "avoid": [
+      "Click-only handlers on non-focusable div/span elements",
+      "Modals or widgets that trap keyboard focus with no escape"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["replace with native controls", "add key handlers and tabindex", "implement focus-trap escape"]
+  },
+  "validation": {
+    "methods": ["keyboard-only walkthrough", "automated a11y scan", "screen-reader testing"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["count-keyboard-inoperable-controls", "count-keyboard-traps"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

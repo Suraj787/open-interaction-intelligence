@@ -1,0 +1,105 @@
+{
+  "id": "claim-content-on-hover-focus-041",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Content that appears on hover or focus must be dismissable, hoverable, and persistent until dismissed or no longer valid.",
+    "category": "predictability",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "monitor",
+      "configure"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "motor-impairment",
+      "keyboard-only"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "keyboard"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Applies to tooltips, popovers and custom hovercards."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Let users dismiss tooltips with Escape without moving pointer/focus.",
+      "Keep popovers open while the pointer moves onto them."
+    ],
+    "avoid": [
+      "Tooltips that vanish when the pointer crosses them.",
+      "Hovercards that cannot be dismissed and obscure content."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "make-dismissable",
+      "make-hoverable",
+      "make-persistent"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-hover-content-robust"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "dismissable",
+      "hoverable",
+      "persistent"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

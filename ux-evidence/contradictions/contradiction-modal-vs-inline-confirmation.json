@@ -1,0 +1,14 @@
+{
+  "id": "contradiction-modal-vs-inline-confirmation",
+  "topic": "Modal dialog versus inline confirmation for destructive or significant actions",
+  "competing_claims": [
+    "Modal confirmations force a deliberate stop and prevent accidental destructive actions.",
+    "Modals interrupt flow, are often dismissed reflexively, and inline confirmation or undo is less disruptive and more honest about risk."
+  ],
+  "resolution_type": "context-dependent",
+  "resolution": "Scale the friction to the risk and reversibility. For low-risk or reversible actions prefer an immediate action with a prominent, time-generous undo. For high-risk, irreversible or high-impact actions (deleting shared data, financial commitments) use an explicit confirmation that names the consequence, and for the most severe cases require typed or re-authenticated confirmation. Avoid reflexive 'Are you sure?' modals on trivial reversible actions.",
+  "unresolved": [
+    "How long an undo window should remain available for bulk or batch operations is context-specific."
+  ],
+  "human_decision_required": true
+}

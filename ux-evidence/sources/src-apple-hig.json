@@ -1,0 +1,20 @@
+{
+  "id": "src-apple-hig",
+  "title": "Apple Human Interface Guidelines",
+  "organisation": "Apple Inc.",
+  "date": "2026",
+  "url": "https://developer.apple.com/design/human-interface-guidelines/",
+  "tier": 1,
+  "methodology": [
+    "platform-design-guidance",
+    "first-party-conventions"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Platform-vendor guidance reflecting Apple ecosystem conventions",
+    "Recommendations may not transfer to non-Apple platforms",
+    "Limited published empirical methodology behind guidance"
+  ]
+}

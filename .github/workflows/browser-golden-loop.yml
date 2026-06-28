@@ -1,0 +1,90 @@
+name: browser-golden-loop
+
+# Proves the evidence-grounded golden audit-and-repair loop in a real browser.
+# A stable release must not be tagged until this job is green (ADR-REL-002).
+
+on:
+  pull_request:
+  push:
+    branches:
+      - motif-v3-live
+      - motif-v3-1-evidence
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: browser-golden-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  golden-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Motif with the browser extra
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[browser]"
+
+      - name: Install Chromium (Playwright)
+        run: python -m playwright install --with-deps chromium
+
+      - name: Install fixture dependencies
+        working-directory: evals/fixtures/sample-vue-app
+        run: npm install --no-audit --no-fund
+
+      - name: Browser doctor (must be ready)
+        run: |
+          python -m ii doctor --browser
+          python - <<'PY'
+          import sys; sys.path.insert(0, ".")
+          from ii import browser
+          ok, reason = browser.available()
+          print("browser available:", ok, reason)
+          sys.exit(0 if ok else 1)
+          PY
+
+      - name: Deterministic gate
+        run: make check
+
+      - name: Golden browser scenario (require-browser)
+        run: |
+          set -o pipefail
+          python -m ii bench --scenario vue-dashboard-evidence-repair \
+            --target evals/fixtures/sample-vue-app --require-browser > golden-result.json
+          code=$?
+          cat golden-result.json
+          exit $code
+
+      - name: Collect artifacts
+        if: always()
+        run: |
+          mkdir -p motif-browser-golden-loop
+          cp -r evals/fixtures/sample-vue-app/.motif/evidence/* motif-browser-golden-loop/ 2>/dev/null || true
+          cp golden-result.json motif-browser-golden-loop/ 2>/dev/null || true
+
+      - name: Upload golden-loop artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: motif-browser-golden-loop
+          path: motif-browser-golden-loop/
+          retention-days: 14
+          if-no-files-found: warn

@@ -1,0 +1,109 @@
+{
+  "id": "claim-error-message-adjacent-to-field",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Show each validation error message next to the field that caused it, not only in a separate summary, so users can locate and fix the specific problem.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create"
+    ],
+    "workflows": [
+      "data-entry",
+      "error-recovery",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-gov-uk-service-manual",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "service-pattern-guidance",
+      "heuristic-evaluation",
+      "moderated-usability-testing"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Pairing with a page-level error summary is recommended for longer forms."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Place the message immediately above or beside the field",
+      "Associate the message programmatically with the input"
+    ],
+    "avoid": [
+      "Listing all errors only at the top with no inline indicators"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-02-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

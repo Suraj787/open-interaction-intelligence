@@ -1,0 +1,21 @@
+{
+  "id": "src-w3c-wai",
+  "title": "W3C Web Accessibility Initiative (WAI)",
+  "organisation": "World Wide Web Consortium (W3C)",
+  "date": "2026",
+  "url": "https://www.w3.org/WAI/",
+  "tier": 1,
+  "methodology": [
+    "consensus-guidance",
+    "educational-resources",
+    "specification-stewardship"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Umbrella resource pointing to many normative and non-normative documents",
+    "Guidance breadth means specificity varies by topic",
+    "Living resource updated continuously"
+  ]
+}

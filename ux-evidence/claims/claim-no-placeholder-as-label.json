@@ -1,0 +1,111 @@
+{
+  "id": "claim-no-placeholder-as-label",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Do not use placeholder text as the only field label; placeholders disappear on focus, are often skipped by screen readers, and burden users with memory and recall.",
+    "category": "forms-and-errors",
+    "type": "anti-pattern",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-vision",
+      "screen-reader",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-gov-uk-service-manual",
+      "src-nngroup",
+      "src-coga"
+    ],
+    "methodology": [
+      "service-pattern-guidance",
+      "heuristic-evaluation",
+      "accessibility-guidance"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A persistent visible label plus an optional hint/example is the recommended alternative."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use a persistent visible label",
+      "Add examples as separate hint text"
+    ],
+    "avoid": [
+      "Relying on disappearing placeholder text to convey the field's purpose"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

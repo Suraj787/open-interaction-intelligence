@@ -1,0 +1,107 @@
+{
+  "id": "claim-back-button-safety",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Do not break or hijack the browser Back button; users rely on it heavily as their escape hatch, and disabling it disorients them.",
+    "category": "navigation-and-ia",
+    "type": "anti-pattern",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "public-service-system",
+      "documentation",
+      "mobile-web"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation",
+      "checkout",
+      "search-and-filter",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "moderated-usability-testing",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Single-page apps must manage history state so Back behaves as users expect."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep Back returning to the previous meaningful view",
+      "Sync SPA routes with browser history"
+    ],
+    "avoid": [
+      "Disabling Back or trapping users on a page"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-02-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

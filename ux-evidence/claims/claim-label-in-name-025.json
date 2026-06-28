@@ -1,0 +1,101 @@
+{
+  "id": "claim-label-in-name-025",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For components with a visible text label, the accessible name must contain the visible label text so speech-input users can activate them.",
+    "category": "label-in-name",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "public-service-system"
+    ],
+    "purposes": [
+      "transact",
+      "navigate"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "screen-reader",
+      "cognitive"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Where aria-label overrides visible text, speech-recognition users may be unable to target the control."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Ensure aria-label/aria-labelledby starts with or contains the visible text.",
+      "Prefer the visible text as the accessible name."
+    ],
+    "avoid": [
+      "aria-label that omits or contradicts the visible label.",
+      "Icon button labelled 'submit' but visibly reads 'Send'."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "align-accessible-name-with-label"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-label-in-name"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "accessible-name-contains-visible-label"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

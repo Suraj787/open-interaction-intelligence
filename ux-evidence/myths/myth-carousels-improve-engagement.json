@@ -1,0 +1,22 @@
+{
+  "id": "myth-carousels-improve-engagement",
+  "statement": "Auto-rotating homepage carousels increase engagement and let everyone get their content above the fold.",
+  "why_it_spreads": "They satisfy competing stakeholder demands for top-of-page placement and look dynamic.",
+  "evidence_against": [
+    "NN/g on carousels (src-nngroup): auto-advancing carousels suffer banner blindness, low click-through beyond the first slide, and accessibility and motion problems.",
+    "Auto-rotation conflicts with WCAG pause/stop/hide expectations for moving content (src-wcag22)."
+  ],
+  "replacement_principle": "Prefer a single strong message or a static, user-controlled set of promotions; if carousels are used, make them user-initiated, pausable and keyboard accessible.",
+  "disposition": "warn",
+  "confidence": "medium",
+  "applicable_contexts": [
+    "marketing-site",
+    "website",
+    "ecommerce",
+    "homepage"
+  ],
+  "still_applies_when": [
+    "User-controlled, non-auto-rotating galleries (e.g. product images) are appropriate",
+    "Carousels with clear affordances and few, equally relevant items can be acceptable"
+  ]
+}

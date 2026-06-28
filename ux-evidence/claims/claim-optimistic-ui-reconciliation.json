@@ -1,0 +1,64 @@
+{
+  "id": "claim-optimistic-ui-reconciliation",
+  "schema_version": 1,
+  "claim": {
+    "statement": "When using optimistic UI, snapshot prior state before applying the optimistic change, reconcile against the authoritative server response, and roll back cleanly on failure. Guard against stale responses with per-request identity so only the latest mutation commits or reverts.",
+    "category": "resilience",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "pwa", "mobile-web", "native-mobile"],
+    "purposes": ["productivity", "transactional", "operations"],
+    "workflows": ["forms", "data-tables", "bulk-actions"],
+    "expertise": ["intermediate", "expert"],
+    "devices": ["desktop", "mobile", "touch"],
+    "environments": ["low-connectivity"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["industry-best-practice", "expert-review"],
+    "confidence": "medium",
+    "limitations": ["Optimistic UI is risky for irreversible or financial writes; reconciliation and conflict handling are domain-specific"]
+  },
+  "recommendation": {
+    "do": [
+      "Capture a rollback snapshot before mutating local state",
+      "Re-sync from the server (refetch/invalidate) after the mutation settles",
+      "Tag mutations with request identity and ignore outdated responses"
+    ],
+    "avoid": [
+      "Optimistic UI with no rollback path",
+      "Applying optimistic updates to irreversible or money-moving actions without confirmation"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add onMutate/onError rollback handlers", "add post-settle revalidation", "introduce request-identity guards"]
+  },
+  "validation": {
+    "methods": ["failure-injection testing", "race-condition testing", "state-consistency assertions"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["rollback-success-rate", "stale-commit-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

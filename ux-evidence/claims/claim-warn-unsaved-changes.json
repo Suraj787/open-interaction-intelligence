@@ -1,0 +1,105 @@
+{
+  "id": "claim-warn-unsaved-changes",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Warn users before they navigate away or close a context that contains unsaved changes, giving them a chance to save and avoid data loss.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "internal-tool",
+      "dashboard",
+      "public-service-system"
+    ],
+    "purposes": [
+      "create",
+      "configure",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "account-management",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "irreversible"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary",
+      "administrator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Browser-native beforeunload prompts cannot be styled and should be used sparingly; autosave is often preferable."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Prompt before discarding unsaved edits",
+      "Prefer autosave or drafts where feasible"
+    ],
+    "avoid": [
+      "Silently discarding in-progress work on navigation"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-08-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

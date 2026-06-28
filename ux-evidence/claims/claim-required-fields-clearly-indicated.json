@@ -1,0 +1,109 @@
+{
+  "id": "claim-required-fields-clearly-indicated",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Provide labels and instructions that make a field's required status and expected input clear before the user submits.",
+    "category": "forms-and-errors",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-vision",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "normative-standard"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 3.3.2 (Level A) requires labels/instructions; the specific styling of required indicators is not prescribed."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "State which fields are required in a way conveyed to assistive tech",
+      "Give format instructions where input could be ambiguous"
+    ],
+    "avoid": [
+      "Conveying required status by colour alone"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "automated-accessibility-scan",
+      "manual-audit",
+      "screen-reader-testing"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "wcag-sc-3.3.2-pass",
+      "form-error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

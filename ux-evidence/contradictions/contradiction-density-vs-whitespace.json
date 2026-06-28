@@ -1,0 +1,14 @@
+{
+  "id": "contradiction-density-vs-whitespace",
+  "topic": "Information density versus generous whitespace (expert versus novice users)",
+  "competing_claims": [
+    "Generous whitespace improves readability, reduces errors and feels modern, so interfaces should be airy.",
+    "Expert and operational users are slowed by low-density layouts and prefer compact, information-rich screens that minimise scrolling and navigation."
+  ],
+  "resolution_type": "context-dependent",
+  "resolution": "Match density to expertise and frequency of use. Novice, infrequent and consumer audiences benefit from lower density and more whitespace; domain professionals doing high-frequency operational work benefit from higher density and at-a-glance data. Offer density controls where one product serves both audiences, and never sacrifice legibility, target size or grouping to achieve density.",
+  "unresolved": [
+    "Where exactly the density threshold sits for 'mixed' audiences is not settled and needs per-product testing."
+  ],
+  "human_decision_required": true
+}

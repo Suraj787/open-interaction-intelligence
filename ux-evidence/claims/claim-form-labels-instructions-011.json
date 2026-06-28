@@ -1,0 +1,104 @@
+{
+  "id": "claim-form-labels-instructions-011",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Labels or instructions must be provided when content requires user input.",
+    "category": "form-labels",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "communicate"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "screen-reader",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-webaim"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A programmatic association (label/for, aria-labelledby) is needed for screen-reader support beyond visible text."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Give every field a persistent, programmatically associated label.",
+      "Surface required formats and constraints as instructions."
+    ],
+    "avoid": [
+      "Placeholder text used as the only label.",
+      "Fields labelled only by adjacent layout."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "associate-label",
+      "add-instructions"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-field-has-label"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "field-label-coverage"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

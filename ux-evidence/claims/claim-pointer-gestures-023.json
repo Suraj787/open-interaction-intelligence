@@ -1,0 +1,100 @@
+{
+  "id": "claim-pointer-gestures-023",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Functionality that uses multipoint or path-based gestures must also be operable with a single pointer without a path-based gesture, unless essential.",
+    "category": "pointer-gestures",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "mobile-web",
+      "web-app",
+      "dashboard"
+    ],
+    "purposes": [
+      "navigate",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "field",
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Examples: pinch-zoom, swipe carousels and slider dragging need single-tap equivalents."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Provide buttons as single-pointer alternatives to swipe/pinch gestures.",
+      "Offer next/previous controls alongside swipe."
+    ],
+    "avoid": [
+      "Carousels operable only by swipe.",
+      "Sliders operable only by drag."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-single-pointer-control"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-single-pointer-alternative"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-single-pointer-alt"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

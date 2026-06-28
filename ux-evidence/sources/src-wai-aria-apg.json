@@ -1,0 +1,21 @@
+{
+  "id": "src-wai-aria-apg",
+  "title": "ARIA Authoring Practices Guide (APG)",
+  "organisation": "World Wide Web Consortium (W3C) Web Accessibility Initiative",
+  "date": "2024",
+  "url": "https://www.w3.org/WAI/ARIA/apg/",
+  "tier": 1,
+  "methodology": [
+    "consensus-guidance",
+    "reference-implementation",
+    "task-force-review"
+  ],
+  "access_type": "standard",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Patterns are illustrative, not the only conformant approach",
+    "Native HTML semantics are preferred over ARIA where available",
+    "Living document; examples evolve over time"
+  ]
+}

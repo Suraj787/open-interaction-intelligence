@@ -1,0 +1,103 @@
+{
+  "id": "claim-instant-feedback-100ms",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For direct-manipulation interactions, respond within about 0.1 second so the system feels instantaneous; the result display itself is the feedback.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool",
+      "website"
+    ],
+    "purposes": [
+      "create",
+      "configure",
+      "monitor",
+      "analyse"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "low-power"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "literature-synthesis",
+      "perceptual-research"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Sub-100ms is not always achievable over networks; applies most to local UI manipulation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Reflect direct manipulation immediately",
+      "Optimise local interactions for snappiness"
+    ],
+    "avoid": [
+      "Adding artificial delays to direct interactions"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2014-06-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

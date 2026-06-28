@@ -1,0 +1,104 @@
+{
+  "id": "claim-error-suggestion-013",
+  "schema_version": 1,
+  "claim": {
+    "statement": "When an input error is detected and suggestions for correction are known, those suggestions must be provided unless it would jeopardise security or purpose.",
+    "category": "error-suggestion",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed",
+      "novice"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "screen-reader"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "high-interruption"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Suggestions may be withheld where they would compromise security (e.g. exact password rules)."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Offer concrete correction guidance (expected format, allowed range).",
+      "Echo the constraint that was violated."
+    ],
+    "avoid": [
+      "'Invalid input' with no path to fix it.",
+      "Suggestions that reveal sensitive validation details."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-correction-suggestion"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-error-suggestion-present"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "suggestion-present"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

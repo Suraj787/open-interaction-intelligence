@@ -1,0 +1,14 @@
+{
+  "id": "val-reduced-motion-check",
+  "method": "Verify that the interface honours the prefers-reduced-motion setting by removing or reducing non-essential animation, and that any moving or auto-updating content can be paused, stopped or hidden (WCAG 2.2.2, 2.3.3).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "animations-respecting-preference",
+    "animations-ignoring-preference",
+    "auto-motion-with-controls"
+  ],
+  "expected_output": "Report of animations/transitions and whether each responds to prefers-reduced-motion, plus a list of auto-playing or moving content lacking pause/stop/hide controls."
+}

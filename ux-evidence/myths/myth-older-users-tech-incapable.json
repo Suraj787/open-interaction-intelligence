@@ -1,0 +1,18 @@
+{
+  "id": "myth-older-users-tech-incapable",
+  "statement": "Older users are inherently incapable with technology, so interfaces for them should be dumbed down.",
+  "why_it_spreads": "Ageist stereotyping and conflation of unfamiliarity or accessibility needs with incapacity.",
+  "evidence_against": [
+    "NN/g research on older adults (src-nngroup): older users succeed when designs respect target size, contrast and clear language; failures stem from poor design, not age.",
+    "W3C WAI / WCAG (src-w3c-wai, src-wcag22): age-related needs are addressed by sound accessibility practice, not by removing capability."
+  ],
+  "replacement_principle": "Design for the actual physical, sensory and cognitive needs present in the audience (vision, motor precision, familiarity) instead of stereotyping a demographic.",
+  "disposition": "block",
+  "confidence": "high",
+  "applicable_contexts": [
+    "any",
+    "accessibility",
+    "audience-assumptions"
+  ],
+  "still_applies_when": []
+}

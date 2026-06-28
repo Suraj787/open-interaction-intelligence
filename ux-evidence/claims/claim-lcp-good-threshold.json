@@ -1,0 +1,64 @@
+{
+  "id": "claim-lcp-good-threshold",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Render the main content quickly: target a Largest Contentful Paint (LCP) of 2.5 seconds or less at the 75th percentile, the 'good' Core Web Vitals threshold. Optimise the LCP resource's discovery, priority, and delivery so users perceive a fast load.",
+    "category": "performance",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["content-consumption", "transactional", "productivity"],
+    "workflows": ["navigation", "content-consumption", "search"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "devices": ["mobile", "touch", "desktop"],
+    "environments": ["low-connectivity"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["normative-standard", "field-data-thresholds"],
+    "confidence": "high",
+    "limitations": ["2.5s is the good boundary; >4.0s is poor. Measured at p75 across mobile and desktop"]
+  },
+  "recommendation": {
+    "do": [
+      "Preload and prioritise the LCP image/text resource",
+      "Serve appropriately sized, modern-format images and efficient fonts",
+      "Reduce render-blocking CSS/JS and server response time"
+    ],
+    "avoid": [
+      "Lazy-loading the LCP element",
+      "Large render-blocking resources ahead of main content"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["preload LCP resource", "optimise images/fonts", "remove render-blocking resources"]
+  },
+  "validation": {
+    "methods": ["field RUM (CrUX/web-vitals)", "Lighthouse", "DevTools trace"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["lcp-p75-ms", "ttfb", "render-blocking-bytes"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

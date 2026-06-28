@@ -1,0 +1,100 @@
+{
+  "id": "claim-reflow-015",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Content must reflow to a single column without loss of information or two-dimensional scrolling at 320 CSS pixels width (400% zoom).",
+    "category": "reflow",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "mobile-web"
+    ],
+    "purposes": [
+      "browse",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "mobile",
+      "desktop"
+    ],
+    "environments": [
+      "office",
+      "field"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Exception: content requiring 2D layout such as data tables, maps and toolbars."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use responsive layouts so content reflows to 320px without horizontal scroll.",
+      "Allow data tables to scroll within their own region."
+    ],
+    "avoid": [
+      "Fixed-width layouts that force horizontal scrolling when zoomed.",
+      "Content clipped off-screen at 400% zoom."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "use-responsive-layout",
+      "remove-fixed-widths"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-reflow-320px"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "no-horizontal-scroll-at-320"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "claim-labels-above-fields",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Position field labels above their inputs rather than to the left or inside, to preserve horizontal space for input and improve scannability, especially on narrow screens.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "ecommerce",
+      "web-app",
+      "website",
+      "mobile-web",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "mobile",
+      "touch",
+      "desktop",
+      "tablet"
+    ],
+    "environments": [
+      "home",
+      "office",
+      "field"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-baymard",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "large-scale-usability-testing",
+      "moderated-usability-testing"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Baymard's sample is ecommerce/mobile checkout; very short binary fields may use other placements."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Place the label directly above the input",
+      "Keep one label-field pair per row on mobile"
+    ],
+    "avoid": [
+      "Left-aligned labels that crowd the input on small screens",
+      "Using placeholder text as the only label"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-06-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

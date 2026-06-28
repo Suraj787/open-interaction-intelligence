@@ -1,0 +1,15 @@
+{
+  "id": "val-keyboard-traversal",
+  "method": "Operate the entire interface using only the keyboard, confirming all interactive elements are reachable and operable, focus order is logical, and no keyboard traps exist (WCAG 2.1.1, 2.1.2, 2.4.3).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "reachable-control-ratio",
+    "focus-order-anomalies",
+    "keyboard-traps",
+    "operable-control-ratio"
+  ],
+  "expected_output": "Traversal log of focus order, list of unreachable or inoperable controls, and any detected keyboard traps. Complex widgets may still need human confirmation."
+}

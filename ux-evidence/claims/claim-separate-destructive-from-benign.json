@@ -1,0 +1,65 @@
+{
+  "id": "claim-separate-destructive-from-benign",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Do not place consequential or destructive options immediately adjacent to, or styled the same as, benign frequent options. Proximity and visual sameness of high-consequence and low-consequence controls cause costly slips; separate, restyle, or relocate dangerous actions.",
+    "category": "high-risk-action",
+    "type": "anti-pattern",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["productivity", "operations", "transactional"],
+    "workflows": ["forms", "data-tables", "bulk-actions", "settings"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "low-vision"],
+    "risks": ["irreversible", "financial"],
+    "devices": ["touch", "mobile", "desktop", "keyboard"],
+    "audience_roles": ["end-user", "operator", "admin"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Layout trade-offs differ by surface; the principle is general, exact placement is contextual"]
+  },
+  "recommendation": {
+    "do": [
+      "Separate destructive actions from frequent benign ones with space or grouping",
+      "Give destructive actions distinct, recognisable styling",
+      "Consider relocating irreversible actions into an overflow or danger zone"
+    ],
+    "avoid": [
+      "Delete sitting flush against Save with identical appearance",
+      "Consequential menu items directly above/below routine ones with no separation"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add spacing/grouping between actions", "restyle destructive actions distinctly", "move irreversible actions to a danger zone"]
+  },
+  "validation": {
+    "methods": ["layout/heuristic review", "mis-click testing", "usability testing"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["adjacent-consequential-control-count", "mis-click-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "val-runtime-geometry-check",
+  "method": "Measure the rendered hit-target geometry of interactive controls at runtime and compare against minimum target-size guidance (WCAG 2.5.8 minimum 24x24 CSS px, with larger touch recommendations).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "target-width-px",
+    "target-height-px",
+    "target-spacing-px",
+    "undersized-target-count"
+  ],
+  "expected_output": "List of interactive elements with measured width/height/spacing and a pass/fail flag against the 24x24 CSS px threshold (and any stricter touch target budget)."
+}

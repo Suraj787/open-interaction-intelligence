@@ -1,0 +1,101 @@
+{
+  "id": "claim-focus-not-obscured-006",
+  "schema_version": 1,
+  "claim": {
+    "statement": "When a component receives keyboard focus, it must not be entirely hidden by author-created content such as sticky headers or cookie banners.",
+    "category": "focus-indicator",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "dashboard"
+    ],
+    "purposes": [
+      "navigate",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "keyboard",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level AA, SC 2.4.11). Minimum requires the focused item not be entirely hidden."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Add scroll-padding/scroll-margin so sticky bars never fully cover the focused element.",
+      "Test tabbing with overlays present."
+    ],
+    "avoid": [
+      "Sticky toolbars that scroll the focused field under them.",
+      "Persistent banners overlapping focus targets."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-scroll-padding",
+      "reserve-focus-offset"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-focus-not-obscured"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "focus-fully-visible"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

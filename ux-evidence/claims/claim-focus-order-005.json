@@ -1,0 +1,102 @@
+{
+  "id": "claim-focus-order-005",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Focusable components must receive focus in an order that preserves meaning and operability.",
+    "category": "focus-order",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "public-service-system"
+    ],
+    "purposes": [
+      "transact",
+      "navigate"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "screen-reader"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "keyboard",
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "DOM order should generally match visual order; positive tabindex usually harms order."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep DOM order aligned with visual reading order.",
+      "Move focus into and out of dialogs deliberately."
+    ],
+    "avoid": [
+      "Positive tabindex values that jump focus around.",
+      "CSS reordering that desyncs visual and tab order."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "reorder-dom",
+      "remove-positive-tabindex"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-focus-order-logical"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "tab-order-matches-visual"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

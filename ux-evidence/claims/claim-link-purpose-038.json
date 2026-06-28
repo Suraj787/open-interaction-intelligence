@@ -1,0 +1,101 @@
+{
+  "id": "claim-link-purpose-038",
+  "schema_version": 1,
+  "claim": {
+    "statement": "The purpose of each link must be determinable from the link text alone or together with its programmatically determined context.",
+    "category": "structure",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce"
+    ],
+    "purposes": [
+      "navigate",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Screen-reader users often navigate by a list of links out of context."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Make link text describe its destination.",
+      "Add context via aria-label or surrounding semantics when needed."
+    ],
+    "avoid": [
+      "Repeated 'Read more' / 'Click here' links.",
+      "Icon-only links with no accessible name."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "rewrite-link-text",
+      "add-link-context"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-link-purpose-clear"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "link-text-descriptive"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

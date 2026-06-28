@@ -1,0 +1,111 @@
+{
+  "id": "claim-descriptive-link-and-nav-labels",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Make link and navigation labels descriptive of their destination so their purpose is clear from the link text and context.",
+    "category": "navigation-and-ia",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "documentation",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "learn",
+      "comply"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "normative-standard",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 2.4.4 Link Purpose (In Context) is Level A; purpose may be derived from link text plus its programmatic context."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Write link text that states the destination",
+      "Avoid repeated 'click here' or 'read more' with no context"
+    ],
+    "avoid": [
+      "Ambiguous link labels that require surrounding text to interpret"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "automated-accessibility-scan",
+      "manual-audit",
+      "screen-reader-testing"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "wcag-sc-2.4.4-pass",
+      "link-comprehension-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "counts": {
+    "claims": 110,
+    "sources": 13,
+    "myths": 12,
+    "contradictions": 5,
+    "validations": 8,
+    "packs": 3
+  },
+  "by_category": {
+    "accessible-authentication": [
+      "claim-accessible-authentication-029"
+    ],
+    "performance": [
+      "claim-animate-transform-opacity",
+      "claim-avoid-layout-shift-cls",
+      "claim-debounce-expensive-work",
+      "claim-inp-under-200ms",
+      "claim-lcp-good-threshold",
+      "claim-virtualize-large-lists"
+    ],
+    "reduced-motion": [
+      "claim-animation-from-interactions-021"
+    ],
+    "forms-and-errors": [
+      "claim-appropriate-input-types",
+      "claim-autocomplete-input-purpose",
+      "claim-confirmation-before-destructive-submit",
+      "claim-error-message-adjacent-to-field",
+      "claim-error-message-recovery-suggestion",
+      "claim-error-messages-plain-language",
+      "claim-error-summary-top-of-page",
+      "claim-error-tone-no-blame",
+      "claim-inline-validation-on-blur",
+      "claim-labels-above-fields",
+      "claim-mark-optional-not-required",
+      "claim-no-placeholder-as-label",
+      "claim-preserve-input-on-error",
+      "claim-required-fields-clearly-indicated",
+      "claim-single-column-form-layout",
+      "claim-warn-unsaved-changes"
+    ],
+    "high-risk-action": [
+      "claim-audit-trail-operator-actions",
+      "claim-clear-consequence-text",
+      "claim-confirm-bulk-actions",
+      "claim-confirm-destructive-actions",
+      "claim-double-confirm-irreversible",
+      "claim-no-accidental-submit",
+      "claim-separate-destructive-from-benign",
+      "claim-slow-down-financial-legal-emergency",
+      "claim-undo-where-possible"
+    ],
+    "data-entry": [
+      "claim-autocomplete-attributes-input"
+    ],
+    "keyboard-input": [
+      "claim-autofocus-caution",
+      "claim-focus-management-route-change",
+      "claim-keyboard-operable-all-interactive",
+      "claim-keyboard-shortcuts-expert-workflows",
+      "claim-visible-focus-indicator"
+    ],
+    "navigation-and-ia": [
+      "claim-avoid-deep-nesting",
+      "claim-back-button-preserve-state",
+      "claim-back-button-safety",
+      "claim-breadcrumbs-deep-hierarchy",
+      "claim-clickable-logo-home",
+      "claim-consistent-component-identification",
+      "claim-consistent-navigation-placement",
+      "claim-current-location-indication",
+      "claim-descriptive-link-and-nav-labels",
+      "claim-location-based-breadcrumbs",
+      "claim-recognisable-persistent-nav",
+      "claim-search-and-browse-both"
+    ],
+    "touch-input": [
+      "claim-avoid-hover-only-touch",
+      "claim-mobile-keyboard-input-type",
+      "claim-touch-target-size-minimum",
+      "claim-touch-target-spacing"
+    ],
+    "structure": [
+      "claim-bypass-blocks-036",
+      "claim-headings-labels-020",
+      "claim-info-relationships-019",
+      "claim-link-purpose-038",
+      "claim-page-titled-037"
+    ],
+    "media": [
+      "claim-captions-prerecorded-040"
+    ],
+    "consistent-help": [
+      "claim-consistent-help-026"
+    ],
+    "consistent-navigation": [
+      "claim-consistent-navigation-027"
+    ],
+    "predictability": [
+      "claim-content-on-hover-focus-041",
+      "claim-on-input-039"
+    ],
+    "contrast": [
+      "claim-contrast-non-text-003",
+      "claim-contrast-text-minimum-002"
+    ],
+    "pointer-gestures": [
+      "claim-dragging-movements-032",
+      "claim-pointer-gestures-023"
+    ],
+    "error-identification": [
+      "claim-error-identification-012"
+    ],
+    "transactions": [
+      "claim-error-prevention-legal-financial",
+      "claim-nonstandard-confirmation-high-risk"
+    ],
+    "error-suggestion": [
+      "claim-error-suggestion-013"
+    ],
+    "system-status-feedback": [
+      "claim-feedback-within-1-second",
+      "claim-instant-feedback-100ms",
+      "claim-loading-indicator-async",
+      "claim-optimistic-vs-confirmed-save",
+      "claim-progress-indicator-long-tasks",
+      "claim-skeleton-screens-loading",
+      "claim-success-feedback-on-action",
+      "claim-undo-over-confirmation",
+      "claim-undo-support",
+      "claim-visibility-of-system-status"
+    ],
+    "focus-indicator": [
+      "claim-focus-appearance-033",
+      "claim-focus-not-obscured-006",
+      "claim-focus-visible-004"
+    ],
+    "focus-order": [
+      "claim-focus-order-005"
+    ],
+    "form-labels": [
+      "claim-form-labels-instructions-011",
+      "claim-identify-input-purpose-035"
+    ],
+    "keyboard": [
+      "claim-keyboard-operable-007",
+      "claim-no-keyboard-trap-008"
+    ],
+    "label-in-name": [
+      "claim-label-in-name-025"
+    ],
+    "language": [
+      "claim-language-of-page-030"
+    ],
+    "name-role-value": [
+      "claim-name-role-value-010"
+    ],
+    "resilience": [
+      "claim-network-failure-resilience",
+      "claim-offline-low-connectivity-handling",
+      "claim-optimistic-ui-reconciliation"
+    ],
+    "images-alt-text": [
+      "claim-non-text-alt-018"
+    ],
+    "reflow": [
+      "claim-orientation-034",
+      "claim-reflow-015"
+    ],
+    "cognitive-accessibility": [
+      "claim-plain-language-042"
+    ],
+    "pointer-cancellation": [
+      "claim-pointer-cancellation-024"
+    ],
+    "redundant-entry": [
+      "claim-redundant-entry-028"
+    ],
+    "resize-text": [
+      "claim-resize-text-200-017"
+    ],
+    "use-of-colour": [
+      "claim-status-colour-001"
+    ],
+    "live-regions": [
+      "claim-status-messages-014"
+    ],
+    "target-size": [
+      "claim-target-size-minimum-009"
+    ],
+    "text-spacing": [
+      "claim-text-spacing-016"
+    ],
+    "seizure-safety": [
+      "claim-three-flashes-022"
+    ],
+    "timeouts": [
+      "claim-timing-adjustable-031"
+    ]
+  },
+  "by_tier": {
+    "1": [
+      "claim-accessible-authentication-029",
+      "claim-animate-transform-opacity",
+      "claim-animation-from-interactions-021",
+      "claim-autocomplete-attributes-input",
+      "claim-autocomplete-input-purpose",
+      "claim-avoid-layout-shift-cls",
+      "claim-bypass-blocks-036",
+      "claim-captions-prerecorded-040",
+      "claim-consistent-component-identification",
+      "claim-consistent-help-026",
+      "claim-consistent-navigation-027",
+      "claim-consistent-navigation-placement",
+      "claim-content-on-hover-focus-041",
+      "claim-contrast-non-text-003",
+      "claim-contrast-text-minimum-002",
+      "claim-descriptive-link-and-nav-labels",
+      "claim-dragging-movements-032",
+      "claim-error-identification-012",
+      "claim-error-message-recovery-suggestion",
+      "claim-error-prevention-legal-financial",
+      "claim-error-suggestion-013",
+      "claim-focus-appearance-033",
+      "claim-focus-management-route-change",
+      "claim-focus-not-obscured-006",
+      "claim-focus-order-005",
+      "claim-focus-visible-004",
+      "claim-form-labels-instructions-011",
+      "claim-headings-labels-020",
+      "claim-identify-input-purpose-035",
+      "claim-info-relationships-019",
+      "claim-inp-under-200ms",
+      "claim-keyboard-operable-007",
+      "claim-keyboard-operable-all-interactive",
+      "claim-label-in-name-025",
+      "claim-language-of-page-030",
+      "claim-lcp-good-threshold",
+      "claim-link-purpose-038",
+      "claim-name-role-value-010",
+      "claim-no-keyboard-trap-008",
+      "claim-non-text-alt-018",
+      "claim-on-input-039",
+      "claim-orientation-034",
+      "claim-page-titled-037",
+      "claim-pointer-cancellation-024",
+      "claim-pointer-gestures-023",
+      "claim-redundant-entry-028",
+      "claim-reflow-015",
+      "claim-required-fields-clearly-indicated",
+      "claim-resize-text-200-017",
+      "claim-status-colour-001",
+      "claim-status-messages-014",
+      "claim-target-size-minimum-009",
+      "claim-text-spacing-016",
+      "claim-three-flashes-022",
+      "claim-timing-adjustable-031",
+      "claim-touch-target-size-minimum",
+      "claim-touch-target-spacing",
+      "claim-visible-focus-indicator"
+    ],
+    "2": [
+      "claim-appropriate-input-types",
+      "claim-autofocus-caution",
+      "claim-avoid-hover-only-touch",
+      "claim-debounce-expensive-work",
+      "claim-error-message-adjacent-to-field",
+      "claim-error-summary-top-of-page",
+      "claim-mark-optional-not-required",
+      "claim-mobile-keyboard-input-type",
+      "claim-no-placeholder-as-label",
+      "claim-offline-low-connectivity-handling",
+      "claim-plain-language-042",
+      "claim-virtualize-large-lists"
+    ],
+    "4": [
+      "claim-audit-trail-operator-actions",
+      "claim-optimistic-vs-confirmed-save",
+      "claim-slow-down-financial-legal-emergency"
+    ],
+    "3": [
+      "claim-avoid-deep-nesting",
+      "claim-back-button-preserve-state",
+      "claim-back-button-safety",
+      "claim-breadcrumbs-deep-hierarchy",
+      "claim-clear-consequence-text",
+      "claim-clickable-logo-home",
+      "claim-confirm-bulk-actions",
+      "claim-confirm-destructive-actions",
+      "claim-confirmation-before-destructive-submit",
+      "claim-current-location-indication",
+      "claim-double-confirm-irreversible",
+      "claim-error-messages-plain-language",
+      "claim-error-tone-no-blame",
+      "claim-feedback-within-1-second",
+      "claim-inline-validation-on-blur",
+      "claim-instant-feedback-100ms",
+      "claim-keyboard-shortcuts-expert-workflows",
+      "claim-labels-above-fields",
+      "claim-loading-indicator-async",
+      "claim-location-based-breadcrumbs",
+      "claim-network-failure-resilience",
+      "claim-no-accidental-submit",
+      "claim-nonstandard-confirmation-high-risk",
+      "claim-optimistic-ui-reconciliation",
+      "claim-preserve-input-on-error",
+      "claim-progress-indicator-long-tasks",
+      "claim-recognisable-persistent-nav",
+      "claim-search-and-browse-both",
+      "claim-separate-destructive-from-benign",
+      "claim-single-column-form-layout",
+      "claim-skeleton-screens-loading",
+      "claim-success-feedback-on-action",
+      "claim-undo-over-confirmation",
+      "claim-undo-support",
+      "claim-undo-where-possible",
+      "claim-visibility-of-system-status",
+      "claim-warn-unsaved-changes"
+    ]
+  },
+  "by_force": {
+    "normative": [
+      "claim-accessible-authentication-029",
+      "claim-autocomplete-attributes-input",
+      "claim-autocomplete-input-purpose",
+      "claim-avoid-layout-shift-cls",
+      "claim-bypass-blocks-036",
+      "claim-captions-prerecorded-040",
+      "claim-consistent-component-identification",
+      "claim-consistent-help-026",
+      "claim-consistent-navigation-027",
+      "claim-consistent-navigation-placement",
+      "claim-content-on-hover-focus-041",
+      "claim-contrast-non-text-003",
+      "claim-contrast-text-minimum-002",
+      "claim-descriptive-link-and-nav-labels",
+      "claim-dragging-movements-032",
+      "claim-error-identification-012",
+      "claim-error-message-recovery-suggestion",
+      "claim-error-prevention-legal-financial",
+      "claim-error-suggestion-013",
+      "claim-focus-management-route-change",
+      "claim-focus-not-obscured-006",
+      "claim-focus-order-005",
+      "claim-focus-visible-004",
+      "claim-form-labels-instructions-011",
+      "claim-headings-labels-020",
+      "claim-identify-input-purpose-035",
+      "claim-info-relationships-019",
+      "claim-inp-under-200ms",
+      "claim-keyboard-operable-007",
+      "claim-keyboard-operable-all-interactive",
+      "claim-label-in-name-025",
+      "claim-language-of-page-030",
+      "claim-lcp-good-threshold",
+      "claim-link-purpose-038",
+      "claim-name-role-value-010",
+      "claim-no-keyboard-trap-008",
+      "claim-non-text-alt-018",
+      "claim-on-input-039",
+      "claim-orientation-034",
+      "claim-page-titled-037",
+      "claim-pointer-cancellation-024",
+      "claim-pointer-gestures-023",
+      "claim-redundant-entry-028",
+      "claim-reflow-015",
+      "claim-required-fields-clearly-indicated",
+      "claim-resize-text-200-017",
+      "claim-status-colour-001",
+      "claim-status-messages-014",
+      "claim-target-size-minimum-009",
+      "claim-text-spacing-016",
+      "claim-three-flashes-022",
+      "claim-timing-adjustable-031",
+      "claim-touch-target-size-minimum",
+      "claim-touch-target-spacing",
+      "claim-visible-focus-indicator"
+    ],
+    "strong-recommendation": [
+      "claim-animate-transform-opacity",
+      "claim-animation-from-interactions-021",
+      "claim-appropriate-input-types",
+      "claim-avoid-hover-only-touch",
+      "claim-back-button-safety",
+      "claim-breadcrumbs-deep-hierarchy",
+      "claim-clear-consequence-text",
+      "claim-confirm-bulk-actions",
+      "claim-confirm-destructive-actions",
+      "claim-confirmation-before-destructive-submit",
+      "claim-current-location-indication",
+      "claim-debounce-expensive-work",
+      "claim-double-confirm-irreversible",
+      "claim-error-message-adjacent-to-field",
+      "claim-error-messages-plain-language",
+      "claim-error-summary-top-of-page",
+      "claim-feedback-within-1-second",
+      "claim-focus-appearance-033",
+      "claim-inline-validation-on-blur",
+      "claim-labels-above-fields",
+      "claim-loading-indicator-async",
+      "claim-mobile-keyboard-input-type",
+      "claim-no-placeholder-as-label",
+      "claim-plain-language-042",
+      "claim-preserve-input-on-error",
+      "claim-progress-indicator-long-tasks",
+      "claim-recognisable-persistent-nav",
+      "claim-search-and-browse-both",
+      "claim-separate-destructive-from-benign",
+      "claim-single-column-form-layout",
+      "claim-success-feedback-on-action",
+      "claim-undo-support",
+      "claim-undo-where-possible",
+      "claim-virtualize-large-lists",
+      "claim-visibility-of-system-status"
+    ],
+    "hypothesis": [
+      "claim-audit-trail-operator-actions",
+      "claim-optimistic-vs-confirmed-save",
+      "claim-slow-down-financial-legal-emergency"
+    ],
+    "contextual-recommendation": [
+      "claim-autofocus-caution",
+      "claim-avoid-deep-nesting",
+      "claim-back-button-preserve-state",
+      "claim-clickable-logo-home",
+      "claim-error-tone-no-blame",
+      "claim-instant-feedback-100ms",
+      "claim-keyboard-shortcuts-expert-workflows",
+      "claim-location-based-breadcrumbs",
+      "claim-mark-optional-not-required",
+      "claim-network-failure-resilience",
+      "claim-no-accidental-submit",
+      "claim-nonstandard-confirmation-high-risk",
+      "claim-offline-low-connectivity-handling",
+      "claim-optimistic-ui-reconciliation",
+      "claim-skeleton-screens-loading",
+      "claim-undo-over-confirmation",
+      "claim-warn-unsaved-changes"
+    ]
+  }
+}

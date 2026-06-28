@@ -1,0 +1,100 @@
+{
+  "id": "claim-page-titled-037",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Each page must have a title that describes its topic or purpose.",
+    "category": "structure",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "navigate",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Titles orient screen-reader users and people managing multiple tabs/windows."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Give each route a unique, descriptive <title>.",
+      "Lead with the page-specific topic, then the site name."
+    ],
+    "avoid": [
+      "Generic 'Home' or 'Untitled' titles on every page.",
+      "SPA routes that never update the document title."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "set-descriptive-title",
+      "update-spa-title"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-page-title-descriptive"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-unique-descriptive-title"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

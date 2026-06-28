@@ -1,0 +1,23 @@
+{
+  "id": "myth-three-click-rule",
+  "statement": "Every page or piece of content must be reachable within three clicks or users will give up.",
+  "why_it_spreads": "It is a memorable, quantifiable rule of thumb that surfaced in late-1990s web-design folklore and Jeffrey Zeldman's 2001 book, and it gives teams a simple target.",
+  "evidence_against": [
+    "NN/g (src-nngroup, https://www.nngroup.com/articles/3-click-rule/): no published study supports it; Porter's study found drop-off and satisfaction did not worsen past three clicks.",
+    "What matters is interaction cost and wayfinding clarity, not a raw click count."
+  ],
+  "replacement_principle": "Minimise total interaction and cognitive cost and keep each step clear and confidence-building, rather than capping the number of clicks.",
+  "disposition": "warn",
+  "confidence": "high",
+  "applicable_contexts": [
+    "website",
+    "web-app",
+    "ecommerce",
+    "navigation",
+    "information-architecture"
+  ],
+  "still_applies_when": [
+    "As a loose heuristic to question unnecessarily deep navigation",
+    "When each extra step genuinely adds friction with no orientation benefit"
+  ]
+}

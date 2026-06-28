@@ -1,0 +1,111 @@
+{
+  "id": "claim-consistent-component-identification",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Identify functional components that recur across pages consistently (same name, icon, and label) so users learn them once and recognise them everywhere.",
+    "category": "navigation-and-ia",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "public-service-system",
+      "documentation",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "configure",
+      "comply"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-vision",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "normative-standard",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 3.2.4 Consistent Identification is Level AA and applies to components with the same functionality within a set of pages."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use the same label and icon for the same function across pages",
+      "Maintain a shared design system for recurring components"
+    ],
+    "avoid": [
+      "Naming or icon-ing the same control differently on different pages"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "automated-accessibility-scan",
+      "manual-audit"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "wcag-sc-3.2.4-pass",
+      "recognition-error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

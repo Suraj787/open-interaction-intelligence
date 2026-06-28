@@ -1,0 +1,64 @@
+{
+  "id": "claim-double-confirm-irreversible",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For irreversible, high-severity actions with no undo (delete an account, drop a database, permanently delete a project), add deliberate friction such as a type-to-confirm step (typing the resource name or the word 'delete') so the action cannot be triggered by a single reflexive click.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa"],
+    "purposes": ["operations", "transactional"],
+    "workflows": ["settings", "bulk-actions", "data-tables"],
+    "expertise": ["intermediate", "expert"],
+    "risks": ["irreversible"],
+    "devices": ["desktop", "keyboard"],
+    "audience_roles": ["operator", "admin"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Friction is justified only for genuinely irreversible/critical actions; overuse trains users to ignore it"]
+  },
+  "recommendation": {
+    "do": [
+      "Use type-to-confirm (resource name or 'delete') for irreversible actions",
+      "Group irreversible controls in a clearly marked danger zone",
+      "Keep the confirm action disabled until the typed value matches"
+    ],
+    "avoid": [
+      "A single-click delete for irreversible operations",
+      "Applying heavy friction to routine reversible actions"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add type-to-confirm input", "gate confirm button on exact match", "segregate into a danger zone"]
+  },
+  "validation": {
+    "methods": ["interaction walkthrough", "heuristic review", "usability testing"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["accidental-irreversible-action-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

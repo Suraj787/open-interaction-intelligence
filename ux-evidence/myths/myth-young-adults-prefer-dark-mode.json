@@ -1,0 +1,18 @@
+{
+  "id": "myth-young-adults-prefer-dark-mode",
+  "statement": "Young adults universally prefer dark mode, so it should be the default for that audience.",
+  "why_it_spreads": "Trend-following and conflating a popular option with a universal demographic preference.",
+  "evidence_against": [
+    "NN/g on dark mode (src-nngroup): preference is individual and context-dependent; light mode can improve performance for some visual tasks and some readers with conditions like astigmatism.",
+    "Preference varies with ambient light, content type and accessibility needs, not age alone."
+  ],
+  "replacement_principle": "Offer a user-controllable theme that respects the operating-system preference (prefers-color-scheme) rather than forcing a default by demographic assumption.",
+  "disposition": "block",
+  "confidence": "high",
+  "applicable_contexts": [
+    "any",
+    "audience-assumptions",
+    "theming"
+  ],
+  "still_applies_when": []
+}

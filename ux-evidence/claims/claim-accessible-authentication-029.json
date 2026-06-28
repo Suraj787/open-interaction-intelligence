@@ -1,0 +1,106 @@
+{
+  "id": "claim-accessible-authentication-029",
+  "schema_version": 1,
+  "claim": {
+    "statement": "An authentication step must not rely on a cognitive function test (such as remembering or transcribing) unless an alternative, a mechanism, or object/personal-content recognition is available.",
+    "category": "accessible-authentication",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply"
+    ],
+    "workflows": [
+      "account-management",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "motor-impairment"
+    ],
+    "risks": [
+      "privacy",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level AA, SC 3.3.8). Allowing password managers/paste and supporting WebAuthn satisfies it."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Allow paste and password-manager autofill on credential fields.",
+      "Support passkeys/WebAuthn or email-link alternatives."
+    ],
+    "avoid": [
+      "Blocking paste in password or OTP fields.",
+      "Transcription puzzles or memory tests with no alternative."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "allow-paste",
+      "support-webauthn",
+      "provide-auth-alternative"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-accessible-authentication"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "no-cognitive-test-or-has-alternative"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

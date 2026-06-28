@@ -1,0 +1,107 @@
+{
+  "id": "claim-single-column-form-layout",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Lay out form fields in a single column so the user's attention moves predictably downward, reducing skipped fields and misinterpretation seen with multi-column layouts.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "ecommerce",
+      "web-app",
+      "website",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "tablet"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-baymard",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "large-scale-usability-testing",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Closely related short fields (e.g. city / state / ZIP) may sit on one row; the guidance targets extensive multi-column layouts."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Stack fields vertically in one column",
+      "Group only tightly-related short fields on a single row"
+    ],
+    "avoid": [
+      "Spreading unrelated fields across multiple columns"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-19",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

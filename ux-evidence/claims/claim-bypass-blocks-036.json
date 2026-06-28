@@ -1,0 +1,101 @@
+{
+  "id": "claim-bypass-blocks-036",
+  "schema_version": 1,
+  "claim": {
+    "statement": "A mechanism must be available to bypass blocks of content that are repeated on multiple pages, such as a skip link or landmark navigation.",
+    "category": "structure",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "navigate"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "screen-reader",
+      "motor-impairment"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "keyboard",
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A skip-to-main link or proper landmark regions satisfies this."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Provide a visible-on-focus 'skip to main content' link.",
+      "Expose main/nav landmarks for AT navigation."
+    ],
+    "avoid": [
+      "Forcing keyboard users to tab through the full menu on every page.",
+      "No skip link and no landmarks."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-skip-link",
+      "add-landmarks"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-bypass-mechanism"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-skip-or-landmarks"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

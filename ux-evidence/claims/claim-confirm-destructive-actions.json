@@ -1,0 +1,64 @@
+{
+  "id": "claim-confirm-destructive-actions",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Require an explicit confirmation step before destructive or irreversible actions (delete, overwrite, discard). Confirmation should clearly name the object and consequence, and the confirm control should be visually distinct from the safe default.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["productivity", "operations", "transactional", "data-entry"],
+    "workflows": ["forms", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "risks": ["irreversible"],
+    "devices": ["touch", "mobile", "desktop", "keyboard"],
+    "audience_roles": ["end-user", "operator", "admin"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Overusing confirmations causes dialog fatigue; reserve for genuinely consequential actions"]
+  },
+  "recommendation": {
+    "do": [
+      "Interrupt with a confirmation for destructive/irreversible actions",
+      "Name the specific object and state the consequence in the dialog",
+      "Make the destructive button visually distinct and not the default focus where risk is high"
+    ],
+    "avoid": [
+      "Confirming trivial, easily reversible actions",
+      "Generic 'Are you sure?' copy with no consequence detail"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add confirmation dialog", "specify object and consequence in copy", "style destructive action distinctly"]
+  },
+  "validation": {
+    "methods": ["interaction walkthrough", "heuristic review", "usability testing"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["accidental-destructive-action-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

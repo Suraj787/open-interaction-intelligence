@@ -1,0 +1,102 @@
+{
+  "id": "claim-consistent-navigation-027",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Navigational mechanisms repeated across pages must occur in the same relative order each time, unless the user changes it.",
+    "category": "consistent-navigation",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "navigate",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed",
+      "intermittent"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Consistency reduces cognitive load and supports learnability across a site."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep primary navigation in a stable order across pages.",
+      "Use consistent labels for repeated controls."
+    ],
+    "avoid": [
+      "Reordering nav items per page.",
+      "Renaming the same destination differently across pages."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "standardise-navigation-order"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-consistent-navigation"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "nav-order-consistent"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

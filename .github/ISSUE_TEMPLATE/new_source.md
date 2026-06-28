@@ -55,7 +55,29 @@ Provide links and notes that support the licence, redistribution and trust asses
 ## Why Motif should include it
 
 What interaction problem / pattern does it serve? Website vs web application? Vue /
-Frappe-Vue relevance? Accessibility and performance characteristics?
+Frappe-Vue relevance?
+
+## Accessibility & reduced-motion
+
+- **Keyboard / focus / semantics:** (how usable is it without a pointer? ARIA quality?)
+- **`prefers-reduced-motion` support:** (built-in / partial / none, and the documented
+  fallback)
+- **Essential-status reliance on motion or hover:** (any? how is it mitigated?)
+
+## Performance
+
+- **Animated properties:** (transform/opacity only, or layout-affecting?)
+- **Bundle / runtime cost:** (approx size, dependencies, main-thread work)
+- **Behaviour under dense UIs / low-end devices:** (notes, budgets, known jank)
+
+## Maintainer declaration
+
+- [ ] I am proposing this in good faith and have linked **official** sources only.
+- [ ] To the best of my knowledge the licence facts above are accurate as of the date
+      filed, and I understand a maintainer will independently re-verify them.
+- [ ] I am **not** asking Motif to bundle source-available / Commons-Clause / premium code.
+- [ ] **Popularity is not trust**, I have justified the trust tier on provenance,
+      maintenance and accessibility, not download counts or stars.
 
 ## Checklist
 

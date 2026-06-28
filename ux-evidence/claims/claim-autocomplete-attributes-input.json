@@ -1,0 +1,64 @@
+{
+  "id": "claim-autocomplete-attributes-input",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Identify the purpose of common input fields with standard autocomplete tokens (e.g. name, email, tel, postal-code) per WCAG 2.2 SC 1.3.5 Identify Input Purpose (AA). This enables browser/AT autofill and meaningfully speeds and de-errors mobile data entry.",
+    "category": "data-entry",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["data-entry", "transactional"],
+    "workflows": ["forms"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "cognitive", "low-vision"],
+    "devices": ["touch", "mobile", "desktop", "keyboard"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22"],
+    "methodology": ["normative-standard", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["1.3.5 covers user-information fields collecting data about the user, not arbitrary fields"]
+  },
+  "recommendation": {
+    "do": [
+      "Apply correct autocomplete tokens to identity, contact, and payment fields",
+      "Combine autocomplete with appropriate input type and inputmode",
+      "Test that browser/password-manager autofill populates correctly"
+    ],
+    "avoid": [
+      "autocomplete=off on routine user-information fields",
+      "Custom field names that defeat autofill"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "full",
+    "approval_required": false,
+    "strategies": ["add autocomplete tokens", "remove unjustified autocomplete=off", "align name/id with semantics"]
+  },
+  "validation": {
+    "methods": ["static attribute audit", "autofill behaviour testing"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["percent-eligible-fields-with-autocomplete"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

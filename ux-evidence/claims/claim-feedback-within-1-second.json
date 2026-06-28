@@ -1,0 +1,108 @@
+{
+  "id": "claim-feedback-within-1-second",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Acknowledge a user action within about one second to keep their flow of thought uninterrupted; beyond that, show explicit feedback.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "dashboard",
+      "enterprise-app",
+      "ecommerce",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "monitor",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "checkout",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "low-power"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "low-connectivity"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "literature-synthesis",
+      "perceptual-research"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "The 0.1s / 1s / 10s thresholds derive from human perception research and are robust over time, but acceptable latency also depends on task and expectation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Respond to direct actions within ~1s",
+      "Show a busy indicator if the response will be slower"
+    ],
+    "avoid": [
+      "Letting actions appear to hang with no feedback"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "performance-measurement",
+      "moderated-usability-testing"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "response-latency-ms",
+      "task-abandonment-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2014-06-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

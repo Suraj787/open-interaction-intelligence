@@ -7,9 +7,89 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-Toward v0.3.0: live `ii compile plan/apply`, workflow simulation (Playwright),
-visual-regression assurance, drift trend tracking, external provider imports, and the
-automated InterfaceBench runner.
+Toward v3.2: run the golden loop under a real browser CI (Playwright/axe), broader
+repair classes, Visual Twin rendering, and semantic visual comparison.
+
+## [3.1.0] - 2026-06-28 "Evidence-Grounded Runtime"
+
+Adds a deterministic UX Evidence Graph and a real audit-and-repair golden loop. Same repo
+and name. Per ADR-UXE-001 the browser-executed steps are an optional extra and report
+not-executed where no runtime is present; v3.1.0 is held from tagging until a browser CI
+run passes the golden loop.
+
+### Added (implemented, covered by `make check`, 146 self-checks)
+
+- **UX Evidence Graph** under `ux-evidence/`: a 9-dimension ontology, 7 schemas, and 110
+  web-grounded executable claims (Tier 1-3, each with sources, limitations, validation, and
+  freshness), 13 sources, 12 myths, 5 contradictions, 8 validation methods, and 3 packs
+  (enterprise, public-service, ecommerce).
+- **Deterministic query engine**: a screen/workflow context vector resolves to applicable
+  claims with explicit merge rules (specificity wins, normative cannot be overridden by
+  weaker, higher-risk guardrails win, hypotheses never block, stale cannot newly block,
+  conflicts surfaced, sources + limitations exposed) and confidence that drops when critical
+  context is an assumption.
+- **Evidence CLI** (`motif evidence validate|index|query|explain|sources|check-myth|
+  contradictions|stale|pack`) and **6 MCP tools + 5 resources** (read-only, audit-logged).
+- **Golden repair loop** (`motif repair golden`, `motif bench --scenario
+  vue-dashboard-evidence-repair`): detect colour-only status (static) -> build context vector
+  -> query the applicable normative claim -> generate a repair plan -> apply a text-label fix
+  in an isolated git worktree -> verify the finding is closed (static) -> exact rollback ->
+  before/after HTML+JSON evidence report. The fixture on `main` is never modified.
+- **Browser foundation** behind the optional `motif[browser]` extra: `ii/browser.py`,
+  `ii/apprunner.py` (detect/start/HTTP-readiness/stop, no-secret env, policy-gated start),
+  and `motif doctor --browser`. Guardian now attaches evidence claims to findings.
+
+### Experimental / not-executed here (honestly marked, never faked)
+
+Browser capture (screenshots, axe, accessibility tree, traces), the runtime before/after
+validation, and the in-browser finding-closed check require Playwright + a browser, which
+cannot be installed in this environment. They return `not-executed`. See
+`docs/reviews/motif-v3-1-gap-analysis.md` and ADR-UXE-001.
+
+### Compatibility
+
+Additive. All v2/v3 commands, `ii`/`oii` aliases, schemas, and registries are preserved;
+nothing removed. Migration guide: `docs/migration/v3-to-v3-1.md`.
+
+## [3.0.0] - 2026-06-28 "Motif Live"
+
+Activates the intelligence and governance platform into a runtime, execution, assurance,
+and continuous-governance product. Same repo, same name. `motif` is the command (`ii`,
+`oii` aliases). All v2 commands and schemas are preserved (see docs/migration/v2-to-v3.md).
+
+### Added (implemented, covered by `make check`)
+
+- **Motif Runtime**: project state under `.motif/`, run records, framework/route/component
+  detection, isolated git worktrees. `motif init` first-run experience.
+- **Create / Improve / run / autopilot** orchestration loops (deterministic steps run;
+  browser steps are experimental and skipped, never faked).
+- **Unified Findings** model + lifecycle + CLI (`motif findings audit|list|show|accept|fix|
+  verify|suppress`), with suppressions requiring reason/scope/author/expiry.
+- **Policy as code** (`motif policy ...`), **project memory** incl. rejected-approach
+  (`motif memory ...`), **contextual recommendation** (`motif recommend`), **concept
+  generation** (`motif concepts generate`).
+- **Motif Atlas**: a static public catalogue generated from the one registry
+  (`motif atlas build`, 183 pages). **Design-system extraction** (`motif system extract`).
+- **Motif Studio**: a local read-only viewer over `.motif/` + registry (`motif studio`).
+- **Motif Guardian**: diff scanning + policy gate (`motif guard staged|branch`) and a
+  GitHub Action that comments on PRs.
+- **MCP server** (`motif mcp serve`): dependency-free JSON-RPC over stdio, 11 read tools +
+  guarded write tools + audit log; write actions require `--allow-write`.
+- **Compiler plan** (`motif compile plan`), **InterfaceBench runner** (`motif bench`,
+  automated measures kept separate from model/human evaluation), a **Vue fixture app** for
+  static runtime inspection, and 7 new schemas (32 total).
+
+### Experimental / planned (honestly marked, NOT claimed)
+
+Visual Twin rendering, Playwright/axe runtime assurance, live preview, interactive Studio
+apply, semantic pixel/visual comparison, the full screen compiler apply/pr, and trend
+tracking all require a browser runtime not present in this environment. See
+`docs/capability-matrix.md` and `docs/reviews/motif-v3-gap-analysis.md`.
+
+### Compatibility
+
+All v2 CLI commands, `ii`/`oii` aliases, schemas, and registries are preserved; no schema
+removed. `.motif/` runtime state is gitignored. Migration guide: `docs/migration/v2-to-v3.md`.
 
 ## [2.0.0] - 2026-06-28
 
@@ -138,7 +218,9 @@ This is representative breadth, not full coverage. Licence facts are confidence-
 `pending-verification`. Live network connectors are specified but not implemented in this
 release.
 
-[Unreleased]: https://github.com/Suraj787/motif/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/Suraj787/motif/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/Suraj787/motif/compare/v3.0.0...v3.1.0
+[3.0.0]: https://github.com/Suraj787/motif/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/Suraj787/motif/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/Suraj787/motif/compare/v0.1.0...v1.0.0
 [0.1.0]: https://github.com/Suraj787/motif/releases/tag/v0.1.0

@@ -1,0 +1,63 @@
+{
+  "id": "claim-animate-transform-opacity",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Prefer animating transform and opacity, which the browser can run on the compositor thread without layout or paint, to hit smooth 60fps motion. Avoid animating geometry-changing properties (top/left/width/height) that force layout and paint on the main thread.",
+    "category": "performance",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa", "desktop-app"],
+    "purposes": ["content-consumption", "productivity", "transactional"],
+    "workflows": ["navigation", "content-consumption"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "devices": ["touch", "mobile", "desktop"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["platform-guideline", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["will-change can promote layers but should be used sparingly to avoid memory overhead"]
+  },
+  "recommendation": {
+    "do": [
+      "Animate position with transform: translate() and fades with opacity",
+      "Profile animations in DevTools to confirm no paint/layout per frame",
+      "Respect prefers-reduced-motion"
+    ],
+    "avoid": [
+      "Animating top/left/width/height/margin in hot paths",
+      "Overusing will-change on many elements"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["rewrite animations to transform/opacity", "promote to compositor layer where justified", "add reduced-motion handling"]
+  },
+  "validation": {
+    "methods": ["DevTools performance/paint profiling", "frame-rate measurement"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["dropped-frames", "paint-area-per-frame"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

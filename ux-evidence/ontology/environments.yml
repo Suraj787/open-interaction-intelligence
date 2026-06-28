@@ -1,0 +1,10 @@
+# Motif UX Evidence ontology: environments
+values:
+  - office
+  - factory
+  - field
+  - home
+  - public
+  - clinical
+  - low-connectivity
+  - high-interruption

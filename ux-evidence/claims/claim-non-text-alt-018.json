@@ -1,0 +1,103 @@
+{
+  "id": "claim-non-text-alt-018",
+  "schema_version": 1,
+  "claim": {
+    "statement": "All non-text content must have a text alternative that serves the equivalent purpose; decorative images must be marked so assistive technology ignores them.",
+    "category": "images-alt-text",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "ecommerce",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "browse",
+      "communicate"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "blind",
+      "screen-reader",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-webaim"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Decorative images need empty alt or role=presentation; informative images need descriptive alt."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Write concise, purpose-equivalent alt text for informative images.",
+      "Use alt=\"\" for purely decorative images."
+    ],
+    "avoid": [
+      "Missing alt attributes.",
+      "Redundant alt like 'image' or filenames."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-alt-text",
+      "mark-decorative"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-images-have-alt"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "alt-coverage",
+      "alt-quality"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

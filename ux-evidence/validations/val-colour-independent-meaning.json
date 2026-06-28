@@ -1,0 +1,14 @@
+{
+  "id": "val-colour-independent-meaning",
+  "method": "Check that information conveyed by colour is also available through text, icon, shape or pattern, so meaning does not depend on colour perception alone (WCAG 1.4.1 Use of Color).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "has-text-or-icon",
+    "colour-only-signal-count",
+    "status-redundancy-coverage"
+  ],
+  "expected_output": "Per status/indicator element: pass if a non-colour cue (text label, icon, or shape) accompanies the colour; fail with the offending selector when colour is the only differentiator."
+}

@@ -1,0 +1,113 @@
+{
+  "id": "claim-error-messages-plain-language",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Write error messages in plain, human-readable language that precisely describes the problem, avoiding system codes and technical jargon.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "error-recovery",
+      "checkout"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "low-literacy",
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial",
+      "legal"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup",
+      "src-gov-uk-service-manual"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "moderated-usability-testing",
+      "service-pattern-guidance"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Exact wording must be localised and tested with the target audience."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Describe what went wrong and how to fix it",
+      "Use the same vocabulary the user used"
+    ],
+    "avoid": [
+      "Generic messages like 'An error occurred'",
+      "Raw error or status codes"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-04-23",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

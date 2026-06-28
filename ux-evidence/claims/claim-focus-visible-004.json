@@ -1,0 +1,103 @@
+{
+  "id": "claim-focus-visible-004",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Any keyboard-operable interface must provide a visible focus indicator on the focused element.",
+    "category": "focus-indicator",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "navigate",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "low-vision",
+      "motor-impairment"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "keyboard",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "2.4.7 requires visibility; focus appearance size/contrast is governed by the AAA 2.4.13."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep a clearly visible :focus-visible outline on all interactive elements.",
+      "Never set outline:none without an equivalent replacement."
+    ],
+    "avoid": [
+      "Removing default focus outlines globally.",
+      "Focus styles that match the resting state."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-focus-outline",
+      "restore-default-outline"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-focus-visible-present"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "focus-indicator-present"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

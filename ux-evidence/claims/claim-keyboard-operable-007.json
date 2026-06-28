@@ -1,0 +1,105 @@
+{
+  "id": "claim-keyboard-operable-007",
+  "schema_version": 1,
+  "claim": {
+    "statement": "All functionality must be operable through a keyboard interface without requiring specific timings for keystrokes.",
+    "category": "keyboard",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation",
+      "bulk-action"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "motor-impairment",
+      "screen-reader"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "keyboard",
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Custom widgets must implement the keyboard interaction patterns described in the ARIA APG."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Make every control reachable and operable by keyboard.",
+      "Implement APG keyboard patterns for custom widgets."
+    ],
+    "avoid": [
+      "Click-only controls (div/span with onclick and no key handler).",
+      "Hover-only menus with no keyboard equivalent."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-key-handlers",
+      "use-native-controls",
+      "apply-apg-pattern"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-keyboard-operable"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "all-controls-keyboard-reachable"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "myth-seven-plus-minus-two-nav-items",
+  "statement": "Navigation menus must contain no more than seven (plus or minus two) items because that is the limit of human memory.",
+  "why_it_spreads": "Misapplication of Miller's 1956 paper on short-term memory span to persistent, on-screen navigation.",
+  "evidence_against": [
+    "NN/g (src-nngroup): Miller's limit concerns information held in working memory, not items visible on screen that users can scan and re-read.",
+    "Visible menus do not need to be memorised, so the 7 plus/minus 2 constraint does not transfer."
+  ],
+  "replacement_principle": "Size and group navigation around the structure of the content and users' tasks, using clear labels and grouping; legibility and scan-ability matter more than an arbitrary item count.",
+  "disposition": "contextualise",
+  "confidence": "high",
+  "applicable_contexts": [
+    "navigation",
+    "menu-design",
+    "information-architecture",
+    "web-app",
+    "website"
+  ],
+  "still_applies_when": [
+    "Users must hold options in memory (e.g. spoken IVR menus) rather than see them",
+    "Very long flat menus still benefit from grouping to reduce scanning effort"
+  ]
+}

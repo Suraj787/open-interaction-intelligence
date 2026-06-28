@@ -1,0 +1,104 @@
+{
+  "id": "claim-animation-from-interactions-021",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Motion animation triggered by interaction must be able to be disabled, unless the animation is essential, honouring the prefers-reduced-motion preference.",
+    "category": "reduced-motion",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "marketing-site"
+    ],
+    "purposes": [
+      "browse",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "motor-impairment"
+    ],
+    "risks": [
+      "safety"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.3.3 is Level AAA, so treated as a strong recommendation rather than a Level A/AA floor.",
+      "Vestibular triggers include parallax and large scroll-linked motion."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Wrap non-essential motion in a prefers-reduced-motion: reduce media query.",
+      "Replace large transitions with fades when reduced motion is requested."
+    ],
+    "avoid": [
+      "Parallax and scroll-jacking with no opt-out.",
+      "Auto-playing motion that ignores OS reduced-motion."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "honour-prefers-reduced-motion",
+      "reduce-animation"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-reduced-motion-honoured"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "respects-prefers-reduced-motion"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "claim-clear-consequence-text",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Confirmation and high-risk action copy must state the concrete consequence in plain language: what exactly will happen, to which object, whether it is reversible, and what is affected. Button labels should describe the action ('Delete 3 invoices') rather than generic 'OK/Yes'.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["operations", "transactional", "productivity"],
+    "workflows": ["forms", "data-tables", "bulk-actions", "settings"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["cognitive", "low-vision"],
+    "risks": ["irreversible"],
+    "devices": ["touch", "mobile", "desktop"],
+    "audience_roles": ["end-user", "operator", "admin"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Effective copy is context-specific; the principle is general, the exact wording is not"]
+  },
+  "recommendation": {
+    "do": [
+      "Name the object and count, and state reversibility explicitly",
+      "Use action-specific button labels matching the verb in the prompt",
+      "Call out side effects (e.g. cascading deletes, shared resources)"
+    ],
+    "avoid": [
+      "Vague 'Are you sure?' with OK/Cancel only",
+      "Hiding the real consequence behind cheerful or ambiguous wording"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["rewrite dialog copy with object and consequence", "use verb-specific button labels", "add side-effect disclosure"]
+  },
+  "validation": {
+    "methods": ["content review", "comprehension/usability testing", "heuristic review"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["consequence-comprehension-rate", "post-confirm-regret-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

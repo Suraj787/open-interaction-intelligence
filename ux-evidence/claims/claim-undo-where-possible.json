@@ -1,0 +1,64 @@
+{
+  "id": "claim-undo-where-possible",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Prefer undo over up-front confirmation for reversible actions. Where an action can be safely reversed, perform it immediately and offer a time-boxed undo (e.g. a toast), which is lower friction and lets users recover from mistakes without dialog fatigue.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["productivity", "operations", "content-consumption"],
+    "workflows": ["data-tables", "bulk-actions", "forms"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "risks": ["irreversible"],
+    "devices": ["touch", "mobile", "desktop"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Undo is only suitable where the action is genuinely reversible within the undo window"]
+  },
+  "recommendation": {
+    "do": [
+      "Apply reversible actions immediately and show an undo affordance",
+      "Keep the undo window long enough to notice and act",
+      "Use undo to reduce reliance on interruptive confirmations"
+    ],
+    "avoid": [
+      "Offering undo for actions that cannot actually be reversed",
+      "Undo toasts that vanish before the user can react"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["defer commit during undo window", "add undo toast/handler", "snapshot state for reversal"]
+  },
+  "validation": {
+    "methods": ["interaction walkthrough", "usability testing", "recovery-path review"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["undo-usage-rate", "post-action-error-recovery-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

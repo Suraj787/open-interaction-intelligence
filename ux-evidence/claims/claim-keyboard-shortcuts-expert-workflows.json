@@ -1,0 +1,64 @@
+{
+  "id": "claim-keyboard-shortcuts-expert-workflows",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Provide keyboard shortcuts and accelerators for frequent expert workflows so power users can work keyboard-first, which is materially faster than mouse-driven operation. Shortcuts should be discoverable, documented, and avoid clobbering native browser/AT bindings.",
+    "category": "keyboard-input",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa"],
+    "purposes": ["productivity", "operations", "data-entry"],
+    "workflows": ["data-tables", "bulk-actions", "navigation", "search"],
+    "expertise": ["expert", "intermediate"],
+    "abilities": ["motor-impairment"],
+    "devices": ["keyboard", "desktop"],
+    "audience_roles": ["operator", "admin", "end-user"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Benefit concentrates in high-frequency expert tasks; over-binding can conflict with assistive tech"]
+  },
+  "recommendation": {
+    "do": [
+      "Offer accelerators for the highest-frequency actions (navigate, create, search, submit)",
+      "Expose a shortcuts reference (e.g. ? overlay) and show hints in menus",
+      "Allow customisation or remapping where conflicts arise"
+    ],
+    "avoid": [
+      "Overriding reserved browser or screen-reader key combinations",
+      "Hiding shortcuts so only insiders know they exist"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "none",
+    "approval_required": true,
+    "strategies": ["add accelerator handlers", "publish a discoverable shortcut map", "add conflict detection"]
+  },
+  "validation": {
+    "methods": ["keyboard walkthrough", "conflict audit against AT bindings", "task-time comparison"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["task-completion-time", "shortcut-adoption-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

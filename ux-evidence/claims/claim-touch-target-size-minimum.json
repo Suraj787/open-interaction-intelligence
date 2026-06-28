@@ -1,0 +1,64 @@
+{
+  "id": "claim-touch-target-size-minimum",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Interactive touch targets must be large enough to operate reliably: at least 24x24 CSS pixels per WCAG 2.2 SC 2.5.8 (Level AA), and platform guidance recommends larger comfortable minimums of 44x44 pt (Apple HIG) and 48x48 dp (Material Design). The hit area, not just the visible glyph, must meet the size.",
+    "category": "touch-input",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "pwa"],
+    "purposes": ["productivity", "transactional", "data-entry"],
+    "workflows": ["forms", "navigation", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "low-vision"],
+    "devices": ["touch", "mobile"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22", "src-apple-hig", "src-material"],
+    "methodology": ["normative-standard", "platform-guideline"],
+    "confidence": "high",
+    "limitations": ["WCAG 2.5.8 has exceptions (inline targets, spacing-based alternative, equivalent control elsewhere)"]
+  },
+  "recommendation": {
+    "do": [
+      "Size the interactive hit area to >= 24x24 CSS px (WCAG 2.5.8 floor) and prefer 44pt / 48dp on touch surfaces",
+      "Expand the tappable area beyond a small visible glyph using padding or an invisible hit slop",
+      "Verify size at the actual rendered zoom and device pixel ratio"
+    ],
+    "avoid": [
+      "Relying on the visible icon size when the hit area is smaller",
+      "Placing sub-24px controls without qualifying for a documented WCAG exception"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["increase min-width/min-height", "add padding to expand hit area", "apply hit-slop on native controls"]
+  },
+  "validation": {
+    "methods": ["computed-bounding-box measurement", "automated accessibility scan", "manual touch testing on device"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["target-width-css-px", "target-height-css-px", "percent-targets-below-threshold"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "claim-preserve-input-on-error",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Preserve the user's entered values when a form fails validation; never clear fields and force re-entry after an error.",
+    "category": "forms-and-errors",
+    "type": "anti-pattern",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "error-recovery",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "motor-impairment",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup",
+      "src-gov-uk-service-manual"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "service-pattern-guidance"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Sensitive fields such as passwords may legitimately require re-entry."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Repopulate valid fields after a failed submit",
+      "Keep the user's place and scroll context"
+    ],
+    "avoid": [
+      "Wiping the whole form when one field is wrong"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-11-13",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

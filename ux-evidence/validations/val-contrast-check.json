@@ -1,0 +1,14 @@
+{
+  "id": "val-contrast-check",
+  "method": "Compute colour-contrast ratios for text and meaningful non-text UI components against their backgrounds and compare to WCAG thresholds (1.4.3 4.5:1 normal / 3:1 large text; 1.4.11 3:1 non-text).",
+  "automatable": true,
+  "population_sensitive": true,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "contrast-ratio",
+    "text-elements-below-threshold",
+    "nontext-components-below-threshold"
+  ],
+  "expected_output": "Per element: foreground/background colours, computed contrast ratio and pass/fail against the applicable threshold; fail list with selectors. Text over images may need human review."
+}

@@ -1,0 +1,103 @@
+{
+  "id": "claim-focus-appearance-033",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Focus indicators should meet a minimum area and 3:1 contrast against adjacent colours so they are clearly perceivable.",
+    "category": "focus-indicator",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "navigate",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "keyboard-only",
+      "motor-impairment"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "keyboard",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.4.13 is Level AAA, so treated as a strong recommendation beyond the 2.4.7 floor.",
+      "Minimum: area at least the perimeter of a 2px-thick outline and 3:1 contrast against unfocused state."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use a focus ring at least 2px thick with 3:1 contrast.",
+      "Ensure the indicator is not obscured by other content."
+    ],
+    "avoid": [
+      "Hairline focus outlines with poor contrast.",
+      "Focus styles that only shift colour subtly."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "strengthen-focus-indicator"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-focus-appearance"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "focus-area",
+      "focus-contrast"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

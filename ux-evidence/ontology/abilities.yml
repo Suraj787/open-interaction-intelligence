@@ -1,0 +1,12 @@
+# Motif UX Evidence ontology: abilities
+values:
+  - motor-impairment
+  - low-vision
+  - blind
+  - colour-vision-deficiency
+  - cognitive
+  - deaf-hard-of-hearing
+  - keyboard-only
+  - screen-reader
+  - low-literacy
+  - none-specified

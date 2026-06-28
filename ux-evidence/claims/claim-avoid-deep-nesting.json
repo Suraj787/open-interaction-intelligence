@@ -1,0 +1,105 @@
+{
+  "id": "claim-avoid-deep-nesting",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Avoid excessively deep navigation hierarchies; deeper structures demand more clicks and cognitive effort, so balance breadth and depth based on users and content volume.",
+    "category": "navigation-and-ia",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "documentation",
+      "ecommerce",
+      "web-app",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "learn"
+    ],
+    "workflows": [
+      "search-and-filter",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "moderated-usability-testing",
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Neither extreme is universally best; the right depth depends on content size and is validated through tree testing."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Flatten where categories are thin",
+      "Use tree testing to find the right depth"
+    ],
+    "avoid": [
+      "Burying key content several unnecessary levels deep"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-03-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

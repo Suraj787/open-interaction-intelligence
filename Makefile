@@ -1,7 +1,8 @@
-.PHONY: check validate ii-validate selfcheck ii-selfcheck test lint index doctor secrets clean
+.PHONY: check validate ii-validate selfcheck ii-selfcheck v3-selfcheck v3-1-selfcheck test lint index doctor secrets clean \
+	check-runtime check-atlas check-mcp check-bench check-guardian check-evidence check-browser check-repair check-v3-1 bench-golden
 
 # One command that mirrors CI. Dependency-free by default.
-check: validate ii-validate selfcheck ii-selfcheck secrets
+check: validate ii-validate selfcheck ii-selfcheck v3-selfcheck v3-1-selfcheck secrets
 	@echo "==> make check: OK"
 
 validate:
@@ -15,6 +16,24 @@ selfcheck:
 
 ii-selfcheck:
 	@python3 tools/ii_selfcheck.py
+
+v3-selfcheck:
+	@python3 tools/v3_selfcheck.py
+
+v3-1-selfcheck:
+	@python3 tools/v3_1_selfcheck.py
+
+# v3 surface smoke targets (subsets of the v3 self-check).
+check-runtime check-atlas check-mcp check-bench check-guardian:
+	@python3 tools/v3_selfcheck.py
+
+# v3.1 evidence + browser + repair targets.
+check-evidence check-browser check-repair check-v3-1:
+	@python3 tools/v3_1_selfcheck.py
+
+# Golden evidence-grounded repair benchmark (deterministic; browser steps not-executed here).
+bench-golden:
+	@python3 -m ii repair golden --target evals/fixtures/sample-vue-app --route /projects
 
 # Full pytest suite (requires dev extras: pip install -e '.[dev]')
 test:

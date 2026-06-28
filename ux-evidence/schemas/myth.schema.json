@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/myth.schema.json",
+  "title": "myth",
+  "type": "object",
+  "required": [
+    "id",
+    "statement",
+    "evidence_against",
+    "replacement_principle",
+    "disposition"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^myth-[a-z0-9-]+$"
+    },
+    "statement": {
+      "type": "string"
+    },
+    "why_it_spreads": {
+      "type": "string"
+    },
+    "evidence_against": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "replacement_principle": {
+      "type": "string"
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "block",
+        "warn",
+        "contextualise"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "applicable_contexts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "still_applies_when": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

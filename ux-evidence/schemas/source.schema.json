@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/source.schema.json",
+  "title": "source",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "tier",
+    "url",
+    "verification_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^src-[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "organisation": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "methodology": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sample": {
+      "type": "string"
+    },
+    "commercial_bias": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "access_type": {
+      "type": "string",
+      "enum": [
+        "open",
+        "paywalled",
+        "registration",
+        "standard"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "pending",
+        "unverifiable"
+      ]
+    },
+    "last_verified": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

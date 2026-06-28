@@ -1,0 +1,21 @@
+{
+  "id": "src-material",
+  "title": "Material Design 3",
+  "organisation": "Google LLC",
+  "date": "2026",
+  "url": "https://m3.material.io/",
+  "tier": 1,
+  "methodology": [
+    "platform-design-system",
+    "first-party-conventions",
+    "accessibility-guidance"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Platform-vendor guidance reflecting Google/Android conventions",
+    "Material Web Components are in maintenance mode",
+    "Aesthetic conventions may not suit all brands or contexts"
+  ]
+}

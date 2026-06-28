@@ -1,0 +1,21 @@
+{
+  "id": "src-mdn",
+  "title": "MDN Web Docs",
+  "organisation": "Mozilla",
+  "date": "2026",
+  "url": "https://developer.mozilla.org/",
+  "tier": 1,
+  "methodology": [
+    "technical-documentation",
+    "specification-tracking",
+    "community-review"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Documents platform behaviour, not original UX research",
+    "Browser support data depends on upstream compatibility datasets",
+    "Living document; content changes continuously"
+  ]
+}

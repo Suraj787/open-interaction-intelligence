@@ -1,0 +1,110 @@
+{
+  "id": "claim-success-feedback-on-action",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Confirm successful completion of a user action with clear, timely feedback so users know their goal was achieved.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "enterprise-app",
+      "internal-tool",
+      "public-service-system"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure",
+      "communicate"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management",
+      "approval"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "screen-reader",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary",
+      "administrator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Choose the right channel (inline confirmation, toast, status message) for the action's importance and persistence needs."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Acknowledge saves and submissions explicitly",
+      "Announce success to assistive technology"
+    ],
+    "avoid": [
+      "Leaving users guessing whether the action succeeded"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

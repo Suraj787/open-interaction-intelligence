@@ -1,0 +1,22 @@
+{
+  "id": "myth-users-do-not-scroll",
+  "statement": "Users do not scroll, so all important content must be placed above the fold.",
+  "why_it_spreads": "Carried over from print and early-web eyetracking; designers fear content below the initial viewport will never be seen.",
+  "evidence_against": [
+    "NN/g scrolling research (src-nngroup, https://www.nngroup.com/articles/scrolling-and-attention/): users do scroll, and more than they used to, when given a reason.",
+    "Responsive and mobile layouts make scrolling a primary, expected interaction."
+  ],
+  "replacement_principle": "Assume users will scroll when motivated; use the top of the page to establish relevance and signal that more content follows, rather than cramming everything above the fold.",
+  "disposition": "contextualise",
+  "confidence": "high",
+  "applicable_contexts": [
+    "website",
+    "marketing-site",
+    "mobile-web",
+    "content-page"
+  ],
+  "still_applies_when": [
+    "Attention is still concentrated near the top, so lead with the most important content",
+    "Critical calls to action benefit from being visible without requiring a scroll on key pages"
+  ]
+}

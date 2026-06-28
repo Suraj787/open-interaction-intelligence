@@ -1,0 +1,106 @@
+{
+  "id": "claim-undo-support",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Provide an undo mechanism so users can reverse actions, lowering the cost of mistakes and encouraging confident exploration.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "create",
+      "configure",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "bulk-action",
+      "daily-operation",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "motor-impairment",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary",
+      "administrator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Not all actions are reversible; for truly irreversible operations, confirmation is the appropriate safeguard instead."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Offer undo where actions can be reversed",
+      "Support multiple undo for rapid sequences of actions"
+    ],
+    "avoid": [
+      "Forcing users into a one-way path with no exit"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

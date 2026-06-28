@@ -1,0 +1,9 @@
+# Motif UX Evidence ontology: devices
+values:
+  - desktop
+  - touch
+  - mobile
+  - tablet
+  - keyboard
+  - screen-reader
+  - low-power

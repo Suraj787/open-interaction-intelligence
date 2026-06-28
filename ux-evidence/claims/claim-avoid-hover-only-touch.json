@@ -1,0 +1,64 @@
+{
+  "id": "claim-avoid-hover-only-touch",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Do not hide essential content or actions behind hover-only interactions on touch devices, which lack a reliable hover state. Provide an equivalent tap/click affordance and gate hover-enhanced styling behind (hover: hover) and (pointer: fine) media queries.",
+    "category": "touch-input",
+    "type": "anti-pattern",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["productivity", "content-consumption", "transactional"],
+    "workflows": ["navigation", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment"],
+    "devices": ["touch", "mobile"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-material", "src-wcag22"],
+    "methodology": ["platform-guideline", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["Hybrid devices with both touch and pointer require any-hover/any-pointer handling"]
+  },
+  "recommendation": {
+    "do": [
+      "Expose hover-revealed actions via a persistent or tap-revealed control on touch",
+      "Use @media (hover: hover) and (pointer: fine) to scope hover enhancements",
+      "Design the no-hover, coarse-pointer experience first"
+    ],
+    "avoid": [
+      "Row actions or menus that only appear on :hover",
+      "Tooltips that carry information available nowhere else"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["add tap-triggered disclosure", "wrap hover styles in pointer/hover media queries", "make actions persistently visible"]
+  },
+  "validation": {
+    "methods": ["touch emulation testing", "media-query audit", "manual device review"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["count-hover-only-actions"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "claim-error-tone-no-blame",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Keep error-message tone neutral and constructive; do not blame the user with words like 'invalid', 'illegal', or 'incorrect'.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create"
+    ],
+    "workflows": [
+      "data-entry",
+      "error-recovery",
+      "checkout"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "content-analysis"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Tone preferences vary by audience and locale; validate wording in context."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Phrase errors as helpful guidance",
+      "Focus on the fix, not fault"
+    ],
+    "avoid": [
+      "Accusatory or jargon-laden phrasing"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": false,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-04-23",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

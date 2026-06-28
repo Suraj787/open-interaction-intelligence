@@ -1,0 +1,97 @@
+{
+  "id": "pack-ecommerce-transactional",
+  "name": "E-commerce transactional flows",
+  "context_vector": {
+    "product_forms": [
+      "ecommerce",
+      "website",
+      "mobile-web"
+    ],
+    "purposes": [
+      "transact",
+      "browse",
+      "decide"
+    ],
+    "workflows": [
+      "checkout",
+      "search-and-filter",
+      "account-management",
+      "error-recovery"
+    ],
+    "audience_roles": [
+      "beneficiary"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "none-specified",
+      "low-vision",
+      "keyboard-only",
+      "colour-vision-deficiency"
+    ],
+    "risks": [
+      "financial",
+      "privacy"
+    ],
+    "devices": [
+      "mobile",
+      "desktop",
+      "touch"
+    ],
+    "environments": [
+      "home",
+      "public",
+      "high-interruption"
+    ],
+    "jurisdiction": [
+      "global"
+    ]
+  },
+  "claim_ids": [
+    "claim-guest-checkout-001",
+    "claim-form-labels-001",
+    "claim-inline-validation-001",
+    "claim-error-identification-001",
+    "claim-target-size-001",
+    "claim-visible-focus-001",
+    "claim-contrast-text-001",
+    "claim-status-colour-001",
+    "claim-progress-indicator-checkout-001",
+    "claim-minimise-form-fields-001",
+    "claim-autofill-support-001",
+    "claim-responsive-input-latency-inp-001",
+    "claim-trust-signals-checkout-001",
+    "claim-curated-choice-001"
+  ],
+  "anti_pattern_ids": [
+    "anti-forced-account-creation",
+    "anti-autoplay-carousel",
+    "anti-colour-only-status",
+    "anti-option-overload",
+    "anti-hidden-total-cost"
+  ],
+  "myths_to_block": [
+    "myth-more-choices-always-better",
+    "myth-carousels-improve-engagement",
+    "myth-three-click-rule",
+    "myth-users-do-not-scroll",
+    "myth-automated-a11y-proves-accessibility"
+  ],
+  "required_validations": [
+    "val-keyboard-traversal",
+    "val-focus-visible-check",
+    "val-contrast-check",
+    "val-colour-independent-meaning",
+    "val-runtime-geometry-check",
+    "val-axe-scan"
+  ],
+  "evidence_floor": 1,
+  "known_gaps": [
+    "Detailed Baymard checkout findings are paywalled, limiting citation depth",
+    "Conversion impact of specific patterns is context- and catalogue-specific"
+  ],
+  "confidence": "medium"
+}

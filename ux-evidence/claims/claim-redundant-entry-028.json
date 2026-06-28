@@ -1,0 +1,105 @@
+{
+  "id": "claim-redundant-entry-028",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Information previously entered by the user in the same process must be auto-populated or available to select, rather than required to be re-entered.",
+    "category": "redundant-entry",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "ecommerce",
+      "public-service-system",
+      "web-app"
+    ],
+    "purposes": [
+      "transact"
+    ],
+    "workflows": [
+      "checkout",
+      "data-entry",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed",
+      "novice"
+    ],
+    "abilities": [
+      "cognitive",
+      "motor-impairment",
+      "low-literacy"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "high-interruption"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level A, SC 3.3.7). Exceptions include re-entry essential for security (e.g. password confirmation)."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Auto-populate or offer previously entered data within a multi-step flow.",
+      "Provide a 'same as billing' shortcut."
+    ],
+    "avoid": [
+      "Asking users to retype the same address across steps.",
+      "Discarding entered data on validation errors."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "autopopulate-known-data",
+      "offer-reuse-control"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-no-redundant-entry"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "reuses-prior-input"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

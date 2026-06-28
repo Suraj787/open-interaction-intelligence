@@ -1,0 +1,103 @@
+{
+  "id": "claim-target-size-minimum-009",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Pointer targets must be at least 24 by 24 CSS pixels, unless spacing, an equivalent control, or an exception applies.",
+    "category": "target-size",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "mobile-web",
+      "web-app",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "navigate"
+    ],
+    "workflows": [
+      "checkout",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "low-vision"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "touch",
+      "mobile",
+      "desktop"
+    ],
+    "environments": [
+      "field",
+      "public"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "New in WCAG 2.2 (Level AA, SC 2.5.8). Exceptions: spacing, inline links, user-agent default, essential."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Size tap targets to at least 24x24px, or leave a 24px spacing offset.",
+      "Enlarge icon-only buttons and close affordances."
+    ],
+    "avoid": [
+      "Cramped icon buttons under 24px with no spacing.",
+      "Tiny adjacent tap targets."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "increase-target-size",
+      "add-spacing-offset"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-target-size-24px"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "target-dimension-px"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

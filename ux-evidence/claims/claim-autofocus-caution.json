@@ -1,0 +1,64 @@
+{
+  "id": "claim-autofocus-caution",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Use autofocus sparingly. Auto-focusing an input can drop screen-reader and cognitively impaired users into a field without the surrounding context and can trigger an unexpected change of context. Only autofocus when a field is unambiguously the primary task and it benefits all users.",
+    "category": "keyboard-input",
+    "type": "anti-pattern",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa", "desktop-app"],
+    "purposes": ["data-entry", "transactional", "productivity"],
+    "workflows": ["forms", "search"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["screen-reader", "cognitive", "low-vision"],
+    "devices": ["keyboard", "desktop", "mobile"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-wcag22", "src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Single-purpose pages (e.g. a search-only or login screen) are reasonable exceptions"]
+  },
+  "recommendation": {
+    "do": [
+      "Reserve autofocus for single-purpose screens where the field is the clear primary task",
+      "Ensure preceding instructions are still encountered before focus lands",
+      "On mobile, weigh the disruption of an immediately opening keyboard"
+    ],
+    "avoid": [
+      "Autofocusing fields buried below important context or instructions",
+      "Autofocusing inside modals that also shift screen-reader context unexpectedly"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["remove autofocus attribute", "scope autofocus to single-purpose pages", "replace with on-demand focus"]
+  },
+  "validation": {
+    "methods": ["screen-reader entry testing", "static autofocus audit", "cognitive walkthrough"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["count-autofocus-instances"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

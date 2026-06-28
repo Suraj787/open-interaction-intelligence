@@ -1,0 +1,109 @@
+{
+  "id": "claim-error-summary-top-of-page",
+  "schema_version": 1,
+  "claim": {
+    "statement": "On submit failure, show an error summary at the top of the page that lists each error and links to the corresponding field, and move keyboard focus to it.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "public-service-system",
+      "web-app",
+      "website",
+      "enterprise-app",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create"
+    ],
+    "workflows": [
+      "data-entry",
+      "error-recovery",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "keyboard-only",
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "legal",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "screen-reader",
+      "keyboard",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-gov-uk-service-manual",
+      "src-wcag22"
+    ],
+    "methodology": [
+      "service-pattern-guidance",
+      "normative-standard"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Most valuable on longer multi-field pages; a single-field page may need only the inline message."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Link each summary entry to its field",
+      "Set focus to the summary on validation failure"
+    ],
+    "avoid": [
+      "Showing a summary with no links to the offending fields"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-02-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "claim-loading-indicator-async",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Show a visible loading indicator for asynchronous operations that are not instantaneous, so users know the system received their request and is working.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "ecommerce",
+      "internal-tool",
+      "mobile-web"
+    ],
+    "purposes": [
+      "transact",
+      "monitor",
+      "create",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "checkout",
+      "data-entry"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "low-power"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "low-connectivity",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "For very short waits (<1s) an indicator may flash distractingly; gate its appearance with a short delay."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Disable the trigger and show a busy state during the request",
+      "Announce loading state to assistive technology"
+    ],
+    "avoid": [
+      "Leaving the UI looking idle while a request is in flight"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "claim-timing-adjustable-031",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For each time limit set by the content, users must be able to turn it off, adjust it, or extend it, with limited exceptions.",
+    "category": "timeouts",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "public-service-system",
+      "web-app",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed",
+      "novice"
+    ],
+    "abilities": [
+      "cognitive",
+      "motor-impairment",
+      "low-literacy"
+    ],
+    "risks": [
+      "financial",
+      "legal"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "high-interruption",
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-coga"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Exceptions: real-time events, essential limits, and limits over 20 hours."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Warn before a session/timeout expires and let users extend.",
+      "Preserve entered data across re-authentication."
+    ],
+    "avoid": [
+      "Silent session timeouts that discard work.",
+      "Countdowns with no extend option."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-timeout-warning",
+      "allow-extend-timeout",
+      "preserve-data"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-timeout-adjustable"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "timeout-extendable"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

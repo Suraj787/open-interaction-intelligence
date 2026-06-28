@@ -1,0 +1,64 @@
+{
+  "id": "claim-focus-management-route-change",
+  "schema_version": 1,
+  "claim": {
+    "statement": "On client-side route changes in single-page apps, programmatically move focus to the new view (typically its first unique heading or main landmark) so keyboard and screen-reader users are not stranded on stale or detached elements, preserving a sensible focus order per WCAG 2.4.3.",
+    "category": "keyboard-input",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "pwa", "mobile-web"],
+    "purposes": ["productivity", "transactional", "content-consumption"],
+    "workflows": ["navigation", "forms"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["screen-reader", "motor-impairment", "low-vision"],
+    "devices": ["keyboard", "desktop", "mobile"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22"],
+    "methodology": ["normative-standard", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["Only move focus in response to a user-initiated navigation to avoid surprising focus jumps (SC 3.2)"]
+  },
+  "recommendation": {
+    "do": [
+      "Set focus to the new view's unique heading or main region after navigation",
+      "Make the focus target programmatically focusable (tabindex=-1 if non-interactive)",
+      "Scroll the focused element into view and keep it clear of sticky overlays"
+    ],
+    "avoid": [
+      "Leaving focus on the now-removed trigger or at the top of a detached DOM",
+      "Moving focus on events the user did not initiate"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["call element.focus() on route change", "add a focusable heading wrapper", "use a router focus hook"]
+  },
+  "validation": {
+    "methods": ["keyboard navigation testing", "screen-reader route-change testing", "automated focus tracking"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["percent-route-changes-with-focus-moved"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

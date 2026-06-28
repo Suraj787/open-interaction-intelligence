@@ -1,0 +1,101 @@
+{
+  "id": "claim-contrast-non-text-003",
+  "schema_version": 1,
+  "claim": {
+    "statement": "User interface components and graphical objects needed to understand content must have at least 3:1 contrast against adjacent colours.",
+    "category": "contrast",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "configure",
+      "monitor"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "colour-vision-deficiency"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Applies to states (focus, checked) and meaningful graphics; inactive/disabled components are exempt."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Ensure input borders, icon glyphs, focus rings and chart strokes meet 3:1.",
+      "Check active and hover states, not just default."
+    ],
+    "avoid": [
+      "Borderless inputs that rely on a faint background tint.",
+      "1:1 icons distinguished only by hue."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "adjust-component-border",
+      "adjust-icon-colour"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-non-text-contrast-ratio"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "contrast-ratio"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

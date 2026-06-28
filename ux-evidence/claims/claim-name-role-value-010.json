@@ -1,0 +1,104 @@
+{
+  "id": "claim-name-role-value-010",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For all UI components, the name and role must be programmatically determinable, and states/values must be set and notified to assistive technologies.",
+    "category": "name-role-value",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "dashboard"
+    ],
+    "purposes": [
+      "configure",
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "blind"
+    ],
+    "risks": [
+      "financial"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-wai-aria-apg",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Prefer native HTML semantics; use ARIA only to fill gaps."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use native elements or correct ARIA role + accessible name + state.",
+      "Keep aria-checked/aria-expanded/aria-selected in sync with the UI."
+    ],
+    "avoid": [
+      "Custom controls with no role or name.",
+      "Visual-only state (e.g. a styled div) with no aria state."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-aria-role",
+      "add-accessible-name",
+      "sync-aria-state"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-name-role-value"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-role",
+      "has-accessible-name"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

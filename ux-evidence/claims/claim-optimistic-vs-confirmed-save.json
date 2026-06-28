@@ -1,0 +1,106 @@
+{
+  "id": "claim-optimistic-vs-confirmed-save",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Optimistic UI that reflects a change before the server confirms it may improve perceived responsiveness, but must reconcile and clearly communicate failures if the server rejects the change.",
+    "category": "system-status-feedback",
+    "type": "principle",
+    "force": "hypothesis"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool",
+      "mobile-web"
+    ],
+    "purposes": [
+      "create",
+      "configure",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "bulk-action"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial",
+      "irreversible"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "low-power"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "low-connectivity"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 4,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "practitioner-guidance"
+    ],
+    "confidence": "low",
+    "limitations": [
+      "Direct controlled evidence comparing optimistic vs confirmed saves is limited; risk of showing false success makes this context-dependent and unsafe for high-stakes data."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Reconcile state on server response",
+      "Surface and roll back on failure clearly"
+    ],
+    "avoid": [
+      "Showing success optimistically for irreversible or high-risk actions"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-09-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

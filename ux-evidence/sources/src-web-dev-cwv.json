@@ -1,0 +1,21 @@
+{
+  "id": "src-web-dev-cwv",
+  "title": "web.dev Core Web Vitals (including Interaction to Next Paint)",
+  "organisation": "Google LLC",
+  "date": "2024-03-12",
+  "url": "https://web.dev/articles/vitals/",
+  "tier": 1,
+  "methodology": [
+    "field-data-analysis",
+    "chrome-ux-report",
+    "metric-definition"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "INP replaced First Input Delay as a Core Web Vital on 2024-03-12",
+    "Thresholds are defined by Google and tied to Chrome telemetry",
+    "Performance metrics are a proxy for, not a guarantee of, good UX"
+  ]
+}

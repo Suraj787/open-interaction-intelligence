@@ -1,0 +1,12 @@
+# Motif UX Evidence ontology: workflows
+values:
+  - daily-operation
+  - onboarding
+  - checkout
+  - data-entry
+  - search-and-filter
+  - bulk-action
+  - approval
+  - reporting
+  - account-management
+  - error-recovery

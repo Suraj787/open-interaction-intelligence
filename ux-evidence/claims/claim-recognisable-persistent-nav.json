@@ -1,0 +1,107 @@
+{
+  "id": "claim-recognisable-persistent-nav",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Provide recognisable, persistent primary navigation that sets expectations for available content and helps users move without memorising paths.",
+    "category": "navigation-and-ia",
+    "type": "principle",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "documentation",
+      "public-service-system",
+      "marketing-site",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "browse",
+      "navigate",
+      "learn",
+      "monitor"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter",
+      "onboarding"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "moderated-usability-testing"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Navigation structure must reflect users' mental models, validated through testing such as card sorting and tree testing."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep primary navigation visible and predictable",
+      "Use labels that match users' vocabulary"
+    ],
+    "avoid": [
+      "Hiding core navigation behind unlabelled icons"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-02-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

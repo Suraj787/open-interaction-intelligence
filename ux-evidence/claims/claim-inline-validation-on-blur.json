@@ -1,0 +1,108 @@
+{
+  "id": "claim-inline-validation-on-blur",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Validate form fields inline when the user leaves a field (on blur) rather than only on submit, so errors can be corrected in context immediately after entry.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "moderated-usability-testing"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Optimal timing is context-dependent; some design systems (e.g. GOV.UK) defer validation to submit for screen-reader and cognitive-load reasons."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Trigger validation when focus leaves a completed field",
+      "Show a positive indicator when a field is valid where helpful"
+    ],
+    "avoid": [
+      "Validating character-by-character while the user is still typing",
+      "Only revealing errors after a full-page submit"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-11-13",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

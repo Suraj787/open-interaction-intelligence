@@ -1,0 +1,77 @@
+name: Guardian
+
+# Motif Guardian, continuous governance on every pull request.
+# It runs the principal gate (`make check`: dependency-free self-checks + secret
+# scan), then scans the branch diff for findings and checks policy-as-code
+# (motif-policy.yml against schemas/policy.schema.json). The report is posted as a
+# single, updated PR comment. Warnings are informational; only blocking findings
+# fail the job.
+
+on:
+  pull_request:
+
+# Least privilege: read the repo, write PR comments. No write access to code.
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: guardian-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guardian:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for diff against base)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: |
+          git fetch --no-tags --prune origin \
+            "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Principal gate. Dependency-free Python self-checks + secret scan.
+      # A failure here is a hard stop, it fails the job before Guardian runs.
+      - name: make check (principal gate)
+        run: make check
+
+      # Guardian branch scan. Exit code is the source of truth:
+      #   0  -> clean or warnings only (non-blocking)
+      #   !0 -> at least one blocking finding or a policy violation
+      # We capture the code so the report still posts before we enforce it.
+      - name: Guardian branch scan
+        id: guard
+        run: |
+          set +e
+          python -m motif guard branch \
+            --base "origin/${{ github.base_ref }}" \
+            --format markdown > guardian-report.md
+          code=$?
+          set -e
+          echo "exit_code=${code}" >> "$GITHUB_OUTPUT"
+          if [ ! -s guardian-report.md ]; then
+            echo "Guardian produced no report output." > guardian-report.md
+          fi
+
+      # Sticky comment: creates the comment on first run, edits it thereafter.
+      # Uses the default GITHUB_TOKEN scoped by the permissions block above.
+      - name: Post / update Guardian PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: motif-guardian
+          path: guardian-report.md
+
+      # Non-blocking on warnings; fail the job only on blocking findings.
+      - name: Enforce blocking findings
+        if: steps.guard.outputs.exit_code != '0'
+        run: |
+          echo "::error::Motif Guardian reported blocking findings (exit ${{ steps.guard.outputs.exit_code }}). See the PR comment."
+          exit 1

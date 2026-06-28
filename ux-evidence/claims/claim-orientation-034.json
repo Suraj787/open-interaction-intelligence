@@ -1,0 +1,100 @@
+{
+  "id": "claim-orientation-034",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Content must not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific orientation is essential.",
+    "category": "reflow",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "mobile-web",
+      "web-app"
+    ],
+    "purposes": [
+      "browse",
+      "transact"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "mobile",
+      "tablet",
+      "touch"
+    ],
+    "environments": [
+      "field",
+      "home"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Essential exceptions include a piano app or cheque deposit. Users with mounted devices cannot rotate."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Support both portrait and landscape layouts.",
+      "Avoid CSS/JS that locks orientation."
+    ],
+    "avoid": [
+      "orientation-locked screens with no reason.",
+      "Content broken when the device is rotated."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "support-both-orientations"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-orientation-unlocked"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "works-in-both-orientations"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/evidence-pack.schema.json",
+  "title": "evidence-pack",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "context_vector",
+    "claim_ids"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^pack-[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "context_vector": {
+      "type": "object"
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "anti_pattern_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "myths_to_block": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_validations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_floor": {
+      "type": "integer"
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Motif UX Evidence ontology: audience-roles
+values:
+  - beneficiary
+  - operator
+  - proxy
+  - observer
+  - administrator

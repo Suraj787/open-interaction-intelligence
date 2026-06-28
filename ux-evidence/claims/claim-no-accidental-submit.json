@@ -1,0 +1,65 @@
+{
+  "id": "claim-no-accidental-submit",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Protect against accidental triggering of consequential actions: keep destructive or benign actions spatially separated, avoid placing a dangerous control where users expect a safe one, and prevent stray Enter/double-submits from firing high-impact operations.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "desktop-app", "pwa"],
+    "purposes": ["transactional", "operations", "data-entry"],
+    "workflows": ["forms", "bulk-actions", "data-tables"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment"],
+    "risks": ["financial", "irreversible"],
+    "devices": ["touch", "mobile", "desktop", "keyboard"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Balance against efficiency; excessive guarding slows legitimate frequent actions"]
+  },
+  "recommendation": {
+    "do": [
+      "Separate consequential controls from adjacent benign ones",
+      "Disable the submit control while a submission is in flight to prevent double-submit",
+      "Require explicit activation for high-impact actions rather than implicit Enter"
+    ],
+    "avoid": [
+      "Placing Delete immediately next to Save/Cancel with identical styling",
+      "Letting a stray Enter submit a high-impact form"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["increase spacing/styling between actions", "disable control during in-flight submit", "guard implicit Enter submission"]
+  },
+  "validation": {
+    "methods": ["interaction walkthrough", "double-submit testing", "heuristic review"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["double-submit-rate", "mis-click-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

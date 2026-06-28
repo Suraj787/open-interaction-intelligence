@@ -1,0 +1,110 @@
+{
+  "id": "claim-confirmation-before-destructive-submit",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Require an explicit confirmation step before committing actions with serious or destructive consequences, such as deleting data or finalising a costly transaction.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "enterprise-app",
+      "internal-tool",
+      "dashboard",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact",
+      "configure",
+      "decide"
+    ],
+    "workflows": [
+      "data-entry",
+      "bulk-action",
+      "approval",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "financial",
+      "irreversible",
+      "legal",
+      "privacy"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "administrator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "moderated-usability-testing"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Overuse causes dialog fatigue; reserve confirmations for genuinely consequential actions, and prefer undo for reversible ones."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Confirm before irreversible or high-cost actions",
+      "State clearly what will happen and to what"
+    ],
+    "avoid": [
+      "Confirming trivial, easily reversible actions"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-08-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

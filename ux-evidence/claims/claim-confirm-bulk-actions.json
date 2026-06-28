@@ -1,0 +1,64 @@
+{
+  "id": "claim-confirm-bulk-actions",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Confirm bulk actions that affect many objects at once, showing the exact count and scope before executing (e.g. 'Delete 142 records'). Bulk operations multiply the cost of a mistake, so the confirmation should state how many items are affected and whether the change is reversible.",
+    "category": "high-risk-action",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa", "mobile-web"],
+    "purposes": ["operations", "productivity", "transactional"],
+    "workflows": ["bulk-actions", "data-tables"],
+    "expertise": ["intermediate", "expert"],
+    "risks": ["irreversible", "financial"],
+    "devices": ["desktop", "touch", "mobile", "keyboard"],
+    "audience_roles": ["operator", "admin", "end-user"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-nngroup"],
+    "methodology": ["expert-review", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Frequent low-risk bulk edits may warrant undo instead of a blocking confirmation"]
+  },
+  "recommendation": {
+    "do": [
+      "Show the exact affected count and scope in the confirmation",
+      "Distinguish 'selected' vs 'all matching filter' selections explicitly",
+      "Offer undo for reversible bulk operations"
+    ],
+    "avoid": [
+      "Executing a bulk delete/update with no count or scope shown",
+      "Ambiguous 'select all' that silently spans beyond the visible page"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add count/scope to bulk confirmation", "clarify selection semantics", "add undo for reversible bulk ops"]
+  },
+  "validation": {
+    "methods": ["interaction walkthrough", "usability testing", "heuristic review"],
+    "automatable": "none",
+    "requires_human_eval": true,
+    "metrics": ["bulk-action-error-rate", "scope-misunderstanding-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

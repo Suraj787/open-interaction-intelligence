@@ -1,0 +1,95 @@
+{
+  "id": "pack-enterprise-operational",
+  "name": "Enterprise operational tooling",
+  "context_vector": {
+    "product_forms": [
+      "enterprise-app",
+      "internal-tool",
+      "dashboard"
+    ],
+    "purposes": [
+      "monitor",
+      "analyse",
+      "configure",
+      "decide"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "bulk-action",
+      "approval",
+      "reporting"
+    ],
+    "audience_roles": [
+      "operator",
+      "administrator"
+    ],
+    "expertise": [
+      "domain-professional",
+      "expert"
+    ],
+    "abilities": [
+      "keyboard-only",
+      "low-vision",
+      "none-specified"
+    ],
+    "risks": [
+      "financial",
+      "irreversible",
+      "reputational"
+    ],
+    "devices": [
+      "desktop",
+      "keyboard"
+    ],
+    "environments": [
+      "office",
+      "high-interruption"
+    ],
+    "jurisdiction": [
+      "global"
+    ]
+  },
+  "claim_ids": [
+    "claim-visible-focus-001",
+    "claim-keyboard-operable-001",
+    "claim-target-size-001",
+    "claim-status-colour-001",
+    "claim-contrast-text-001",
+    "claim-information-density-expert-001",
+    "claim-destructive-action-confirmation-001",
+    "claim-undo-availability-001",
+    "claim-bulk-action-feedback-001",
+    "claim-error-recovery-001",
+    "claim-inline-validation-001",
+    "claim-table-sort-filter-001",
+    "claim-session-timeout-warning-001",
+    "claim-responsive-input-latency-inp-001"
+  ],
+  "anti_pattern_ids": [
+    "anti-colour-only-status",
+    "anti-reflexive-confirmation-modal",
+    "anti-keyboard-trap",
+    "anti-destructive-action-no-undo"
+  ],
+  "myths_to_block": [
+    "myth-automated-a11y-proves-accessibility",
+    "myth-older-users-tech-incapable",
+    "myth-white-space-is-wasted",
+    "myth-seven-plus-minus-two-nav-items"
+  ],
+  "required_validations": [
+    "val-keyboard-traversal",
+    "val-focus-visible-check",
+    "val-contrast-check",
+    "val-colour-independent-meaning",
+    "val-axe-scan",
+    "val-runtime-geometry-check"
+  ],
+  "evidence_floor": 2,
+  "known_gaps": [
+    "Limited public empirical evidence on optimal data density thresholds for expert operators",
+    "Screen-reader behaviour in complex data grids needs manual review per product"
+  ],
+  "confidence": "medium"
+}

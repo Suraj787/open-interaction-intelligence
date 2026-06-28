@@ -1,0 +1,100 @@
+{
+  "id": "claim-text-spacing-016",
+  "schema_version": 1,
+  "claim": {
+    "statement": "No loss of content or functionality may occur when users override line height, paragraph, letter and word spacing within the specified metrics.",
+    "category": "text-spacing",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "documentation"
+    ],
+    "purposes": [
+      "learn",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "cognitive",
+      "low-literacy"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Metrics: line-height 1.5x, paragraph spacing 2x font size, letter 0.12x, word 0.16x."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Avoid fixed-height text containers; allow text to grow.",
+      "Test with the text-spacing bookmarklet."
+    ],
+    "avoid": [
+      "Clipped or overlapping text when spacing increases.",
+      "px-fixed line boxes that truncate content."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "remove-fixed-heights",
+      "allow-overflow"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-text-spacing-no-clip"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "no-clipping-with-spacing"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

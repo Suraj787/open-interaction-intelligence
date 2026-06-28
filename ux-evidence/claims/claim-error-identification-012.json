@@ -1,0 +1,104 @@
+{
+  "id": "claim-error-identification-012",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Input errors that are automatically detected must be identified and described to the user in text.",
+    "category": "error-identification",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "public-service-system",
+      "ecommerce"
+    ],
+    "purposes": [
+      "transact"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "error-recovery"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision"
+    ],
+    "risks": [
+      "financial",
+      "legal"
+    ],
+    "devices": [
+      "screen-reader",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Identification must be in text, not colour or icon alone, and associated with the field."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "State which field is in error and what is wrong, in text.",
+      "Associate the error message with the field via aria-describedby."
+    ],
+    "avoid": [
+      "Red borders with no text.",
+      "Generic 'form invalid' messages with no field detail."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-error-text",
+      "associate-error-message"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-error-identified-in-text"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "error-has-text",
+      "error-associated"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

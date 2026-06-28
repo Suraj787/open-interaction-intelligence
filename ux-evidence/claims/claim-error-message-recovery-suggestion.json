@@ -1,0 +1,111 @@
+{
+  "id": "claim-error-message-recovery-suggestion",
+  "schema_version": 1,
+  "claim": {
+    "statement": "When an input error is detected and a correction is known, provide a suggestion for how to fix it (unless doing so would jeopardise security or the purpose of the content).",
+    "category": "forms-and-errors",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "create"
+    ],
+    "workflows": [
+      "data-entry",
+      "error-recovery",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-vision",
+      "screen-reader",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial",
+      "legal"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "screen-reader"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "normative-standard",
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 3.3.3 is Level AA and applies only when a suggestion is known and safe to surface."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Offer a concrete correction next to the field",
+      "Suggest a valid format or example value"
+    ],
+    "avoid": [
+      "Stating only that input is invalid with no remedy"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "automated-accessibility-scan",
+      "manual-audit",
+      "screen-reader-testing"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "error-recovery-rate",
+      "wcag-sc-3.3.3-pass"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

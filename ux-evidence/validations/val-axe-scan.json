@@ -1,0 +1,15 @@
+{
+  "id": "val-axe-scan",
+  "method": "Run an automated accessibility rule engine (axe-core) against the rendered DOM to detect machine-detectable WCAG violations.",
+  "automatable": true,
+  "population_sensitive": false,
+  "browser_required": true,
+  "human_required": false,
+  "metrics": [
+    "violation-count",
+    "violations-by-impact",
+    "rules-passed",
+    "rules-incomplete"
+  ],
+  "expected_output": "Structured report of violations with rule id, impact, affected nodes and remediation guidance. Covers only the machine-detectable subset (~40%) of issues and does not prove conformance."
+}

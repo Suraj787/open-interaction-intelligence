@@ -1,0 +1,102 @@
+{
+  "id": "claim-headings-labels-020",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Headings and labels must describe the topic or purpose of the content they introduce.",
+    "category": "structure",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "documentation"
+    ],
+    "purposes": [
+      "navigate",
+      "learn"
+    ],
+    "workflows": [
+      "search-and-filter",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "cognitive",
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader",
+      "desktop"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "2.4.6 is about descriptiveness; 1.3.1 covers the programmatic heading structure itself."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Write headings that summarise the section they head.",
+      "Use a logical, non-skipping heading hierarchy."
+    ],
+    "avoid": [
+      "Vague headings like 'More' or 'Section 2'.",
+      "Duplicate, undifferentiated labels."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "rewrite-heading",
+      "clarify-label"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-headings-descriptive"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "heading-descriptiveness"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

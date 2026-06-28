@@ -1,0 +1,11 @@
+# Motif UX Evidence ontology: risks
+values:
+  - low
+  - financial
+  - medical
+  - legal
+  - privacy
+  - safety
+  - reputational
+  - irreversible
+  - emergency

@@ -1,0 +1,21 @@
+{
+  "id": "src-uswds",
+  "title": "U.S. Web Design System (USWDS)",
+  "organisation": "U.S. General Services Administration, Technology Transformation Services",
+  "date": "2026",
+  "url": "https://designsystem.digital.gov/",
+  "tier": 1,
+  "methodology": [
+    "government-design-system",
+    "accessibility-tested-components",
+    "usability-guidance"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Targets U.S. federal government websites and Section 508 context",
+    "Component styling reflects federal brand conventions",
+    "Guidance is prescriptive for government, not universal"
+  ]
+}

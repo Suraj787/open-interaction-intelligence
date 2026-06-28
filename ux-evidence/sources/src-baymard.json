@@ -1,0 +1,22 @@
+{
+  "id": "src-baymard",
+  "title": "Baymard Institute e-commerce UX research",
+  "organisation": "Baymard Institute",
+  "date": "2026",
+  "url": "https://baymard.com/",
+  "tier": 3,
+  "methodology": [
+    "large-sample-qualitative-usability-testing",
+    "think-aloud-protocol",
+    "benchmarking",
+    "eyetracking"
+  ],
+  "access_type": "paywalled",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Documented large-sample research but most detailed findings are behind a paywall",
+    "Focused on e-commerce checkout, cart and search; narrow domain",
+    "Commercial research organisation selling premium access and audits"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "claim-touch-target-spacing",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Adjacent touch targets must have sufficient spacing so neighbouring controls are not triggered by mistake. WCAG 2.2 SC 2.5.8 lets undersized targets pass only when a 24px-diameter circle centred on each does not overlap another target's circle; platform guidance recommends roughly 8dp+ of spacing between comfortable targets.",
+    "category": "touch-input",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "native-mobile", "pwa"],
+    "purposes": ["productivity", "transactional", "data-entry"],
+    "workflows": ["forms", "navigation", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment"],
+    "devices": ["touch", "mobile"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22", "src-material", "src-apple-hig"],
+    "methodology": ["normative-standard", "platform-guideline"],
+    "confidence": "high",
+    "limitations": ["Spacing requirement interacts with the 24px size rule; dense data tables may need design trade-offs"]
+  },
+  "recommendation": {
+    "do": [
+      "Maintain spacing so 24px circles centred on undersized targets do not overlap",
+      "Add visible gaps or dividers between consecutive tappable rows and icon buttons",
+      "Increase spacing in error-prone or high-stakes clusters of controls"
+    ],
+    "avoid": [
+      "Packing icon buttons edge-to-edge in toolbars on touch surfaces",
+      "Stacking small tappable links with no vertical separation"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["add margin/gap between targets", "increase target size to clear the circle test", "introduce dividers"]
+  },
+  "validation": {
+    "methods": ["geometric overlap test on bounding boxes", "automated accessibility scan", "device touch testing"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["inter-target-gap-px", "percent-target-pairs-overlapping-circles"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "src-wcag22",
+  "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+  "organisation": "World Wide Web Consortium (W3C)",
+  "date": "2023-10-05",
+  "url": "https://www.w3.org/TR/WCAG22/",
+  "tier": 1,
+  "methodology": [
+    "consensus-standard",
+    "working-group-review",
+    "public-comment"
+  ],
+  "access_type": "standard",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Conformance is necessary but not sufficient for real usability",
+    "Several success criteria require human judgement to evaluate",
+    "Errata update published 2024-12-12 does not change normative requirements"
+  ]
+}

@@ -1,0 +1,22 @@
+# Motif policy as code. Affects CLI, Guardian, compiler, and Atlas recommendations.
+version: 1
+policies:
+  accessibility:
+    minimum: wcag-2.2-aa
+    blocking_severity:
+      - critical
+      - high
+  dependencies:
+    new_runtime_dependencies: approval-required
+  originality:
+    maximum_convergence_score: 55
+  performance:
+    max_ui_bundle_delta_kb: 20
+    max_inp_ms: 200
+  interface_debt:
+    maximum_score: 30
+  human_review:
+    required_for:
+      - healthcare
+      - financial-approval
+      - destructive-bulk-action

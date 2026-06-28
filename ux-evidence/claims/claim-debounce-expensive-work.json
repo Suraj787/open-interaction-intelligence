@@ -1,0 +1,64 @@
+{
+  "id": "claim-debounce-expensive-work",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Debounce or throttle expensive work driven by rapid input (search-as-you-type, autosave, resize/scroll handlers) so the costly operation runs once the user pauses rather than on every event. Typical debounce for search/typing is around 200-500ms; tune per use case.",
+    "category": "performance",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa", "desktop-app"],
+    "purposes": ["productivity", "data-entry", "content-consumption"],
+    "workflows": ["search", "forms", "data-tables"],
+    "expertise": ["intermediate", "expert"],
+    "devices": ["desktop", "mobile", "touch", "keyboard"],
+    "environments": ["low-connectivity"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Over-debouncing makes the UI feel sluggish; no single correct delay value"]
+  },
+  "recommendation": {
+    "do": [
+      "Debounce network search queries until typing pauses (~300ms)",
+      "Throttle high-frequency scroll/resize handlers",
+      "Cancel in-flight work superseded by newer input"
+    ],
+    "avoid": [
+      "Firing an API request or heavy compute on every keystroke",
+      "Debouncing direct, discrete actions where it adds perceived lag"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["wrap handler in debounce/throttle", "cancel superseded requests", "tune delay by use case"]
+  },
+  "validation": {
+    "methods": ["network-call counting", "handler-invocation profiling"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["requests-per-interaction", "handler-calls-per-second"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

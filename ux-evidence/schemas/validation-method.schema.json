@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/validation-method.schema.json",
+  "title": "validation-method",
+  "type": "object",
+  "required": [
+    "id",
+    "method"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^val-[a-z0-9-]+$"
+    },
+    "method": {
+      "type": "string"
+    },
+    "automatable": {
+      "type": "boolean"
+    },
+    "population_sensitive": {
+      "type": "boolean"
+    },
+    "browser_required": {
+      "type": "boolean"
+    },
+    "human_required": {
+      "type": "boolean"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_output": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

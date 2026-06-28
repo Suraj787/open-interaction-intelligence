@@ -1,0 +1,103 @@
+{
+  "id": "claim-captions-prerecorded-040",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Captions must be provided for all prerecorded audio content in synchronised media, except where the media is a media alternative for text.",
+    "category": "media",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "marketing-site",
+      "documentation",
+      "web-app"
+    ],
+    "purposes": [
+      "learn",
+      "communicate"
+    ],
+    "workflows": [
+      "onboarding",
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "deaf-hard-of-hearing"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "public"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Captions must convey dialogue and important non-speech sounds; auto-captions usually need review."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Provide accurate synchronised captions for prerecorded video.",
+      "Include speaker identification and key sound effects."
+    ],
+    "avoid": [
+      "Uncaptioned tutorial or marketing video.",
+      "Relying on unreviewed auto-captions."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-captions",
+      "review-auto-captions"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-captions-present"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "has-captions",
+      "caption-accuracy"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

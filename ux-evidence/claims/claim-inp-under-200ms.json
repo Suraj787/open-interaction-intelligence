@@ -1,0 +1,64 @@
+{
+  "id": "claim-inp-under-200ms",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Interactions should feel responsive: target an Interaction to Next Paint (INP) of 200 ms or less at the 75th percentile, the 'good' threshold for this Core Web Vital. Keep input delay, event processing, and presentation work short so the UI paints quickly after user input.",
+    "category": "performance",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["productivity", "transactional", "content-consumption", "operations"],
+    "workflows": ["forms", "navigation", "data-tables", "search", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "devices": ["touch", "mobile", "desktop", "keyboard"],
+    "environments": ["low-connectivity"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["normative-standard", "field-data-thresholds"],
+    "confidence": "high",
+    "limitations": ["INP is a field metric measured at p75; 200ms is the good/needs-improvement boundary, 500ms the poor boundary"]
+  },
+  "recommendation": {
+    "do": [
+      "Break up long tasks and yield to the main thread between work units",
+      "Defer non-urgent work until after the next paint",
+      "Minimise event-handler work and avoid synchronous layout in handlers"
+    ],
+    "avoid": [
+      "Heavy synchronous JavaScript on click/keydown/tap handlers",
+      "Large, monolithic main-thread tasks that block rendering"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["yield with scheduler.yield/setTimeout", "code-split and lazy-load", "memoise and offload to web workers"]
+  },
+  "validation": {
+    "methods": ["field RUM (CrUX/web-vitals)", "lab profiling in DevTools", "Lighthouse"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["inp-p75-ms", "long-task-count", "total-blocking-time"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

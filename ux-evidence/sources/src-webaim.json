@@ -1,0 +1,21 @@
+{
+  "id": "src-webaim",
+  "title": "WebAIM (Web Accessibility In Mind) resources and the WebAIM Million report",
+  "organisation": "WebAIM, Institute for Disability Research, Policy & Practice, Utah State University",
+  "date": "2024",
+  "url": "https://webaim.org/",
+  "tier": 2,
+  "methodology": [
+    "large-scale-automated-survey",
+    "practitioner-guidance",
+    "usability-testing"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "WebAIM Million uses automated detection which finds roughly 40% of WCAG failures",
+    "Automated absence of errors does not prove accessibility",
+    "Annual snapshot of home pages only, not full-journey testing"
+  ]
+}

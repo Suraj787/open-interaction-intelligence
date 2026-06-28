@@ -1,0 +1,22 @@
+{
+  "id": "myth-white-space-is-wasted",
+  "statement": "White space is wasted space and should be filled with more content or controls.",
+  "why_it_spreads": "Pressure to surface more above the fold and a perception that empty areas look unfinished or inefficient.",
+  "evidence_against": [
+    "NN/g (src-nngroup): adequate spacing improves comprehension, scanning and perceived elegance; cramming reduces legibility.",
+    "Material Design and Apple HIG (src-material, src-apple-hig): spacing and layout density are deliberate tools for hierarchy and focus."
+  ],
+  "replacement_principle": "Use white space deliberately to establish hierarchy, grouping and focus; balance density against the task rather than treating empty space as waste.",
+  "disposition": "warn",
+  "confidence": "high",
+  "applicable_contexts": [
+    "layout",
+    "visual-design",
+    "website",
+    "web-app"
+  ],
+  "still_applies_when": [
+    "Information-dense expert tools may legitimately favour higher density",
+    "Excessive whitespace that forces unnecessary scrolling or hides relationships is also a fault"
+  ]
+}

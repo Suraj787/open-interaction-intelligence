@@ -1,0 +1,13 @@
+# Motif UX Evidence ontology: purposes
+values:
+  - transact
+  - monitor
+  - analyse
+  - comply
+  - learn
+  - communicate
+  - configure
+  - browse
+  - create
+  - decide
+  - navigate

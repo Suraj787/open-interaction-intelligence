@@ -44,3 +44,21 @@ secrets.*
 # Harness / HUD state (not part of project)
 .omc/
 .claude/
+
+# v3 Motif Live runtime state (generated; never committed)
+**/.motif/runs/
+**/.motif/twin/
+**/.motif/findings/
+**/.motif/concepts/
+**/.motif/previews/
+**/.motif/decisions/
+**/.motif/evidence/
+**/.motif/baselines/
+**/.motif/policies/
+**/.motif/rollback/
+**/.motif/design-system/
+**/.motif/memory/
+**/.motif/studio/
+**/.motif/atlas/
+**/.motif/project/
+evals/fixtures/**/.motif/

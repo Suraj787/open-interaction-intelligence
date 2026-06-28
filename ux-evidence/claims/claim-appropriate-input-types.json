@@ -1,0 +1,107 @@
+{
+  "id": "claim-appropriate-input-types",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Use the input type and inputmode appropriate to the data (e.g. email, tel, numeric) so devices present the right keyboard and built-in validation.",
+    "category": "forms-and-errors",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "mobile-web",
+      "web-app",
+      "website",
+      "ecommerce",
+      "public-service-system"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "configure"
+    ],
+    "workflows": [
+      "data-entry",
+      "checkout",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "mobile",
+      "touch",
+      "tablet",
+      "desktop"
+    ],
+    "environments": [
+      "home",
+      "field",
+      "office"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-gov-uk-service-manual",
+      "src-nngroup"
+    ],
+    "methodology": [
+      "service-pattern-guidance",
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "inputmode and type behaviour varies across browsers and OS versions."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Match input type to the expected value",
+      "Set inputmode to optimise on-screen keyboards"
+    ],
+    "avoid": [
+      "Using a generic text input for numeric, email, or phone data"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-09-01",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,12 @@
+# Motif UX Evidence ontology: product-forms
+values:
+  - web-app
+  - website
+  - public-service-system
+  - ecommerce
+  - enterprise-app
+  - dashboard
+  - mobile-web
+  - documentation
+  - marketing-site
+  - internal-tool

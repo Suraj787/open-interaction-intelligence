@@ -1,0 +1,100 @@
+{
+  "id": "claim-resize-text-200-017",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Text must be resizable up to 200% without assistive technology and without loss of content or functionality.",
+    "category": "resize-text",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "documentation"
+    ],
+    "purposes": [
+      "learn",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-webaim"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Captions and images of text are exempt; use relative units to support zoom."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Use rem/em units and relative line lengths.",
+      "Verify content remains usable at 200% browser zoom."
+    ],
+    "avoid": [
+      "Disabling zoom via viewport user-scalable=no.",
+      "Fixed px font sizes that clip when enlarged."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "use-relative-units",
+      "remove-user-scalable-no"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-text-resize-200"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "usable-at-200-percent"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

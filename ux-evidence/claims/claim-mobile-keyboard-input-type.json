@@ -1,0 +1,64 @@
+{
+  "id": "claim-mobile-keyboard-input-type",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Form fields should surface the most appropriate mobile keyboard by setting the correct input type and inputmode (e.g. type=email for email, type=tel for phone, inputmode=numeric/decimal for numeric entry), so users get the right keys without extra switching.",
+    "category": "touch-input",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["data-entry", "transactional", "productivity"],
+    "workflows": ["forms", "search"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "cognitive"],
+    "devices": ["touch", "mobile"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-material", "src-apple-hig"],
+    "methodology": ["platform-guideline", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["Exact keyboard rendering for inputmode differs between iOS and Android"]
+  },
+  "recommendation": {
+    "do": [
+      "Use type=email, type=tel, type=url where semantically correct",
+      "Use inputmode=numeric or inputmode=decimal for numeric entry instead of type=number",
+      "Pair with autocomplete tokens for faster, less error-prone entry"
+    ],
+    "avoid": [
+      "Defaulting every field to a plain text keyboard",
+      "Using type=number for identifiers like phone numbers or codes"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "full",
+    "approval_required": false,
+    "strategies": ["set input type attribute", "set inputmode attribute", "add autocomplete tokens"]
+  },
+  "validation": {
+    "methods": ["static attribute audit", "device keyboard inspection"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["percent-fields-with-appropriate-inputmode"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

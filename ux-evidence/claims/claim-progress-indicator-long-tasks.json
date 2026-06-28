@@ -1,0 +1,109 @@
+{
+  "id": "claim-progress-indicator-long-tasks",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For operations taking more than about ten seconds, show a percent-done progress indicator so users know how long the wait will be.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool",
+      "ecommerce",
+      "public-service-system"
+    ],
+    "purposes": [
+      "transact",
+      "create",
+      "analyse",
+      "monitor"
+    ],
+    "workflows": [
+      "bulk-action",
+      "reporting",
+      "data-entry",
+      "checkout"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile",
+      "low-power"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "low-connectivity"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary",
+      "administrator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "literature-synthesis",
+      "moderated-usability-testing"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Where progress cannot be measured, an indeterminate indicator with reassuring messaging is the fallback."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Show percent-done for long operations",
+      "Give an estimated time or step count"
+    ],
+    "avoid": [
+      "A bare spinner for multi-minute operations"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "claim-avoid-layout-shift-cls",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Avoid unexpected visual movement: keep Cumulative Layout Shift (CLS) at 0.1 or less at the 75th percentile, the 'good' Core Web Vitals threshold. Reserve space for images, media, ads, and async content so loading does not push content the user is reading or about to tap.",
+    "category": "performance",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "mobile-web", "pwa"],
+    "purposes": ["content-consumption", "transactional", "productivity"],
+    "workflows": ["forms", "navigation", "data-tables", "content-consumption"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "low-vision"],
+    "devices": ["touch", "mobile", "desktop"],
+    "audience_roles": ["end-user"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["normative-standard", "field-data-thresholds"],
+    "confidence": "high",
+    "limitations": ["0.1 is the good boundary; >0.25 is poor. Shifts within 500ms of user input are excluded as expected"]
+  },
+  "recommendation": {
+    "do": [
+      "Set explicit width/height or aspect-ratio on images and embeds",
+      "Reserve space for banners, ads, and dynamically injected content",
+      "Use font-display and size-adjust to limit late font reflow"
+    ],
+    "avoid": [
+      "Inserting content above existing content after load",
+      "Images and iframes with no dimensions"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["add width/height or aspect-ratio", "reserve min-height placeholders", "stabilise web-font metrics"]
+  },
+  "validation": {
+    "methods": ["field RUM", "Lighthouse/DevTools layout-shift trace", "visual regression"],
+    "automatable": "partial",
+    "requires_human_eval": false,
+    "metrics": ["cls-p75", "largest-shift-source"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

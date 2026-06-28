@@ -1,0 +1,107 @@
+{
+  "id": "claim-error-prevention-legal-financial",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For submissions causing legal commitments, financial transactions, or modification/deletion of user data, make them reversible, error-checked, or reviewable and confirmable before finalising.",
+    "category": "transactions",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "ecommerce",
+      "public-service-system",
+      "web-app",
+      "enterprise-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "decide"
+    ],
+    "workflows": [
+      "checkout",
+      "approval",
+      "data-entry",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy",
+      "none-specified"
+    ],
+    "risks": [
+      "financial",
+      "legal",
+      "irreversible",
+      "privacy"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "normative-standard"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "WCAG 2.2 SC 3.3.4 is Level AA; at least one of reversible, checked, or confirmable must be provided."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Offer a review-and-confirm step before finalising",
+      "Allow correction of detected input errors"
+    ],
+    "avoid": [
+      "Finalising irreversible legal or financial submissions with no review or undo"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "manual-audit",
+      "moderated-usability-testing",
+      "screen-reader-testing"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "wcag-sc-3.3.4-pass",
+      "transaction-error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "claim-network-failure-resilience",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Handle transient network failures resiliently: retry idempotent requests with backoff, distinguish temporary from permanent failures, and surface clear, actionable error and recovery states rather than spinning indefinitely or failing silently.",
+    "category": "resilience",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "pwa", "mobile-web", "native-mobile"],
+    "purposes": ["productivity", "transactional", "operations", "data-entry"],
+    "workflows": ["forms", "data-tables", "bulk-actions", "search"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "devices": ["mobile", "touch", "desktop"],
+    "environments": ["low-connectivity", "field-use"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["industry-best-practice", "expert-review"],
+    "confidence": "medium",
+    "limitations": ["Retrying non-idempotent writes risks duplication; backoff/limits must be tuned per endpoint"]
+  },
+  "recommendation": {
+    "do": [
+      "Retry idempotent reads with exponential backoff and a cap",
+      "Show explicit error states with a retry affordance",
+      "Differentiate temporary (retry) from permanent (surface) failures"
+    ],
+    "avoid": [
+      "Indefinite spinners with no timeout or error state",
+      "Blindly retrying non-idempotent writes"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add backoff retry policy", "add explicit error/empty/timeout states", "add idempotency keys for writes"]
+  },
+  "validation": {
+    "methods": ["failure-injection testing", "throttled-network testing", "error-state review"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["request-success-after-retry-rate", "indefinite-spinner-count"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "claim-visible-focus-indicator",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Every keyboard-focusable control must show a clearly visible focus indicator so keyboard users can always see where they are (WCAG 2.2 SC 2.4.7 Focus Visible, AA). Do not suppress default outlines without providing an equally visible replacement.",
+    "category": "keyboard-input",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "desktop-app", "pwa", "mobile-web"],
+    "purposes": ["productivity", "transactional", "content-consumption"],
+    "workflows": ["forms", "navigation", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "abilities": ["motor-impairment", "low-vision", "screen-reader"],
+    "devices": ["keyboard", "desktop"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": ["src-wcag22"],
+    "methodology": ["normative-standard"],
+    "confidence": "high",
+    "limitations": ["WCAG 2.4.11 Focus Appearance (AA) adds quantified contrast/area expectations beyond mere visibility"]
+  },
+  "recommendation": {
+    "do": [
+      "Keep a visible focus ring on all interactive elements",
+      "Use :focus-visible to tailor indicators without removing them for keyboard users",
+      "Ensure the indicator has adequate contrast against its background"
+    ],
+    "avoid": [
+      "outline: none with no replacement",
+      "Focus styles that are barely distinguishable from the resting state"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": false,
+    "strategies": ["restore/replace focus outline", "adopt :focus-visible styles", "raise indicator contrast"]
+  },
+  "validation": {
+    "methods": ["keyboard tab-through", "automated focus-style audit", "contrast measurement"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["percent-focusable-without-visible-indicator"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

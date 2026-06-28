@@ -1,0 +1,102 @@
+{
+  "id": "claim-clickable-logo-home",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Make the site or app logo a clickable link back to the home or primary landing view, matching a near-universal user expectation.",
+    "category": "navigation-and-ia",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "ecommerce",
+      "documentation",
+      "marketing-site",
+      "public-service-system"
+    ],
+    "purposes": [
+      "browse",
+      "navigate"
+    ],
+    "workflows": [
+      "daily-operation",
+      "search-and-filter"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "convention-analysis"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Expectation is strongest on the web; some app contexts use an explicit Home control instead."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Link the header logo to home",
+      "Keep the logo in a consistent top-left position"
+    ],
+    "avoid": [
+      "A decorative logo that looks clickable but is not"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-20",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "myth-children-want-cartoon-ui",
+  "statement": "Interfaces for children must be cartoonish, brightly coloured and playful by default.",
+  "why_it_spreads": "Marketing stereotypes about childhood and a one-size-fits-all view of a very broad age range.",
+  "evidence_against": [
+    "NN/g research on designing for children (src-nngroup): needs differ enormously across ages and tasks; juvenile styling can patronise older children and harm usability.",
+    "Reading level, motor skill and cognitive load drive success more than cartoon aesthetics."
+  ],
+  "replacement_principle": "Design for the specific developmental stage, reading level and task of the child audience, validating with that audience rather than assuming a cartoon style.",
+  "disposition": "block",
+  "confidence": "high",
+  "applicable_contexts": [
+    "any",
+    "audience-assumptions",
+    "education"
+  ],
+  "still_applies_when": []
+}

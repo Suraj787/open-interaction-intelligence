@@ -1,0 +1,104 @@
+{
+  "id": "claim-undo-over-confirmation",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Where an action can be reversed, offering an undo affordance after the fact is often less disruptive than interrupting the user with a confirmation dialog beforehand.",
+    "category": "system-status-feedback",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool"
+    ],
+    "purposes": [
+      "create",
+      "configure",
+      "communicate"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "bulk-action"
+    ],
+    "expertise": [
+      "intermittent",
+      "domain-professional",
+      "expert",
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Only applies to reversible actions; irreversible or high-consequence actions still warrant confirmation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Prefer post-action undo for reversible operations",
+      "Keep the undo affordance visible long enough to act on"
+    ],
+    "avoid": [
+      "Interrupting every reversible action with a modal confirmation"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-08-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

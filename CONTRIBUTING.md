@@ -137,3 +137,29 @@ The core CLI is dependency-free (Python 3.11+, stdlib only). Optional dev extras
 By contributing, you agree that your original contributions are licensed under the
 project's [MIT licence](LICENSE), and that any third-party material you reference retains
 its own licence and obligations.
+
+## Motif v3: contributing sources, recipes, and adapters
+
+Motif v3 adds **Guardian** (continuous governance) and a structured community
+source-contribution workflow. Start from the right issue template, then let Guardian gate
+the PR:
+
+- **Suggest a source**, [`new_source`](.github/ISSUE_TEMPLATE/new_source.md)
+- **Submit a clean-room recipe**, [`recipe_submission`](.github/ISSUE_TEMPLATE/recipe_submission.md)
+- **Report a licence change**, [`licence_change`](.github/ISSUE_TEMPLATE/licence_change.md)
+
+Each requires provenance, licence + `license_reference`, official links, framework,
+accessibility + reduced-motion notes, performance notes, and a maintainer declaration.
+
+**Guardian** runs on every pull request
+([`.github/workflows/guardian.yml`](.github/workflows/guardian.yml)): it runs `make check`
+(the principal gate) and `motif guard branch`, which scans changed files for findings and
+checks policy-as-code in `motif-policy.yml` against
+[`schemas/policy.schema.json`](schemas/policy.schema.json). The report is posted as a PR
+comment; warnings are informational, blocking findings fail the check. You can run the same
+checks locally with `motif guard staged` before pushing.
+
+The full lifecycle (submitted → automated validation → provenance verification → maintainer
+review → experimental → approved), the per-contribution requirement list, and why
+**popularity must not determine trust** are documented in
+[`docs/contributing/source-contribution.md`](docs/contributing/source-contribution.md).

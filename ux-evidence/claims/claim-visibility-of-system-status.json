@@ -1,0 +1,112 @@
+{
+  "id": "claim-visibility-of-system-status",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Keep users informed about what is happening through appropriate, timely feedback so the current state of the system is always visible.",
+    "category": "system-status-feedback",
+    "type": "principle",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "dashboard",
+      "enterprise-app",
+      "internal-tool",
+      "ecommerce",
+      "public-service-system"
+    ],
+    "purposes": [
+      "monitor",
+      "transact",
+      "create",
+      "configure",
+      "analyse"
+    ],
+    "workflows": [
+      "daily-operation",
+      "data-entry",
+      "checkout",
+      "reporting",
+      "bulk-action"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "low",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "touch",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "operator",
+      "beneficiary",
+      "administrator",
+      "observer"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A foundational heuristic; concrete feedback mechanisms must be designed and tested per context."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Communicate state changes promptly",
+      "Indicate progress, success, and errors"
+    ],
+    "avoid": [
+      "Leaving users unsure whether their action registered"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2024-01-15",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

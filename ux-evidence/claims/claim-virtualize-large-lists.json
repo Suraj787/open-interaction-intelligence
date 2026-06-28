@@ -1,0 +1,63 @@
+{
+  "id": "claim-virtualize-large-lists",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Virtualise (window) large lists and tables so only visible rows are rendered. For collections beyond roughly a thousand rows this keeps DOM node count, memory, and render/scroll time bounded instead of growing with data size.",
+    "category": "performance",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["web-app", "pwa", "desktop-app", "mobile-web"],
+    "purposes": ["productivity", "operations", "data-entry"],
+    "workflows": ["data-tables", "search", "navigation"],
+    "expertise": ["intermediate", "expert"],
+    "devices": ["desktop", "mobile", "touch"],
+    "audience_roles": ["operator", "admin", "end-user"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["platform-guideline", "industry-best-practice"],
+    "confidence": "high",
+    "limitations": ["Virtualisation complicates in-page find, focus order, and a11y; needs careful ARIA and keyboard handling"]
+  },
+  "recommendation": {
+    "do": [
+      "Render only the visible window plus a small overscan buffer",
+      "Use a maintained virtualisation library (e.g. windowing components)",
+      "Preserve keyboard navigation and screen-reader semantics for off-screen rows"
+    ],
+    "avoid": [
+      "Mounting thousands of DOM rows at once",
+      "Breaking Ctrl/Cmd+F and focus management when windowing"
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["introduce list virtualisation", "add pagination or infinite scroll", "server-side windowing"]
+  },
+  "validation": {
+    "methods": ["DOM-node count measurement", "scroll FPS profiling", "a11y regression check"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["dom-node-count", "scroll-fps", "row-render-time"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "myth-teenagers-want-bright-colours",
+  "statement": "Teenagers want loud, bright, busy interfaces full of animation.",
+  "why_it_spreads": "Marketing stereotypes about youth culture projected onto interface design.",
+  "evidence_against": [
+    "NN/g research on teenage users (src-nngroup): teens are often impatient with cluttered, gimmicky designs and value clarity and speed like other users.",
+    "Usability fundamentals (legibility, performance, clear structure) apply regardless of age."
+  ],
+  "replacement_principle": "Apply usability fundamentals and test with the actual teenage audience for the specific task, rather than assuming a loud aesthetic preference from a demographic label.",
+  "disposition": "block",
+  "confidence": "high",
+  "applicable_contexts": [
+    "any",
+    "audience-assumptions"
+  ],
+  "still_applies_when": []
+}

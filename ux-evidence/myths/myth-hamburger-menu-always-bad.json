@@ -1,0 +1,22 @@
+{
+  "id": "myth-hamburger-menu-always-bad",
+  "statement": "The hamburger menu is always bad and should never be used.",
+  "why_it_spreads": "Over-generalisation of valid findings that hidden navigation reduces discoverability, hardened into an absolute rule.",
+  "evidence_against": [
+    "NN/g (src-nngroup, https://www.nngroup.com/articles/hamburger-menus/): hidden navigation lowers discoverability and increases task time, but on small screens space is constrained and the icon is now widely recognised.",
+    "The trade-off is contextual: visible navigation is better when space allows, but hidden navigation can be a reasonable compromise on mobile."
+  ],
+  "replacement_principle": "Prefer visible or partially visible navigation when screen space permits; reserve hidden menus for secondary items or genuinely space-constrained mobile layouts, and keep the trigger conventional and accessible.",
+  "disposition": "contextualise",
+  "confidence": "high",
+  "applicable_contexts": [
+    "navigation",
+    "mobile-web",
+    "responsive-design",
+    "web-app"
+  ],
+  "still_applies_when": [
+    "On small viewports where there is no room for visible primary navigation",
+    "For secondary or overflow navigation that is not central to the main task"
+  ]
+}

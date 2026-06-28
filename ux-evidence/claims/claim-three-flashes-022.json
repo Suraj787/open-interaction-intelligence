@@ -1,0 +1,102 @@
+{
+  "id": "claim-three-flashes-022",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Web pages must not contain anything that flashes more than three times per second, unless the flash is below the general and red flash thresholds.",
+    "category": "seizure-safety",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "marketing-site"
+    ],
+    "purposes": [
+      "communicate",
+      "browse"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "safety",
+      "medical"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "home",
+      "public"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Flashing above three per second over a sufficiently large area can trigger photosensitive seizures."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Keep flashing below three per second.",
+      "Evaluate animated media with a flash-analysis tool (e.g. PEAT)."
+    ],
+    "avoid": [
+      "Rapidly flashing banners, GIFs or video.",
+      "Strobing transitions."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": false,
+    "human": true
+  },
+  "repair": {
+    "automatable": "none",
+    "approval_required": true,
+    "strategies": [
+      "remove-flashing",
+      "slow-flash-rate"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-no-flash-threshold"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "flash-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

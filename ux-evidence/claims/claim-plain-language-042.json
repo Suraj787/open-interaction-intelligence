@@ -1,0 +1,112 @@
+{
+  "id": "claim-plain-language-042",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Use clear, plain language and avoid unexplained jargon, abbreviations and complex sentence structures so content is usable by people with cognitive and learning disabilities.",
+    "category": "cognitive-accessibility",
+    "type": "recommendation",
+    "force": "strong-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "public-service-system",
+      "website",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "learn",
+      "comply",
+      "communicate"
+    ],
+    "workflows": [
+      "onboarding",
+      "data-entry",
+      "error-recovery"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "low-literacy"
+    ],
+    "risks": [
+      "legal",
+      "financial"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "home",
+      "public",
+      "high-interruption"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": [
+      "src-coga",
+      "src-wcag22"
+    ],
+    "methodology": [
+      "expert-guidance",
+      "standards-consensus"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "COGA 'Making Content Usable' is a W3C Group Note (supporting guidance), not a normative WCAG success criterion at A/AA.",
+      "Plain-language reading-level is WCAG 3.1.5, a Level AAA criterion."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Write at the lowest reading level appropriate for the content.",
+      "Expand or define abbreviations and jargon on first use."
+    ],
+    "avoid": [
+      "Dense legalese in user-facing flows.",
+      "Unexplained acronyms in instructions."
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": false,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "simplify-language",
+      "define-terms"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-plain-language"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "reading-level"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2021-04-29",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

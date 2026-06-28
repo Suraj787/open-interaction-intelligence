@@ -1,0 +1,104 @@
+{
+  "id": "claim-contrast-text-minimum-002",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Body text and images of text must have a contrast ratio of at least 4.5:1 against their background (3:1 for large text).",
+    "category": "contrast",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "web-app",
+      "website",
+      "dashboard"
+    ],
+    "purposes": [
+      "browse",
+      "monitor"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "low-vision",
+      "colour-vision-deficiency"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "field"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-webaim"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Large text (18pt or 14pt bold) requires only 3:1.",
+      "Logotypes and incidental text are exempt."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Verify foreground/background pairs meet 4.5:1 (or 3:1 for large text).",
+      "Use a contrast checker on design tokens."
+    ],
+    "avoid": [
+      "Light-grey text on white.",
+      "Placeholder-only text used as content."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "adjust-foreground-colour",
+      "adjust-background-colour",
+      "increase-font-weight"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-text-contrast-ratio"
+    ],
+    "automatable": "full",
+    "requires_human_eval": false,
+    "metrics": [
+      "contrast-ratio"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

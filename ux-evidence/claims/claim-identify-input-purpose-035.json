@@ -1,0 +1,106 @@
+{
+  "id": "claim-identify-input-purpose-035",
+  "schema_version": 1,
+  "claim": {
+    "statement": "The purpose of input fields collecting information about the user must be programmatically determinable using appropriate autocomplete tokens.",
+    "category": "form-labels",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "ecommerce",
+      "public-service-system",
+      "web-app"
+    ],
+    "purposes": [
+      "transact"
+    ],
+    "workflows": [
+      "checkout",
+      "data-entry",
+      "account-management"
+    ],
+    "expertise": [
+      "mixed",
+      "novice"
+    ],
+    "abilities": [
+      "cognitive",
+      "motor-impairment",
+      "low-literacy"
+    ],
+    "risks": [
+      "financial",
+      "privacy"
+    ],
+    "devices": [
+      "desktop",
+      "mobile"
+    ],
+    "environments": [
+      "office",
+      "home"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "Applies to fields about the user; correct autocomplete tokens enable autofill and personalisation."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Add correct autocomplete attributes (name, email, tel, address...).",
+      "Use input types that match the data."
+    ],
+    "avoid": [
+      "Generic text inputs for known personal data.",
+      "Incorrect or missing autocomplete tokens."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": [
+      "add-autocomplete-token",
+      "set-input-type"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-autocomplete-tokens"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "autocomplete-coverage"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

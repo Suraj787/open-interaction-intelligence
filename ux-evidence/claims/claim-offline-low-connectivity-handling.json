@@ -1,0 +1,64 @@
+{
+  "id": "claim-offline-low-connectivity-handling",
+  "schema_version": 1,
+  "claim": {
+    "statement": "Handle offline and low-connectivity states gracefully: communicate connection status non-blockingly, let users keep working where feasible by queuing actions, and replay the queue in order and idempotently when connectivity returns. Surface permanent sync failures clearly.",
+    "category": "resilience",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": ["pwa", "mobile-web", "native-mobile", "web-app"],
+    "purposes": ["productivity", "operations", "data-entry", "transactional"],
+    "workflows": ["forms", "data-tables", "bulk-actions"],
+    "expertise": ["novice", "intermediate", "expert"],
+    "devices": ["mobile", "touch", "desktop"],
+    "environments": ["low-connectivity", "field-use"],
+    "audience_roles": ["end-user", "operator"]
+  },
+  "evidence": {
+    "tier": 2,
+    "sources": ["src-web-dev-cwv"],
+    "methodology": ["platform-guideline", "industry-best-practice"],
+    "confidence": "medium",
+    "limitations": ["Queue ordering, idempotency, and conflict resolution are non-trivial and domain-specific"]
+  },
+  "recommendation": {
+    "do": [
+      "Show a subtle, non-blocking connectivity indicator",
+      "Queue user actions offline and replay them in creation order when online",
+      "Make replayed requests idempotent and surface permanent failures to the user"
+    ],
+    "avoid": [
+      "Blocking modals that halt all work when the network drops",
+      "Silently discarding actions taken while offline"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "repair": {
+    "automatable": "partial",
+    "approval_required": true,
+    "strategies": ["add service-worker caching", "implement an outbox/sync queue", "add idempotency keys and retry policy"]
+  },
+  "validation": {
+    "methods": ["offline/throttled-network testing", "queue replay testing", "failure-injection testing"],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": ["queued-action-success-rate", "duplicate-write-rate"]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2026-06-28",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

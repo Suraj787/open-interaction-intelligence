@@ -1,0 +1,100 @@
+{
+  "id": "claim-language-of-page-030",
+  "schema_version": 1,
+  "claim": {
+    "statement": "The default human language of each page must be programmatically determinable via a valid lang attribute.",
+    "category": "language",
+    "type": "requirement",
+    "force": "normative"
+  },
+  "applicability": {
+    "product_forms": [
+      "website",
+      "web-app",
+      "documentation"
+    ],
+    "purposes": [
+      "browse",
+      "learn"
+    ],
+    "workflows": [
+      "daily-operation"
+    ],
+    "expertise": [
+      "mixed"
+    ],
+    "abilities": [
+      "screen-reader",
+      "blind",
+      "low-literacy"
+    ],
+    "risks": [
+      "low"
+    ],
+    "devices": [
+      "screen-reader"
+    ],
+    "environments": [
+      "office"
+    ],
+    "audience_roles": [],
+    "jurisdiction": []
+  },
+  "evidence": {
+    "tier": 1,
+    "sources": [
+      "src-wcag22",
+      "src-mdn"
+    ],
+    "methodology": [
+      "standards-consensus"
+    ],
+    "confidence": "high",
+    "limitations": [
+      "A correct lang attribute drives screen-reader pronunciation and correct voice selection."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Set a valid lang attribute on the html element.",
+      "Update lang when the page language changes."
+    ],
+    "avoid": [
+      "Missing or empty lang attribute.",
+      "lang value not matching the actual content language."
+    ]
+  },
+  "detection": {
+    "static": true,
+    "browser": true,
+    "model_review": false,
+    "human": false
+  },
+  "repair": {
+    "automatable": "full",
+    "approval_required": false,
+    "strategies": [
+      "set-html-lang"
+    ]
+  },
+  "validation": {
+    "methods": [
+      "val-html-lang-valid"
+    ],
+    "automatable": "full",
+    "requires_human_eval": false,
+    "metrics": [
+      "has-valid-lang"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2023-10-05",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}

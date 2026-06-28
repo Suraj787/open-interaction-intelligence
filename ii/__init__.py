@@ -7,4 +7,4 @@ scanners, secure supply chain, controlled installer).
 User-facing command: `motif` (short alias `ii`; legacy alias `oii`). Dependency-free.
 """
 
-__version__ = "2.0.0"
+__version__ = "3.1.0"

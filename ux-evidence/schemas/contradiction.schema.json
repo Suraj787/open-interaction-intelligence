@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://motif.dev/ux-evidence/schemas/contradiction.schema.json",
+  "title": "contradiction",
+  "type": "object",
+  "required": [
+    "id",
+    "topic",
+    "competing_claims",
+    "resolution_type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^contradiction-[a-z0-9-]+$"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "competing_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resolution_type": {
+      "type": "string",
+      "enum": [
+        "context-dependent",
+        "superseded",
+        "unresolved",
+        "both-apply"
+      ]
+    },
+    "resolution": {
+      "type": "string"
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_decision_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

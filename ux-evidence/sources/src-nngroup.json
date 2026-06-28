@@ -1,0 +1,21 @@
+{
+  "id": "src-nngroup",
+  "title": "Nielsen Norman Group (NN/g) articles and research",
+  "organisation": "Nielsen Norman Group",
+  "date": "2026",
+  "url": "https://www.nngroup.com/",
+  "tier": 4,
+  "methodology": [
+    "moderated-usability-testing",
+    "eyetracking",
+    "practitioner-synthesis"
+  ],
+  "access_type": "open",
+  "verification_status": "verified",
+  "last_verified": "2026-06-28",
+  "limitations": [
+    "Practitioner source: many articles document methodology but some are opinion or experience-based",
+    "Sample sizes and raw data are not always disclosed per article",
+    "Full reports and benchmarks are paywalled; assess strength of evidence per article"
+  ]
+}

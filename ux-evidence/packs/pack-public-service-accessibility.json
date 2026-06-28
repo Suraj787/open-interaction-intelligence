@@ -1,0 +1,114 @@
+{
+  "id": "pack-public-service-accessibility",
+  "name": "Public-service digital systems (accessibility-first)",
+  "context_vector": {
+    "product_forms": [
+      "public-service-system",
+      "website",
+      "web-app"
+    ],
+    "purposes": [
+      "transact",
+      "comply",
+      "navigate",
+      "communicate"
+    ],
+    "workflows": [
+      "onboarding",
+      "data-entry",
+      "approval",
+      "error-recovery",
+      "account-management"
+    ],
+    "audience_roles": [
+      "beneficiary",
+      "proxy",
+      "operator"
+    ],
+    "expertise": [
+      "novice",
+      "intermittent",
+      "mixed"
+    ],
+    "abilities": [
+      "blind",
+      "low-vision",
+      "screen-reader",
+      "keyboard-only",
+      "cognitive",
+      "low-literacy",
+      "motor-impairment",
+      "colour-vision-deficiency"
+    ],
+    "risks": [
+      "legal",
+      "privacy",
+      "financial",
+      "irreversible"
+    ],
+    "devices": [
+      "mobile",
+      "desktop",
+      "screen-reader",
+      "low-power"
+    ],
+    "environments": [
+      "home",
+      "public",
+      "low-connectivity"
+    ],
+    "jurisdiction": [
+      "uk",
+      "us",
+      "eu"
+    ]
+  },
+  "claim_ids": [
+    "claim-status-colour-001",
+    "claim-visible-focus-001",
+    "claim-target-size-001",
+    "claim-contrast-text-001",
+    "claim-keyboard-operable-001",
+    "claim-plain-language-001",
+    "claim-form-labels-001",
+    "claim-error-identification-001",
+    "claim-error-recovery-001",
+    "claim-meaningful-alt-text-001",
+    "claim-reading-order-001",
+    "claim-reduced-motion-001",
+    "claim-one-thing-per-page-001",
+    "claim-session-timeout-warning-001",
+    "claim-skip-to-content-001"
+  ],
+  "anti_pattern_ids": [
+    "anti-colour-only-status",
+    "anti-autoplay-carousel",
+    "anti-autofocus-on-content-page",
+    "anti-placeholder-as-label",
+    "anti-automated-only-a11y-signoff"
+  ],
+  "myths_to_block": [
+    "myth-automated-a11y-proves-accessibility",
+    "myth-older-users-tech-incapable",
+    "myth-children-want-cartoon-ui",
+    "myth-teenagers-want-bright-colours",
+    "myth-young-adults-prefer-dark-mode",
+    "myth-users-do-not-scroll"
+  ],
+  "required_validations": [
+    "val-axe-scan",
+    "val-keyboard-traversal",
+    "val-focus-visible-check",
+    "val-contrast-check",
+    "val-colour-independent-meaning",
+    "val-runtime-geometry-check",
+    "val-reduced-motion-check",
+    "val-manual-screen-reader-review"
+  ],
+  "evidence_floor": 2,
+  "known_gaps": [
+    "Cognitive-accessibility (COGA) guidance is qualitative and lacks objective pass/fail thresholds",
+    "Plain-language reading-level assessment still needs human review"
+  ],
+  "confidence": "high"
+}

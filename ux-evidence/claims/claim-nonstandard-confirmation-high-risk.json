@@ -1,0 +1,108 @@
+{
+  "id": "claim-nonstandard-confirmation-high-risk",
+  "schema_version": 1,
+  "claim": {
+    "statement": "For especially dangerous, irreversible operations, require a non-standard confirmation (such as typing a keyword) rather than a single OK click that can become automatic.",
+    "category": "transactions",
+    "type": "recommendation",
+    "force": "contextual-recommendation"
+  },
+  "applicability": {
+    "product_forms": [
+      "enterprise-app",
+      "internal-tool",
+      "dashboard",
+      "web-app",
+      "public-service-system"
+    ],
+    "purposes": [
+      "configure",
+      "transact",
+      "decide"
+    ],
+    "workflows": [
+      "bulk-action",
+      "approval",
+      "account-management",
+      "data-entry"
+    ],
+    "expertise": [
+      "domain-professional",
+      "expert",
+      "mixed"
+    ],
+    "abilities": [
+      "cognitive",
+      "none-specified"
+    ],
+    "risks": [
+      "irreversible",
+      "financial",
+      "legal",
+      "safety"
+    ],
+    "devices": [
+      "desktop",
+      "touch"
+    ],
+    "environments": [
+      "office",
+      "high-interruption"
+    ],
+    "audience_roles": [
+      "administrator",
+      "operator"
+    ]
+  },
+  "evidence": {
+    "tier": 3,
+    "sources": [
+      "src-nngroup"
+    ],
+    "methodology": [
+      "heuristic-evaluation",
+      "case-study"
+    ],
+    "confidence": "low",
+    "limitations": [
+      "Adds friction; justified only for the highest-consequence, irreversible actions."
+    ]
+  },
+  "recommendation": {
+    "do": [
+      "Require typing a resource name to confirm deletion",
+      "Make the consequence explicit in the dialog"
+    ],
+    "avoid": [
+      "Guarding catastrophic actions with a single default-focused OK button"
+    ]
+  },
+  "detection": {
+    "static": false,
+    "browser": true,
+    "model_review": true,
+    "human": true
+  },
+  "validation": {
+    "methods": [
+      "usability-testing",
+      "expert-review"
+    ],
+    "automatable": "partial",
+    "requires_human_eval": true,
+    "metrics": [
+      "task-completion-rate",
+      "error-rate"
+    ]
+  },
+  "legal": {
+    "compliance_claim_allowed": false,
+    "disclaimer_required": true
+  },
+  "freshness": {
+    "published_at": "2022-08-21",
+    "reviewed_at": "2026-06-28",
+    "review_after": "2027-06-28",
+    "status": "current"
+  }
+}
