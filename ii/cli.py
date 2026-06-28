@@ -53,6 +53,10 @@ def cmd_validate(_a) -> int:
 
 
 def cmd_doctor(_a) -> int:
+    if getattr(_a, "browser", False):
+        from . import browser as browser_mod
+        _p(json.dumps(browser_mod.doctor(), indent=2))
+        return 0
     from motif import doctor as md
     lines, ok = md.run()
     _p("\n".join(lines))
@@ -300,7 +304,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="cmd", required=True)
 
     sub.add_parser("validate", help="validate foundation + engine data + graph").set_defaults(fn=cmd_validate)
-    sub.add_parser("doctor", help="environment + engine health").set_defaults(fn=cmd_doctor)
+    sp = sub.add_parser("doctor", help="environment + engine health")
+    sp.add_argument("--browser", action="store_true", help="report browser runtime status")
+    sp.set_defaults(fn=cmd_doctor)
     sub.add_parser("inspect", help="detect the target project's framework/conventions").set_defaults(fn=cmd_inspect)
     sub.add_parser("model-product", help="scaffold a Product Context Manifest").set_defaults(fn=cmd_model_product)
 
