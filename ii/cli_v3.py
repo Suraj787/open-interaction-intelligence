@@ -354,7 +354,8 @@ def cmd_evidence(a) -> int:
         if a.risk:
             ctx["risks"] = [{"type": r.split(":")[0], "severity": int(r.split(":")[1]) if ":" in r else 3}
                             for r in a.risk.split(",")]
-        _jp(ev_mod.query(ctx))
+        explain = getattr(a, "explain_matching", False)
+        _jp(ev_mod.query(ctx, explain=explain))
         return 0
     if act == "explain":
         _jp(ev_mod.explain(a.value or ""))
@@ -463,7 +464,8 @@ def register(sub) -> None:
     sp = add("evidence", cmd_evidence, "UX Evidence Graph",
              [(("--product-form",), {"dest": "product_form"}), (("--purpose",), {}),
               (("--workflow",), {}), (("--expertise",), {}), (("--ability",), {}),
-              (("--risk",), {}), (("--device",), {}), (("--environment",), {})])
+              (("--risk",), {}), (("--device",), {}), (("--environment",), {}),
+              (("--explain-matching",), {"action": "store_true", "dest": "explain_matching"})])
     sp.add_argument("action", choices=["validate", "index", "query", "explain", "sources",
                                        "check-myth", "contradictions", "stale", "pack"])
     sp.add_argument("value", nargs="?")

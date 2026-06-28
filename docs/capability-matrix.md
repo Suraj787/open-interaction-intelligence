@@ -200,3 +200,42 @@ for the proven capabilities; broader coverage remains experimental/planned.
 Honest scope: the loop is proven against the bundled Vue benchmark app. It does not audit
 arbitrary applications, does not prove full accessibility (axe passing is not certification),
 and is not a fully autonomous redesign. Human and assistive-technology review remain required.
+
+---
+
+## Beta correctness corrections (fix/beta-evidence-query-originality, 2026-06-28)
+
+### UX Evidence Graph matching (corrected wildcard semantics)
+- An empty or omitted applicability dimension is a **wildcard** (applies to all values on
+  that dimension). Existing dimension values are **soft relevance signals** used only for
+  ranking.
+- A claim hard-filters only on the dimensions listed in `applicability.restrict` (default
+  `[]` = universal). A restricted claim is excluded only when both claim and context
+  constrain that dimension with no set-intersection.
+- Ranking: more matched dimensions = higher specificity; specific claims rank above
+  universal. Normative claims are not displaced by weaker contextual guidance. Hypotheses
+  never block; stale claims cannot newly block. Assumed context lowers confidence only.
+- Each result reports match type, matched and wildcard dimensions, specificity, sources,
+  limitations, and a reason. `motif evidence query --explain-matching` also lists excluded
+  claims with the dimension responsible.
+- Implemented; proven across 11 product contexts (see the generalisation report).
+
+### Aesthetic-convergence (originality) scoring (recalibrated)
+- Signals are tiered: marketing (strongest), decorative, structural (common UI; weak alone).
+- Scoring dimensions: pattern presence, frequency (with diminishing returns), concentration
+  across files, design-system provenance, product-context justification, and a combination
+  gate (a high band requires several distinct marketing/decorative signals together).
+- Structural patterns are down-weighted for dense product contexts and when a design system
+  is present (design-system provenance handling).
+- Output is a signal-level breakdown with raw count, weighted score, context and provenance
+  adjustments, affected routes, and explanation. Static-only evidence caps confidence at
+  moderate.
+- The detector reports **aesthetic-convergence risk** / **generic-pattern concentration**.
+  It does not and cannot determine whether a UI was produced by AI, and it never labels
+  Tailwind itself as generic.
+
+### Known limitations / static-vs-runtime confidence
+- Evidence matching and originality scoring are static and deterministic.
+- Originality confidence is capped at moderate (no runtime or cross-project comparison).
+- Remaining experimental coverage: cross-project similarity, visual-hierarchy quality, and
+  rendered/runtime confirmation are not implemented.

@@ -8,20 +8,55 @@
     "force": "strong-recommendation"
   },
   "applicability": {
-    "product_forms": ["web-app", "mobile-web", "pwa"],
-    "purposes": ["productivity", "content-consumption", "transactional"],
-    "workflows": ["navigation", "data-tables", "bulk-actions"],
-    "expertise": ["novice", "intermediate", "expert"],
-    "abilities": ["motor-impairment"],
-    "devices": ["touch", "mobile"],
-    "audience_roles": ["end-user", "operator"]
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "pwa"
+    ],
+    "purposes": [
+      "productivity",
+      "content-consumption",
+      "transactional"
+    ],
+    "workflows": [
+      "navigation",
+      "data-tables",
+      "bulk-actions"
+    ],
+    "expertise": [
+      "novice",
+      "intermediate",
+      "expert"
+    ],
+    "abilities": [
+      "motor-impairment"
+    ],
+    "devices": [
+      "touch",
+      "mobile"
+    ],
+    "audience_roles": [
+      "end-user",
+      "operator"
+    ],
+    "restrict": [
+      "devices"
+    ]
   },
   "evidence": {
     "tier": 2,
-    "sources": ["src-material", "src-wcag22"],
-    "methodology": ["platform-guideline", "industry-best-practice"],
+    "sources": [
+      "src-material",
+      "src-wcag22"
+    ],
+    "methodology": [
+      "platform-guideline",
+      "industry-best-practice"
+    ],
     "confidence": "high",
-    "limitations": ["Hybrid devices with both touch and pointer require any-hover/any-pointer handling"]
+    "limitations": [
+      "Hybrid devices with both touch and pointer require any-hover/any-pointer handling"
+    ]
   },
   "recommendation": {
     "do": [
@@ -43,13 +78,23 @@
   "repair": {
     "automatable": "partial",
     "approval_required": false,
-    "strategies": ["add tap-triggered disclosure", "wrap hover styles in pointer/hover media queries", "make actions persistently visible"]
+    "strategies": [
+      "add tap-triggered disclosure",
+      "wrap hover styles in pointer/hover media queries",
+      "make actions persistently visible"
+    ]
   },
   "validation": {
-    "methods": ["touch emulation testing", "media-query audit", "manual device review"],
+    "methods": [
+      "touch emulation testing",
+      "media-query audit",
+      "manual device review"
+    ],
     "automatable": "partial",
     "requires_human_eval": true,
-    "metrics": ["count-hover-only-actions"]
+    "metrics": [
+      "count-hover-only-actions"
+    ]
   },
   "legal": {
     "compliance_claim_allowed": false,

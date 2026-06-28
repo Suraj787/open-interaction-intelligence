@@ -119,6 +119,13 @@
           "items": {
             "type": "string"
           }
+        },
+        "restrict": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "dimensions that are HARD filters; default [] = universal (every dimension wildcard)"
         }
       },
       "additionalProperties": false

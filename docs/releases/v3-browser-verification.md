@@ -63,3 +63,9 @@ The browser gate (ADR-REL-002, spec section 20) is satisfied on `motif-v3-1-evid
 Remaining owner actions before a public tag: merge the branches into `main` (PRs prepared),
 let the workflows run green on `main`, then tag `v3.0.0-beta.1` (prerelease) and, after
 review, `v3.0.0`. No tag is created automatically.
+
+## Beta.2 corrections and the browser gate
+The beta.2 corrections (evidence wildcard semantics, aesthetic-convergence recalibration) are
+static and deterministic and do not change the golden repair loop. The same browser
+golden-loop gate (`--require-browser`) is re-run on the correction branch and must stay green
+before `v3.0.0-beta.2`; the colour-only repair scenario and exact rollback are unchanged.

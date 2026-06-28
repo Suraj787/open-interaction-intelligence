@@ -81,36 +81,99 @@ def is_stale(claim) -> bool:
 
 
 def _ctx_risks(ctx):
-    out = set()
+    out = {}
     for r in ctx.get("risks", []) or []:
-        out.add(r["type"] if isinstance(r, dict) else r)
+        if isinstance(r, dict):
+            out[r["type"]] = max(out.get(r["type"], 0), int(r.get("severity", 0)))
+        else:
+            out[r] = max(out.get(r, 0), 0)
     return out
 
 
-def applies(claim, ctx) -> tuple[bool, int]:
-    """Return (applies, specificity).
+def _claim(claim_id):
+    return next((x for x in load_claims() if x["id"] == claim_id), None)
 
-    A claim narrows only on dimensions the context actually specifies: if the context is
-    silent on a dimension, the claim still applies (it is simply less context-specific).
-    A claim is excluded only when both the claim and the context constrain a dimension and
-    they do not overlap. Specificity counts the dimensions that matched concretely.
+
+def _restrict_dims(claim) -> set:
+    """Dimensions a claim hard-filters on. Default empty = universal (every dimension wildcard).
+
+    A claim that lists `applicability.restrict` is excluded when one of those dimensions is
+    constrained by both claim and context with no intersection. All other dimensions are soft:
+    they refine ranking (specificity) but never exclude a claim.
+    """
+    return set(claim.get("applicability", {}).get("restrict", []) or [])
+
+
+def match(claim, ctx) -> dict:
+    """Match a claim against a context vector.
+
+    Corrected semantics:
+      - empty/omitted claim dimension = wildcard (applies to all values on that dimension);
+      - existing dimension values are soft relevance signals used only for ranking;
+      - a dimension excludes only when it is listed in the claim's `restrict` set and both
+        sides constrain it with no set-intersection;
+      - more matched dimensions = higher specificity (specific ranks above universal).
+    Returns applies, specificity, match_type, matched/wildcard dimensions, reason, and (when
+    excluded) the dimension responsible.
     """
     ap = claim.get("applicability", {})
-    spec = 0
+    restrict = _restrict_dims(claim)
+    matched, wildcard, spec = [], [], 0
+    restricted_hit = False
+
     for dim in _DIMS:
         cv = set(ap.get(dim, []) or [])
         ctxv = set(ctx.get(dim, []) or [])
-        if cv and ctxv:
-            if not (cv & ctxv):
-                return False, 0
+        if not cv:
+            wildcard.append(dim)
+            continue
+        if not ctxv:
+            # context silent: claim still applies (rule 10: do not invent incompatibility)
+            wildcard.append(dim)
+            continue
+        if cv & ctxv:
+            matched.append(dim)
             spec += 1
+            if dim in restrict:
+                restricted_hit = True
+        elif dim in restrict:
+            return {"applies": False, "specificity": 0, "match_type": "excluded",
+                    "matched_dimensions": [], "wildcard_dimensions": [],
+                    "excluded_because": f"{dim}: {sorted(cv)} has no intersection with {sorted(ctxv)}",
+                    "reason": f"restricted on {dim} which does not match the context"}
+        # soft mismatch on a non-restricted dimension: ignored (does not exclude)
+
+    # typed risk: intersection of types adds specificity; severity refines it
     cr = set(ap.get("risks", []) or [])
     ctxr = _ctx_risks(ctx)
     if cr and ctxr:
-        if not (cr & ctxr):
-            return False, 0
-        spec += 1
-    return True, spec
+        hit = cr & set(ctxr)
+        if hit:
+            matched.append("risks")
+            spec += 1 + (1 if max(ctxr[t] for t in hit) >= 4 else 0)
+            if "risks" in restrict:
+                restricted_hit = True
+        elif "risks" in restrict:
+            return {"applies": False, "specificity": 0, "match_type": "excluded",
+                    "matched_dimensions": [], "wildcard_dimensions": [],
+                    "excluded_because": f"risks: {sorted(cr)} has no intersection with {sorted(ctxr)}",
+                    "reason": "restricted on risks which does not match the context"}
+
+    mtype = "restricted-match" if restricted_hit else ("specific" if spec else "universal")
+    if mtype == "universal":
+        reason = "universal claim (no restricting dimensions); applies to every context"
+    elif mtype == "restricted-match":
+        reason = f"matches restricted dimension(s) and {spec} context dimension(s): {matched}"
+    else:
+        reason = f"applies universally; refined by {spec} matching context dimension(s): {matched}"
+    return {"applies": True, "specificity": spec, "match_type": mtype,
+            "matched_dimensions": matched, "wildcard_dimensions": wildcard, "reason": reason}
+
+
+def applies(claim, ctx) -> tuple[bool, int]:
+    """Backward-compatible thin wrapper over match()."""
+    m = match(claim, ctx)
+    return m["applies"], m["specificity"]
 
 
 def _blocking(claim) -> bool:
@@ -119,33 +182,44 @@ def _blocking(claim) -> bool:
             and ev.get("confidence") == "high" and not is_stale(claim))
 
 
-def query(ctx: dict) -> dict:
+def query(ctx: dict, explain: bool = False) -> dict:
     claims = load_claims()
-    matched = []
+    matched, excluded = [], []
     for c in claims:
-        ok, spec = applies(c, ctx)
-        if ok:
-            matched.append((spec, c))
-    matched.sort(key=lambda x: (-x[0], x[1]["evidence"]["tier"]))
+        m = match(c, ctx)
+        if m["applies"]:
+            matched.append((m, c))
+        elif explain:
+            excluded.append({"claim": c["id"], "excluded_because": m.get("excluded_because", ""),
+                             "reason": m["reason"]})
+    # rank: specificity desc, then tier asc (stronger sources first), then id for stability
+    matched.sort(key=lambda x: (-x[0]["specificity"], x[1]["evidence"]["tier"], x[1]["id"]))
 
     applicable, recs, warnings, blocked, validations, sources, limitations = [], [], [], [], set(), set(), []
-    for spec, c in matched:
+    for m, c in matched:
         force = c["claim"]["force"]
         stale = is_stale(c)
+        spec = m["specificity"]
         applicable.append(c["id"])
         sources.update(c.get("evidence", {}).get("sources", []))
         limitations.extend(c.get("evidence", {}).get("limitations", []))
         validations.update(c.get("validation", {}).get("methods", []))
         do = c.get("recommendation", {}).get("do", [])
+        is_block = _blocking(c) and not stale
         if force == "hypothesis":
             warnings.append({"claim": c["id"], "why": "hypothesis (never blocks)"})
         elif stale:
             warnings.append({"claim": c["id"], "why": "stale claim cannot newly block"})
-        if _blocking(c) and not stale:
+        if is_block:
             blocked.append({"claim": c["id"], "category": c["claim"]["category"],
                             "requirement": c["claim"]["statement"]})
         recs.append({"claim": c["id"], "force": force, "specificity": spec,
-                     "tier": c["evidence"]["tier"], "do": do})
+                     "tier": c["evidence"]["tier"], "do": do,
+                     "match_type": m["match_type"], "matched_dimensions": m["matched_dimensions"],
+                     "wildcard_dimensions": m["wildcard_dimensions"], "blocking": is_block,
+                     "sources": c.get("evidence", {}).get("sources", []),
+                     "limitations": c.get("evidence", {}).get("limitations", []),
+                     "reason": m["reason"]})
 
     # conflicts: contradictions whose topic-category appears among matched categories
     cats = {c[1]["claim"]["category"] for c in matched}
@@ -173,6 +247,7 @@ def query(ctx: dict) -> dict:
         "conflicts": conflicts,
         "sources": sorted(sources),
         "limitations": limitations[:20],
+        **({"excluded_claims": excluded} if explain else {}),
     }
 
 

@@ -98,6 +98,15 @@ A version-controlled UX Evidence Graph (110 Tier 1-3 claims with sources, limita
 validation) grounds the audit-and-repair decisions. Browser capture/validation is an
 optional extra and reports `not-executed` without a runtime, never faked.
 
+Evidence matching uses wildcard semantics: an empty applicability dimension applies to all
+values, existing values refine ranking, and only dimensions a claim lists in `restrict` are
+hard filters, so universal claims survive rich contexts. `motif evidence query
+--explain-matching` shows why each claim matched or was excluded. The originality detector
+reports **aesthetic-convergence risk** (generic-pattern concentration with contextual
+originality signals); it accounts for design-system provenance and product context, requires
+a combination of cliche signals for a high band, and does not determine whether a UI was made
+by AI.
+
 ## Installation
 
 Requirements: Python 3.11+ and `git`. Node.js 18+ is optional. The core CLI has no Python

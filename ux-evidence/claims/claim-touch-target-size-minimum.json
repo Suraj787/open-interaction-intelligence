@@ -8,20 +8,59 @@
     "force": "normative"
   },
   "applicability": {
-    "product_forms": ["web-app", "mobile-web", "native-mobile", "pwa"],
-    "purposes": ["productivity", "transactional", "data-entry"],
-    "workflows": ["forms", "navigation", "data-tables", "bulk-actions"],
-    "expertise": ["novice", "intermediate", "expert"],
-    "abilities": ["motor-impairment", "low-vision"],
-    "devices": ["touch", "mobile"],
-    "audience_roles": ["end-user", "operator"]
+    "product_forms": [
+      "web-app",
+      "mobile-web",
+      "native-mobile",
+      "pwa"
+    ],
+    "purposes": [
+      "productivity",
+      "transactional",
+      "data-entry"
+    ],
+    "workflows": [
+      "forms",
+      "navigation",
+      "data-tables",
+      "bulk-actions"
+    ],
+    "expertise": [
+      "novice",
+      "intermediate",
+      "expert"
+    ],
+    "abilities": [
+      "motor-impairment",
+      "low-vision"
+    ],
+    "devices": [
+      "touch",
+      "mobile"
+    ],
+    "audience_roles": [
+      "end-user",
+      "operator"
+    ],
+    "restrict": [
+      "devices"
+    ]
   },
   "evidence": {
     "tier": 1,
-    "sources": ["src-wcag22", "src-apple-hig", "src-material"],
-    "methodology": ["normative-standard", "platform-guideline"],
+    "sources": [
+      "src-wcag22",
+      "src-apple-hig",
+      "src-material"
+    ],
+    "methodology": [
+      "normative-standard",
+      "platform-guideline"
+    ],
     "confidence": "high",
-    "limitations": ["WCAG 2.5.8 has exceptions (inline targets, spacing-based alternative, equivalent control elsewhere)"]
+    "limitations": [
+      "WCAG 2.5.8 has exceptions (inline targets, spacing-based alternative, equivalent control elsewhere)"
+    ]
   },
   "recommendation": {
     "do": [
@@ -43,13 +82,25 @@
   "repair": {
     "automatable": "partial",
     "approval_required": false,
-    "strategies": ["increase min-width/min-height", "add padding to expand hit area", "apply hit-slop on native controls"]
+    "strategies": [
+      "increase min-width/min-height",
+      "add padding to expand hit area",
+      "apply hit-slop on native controls"
+    ]
   },
   "validation": {
-    "methods": ["computed-bounding-box measurement", "automated accessibility scan", "manual touch testing on device"],
+    "methods": [
+      "computed-bounding-box measurement",
+      "automated accessibility scan",
+      "manual touch testing on device"
+    ],
     "automatable": "partial",
     "requires_human_eval": false,
-    "metrics": ["target-width-css-px", "target-height-css-px", "percent-targets-below-threshold"]
+    "metrics": [
+      "target-width-css-px",
+      "target-height-css-px",
+      "percent-targets-below-threshold"
+    ]
   },
   "legal": {
     "compliance_claim_allowed": false,

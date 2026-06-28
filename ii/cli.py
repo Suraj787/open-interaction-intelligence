@@ -181,19 +181,21 @@ def cmd_originality(a) -> int:
     if not a.path:
         _p("usage: ii originality audit <path>")
         return 2
-    findings, score, band = orig_mod.audit_path(a.path)
-    _p(f"# Aesthetic Convergence Score: {score}/100, {band}")
-    seen = {}
-    for f in findings:
-        seen.setdefault(f.signal, {"msg": f.message, "count": 0, "files": 0})
-        seen[f.signal]["count"] += f.count
-        seen[f.signal]["files"] += 1
-    for sig, v in sorted(seen.items(), key=lambda x: -x[1]["count"]):
-        _p(f"  [{v['count']:3}x] {sig}: {v['msg']}")
-    if not findings:
-        _p("  no generic-aesthetic signals detected")
-    _p("\nGround originality in product reality (real workflows, domain metaphors, data), not random novelty.")
-    return 0 if score < 60 else 3
+    ctx = {"product_forms": a.product_form.split(",")} if getattr(a, "product_form", None) else None
+    r = orig_mod.audit(a.path, context=ctx)
+    _p(f"# Aesthetic Convergence Risk: {r['overall_score']}/100, {r['risk_band']}")
+    _p(f"  confidence: {r['confidence']} (static-only)  "
+       f"design-system: {r['provenance']['design_system_present']}  "
+       f"dense-context: {r['provenance']['dense_product_context']}")
+    for s in r["signals"]:
+        _p(f"  [{s['raw_count']:3}x] {s['name']:20} score {s['weighted_score']:5}  "
+           f"(ctx x{s['context_adjustment']}, provenance x{s['provenance_adjustment']}, "
+           f"{s['files_present']} file(s))")
+    if not r["signals"]:
+        _p("  no generic-pattern signals detected")
+    _p("\nAesthetic-convergence risk reflects generic-pattern concentration, not authorship; "
+       "it cannot determine whether a UI was produced by AI. Ground originality in product reality.")
+    return 0 if r["overall_score"] < 60 else 3
 
 
 # ---- motion / density / states -------------------------------------------
@@ -329,6 +331,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("originality", help="aesthetic convergence audit")
     sp.add_argument("action", choices=["audit"])
     sp.add_argument("path", nargs="?")
+    sp.add_argument("--product-form", dest="product_form",
+                    help="comma-separated product forms for context-aware scoring")
     sp.set_defaults(fn=cmd_originality)
 
     sp = sub.add_parser("motion", help="validate motion grammars")

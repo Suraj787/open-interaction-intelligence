@@ -43,3 +43,12 @@ v3.0.0.
 - A reasonable false-positive rate, with the worst FP classes noted for tuning.
 
 Results: `docs/releases/boss-beta-audit.md`.
+
+---
+
+## Corrections applied (2026-06-28)
+The two defects this plan found are fixed on `fix/beta-evidence-query-originality`:
+evidence-query over-filtering (corrected wildcard semantics) and originality false-saturation
+(recalibrated aesthetic-convergence scoring). Results: `docs/releases/boss-beta-audit-after-corrections.md`,
+the before/after table in `docs/releases/boss-beta-audit-comparison.md`, and the
+cross-context proof in `docs/reviews/beta-correction-generalisation-report.md`.
