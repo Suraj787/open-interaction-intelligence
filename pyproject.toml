@@ -15,7 +15,7 @@ dependencies = []  # core is intentionally dependency-free
 
 [project.optional-dependencies]
 dev = ["pytest>=7", "ruff>=0.4"]
-browser = ["playwright>=1.40", "axe-core-python>=0.1"]
+browser = ["playwright>=1.40"]  # axe-core injected from CDN at runtime
 
 [project.scripts]
 motif = "ii.cli:main"

@@ -238,22 +238,28 @@ def cmd_mcp(a) -> int:
 def cmd_bench(a) -> int:
     if getattr(a, "scenario", None) in ("vue-dashboard-evidence-repair", "golden"):
         t = a.target or "evals/fixtures/sample-vue-app"
-        result = repair_mod.golden(t, "/projects")
+        req = getattr(a, "require_browser", False)
+        result = repair_mod.golden(t, "/projects", require_browser=req)
         result["target"] = t
         report_mod.generate(t, "bench-golden", result)
         steps = {s["step"]: s["status"] for s in result["steps"]}
         det_pass = all(steps.get(k) == "passed" for k in
-                       ("detect", "apply-in-worktree", "verify-finding-closed (static)", "rollback (exact)"))
+                       ("detect", "apply-in-worktree", "verify-finding-closed (static)",
+                        "rollback (exact)", "baseline-unchanged"))
         _jp({"scenario": "vue-dashboard-evidence-repair",
-             "deterministic_steps": steps,
+             "deterministic_steps": {k: v for k, v in steps.items()},
              "deterministic_pass": det_pass,
-             "browser_steps": "not-executed (no runtime)",
+             "browser_proven": result.get("browser_proven"),
+             "outcome": result.get("outcome"),
+             "require_browser": req,
              "metrics": {"seeded_issue_detected": steps.get("detect") == "passed",
                          "repair_success_static": steps.get("verify-finding-closed (static)") == "passed",
+                         "runtime_finding_closed": steps.get("verify-runtime-finding-closed"),
                          "rollback_exact": steps.get("rollback (exact)") == "passed",
-                         "regressions": 0},
+                         "baseline_unchanged": steps.get("baseline-unchanged") == "passed",
+                         "regression": steps.get("regression-check")},
              "note": "Deterministic and browser metrics kept separate; not merged into one score."})
-        return 0 if det_pass else 3
+        return 0 if result.get("outcome") != "failed" else 3
     _jp(bench_mod.run(a.target or "."))
     return 0
 
@@ -397,17 +403,17 @@ def cmd_app(a) -> int:
 def cmd_repair(a) -> int:
     if a.action == "golden":
         t = a.target or "evals/fixtures/sample-vue-app"
-        result = repair_mod.golden(t, a.route)
+        result = repair_mod.golden(t, a.route, require_browser=getattr(a, "require_browser", False))
         result["target"] = t
         rid = "repair-" + (a.route or "projects").strip("/").replace("/", "-")
         rdir = report_mod.generate(t, rid, result)
         for s in result["steps"]:
             _p(f"  {s['step']:34} {s['status']}")
-        _p(f"\noutcome: {result.get('deterministic_outcome', result.get('outcome'))}")
-        _p(f"browser: {result.get('browser_outcome', 'not-executed')}")
+        _p(f"\noutcome: {result.get('outcome')}")
+        _p(f"browser proven: {result.get('browser_proven')}")
         _p(f"report: {rdir}/report.html")
-        return 0
-    _p("usage: motif repair golden [--target ... --route /projects]")
+        return 0 if result.get("outcome") != "failed" else 3
+    _p("usage: motif repair golden [--target ... --route /projects] [--require-browser]")
     return 2
 
 
@@ -444,7 +450,8 @@ def register(sub) -> None:
     sp = add("system", cmd_system, "design-system extraction", [T]); sp.add_argument("action", choices=["extract", "violations"])
     sp = add("guard", cmd_guard, "Guardian: scan a diff", [T, (("--base",), {}), (("--format",), {})]); sp.add_argument("action", choices=["staged", "branch"])
     sp = add("mcp", cmd_mcp, "MCP server", [(("--allow-write",), {"action": "store_true"})]); sp.add_argument("action", choices=["serve"])
-    add("bench", cmd_bench, "InterfaceBench runner (automated measures)", [T])
+    add("bench", cmd_bench, "InterfaceBench runner (automated measures or golden scenario)",
+        [T, (("--scenario",), {}), (("--require-browser",), {"action": "store_true", "dest": "require_browser"})])
     add("studio", cmd_studio, "local Studio viewer", [T, (("--port",), {"type": int}), (("--build-only",), {"action": "store_true"})])
     sp = add("compile", cmd_compile, "compiler (plan implemented; apply via installer)",
              [(("--component",), {}), (("--target",), {})]); sp.add_argument("action", choices=["plan", "preview", "apply", "rollback", "pr"])
@@ -465,5 +472,5 @@ def register(sub) -> None:
               (("--approve",), {"action": "store_true"})])
     sp.add_argument("action", choices=["start", "status", "stop"])
     sp = add("repair", cmd_repair, "evidence-grounded repair (golden loop)",
-             [T, (("--route",), {})])
+             [T, (("--route",), {}), (("--require-browser",), {"action": "store_true", "dest": "require_browser"})])
     sp.add_argument("action", choices=["golden"])

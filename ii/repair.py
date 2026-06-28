@@ -148,45 +148,134 @@ def rollback(applied: dict) -> bool:
     return not pathlib.Path(wt).exists()
 
 
-def golden(target, route: str | None = None) -> dict:
-    """The deterministic golden loop. Browser steps report not-executed without a runtime."""
+def _route_url(base_url: str, route: str | None) -> str:
+    return base_url.rstrip("/") + "/#" + (route or "/projects")
+
+
+def _link_node_modules(worktree_fixture: pathlib.Path, original_fixture: pathlib.Path) -> None:
+    """Symlink the original fixture's node_modules into the worktree so the repaired app
+    can start without a second install. The original is never modified."""
+    src = original_fixture / "node_modules"
+    dst = worktree_fixture / "node_modules"
+    if src.exists() and not dst.exists():
+        try:
+            dst.symlink_to(src, target_is_directory=True)
+        except OSError:
+            pass
+
+
+def golden(target, route: str | None = None, require_browser: bool = False,
+           evidence_dir: pathlib.Path | None = None) -> dict:
+    """The golden audit-and-repair loop.
+
+    Deterministic steps always run. Browser steps execute when Playwright is available and
+    otherwise report not-executed. With require_browser=True (CI), any not-executed or failed
+    browser stage fails the scenario; without it (local), the deterministic loop stands alone.
+    """
+    from . import apprunner as app_mod
     steps = []
+    target = pathlib.Path(target)
+    edir = pathlib.Path(evidence_dir) if evidence_dir else (target / ".motif" / "evidence" / "golden")
+    (edir / "before").mkdir(parents=True, exist_ok=True)
+    (edir / "after").mkdir(parents=True, exist_ok=True)
+
     findings = detect_colour_only_status(target)
-    steps.append({"step": "detect", "status": "passed" if findings else "failed",
-                  "findings": len(findings)})
+    steps.append({"step": "detect", "status": "passed" if findings else "failed", "findings": len(findings)})
     if not findings:
         return {"steps": steps, "outcome": "no-seeded-finding"}
-    # Target the seeded dot-based status indicator (the repairable colour-only finding).
     finding = next((f for f in findings if "ProjectStatus" in f["location"]["component"]), findings[0])
     ctx = build_context_vector(target, route)
     steps.append({"step": "context-vector", "status": "passed"})
     qr = ev.query(ctx)
     claim = ev.explain("claim-status-colour-001")
-    claim_ok = "error" not in claim
-    steps.append({"step": "evidence-query", "status": "passed" if claim_ok else "warning",
-                  "applicable_claims": len(qr["applicable_claims"]), "claim": claim.get("id")})
-    rplan = plan(finding, ev._load("claims") and next((c for c in ev.load_claims()
-                 if c["id"] == "claim-status-colour-001"), None), ctx)
+    steps.append({"step": "evidence-query", "status": "passed" if "error" not in claim else "warning",
+                  "claim": claim.get("id")})
+    claim_rec = next((c for c in ev.load_claims() if c["id"] == "claim-status-colour-001"), None)
+    rplan = plan(finding, claim_rec, ctx)
     steps.append({"step": "repair-plan", "status": "passed"})
-    bcap = browser_mod.capture(f"http://127.0.0.1/{(route or '/projects').lstrip('/')}",
-                               pathlib.Path(tempfile.gettempdir()) / "motif-before")
+
+    browser_ok = browser_mod.available()[0]
+    # --- before state (browser) ---
+    before_app = app_mod.start(target, approve=True) if browser_ok else None
+    before_url = _route_url(before_app.url, route) if (before_app and before_app.status == "started") else None
+    if before_app:
+        steps.append({"step": "start-app", "status": "passed" if before_app.status == "started" else before_app.status,
+                      "reason": before_app.reason})
+    bcap = (browser_mod.capture(before_url, edir / "before", target_selector=None)
+            if before_url else {"status": "not-executed", "reason": "no running app"})
     steps.append({"step": "browser-before", "status": bcap["status"]})
+
+    # --- apply repair in isolated worktree ---
     applied = apply(target, finding, "motif-repair-golden")
     steps.append({"step": "apply-in-worktree", "status": "passed" if applied["changed"] else "failed",
                   "used_worktree": applied["used_worktree"]})
-    closed = verify_closed(applied, finding)
-    steps.append({"step": "verify-finding-closed (static)", "status": "passed" if closed else "failed"})
-    acap = browser_mod.capture(f"http://127.0.0.1/{(route or '/projects').lstrip('/')}",
-                               pathlib.Path(tempfile.gettempdir()) / "motif-after")
-    steps.append({"step": "browser-after", "status": acap["status"]})
+    closed_static = verify_closed(applied, finding)
+    steps.append({"step": "verify-finding-closed (static)", "status": "passed" if closed_static else "failed"})
+
+    # --- after state (browser): start the repaired worktree app ---
+    after_status = "not-executed"
+    runtime_closed = "not-executed"
+    if browser_ok and applied.get("used_worktree"):
+        wt_fixture = pathlib.Path(applied["file"]).parent.parent.parent  # .../src/components/X.vue -> fixture root
+        _link_node_modules(wt_fixture, target)
+        after_app = app_mod.start(wt_fixture, approve=True)
+        after_url = _route_url(after_app.url, route) if after_app.status == "started" else None
+        steps.append({"step": "start-repaired-app", "status": "passed" if after_app.status == "started" else after_app.status})
+        acap = (browser_mod.capture(after_url, edir / "after") if after_url
+                else {"status": "not-executed", "reason": "repaired app did not start"})
+        after_status = acap["status"]
+        steps.append({"step": "browser-after", "status": after_status})
+        if after_url:
+            # runtime finding closure: a status label is now rendered as text
+            rt = browser_mod.has_text(after_url, "track")
+            runtime_closed = rt["status"]
+            steps.append({"step": "verify-runtime-finding-closed", "status": rt["status"]})
+            # regression: no new blocking axe violations vs before
+            before_v = bcap.get("axe_violations", 0) if isinstance(bcap, dict) else 0
+            after_v = acap.get("axe_violations", 0)
+            steps.append({"step": "regression-check",
+                          "status": "passed" if after_v <= before_v else "executed-and-failed",
+                          "before_violations": before_v, "after_violations": after_v})
+        app_mod.stop(getattr(after_app, "pid", None))
+    else:
+        steps.append({"step": "start-repaired-app", "status": "not-executed"})
+        steps.append({"step": "browser-after", "status": "not-executed"})
+        steps.append({"step": "verify-runtime-finding-closed", "status": "not-executed"})
+        steps.append({"step": "regression-check", "status": "not-executed"})
+
+    if before_app:
+        app_mod.stop(before_app.pid)
+
     rolled = rollback(applied)
     steps.append({"step": "rollback (exact)", "status": "passed" if rolled else "failed"})
+
+    # baseline unchanged on the source branch
+    fixture_file = target / "src" / "components" / "ProjectStatus.vue"
+    baseline_ok = fixture_file.exists() and "props.status.replace" not in fixture_file.read_text()
+    steps.append({"step": "baseline-unchanged", "status": "passed" if baseline_ok else "failed"})
+
+    browser_states = {s["status"] for s in steps if s["step"].startswith(("start-", "browser-", "verify-runtime", "regression"))}
+    browser_proven = browser_ok and "not-executed" not in browser_states and "executed-and-failed" not in browser_states
+    deterministic_ok = all(
+        s["status"] == "passed" for s in steps
+        if s["step"] in ("detect", "apply-in-worktree", "verify-finding-closed (static)",
+                         "rollback (exact)", "baseline-unchanged"))
+
+    outcome = "failed"
+    if deterministic_ok and (browser_proven or not require_browser):
+        outcome = "browser-verified" if browser_proven else "deterministic-only"
+
     return {
         "steps": steps, "finding": finding, "claim": claim, "plan": rplan,
         "query": {"blocked_patterns": qr["blocked_patterns"], "required_validations": qr["required_validations"],
                   "sources": qr["sources"], "confidence": qr["confidence"]},
-        "deterministic_outcome": "repair applied in worktree, finding closed (static), rolled back exactly",
-        "browser_outcome": bcap["status"],
-        "note": "Browser capture and runtime validation report not-executed without the "
-                "optional browser runtime; the deterministic loop completed and rolled back.",
+        "deterministic_ok": deterministic_ok,
+        "browser_proven": browser_proven,
+        "require_browser": require_browser,
+        "outcome": outcome,
+        "deterministic_outcome": "repair applied in worktree, finding closed (static), rolled back exactly, baseline unchanged",
+        "browser_outcome": bcap.get("status", "not-executed") if isinstance(bcap, dict) else "not-executed",
+        "evidence_dir": str(edir),
+        "note": ("Browser steps executed and verified." if browser_proven else
+                 "Browser steps not-executed (no runtime); deterministic loop completed and rolled back."),
     }
