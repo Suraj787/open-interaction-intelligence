@@ -48,7 +48,7 @@ def _ready(url: str, timeout: float) -> bool:
 
 
 def start(target, port: int | None = None, override_cmd: str | None = None,
-          timeout: float = 30.0, approve: bool = False) -> AppHandle:
+          timeout: float = 60.0, approve: bool = False) -> AppHandle:
     pm = runtime.model_project(target)
     cmd = override_cmd or pm.start_command
     if not cmd:
@@ -65,8 +65,14 @@ def start(target, port: int | None = None, override_cmd: str | None = None,
     url = f"http://127.0.0.1:{p}/"
     env = {k: v for k, v in os.environ.items() if not _is_secret(k)}
     env["PORT"] = str(p)
+    # Most dev servers (Vite) ignore PORT and bind localhost:5173 by default. Pass the
+    # host/port explicitly so the readiness poll targets the right address.
+    argv = cmd.split()
+    low = cmd.lower()
+    if "vite" in low or "dev" in low or "serve" in low:
+        argv += ["--", "--host", "127.0.0.1", "--port", str(p), "--strictPort"]
     try:
-        proc = subprocess.Popen(cmd.split(), cwd=str(target), env=env,
+        proc = subprocess.Popen(argv, cwd=str(target), env=env,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 start_new_session=True)
     except (OSError, ValueError) as e:

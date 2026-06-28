@@ -66,8 +66,12 @@ jobs:
 
       - name: Golden browser scenario (require-browser)
         run: |
+          set -o pipefail
           python -m ii bench --scenario vue-dashboard-evidence-repair \
-            --target evals/fixtures/sample-vue-app --require-browser | tee golden-result.json
+            --target evals/fixtures/sample-vue-app --require-browser > golden-result.json
+          code=$?
+          cat golden-result.json
+          exit $code
 
       - name: Collect artifacts
         if: always()

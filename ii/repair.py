@@ -149,7 +149,9 @@ def rollback(applied: dict) -> bool:
 
 
 def _route_url(base_url: str, route: str | None) -> str:
-    return base_url.rstrip("/") + "/#" + (route or "/projects")
+    # The fixture uses HTML5 history routing; Vite's SPA fallback serves index.html.
+    r = route or "/projects"
+    return base_url.rstrip("/") + (r if r.startswith("/") else "/" + r)
 
 
 def _link_node_modules(worktree_fixture: pathlib.Path, original_fixture: pathlib.Path) -> None:
