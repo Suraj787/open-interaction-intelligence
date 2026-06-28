@@ -1,0 +1,141 @@
+{
+  "id": "embla-carousel",
+  "schema_version": 1,
+  "identity": {
+    "name": "Embla Carousel",
+    "canonical_url": "https://www.embla-carousel.com",
+    "repository_urls": [],
+    "package_urls": [],
+    "owner_or_org": null,
+    "identity_confidence": 0.0,
+    "canonical_relationship_verified": false
+  },
+  "classification": {
+    "source_types": [],
+    "frameworks": [
+      "react"
+    ],
+    "languages": [],
+    "styling": [],
+    "technologies": [],
+    "product_fit": [],
+    "registry_category": "foundational-primitives",
+    "registry_class": "library"
+  },
+  "catalogue": {
+    "component_count_claimed": null,
+    "free_content": "unknown",
+    "paid_content": "unknown",
+    "registry_protocol": [],
+    "mcp_available": "unknown"
+  },
+  "usage": {
+    "permitted_modes": [
+      "inspect",
+      "pattern-extraction",
+      "adapt-before-use",
+      "direct-reuse"
+    ],
+    "direct_reuse_allowed": false,
+    "direct_reuse_requires_review": true,
+    "commercial_use_status": "unverified"
+  },
+  "licence": {
+    "identifier": "unknown",
+    "primary_source_url": null,
+    "verified_from_primary_source": false,
+    "commercial_use": "unknown",
+    "modification": "unknown",
+    "redistribution": "unknown",
+    "attribution_required": "unknown",
+    "asset_licences": [
+      "unknown"
+    ],
+    "confidence": 0.0
+  },
+  "provenance": {
+    "discovery_method": "seed",
+    "discovered_at": "2026-06-28",
+    "discovered_by_version": "3.1.0",
+    "discovered_by_installation_id": null,
+    "contributed_by": null,
+    "first_seen": "2026-06-28",
+    "last_seen": "2026-06-28",
+    "last_verified": null
+  },
+  "maintenance": {
+    "status": "unknown",
+    "latest_release": null,
+    "repository_archived": "unknown",
+    "package_deprecated": "unknown",
+    "activity_score": null,
+    "confidence": 0.0
+  },
+  "security": {
+    "review_status": "not-reviewed",
+    "dependency_review": "not-run",
+    "install_scripts": "unknown",
+    "telemetry": "unknown",
+    "remote_code_loading": "unknown",
+    "unsafe_html": "unknown",
+    "dynamic_code_execution": "unknown",
+    "known_vulnerabilities": [],
+    "compromise_indicators": [],
+    "confidence": 0.0
+  },
+  "accessibility": {
+    "claimed": "unknown",
+    "independently_reviewed": false,
+    "keyboard": "unknown",
+    "focus_management": "unknown",
+    "semantic_markup": "unknown",
+    "reduced_motion": "unknown",
+    "colour_independence": "unknown",
+    "target_size": "unknown",
+    "limitations": [],
+    "confidence": 0.0
+  },
+  "technical": {
+    "installation_mode": [],
+    "dependency_weight": "unknown",
+    "bundle_impact": "unknown",
+    "typescript_quality": "unknown",
+    "test_coverage": "unknown",
+    "design_token_support": "unknown",
+    "framework_lock_in": "unknown"
+  },
+  "design": {
+    "visual_character": [],
+    "density": [],
+    "originality_risk": "unknown",
+    "common_use_cases": [],
+    "unsuitable_use_cases": [],
+    "adaptation_notes": []
+  },
+  "assurance": {
+    "status": "seed-unreviewed",
+    "decision": "insufficient-evidence",
+    "trust_level": "unverified",
+    "review_version": null,
+    "reviewed_by": [],
+    "approval_required": true,
+    "limitations": [
+      "unverified seed entry"
+    ],
+    "compromises": []
+  },
+  "freshness": {
+    "review_after": null,
+    "stale": false
+  },
+  "legal": {
+    "registry_inclusion_is_endorsement": false,
+    "compliance_claim_allowed": false
+  },
+  "references": {
+    "primary": [
+      "https://www.embla-carousel.com"
+    ],
+    "secondary": []
+  }
+}

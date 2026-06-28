@@ -1,0 +1,18 @@
+{
+  "discovery_enabled_by_default": false,
+  "network_during_install": false,
+  "network_during_audit": false,
+  "network_during_repair": false,
+  "network_during_ci": false,
+  "network_during_mcp_startup": false,
+  "discovery_requires_explicit_opt_in": true,
+  "respect_robots_txt": true,
+  "rate_limit_requests_per_minute": 10,
+  "cache_ttl_hours": 168,
+  "max_content_bytes": 1048576,
+  "allow_private_data_upload": false,
+  "allow_code_execution_of_discovered_sources": false,
+  "allow_auto_merge_contributions": false,
+  "allow_direct_central_registry_write": false,
+  "enterprise_can_disable_network": true
+}

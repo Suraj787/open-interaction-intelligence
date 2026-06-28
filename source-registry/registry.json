@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "generated": "2026-06-28",
+  "version": "3.1.0",
+  "categories": {
+    "animated-components": 33,
+    "foundational-primitives": 22,
+    "full-component-systems": 34,
+    "tailwind-blocks": 28,
+    "vue-components": 14,
+    "charts-data-visualisation": 20,
+    "ai-agent-interfaces": 9,
+    "storybooks": 9,
+    "inspiration-galleries": 19,
+    "templates": 9,
+    "competitors": 21
+  },
+  "total_sources": 218,
+  "note": "All entries are seed-unreviewed and UNVERIFIED. Registry inclusion is not endorsement."
+}

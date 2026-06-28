@@ -1,0 +1,13 @@
+{
+  "direct_reuse_requires": ["licence_verified_from_primary_source", "provenance_strong",
+    "security_review_passed", "accessibility_acceptable_for_context", "maintenance_healthy",
+    "technical_fit_strong", "project_policy_allows"],
+  "never_infer_commercial_permission_from_free": true,
+  "registry_inclusion_is_endorsement": false,
+  "reuse_modes": ["direct-reuse", "adapt-before-use", "pattern-extraction", "inspiration-only", "reject-or-block"],
+  "block_when": ["licence_missing_or_incompatible", "provenance_unknown", "repository_impersonated",
+    "package_typo_squatted", "code_unsafe", "abandoned_high_risk", "accessibility_unacceptable_for_workflow",
+    "terms_prohibit_use", "contribution_malicious"],
+  "default_status_for_seed": "seed-unreviewed",
+  "default_status_for_discovered": "quarantined"
+}

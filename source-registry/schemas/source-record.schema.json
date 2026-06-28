@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Motif source record",
+  "type": "object",
+  "required": ["id", "schema_version", "identity", "classification", "usage", "licence",
+               "provenance", "security", "accessibility", "assurance", "freshness", "legal"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "schema_version": {"type": "integer"},
+    "identity": {
+      "type": "object",
+      "required": ["name", "canonical_url", "identity_confidence", "canonical_relationship_verified"],
+      "properties": {
+        "name": {"type": "string"},
+        "canonical_url": {"type": ["string", "null"]},
+        "repository_urls": {"type": "array", "items": {"type": "string"}},
+        "package_urls": {"type": "array", "items": {"type": "string"}},
+        "owner_or_org": {"type": ["string", "null"]},
+        "identity_confidence": {"type": "number"},
+        "canonical_relationship_verified": {"type": "boolean"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "source_types": {"type": "array", "items": {"type": "string"}},
+        "frameworks": {"type": "array", "items": {"type": "string"}},
+        "languages": {"type": "array", "items": {"type": "string"}},
+        "styling": {"type": "array", "items": {"type": "string"}},
+        "technologies": {"type": "array", "items": {"type": "string"}},
+        "product_fit": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "catalogue": {"type": "object"},
+    "usage": {
+      "type": "object",
+      "required": ["permitted_modes", "direct_reuse_allowed", "direct_reuse_requires_review"],
+      "properties": {
+        "permitted_modes": {"type": "array",
+          "items": {"enum": ["inspect", "inspiration", "pattern-extraction", "adapt-before-use", "direct-reuse"]}},
+        "direct_reuse_allowed": {"type": "boolean"},
+        "direct_reuse_requires_review": {"type": "boolean"},
+        "commercial_use_status": {"enum": ["unverified", "permitted", "restricted", "prohibited", "unknown"]}
+      }
+    },
+    "licence": {
+      "type": "object",
+      "required": ["identifier", "verified_from_primary_source", "confidence"],
+      "properties": {
+        "identifier": {"type": "string"},
+        "primary_source_url": {"type": ["string", "null"]},
+        "verified_from_primary_source": {"type": "boolean"},
+        "commercial_use": {"type": "string"},
+        "modification": {"type": "string"},
+        "redistribution": {"type": "string"},
+        "attribution_required": {"type": "string"},
+        "asset_licences": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["discovery_method", "first_seen"],
+      "properties": {
+        "discovery_method": {"enum": ["seed", "web", "github", "npm", "storybook", "user-url", "contribution"]},
+        "discovered_at": {"type": ["string", "null"]},
+        "discovered_by_version": {"type": ["string", "null"]},
+        "discovered_by_installation_id": {"type": ["string", "null"]},
+        "contributed_by": {"type": ["string", "null"]},
+        "first_seen": {"type": "string"},
+        "last_seen": {"type": ["string", "null"]},
+        "last_verified": {"type": ["string", "null"]}
+      }
+    },
+    "maintenance": {"type": "object"},
+    "security": {
+      "type": "object",
+      "required": ["review_status", "confidence"],
+      "properties": {
+        "review_status": {"enum": ["not-reviewed", "static-reviewed", "passed", "flagged", "blocked"]},
+        "dependency_review": {"type": "string"},
+        "install_scripts": {"type": "string"},
+        "telemetry": {"type": "string"},
+        "remote_code_loading": {"type": "string"},
+        "unsafe_html": {"type": "string"},
+        "dynamic_code_execution": {"type": "string"},
+        "known_vulnerabilities": {"type": "array"},
+        "compromise_indicators": {"type": "array"},
+        "confidence": {"type": "number"}
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "required": ["claimed", "independently_reviewed", "confidence"],
+      "properties": {
+        "claimed": {"type": "string"},
+        "independently_reviewed": {"type": "boolean"},
+        "limitations": {"type": "array"},
+        "confidence": {"type": "number"}
+      }
+    },
+    "technical": {"type": "object"},
+    "design": {"type": "object"},
+    "assurance": {
+      "type": "object",
+      "required": ["status", "decision", "trust_level", "approval_required"],
+      "properties": {
+        "status": {"enum": ["seed-unreviewed", "discovered", "quarantined", "under-review",
+          "verified-direct-reuse", "verified-adapt-before-use", "pattern-reference-only",
+          "inspiration-only", "restricted", "blocked", "insufficient-evidence", "stale", "retired"]},
+        "decision": {"type": "string"},
+        "trust_level": {"enum": ["unverified", "low", "medium", "high"]},
+        "review_version": {"type": ["string", "null"]},
+        "reviewed_by": {"type": "array"},
+        "approval_required": {"type": "boolean"},
+        "limitations": {"type": "array"},
+        "compromises": {"type": "array"}
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "required": ["stale"],
+      "properties": {"review_after": {"type": ["string", "null"]}, "stale": {"type": "boolean"}}
+    },
+    "legal": {
+      "type": "object",
+      "required": ["registry_inclusion_is_endorsement", "compliance_claim_allowed"],
+      "properties": {
+        "registry_inclusion_is_endorsement": {"type": "boolean"},
+        "compliance_claim_allowed": {"type": "boolean"}
+      }
+    },
+    "references": {"type": "object"}
+  }
+}
