@@ -14,7 +14,7 @@ keywords = ["agent-skills", "claude-code", "design-systems", "interaction-design
 dependencies = []  # core is intentionally dependency-free
 
 [project.optional-dependencies]
-dev = ["pytest>=7", "ruff>=0.4"]
+dev = ["pytest>=7", "ruff>=0.15.20"]
 browser = ["playwright>=1.40"]  # axe-core injected from CDN at runtime
 
 [project.scripts]
